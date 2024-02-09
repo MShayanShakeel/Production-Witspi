@@ -1,0 +1,253 @@
+.Main-contact {
+  width: 90vw;
+  margin-left: 15vb !important;
+  border-radius: 25px;
+  background-color: #448787;
+  border: 2px solid white;
+  margin-bottom: 10px;
+}
+
+.custom-select__placeholder {
+  color: white !important; /* Add !important to ensure the style takes precedence */
+}
+
+@media screen and (max-width: 2500px) {
+  .Main-contact {
+    width: 100% !important;
+    margin-left: -1vb !important;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .Main-contact {
+    width: 100% !important;
+    margin-left: -1vb !important;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .Main-contact { 
+    margin-left: 8vb !important;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .Main-contact {
+    width: 92% !important;
+    margin-left: 8vb !important;
+  }
+}
+
+.Contact-dropdown-Gender {
+  /* Removes default styles */
+  /* padding: 0.5px; */
+  width: 100%; /* Set the desired width */
+  background-color: transparent;
+  color: white; /* Set text color */
+  border: 0.5px solid white; /* Add border for styling */
+  border-radius: 5px;
+  cursor: pointer; /* Show pointer on hover */
+  height: 2.6rem;
+}
+.Contact-dropdown-Gender{
+  width: 100% !important;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  height: 3rem;
+  border: 0.5px solid #E5E9E9 !important;
+  color: white;
+}
+.Contact-dropdown-Gender:hover {
+  background-color: #356f6f;
+}
+/* Style the options */
+.Contact-dropdown-Gender option {
+  width: 10px !important; /* Set the desired width for options */
+}
+
+.textfield-col {
+  margin-top: 1px;
+}
+.contact-text-field {
+  width: 100% !important;
+  border: 1px solid white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.5s;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.contact-text-field:focus {
+  border: 1px solid white;
+  outline: none;
+}
+.contact-text-field::placeholder {
+  color: white; /* Change this to the desired color */
+}
+.contact-container {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 1.5rem 1.5rem;
+  position: relative;
+  margin: auto;
+}
+.Contact-button-div {
+  display: flex;
+  justify-content: end;
+}
+/* 
+.btn-create-contact{
+    width: 100px;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 2vh;
+    color: white;
+    margin-left: 13px;
+    border-radius: 5px;
+    background: linear-gradient(
+        to right,
+        var(--color-secondary),
+        var(--color-primary)
+      );
+      border: none;
+    } */
+.btn-create-contact {
+  width: 120px;
+  /* height: 7vh; */
+  margin-top: 10px;
+  margin-right: 10px;
+  border: 1px solid #f5f1ff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: 0.5s;
+  background: transparent;
+  color: white;
+}
+.btn-create-contact:hover {
+  background: linear-gradient(to right, #3ab19d, #3aa9ab);
+}
+.btn-create-contact:focus {
+  outline: none;
+  border: 1px solid #f5f1ff;
+}
+::-webkit-input-placeholder {
+  /* Webkit browsers */
+  color: white;
+}
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+.lable-create-contact {
+  color: #ffffff;
+}
+.Group-contact-list-Section {
+  max-height: 50vh !important;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin-bottom: 0.5rem;
+}
+
+
+@media screen and (max-width: 500px) {
+  .row > * {
+    padding-right: calc(var(--bs-gutter-x) * 0.1) !important;
+    padding-left: calc(var(--bs-gutter-x) * 0.35) !important;
+}
+ 
+  
+  .mainpicdiiv {
+    margin-left: -6.5px;
+    margin-top: -0.5rem !important;
+    margin-bottom: 1.5rem !important  ;
+    /* margin-bottom: 10px !important; */
+  }
+  .btn-create-contact {
+    /* width: 80%; */
+    height: 80%;
+    margin-top: 10px;
+    /* margin-right: 20px !important; */
+    border: 1px solid #f5f1ff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: 0.5s;
+    background: transparent;
+    color: white;
+
+   /* position: inherit; */
+
+  }
+  .Create-contact-col-main {
+    margin-left: 1vh !important;
+  }
+  .Main-contact {
+    margin-left: 0px !important;
+    width: 100% !important;
+    margin-bottom: 2rem !important  ;
+  }
+  .create-contact-2-3 {
+    margin-left: 6px !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .contact-text-field {
+    font-size: 12px;
+  }
+  .lable-create-contact {
+    font-size: 12px;
+  }
+  .Group-contact-list-Section {
+    max-height: 27.5rem !important;
+  }
+}
+@media screen and (max-width: 392px) {
+  .Group-contact-list-Section {
+    max-height: 25.5rem !important;
+  }
+}
+@media screen and (max-width: 375px) {
+  .row > * {
+    padding-right: calc(var(--bs-gutter-x) * 0.0) !important;
+    padding-left: calc(var(--bs-gutter-x) * 0.35) !important;
+}
+  .Main-contact {
+    margin-left: 0.7px !important;
+    width: 100% !important;
+    margin-bottom: 1.2rem !important  ;
+    margin-top: -1rem;
+  }
+  .mainpicdiiv {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+  .Create-contact-col-main {
+    margin-left: 0px !important;
+  }
+  .Group-contact-list-Section {
+    max-height: 17rem !important;
+  }
+}
+
+@media screen and (max-width: 285px) {
+  .row > * {
+    padding-right: calc(var(--bs-gutter-x) * 0.0);
+    padding-left: calc(var(--bs-gutter-x) * 0.35);
+}
+
+  .btn-create-contact {
+    width: 90% !important;
+    /* margin-left: auto !important; */
+    /* margin-right: 2rem !important; */
+  }
+  .Group-contact-list-Section {
+    max-height: 15rem !important;
+    overflow-x: scroll;
+  }
+  .contact-text-field {
+    font-size: 10px;
+}
+
+}
+

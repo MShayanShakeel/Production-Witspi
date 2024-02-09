@@ -1,0 +1,100 @@
+.input-instance_grp2 {
+  width: 100%;
+  border: 2px solid #f5f1ff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: 0.5s;
+  background-color: transparent;
+}
+.input-instance_grp2::placeholder {
+  color: white; /* Change this to the desired color */
+}
+
+.input-instance_grp2:focus {
+  outline: none;
+}
+.instance-form-input_grp2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 0;
+}
+.myexecl-btn_creategrp2 {
+  width: 10%;
+  border: 2px solid #f5f1ff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: 0.5s;
+  background: transparent;
+  box-shadow: rgba(89, 38, 240, 0.17) 0px 11.9007px 8.65504px;
+  color: white;
+  transition: 0.5s ease-in;
+}
+.myexecl-btn_creategrp2:hover {
+  border: 2px solid #3ab19d;
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  transition: 0.5s ease-in;
+}
+.create_grp_filter {
+  backdrop-filter: blur(1px);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid #f5f1ff;
+  border-radius: 20px;
+  margin-top: 1rem;
+  margin-left: 0.1rem;
+  width: 100%;   
+}
+@media screen and (max-width: 500px) {
+.create_grp_filter {
+    margin-left: 3vb !important;
+  }
+  }
+
+.creategrp2_container {
+  max-height: 30rem; /* Adjust the height as needed */
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* Add this style to hide the native scrollbar */
+.creategrp2_container::-webkit-scrollbar {
+  width: 1px;
+}
+
+.creategrp2_container::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Scrollbar thumb color */
+  border-radius: 8px;
+}
+
+.creategrp2_container::-webkit-scrollbar-track {
+  background-color: transparent; /* Scrollbar track color */
+}
+
+.creategrp2_maincontainer{
+  max-height: 20rem;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  margin: auto;
+  margin-left: 15px;
+}
+.creategrp2_maincontainer::-webkit-scrollbar {
+  width: 1px;
+}
+
+.creategrp2_maincontainer::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Scrollbar thumb color */
+  border-radius: 8px;
+}
+
+.creategrp2_maincontainer::-webkit-scrollbar-track {
+  background-color: transparent; /* Scrollbar track color */
+}
+th,td{
+  min-width: 270px;
+  margin-left: auto ;
+  margin-right: auto;
+}

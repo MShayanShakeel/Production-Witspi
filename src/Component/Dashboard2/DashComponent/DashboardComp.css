@@ -1,0 +1,30 @@
+.Dashboard-Comp-card {
+  margin-right: auto;
+  margin-left: auto;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  height: 95vh;
+  margin-top: 1rem;
+  border-radius: 20px;
+  backdrop-filter: blur(1px);
+  background-color: #55938F;
+  padding: 10px 32px 10px 40px;
+  text-align: center;
+  border: 2px solid #f5f1ff;
+}
+.Dashboard-Comp-card::-webkit-scrollbar {
+  height: 1px; /* Set the width of the scrollbar */
+}
+
+.Dashboard-Comp-card::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Set the color of the scrollbar thumb */
+}
+.Dashboard-display{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0 0 0;
+}
+
+.Dashboard-Comp-card-left{
+  margin-left: -12px !important;
+}

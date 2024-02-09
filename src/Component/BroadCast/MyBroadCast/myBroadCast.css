@@ -1,0 +1,133 @@
+.myborder-shadow-style {
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0.146323204px 25px 67px rgba(0, 0, 0, 0.07);
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 16px 19px;
+  width: 100%;
+}
+.myborder-list-style {
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 16px 19px;
+  margin-bottom: 10px;
+}
+.Table-head {
+  margin-bottom: 0;
+  --bs-table-border-color: #ffffff;
+}
+.btn-contact-style {
+  background-color: white;
+  border: none;
+  font-weight: bold;
+}
+.btn-contact-style:hover {
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  cursor: pointer;
+  padding: 0 2px;
+  border-radius: 5px;
+  color: white;
+}
+.badge-style {
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  color: white !important;
+}
+.table > :not(caption) > * > * {
+  border-bottom-width: 0;
+  color: #ffffff;
+}
+.close-btn {
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  border: 1px solid #3ab19d !important;
+  margin-left: 5px;
+}
+.card-MybdCast {
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+  height: 20vh;
+}
+.file-styleMybd {
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+/*  .table>:not(caption)>*>* */
+.Tb-modal-pd-rem {
+  padding: 0rem !important;
+}
+.modal-content {
+  width: 500px;
+  margin-top: 60px;
+  /* background-image: url("../../../../images/bg1.jpg"); */
+  background-color: #3AABA8;
+}
+/* .select{
+  background: black;
+} */
+
+.myBroadCast-main{
+  margin-bottom: 20px;
+  margin-left: 10px;
+  width: 99%;
+}
+.txt-center{
+  text-align: center;
+}
+.ft-weight-300{
+  font-weight: 300 !important;
+}
+@media screen and (max-width: 820px) {
+  .myBroadCast-main{
+    margin-bottom: 20px;
+    margin-left: 0px;
+    width: 100%;
+  }
+  .Table-head {
+    font-size: 1.3vh;
+  }
+  .tbody-table{
+    font-size: 1.2vh !important;
+    font-weight: 400 !important;
+  }
+  .badge-style {
+    padding: 10px !important;
+  }
+  .ft-weight-300{
+    font-weight: 300 !important;
+  }
+  .modal-content {
+    width: 100%;
+    font-size: 1.5vh;
+  }
+  .mob-display-act{
+    display: flex;
+    justify-content: center;
+  }
+  .mybtn-file{
+    width: auto;
+  }
+}

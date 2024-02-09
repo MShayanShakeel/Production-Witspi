@@ -1,0 +1,61 @@
+.intances-success-badge {
+  background-color: #74ba2d;
+  color: white;
+  padding: 0px 6px;
+  border-radius: 15px;
+  max-width: 120px;
+  text-align: center;
+}
+.red-badge {
+  background-color: red;
+  color: white;
+  padding: 0px 6px;
+  border-radius: 15px;
+  max-width: 120px;
+  text-align: center;
+}
+.create-instance{
+  background-color: #4dae4f;
+  border: none;
+}
+.pd-20{
+  padding: 10px !important;
+  width: 100%;
+  margin: 0 !important;
+}
+
+@media screen and (max-width: 820px) {
+  .intances-success-mob {
+    background-color: #74ba2d;
+    border-radius: 10px;
+    max-width: 100px;
+    text-align: center;
+    font-size: 1.4vh;
+    display: block !important;
+    border-radius: 5px;
+  }
+  .intances-success-badge{
+    display: none !important;
+  }
+  .red-badge {
+    background-color: red;
+    border-radius: 10px;
+    max-width: 100px;
+    text-align: center;
+    font-size: 1.4vh;
+    display: block !important;
+    border-radius: 5px;
+  }
+  .pd-10-mob{
+    padding: 0px !important;
+  }
+  .pd-mob-instances{
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+  .create-instance{
+    font-size: 1.5vh;
+    padding: 5px;
+    border: none;
+  }
+}

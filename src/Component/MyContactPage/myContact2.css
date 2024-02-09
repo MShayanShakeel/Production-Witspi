@@ -1,0 +1,670 @@
+/* ryffffff csss */
+
+.Backdrop-myContact2 {
+  /* max-height: 95vh;
+  min-height: 10vh; */
+  backdrop-filter: blur(1px);
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  background-color: #448787;
+  border: 2px solid #f5f1ff;
+  border-radius: 20px;
+  z-index: 0;
+  margin-top: 1rem;
+  position: relative;
+}
+.Backdrop-myContact2-2 {
+  padding-bottom: 1px !important;
+  backdrop-filter: blur(1px);
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  background-color: #448787;
+  border: 2px solid #f5f1ff;
+  border-radius: 20px;
+  z-index: 0;
+  position: relative;
+}
+.MyContact_2_maincontainer thead {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #448787; /* Set a background color for the header */
+  z-index: 1;
+}
+.Add-new-btn_createbd {
+  margin-top: -3rem;
+  float: right;
+  margin-right: 10px;
+  background-color: #3aaba8;
+  opacity: 1;
+}
+.input-type {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  opacity: 0;
+  margin-top: -3rem !important;
+}
+.instance-select-fro-message-option {
+  color: yellow;
+  min-width: 20px !important;
+  max-width: 20px !important;
+}
+@media screen and (min-width: 1600px) and (max-width: 1830px) {
+  .Contact-width-1830-1600 {
+    width: 90% !important;
+  }
+}
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  .Contact-width-1830-1600 {
+    width: 100% !important;
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1605px) {
+  .Contact-width-1830-1600 {
+    width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 391px) {
+  .width_91 {
+    margin-left: -0.1rem !important ;
+  }
+}
+@media screen and (max-width: 380px) {
+  .Backdrop-myContact2-2 {
+    margin-left: 1.7vh !important;
+    margin-bottom: 4rem !important;
+  }
+  .col-contact-page {
+    padding-top: 0rem !important;
+  }
+  .center-component-class {
+    margin-bottom: 1.4rem !important;
+    width: 101% !important;
+  }
+  .width_91 {
+    margin-left: 0rem !important ;
+  }
+}
+
+@media screen and (max-width: 361px) {
+  .width_91 {
+    margin-top: 3rem;
+    margin-left: -0rem !important ;
+  }
+  .Backdrop-myContact2-2 {
+    width: 98.6% !important;
+  }
+}
+@media screen and (max-width: 290px) {
+  .Backdrop-myContact2-2 {
+    width: 96vw !important;
+  }
+  .search-container2 {
+    margin-left: -10px !important;
+    margin-top: 5px;
+    padding: 0px !important;
+    font-size: 9px !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .shayanshakeel {
+    padding: 3vh 0.5vh 1vh 0.5vh !important;
+  }
+  .col-contact-page {
+    padding-top: 0.5rem;
+  }
+
+  .row > * {
+    padding-right: calc(var(--bs-gutter-x) * 0.1) !important;
+    padding-left: calc(var(--bs-gutter-x) * 0.6) !important;
+  }
+  .center-component-class {
+    margin-bottom: 1.4rem !important;
+    width: 101% !important;
+  }
+
+  .width_91 {
+    width: 100vw;
+    font-size: 15px;
+    height: auto;
+    position: relative;
+    margin-left: -0.2rem;
+    margin-top: 3rem !important;
+  }
+  .Backdrop-myContact2-2 {
+    width: 97vw;
+    font-size: 15px;
+    min-height: 11vh !important;
+    height: auto;
+    max-height: 73vh !important;
+    margin-top: -0.9rem !important;
+    position: relative;
+    margin-left: 0.7rem !important;
+    margin-bottom: 5.5rem;
+  }
+
+  .h1-MY-contact {
+    font-size: 15px;
+  }
+  .selected-btn {
+    width: 10px;
+    height: 30px;
+    width: 80px;
+    margin-left: 8px;
+    background: transparent;
+    border: 1px solid #f5f1ff;
+    border-radius: 8px !important;
+    margin-top: 2px;
+  }
+  .unselected-dropdown_2 {
+    margin-left: 10px !important;
+    width: 80px;
+    margin-top: 3px !important;
+    border-radius: 8px !important;
+  }
+
+  /* MENU BUTTON CSS */
+
+  .menu-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .menu-items {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .menu-item {
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+  }
+
+  .menu-item:hover {
+    background-color: #ddd;
+  }
+
+  /* New classes for visibility */
+  .visible {
+    display: block;
+  }
+
+  .hidden {
+    display: none;
+  }
+  .myexecl-btn2 {
+    width: 90px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    height: 30px !important;
+    font-size: 10px;
+    margin-top: 3px;
+
+    /* margin-right: 6px;
+  margin-bottom: 2px;
+  margin-left: -2px;
+   */
+  }
+  /* END MENU BUTTON CSS */
+}
+
+.search-container2 {
+  align-items: center;
+  /* background: #fff; */
+  border-radius: 12px;
+  box-shadow: 0 4.3275208473px 35.7020454407px 0 rgba(0, 0, 0, 0.06);
+  display: flex;
+  padding: 0px 13px;
+  margin-right: 10px;
+}
+.inputsearch-2 {
+  background-color: transparent;
+}
+.inputsearch-2::placeholder {
+  color: white; /* Change this to the desired color */
+}
+.myexecl-btn2 {
+  width: 100%;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: 1px solid #f5f1ff;
+  /* padding: 10px 14px; */
+  border-radius: 8px;
+  height: 40px;
+  transition: 0.5s;
+  /* margin: auto; */
+  background: transparent;
+  color: white;
+}
+.myexecl-btn2:hover {
+  background: linear-gradient(to right, #3ab19d, #3aa9ab);
+}
+.myexecl-btn2:focus {
+  outline: none;
+  border: 1px solid #f5f1ff;
+}
+::-webkit-input-placeholder {
+  /* Webkit browsers */
+  color: white;
+}
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+.search-icon2 {
+  color: white;
+  margin-right: 8px;
+}
+.MyContact_2_maincontainer {
+  max-height: 47vh;
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+@media screen and (min-width: 1720px) {
+  .MyContact_2_maincontainer {
+    max-height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: scroll;
+    overflow-y: scroll;
+  }
+}
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  .Contact-Header-width-1200-900 {
+    width: 91% !important;
+    margin-left: 8.7%;
+  }
+}
+
+.MyContact_2_container {
+  max-height: 30rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  align-items: center;
+}
+
+.MyContact_2_container::-webkit-scrollbar {
+  width: 1px;
+}
+
+.MyContact_2_container::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+.MyContact_2_container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.MyContact_2_maincontainer::-webkit-scrollbar {
+  width: 1px;
+}
+
+.MyContact_2_maincontainer::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Scrollbar thumb color */
+  border-radius: 8px;
+}
+
+.MyContact_2_maincontainer::-webkit-scrollbar-track {
+  background-color: transparent; /* Scrollbar track color */
+}
+.td_min_sNo_width {
+  min-width: 40px !important;
+}
+.td_min_width {
+  min-width: 140px !important;
+  max-width: 140px;
+  overflow: hidden;
+  white-space: nowrap;
+  /* max-width: 200px;  */
+  /* border: 1px solid #ccc;  */
+  padding: 5px;
+}
+_min_desc_width {
+  min-width: 300px !important;
+}
+.btns_MyContact2 {
+  width: auto;
+  border: 1px solid #f5f1ff;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: 0.5s;
+  background: transparent;
+  color: white;
+}
+.MyContact_scroll {
+  max-height: 40rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.MyContact_scroll::-webkit-scrollbar {
+  height: 1px; /* Set the width of the scrollbar */
+}
+
+.MyContact_scroll::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Set the color of the scrollbar thumb */
+}
+
+.unselected-dropdown_2 {
+  background: transparent;
+  box-shadow: none;
+  color: white;
+  border: 2px solid #f5f1ff;
+  min-width: 120px;
+  padding: 7px;
+  border-radius: 12px;
+}
+.Del_btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.5s;
+  background: transparent;
+  color: white;
+  background-color: red;
+}
+.Del_btn:hover {
+  border: 1px solid #f5f1ff;
+}
+.Close_btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.5s;
+  background: transparent;
+  background-color: gray;
+  color: white;
+}
+.Update_btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.5s;
+  background: blue;
+  color: #3ab19d;
+}
+.Update_btn:hover {
+  border: 2px solid #3ab19d;
+  color: white;
+  background: text-success;
+}
+
+@media screen and (min-width: 1600px) and (max-width: 2200px) {
+  .td_min_width {
+    max-width: 200px !important;
+    min-width: 200px !important;
+  }
+}
+@media screen and (min-width: 1399px) and (max-width: 1683px) {
+  .width_91 {
+    width: 100% !important;
+  }
+}
+.model-select-box {
+  word-wrap: normal;
+  width: 210px;
+  background: #448787;
+  color: #ffffff;
+  border-radius: 5px;
+  /* color:white;  */
+  font-size: 15px;
+  /* border-color: solid 100 blue; */
+}
+.but-btn-excel {
+  width: 110px;
+  height: 40px;
+  justify-content: end;
+  margin-top: 10px;
+  font-size: 1.9vh;
+  color: white;
+  /* margin-left: 13px; */
+  border-radius: 5px;
+  /* background: linear-gradient(
+      to right,
+      var(--color-secondary),
+      var(--color-primary)
+    ); */
+  background: #0b5ed7;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 550px;
+  margin-top: -25px;
+  margin-bottom: 15px;
+  /* border-style: solid; */
+  /* border-color: white; */
+  border: 2px solid #ffffff;
+}
+.but-btn-excel:hover {
+  background: #54bfb5;
+  border-color: black;
+  /* border-style: solid; */
+  border-color: #0b5ed7;
+}
+.excel-model-div {
+  width: 100%;
+  height: auto;
+  background-color: #6fada1;
+  /* border: solid; */
+  border: 2px solid #ffffff !important;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  /* #448787 */
+}
+.Modal-Footer-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12%;
+  height: 45px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #f5f1ff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: 0.5s;
+  background: transparent;
+  color: white;
+}
+.div-model-button-excel {
+  margin-bottom: 10px;
+  background-color: transparent;
+  display: flex;
+  justify-content: end;
+}
+/**/
+.Excel-model-lable {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 500px) {
+  .excel-model-div {
+    width: 100%;
+    height: auto;
+    background-color: #6fada1;
+    border: 2px solid #ffffff !important;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    /* #448787 */
+  }
+  .excel-mode {
+    margin-left: 0.5px !important;
+  }
+  .Modal-Footer-div {
+    width: auto;
+    height: 40px;
+    margin-left: 10px;
+    border: 1px solid #f5f1ff;
+    padding: 7px 14px;
+    border-radius: 8px;
+    transition: 0.5s;
+    background: transparent;
+    color: white;
+  }
+}
+
+/* YourComponent.css */
+
+/* Styles for the mobile menu icon */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+/* Styles for the navbar on smaller screens */
+/* .navbar {
+  display: flex;
+  flex-direction: column;
+  background-color: #6FADA1;
+  padding: 15px;
+  text-align: center;
+} */
+
+/* Styles for the menu when it's shown */
+.navbar.show-menu {
+  display: flex;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 500px) {
+  .menu-icon {
+    display: block; /* Display the menu icon on small screens */
+    margin-right: 1vh !important;
+  }
+  .mobile-view-create-contact-excel-btn {
+    margin-bottom: -3.5rem;
+  }
+  .navbar.show-menu {
+    background-color: #448787;
+    width: 100px;
+    border-radius: 15px;
+    border: solid 2px white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 9.8vh;
+    left: 0;
+  }
+  /* Hide the navbar by default on small screens */
+  .navbar {
+    display: none;
+    position: absolute;
+  }
+  .unselected-dropdown_2 {
+    background: transparent;
+    box-shadow: none;
+    color: white;
+    border: 1px solid #f5f1fe;
+    min-width: 50px;
+    padding: 7px;
+    border-radius: 12px;
+    font-size: 9px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+}
+.Contact-button-add-excel-also {
+  display: flex;
+  flex-direction: column;
+  top: 3vh;
+  align-items: center;
+  right: 1rem;
+  /* flex-direction: column; */
+  gap: 1rem;
+  position: fixed;
+}
+
+/* BREADCAST POSTION CSS */
+@media screen and (max-width: 376px) {
+  .broadcast-main-div {
+    padding: 0.5vh 0px 0.5vh 0.5vh !important;
+    /* margin-left: -2rem !important; */
+    /* margin-right: 11px; */
+    width: 100vw;
+  }
+  .navbar.show-menu {
+    top: 12.3vh !important;
+  }
+}
+@media screen and (max-width: 391px) {
+  .broadcast-main-div {
+    margin-left: 0.6rem !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .broadcast-main-div {
+    padding: 0.3vh 0px 0.5vh 0vh !important;
+
+    /* margin-left: -1px !important; */
+    width: 99%;
+  }
+}
+
+@media screen and (max-width: 285px) {
+  .broadcast-main-div {
+    padding: 0.5vh 0px 0.5vh 0vh !important;
+    width: 97.5%;
+  }
+  .Broadcast-contact-list-excel-file {
+    left: 0.7vh;
+  }
+}
+
+.instance-selecter-dropdown-box {
+  /* width: 100%; */
+  /* height: 40px; */
+  border-radius: 10px;
+  background: #3aaea3;
+  color: white;
+  border: solid 2px white;
+}
+.media-file-upload-btn {
+  margin-top: -3rem !important;
+}
+
+.DatePicker-class {
+  width: 200.5%;
+  height: 2rem;
+  background: #3aaea3;
+  border-radius: 10px;
+  border: solid 2px white;
+  color: white;
+  padding: 1rem;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.DatePicker-class::placeholder {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.966
+  ) !important; /* Adjust the alpha value for the desired opacity */
+}

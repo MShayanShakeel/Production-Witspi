@@ -1,0 +1,108 @@
+.Main-card-Dash {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.Dash-card-instance {
+  position: relative;
+  transition: 0.3s;
+  width: 9.8vw;
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-bottom: 1vh;
+}
+.Dash-card-instance.no-margin {
+  margin-right: 0; /* Set margin-right to 0 for the last card */
+}
+.live-badge {
+  position: absolute;
+  top: 10px; /* Adjust the top position as needed */
+  right: 10px; /* Adjust the right position as needed */
+  background-color: yellow;
+  color: black;
+  padding: 0.5vh 0.8vh;
+  border-radius: 5px;
+  font-size: 1.35vh;
+}
+
+.Dash-card-instance:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.Dash-card-instance-container {
+  padding: 0.5vh 1vh;
+  background-color: rgba(42, 42, 42, 0.6);
+  color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 1.5vh;
+}
+.images-card-style {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.h6-font-size{
+  font-size: 2vh;
+}
+@media screen and (max-width: 500px) {
+.Dasshboard-message-postion{
+margin-top: -10px;
+width: auto;
+height: 17vh;
+overflow-y: scroll;
+}
+.Dashboard-insstance-hadding{
+  font-size: 18px;
+}
+
+.Profile-img-radius {
+  height: 3.5vh !important;
+    border-radius: 50%;
+    object-fit: cover;
+    /* margin-right: -5px !important;  */
+}
+
+}
+
+
+@media screen and (max-width: 431px){
+  .Dasshboard-message-postion{
+    height: 18vh;
+    }
+  }
+
+@media screen and (max-width: 415px){
+  .Dasshboard-message-postion{
+    height: 18vh;
+    }
+  }
+
+
+@media screen and (max-width: 391px){
+    .Dasshboard-message-postion{
+      height: 18vh;
+      }
+    }
+
+@media screen and (max-width: 376px){
+.Dasshboard-message-postion{
+  height: 18vh;
+  }
+}
+
+@media screen and (max-width: 361px){
+  .Dasshboard-message-postion{
+    height: 18vh;
+    }
+  }
+
+  
+@media screen and (max-width: 281px){
+    .Dasshboard-message-postion{
+      height: 18vh;
+      }
+    }

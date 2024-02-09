@@ -1,0 +1,108 @@
+import React from "react";
+import whatsapiLogo from "../../../images/watspilogo.png";
+import defaultImg from "../../../images/default-img.png";
+import { faBell, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useUserdetails } from "../../store/UserContext";
+import { Col, Row } from "react-bootstrap";
+import "./LaptopHeader.css"
+
+const LaptopHeader = () => {
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/";
+  };
+
+  const { userDetails } = useUserdetails();
+
+  const ShortText = ({ text, maxChar }) => {
+    const shorttext = (text, maxChar) => {
+      if (typeof text !== "string") {
+        return "";
+      }
+      if (text.length > maxChar) {
+        return text.slice(0, maxChar) + ".";
+      }
+      return text;
+    };
+    const shoortedtext = shorttext(text, maxChar);
+
+    return <div>{shoortedtext}</div>;
+  };
+
+  return (
+    <>
+      <Row style={{ marginTop: "1rem" }}>
+        <Col sm={1}></Col>
+        <Col
+          md={11}
+          lg={11}
+          xl={12}
+          xxl={12}
+          className="Backdrop-myContact2-2 width_91 header-laptop-view"
+          style={{ padding: "15px" }}
+        >
+          <div>
+            <div className="MyContact_2_maincontainer">
+              <div
+                className="header-main-items"
+                style={{ verticalAlign: "baseline", color: "white" }}
+              >
+                <div>
+                  <img
+                    src={whatsapiLogo}
+                    alt="Profile-Image"
+                    style={{ cursor: "pointer", height: "3.5vh" }}
+                  />
+                </div>
+
+                <div className="header-profile" style={{ width: "11vh" }}></div>
+                <span
+                  className="logoutbutton-and-pro"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <img
+                    src={defaultImg}
+                    className="Profile-img-radius"
+                    alt="Profile-Image"
+                    style={{ cursor: "pointer", marginTop: "5px" }}
+                  />
+                  <span style={{  width: "6rem"}}>
+                  <abbr
+                  className="custom-tooltip" title={userDetails?.name} style={{ textDecoration: 'none' }}>
+                    <ShortText text={userDetails?.name} maxChar={8} />
+                    </abbr>
+                  </span>
+                  <div className="Pro-badge">Pro</div>
+                  <div className="header-ball-icon-main">
+                      <FontAwesomeIcon
+                        icon={faBell}
+                        style={{
+                          fontSize: "3.5vh",
+                          marginRight : "0.5rem",
+                          color: "rgb(255 252 252 / 100%)",
+                        }}
+                      />
+                    </div>
+                  <a
+                    className="dropdown-item_MainInstance"
+                    onClick={handleLogout}
+                    title="Logout"
+                  >
+                    <FontAwesomeIcon icon={faSignOutAlt} />
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </Col>
+      </Row>
+    </>
+  );
+};
+
+export default LaptopHeader;

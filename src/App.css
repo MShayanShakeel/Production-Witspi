@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --color-primary: #3aa9ab;
+  --color-secondary: #3ab19d;
+  --color-white: #fff;
+  --box-shadow-primary: #3aa9ab25;
+}
+
+.trades-open {
+  width: 85% !important;
+  margin-left: auto;
+  margin-top: 0 !important;
+}
+@media screen and (max-width: 820px) {
+  .trades-open {
+    width: 100% !important;
+  }
+}
+body {
+  background-color: #f7f8fc !important;
+}
+.card-box-border {
+  --bs-card-border-width: none;
+}
+@media screen and (max-width: 820px) {
+  .mob-row {
+    margin-left: 0 !important;
+  }
+  .mob_pad{
+    padding: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  .mob-row {
+    margin-left: 0 !important;
+    /* padding: 1vh 1vh 1vh 1vh !important; */
+  }
+}
+
+.web_Pad{
+  padding: 3vh 4.5vh vh 0;
+}

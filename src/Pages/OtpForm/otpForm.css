@@ -1,0 +1,40 @@
+/* .btn-Verify {
+  background: linear-gradient(to right, #3ab19d, var(--color-primary));
+  border: none;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.main-OtpForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.font-bold {
+  font-weight: 600;
+}
+.timer-color {
+  color: grey;
+}
+.timer-sendNow-color {
+  color: #3ab19d;
+  cursor: pointer;
+}
+.inactive-verify {
+  background: darkgrey;
+  border-radius: 10px;
+  border: none;
+}
+.otp-head {
+  text-align: center;
+}
+.back-arrow-otp {
+  background: linear-gradient(to right, #3ab19d, var(--color-primary));
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  margin: 10px;
+} */

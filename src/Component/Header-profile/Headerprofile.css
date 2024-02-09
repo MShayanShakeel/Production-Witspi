@@ -1,0 +1,115 @@
+.header-main{
+  display: flex;
+  margin-top: 4px;
+  flex-direction: row;
+  height: 8vh !important; 
+  width: 98%;
+  border-radius: 20px !important;
+  border: solid 2px white;
+  position: fixed;
+  background-color: #52918D;
+  top: 0;
+  color: antiquewhite;
+  align-items: center;
+  left: 1%;
+  z-index: 1;   
+}
+.Dasshboard-message-postion-header{
+    display: flex !important;
+    vertical-align: baseline;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.header-pro-button{
+    width: 5px !important;
+}
+.header-ball-icon{
+    margin-left: -20px !important;
+}
+.header-profile{
+    width: 100% !important;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 4vh 0px 2vh ;
+}
+.header-items-all{
+    width: 4vh !important;
+}
+.header-main-items{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    /* justify-content: space-between; */
+    /* flex-wrap: wrap; */
+}
+.Profile-span{
+    text-align: center;
+    font-size: 14px;
+    padding-top: 4px;
+}
+@media screen and (max-width : 415px) {
+    .header-profile{
+    width: auto !important;
+    margin: 0px 3vh 0px 2vh !important ;
+    }
+    .Profile-span{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width : 361px) {
+.header-profile {
+   margin:  0px 0vh 0px 1vh !important ; 
+}}
+
+@media screen and (max-width : 281px) {
+    .header-profile {
+       margin:  0px 0vh 0px 1vh !important ; 
+    }}
+    
+
+@media screen and (max-width : 391px) {
+    .Profile-span{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width : 380px) {
+.header-profile{
+        width: 100% !important;
+        margin: 0px 2.5vh 0px 3vh ;
+    }
+.logoutbutton-and-pro{
+    margin-left: 5vh !important;
+}
+}
+
+@media screen and (max-width : 285px) {
+    .header-profile{
+        width: auto !important;
+        padding: 0px !important;
+        margin: 0px 7px 0px 8px !important;
+    }
+    .Profile-span{
+        padding: 1px;
+        font-size: 10px;
+    } 
+    .logoutbutton-and-pro{
+        margin-left: 0vh !important;
+    }
+
+.dropdown-item_MainInstance {
+    padding: 0px 0px !important;
+}
+.Pro-badge{
+    padding: 0px 0px !important;
+    margin-right: 1vh !important;
+    margin-left: 2vh !important;
+}
+.dropdown-item_MainInstance {
+  
+   
+    margin-left: 1vh !important;
+}
+}

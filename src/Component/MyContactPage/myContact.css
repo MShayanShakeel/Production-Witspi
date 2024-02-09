@@ -1,0 +1,292 @@
+.My-form-input {
+  display: flex;
+  justify-content: space-between;
+}
+.myexecl-btn {
+  width: 100%;
+  border: 1px solid #eee;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: 0.5s;
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  box-shadow: rgba(89, 38, 240, 0.17) 0px 11.9007px 8.65504px;
+  color: white;
+}
+.my-Context-style {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0.146323204px 25px 67px rgba(0, 0, 0, 0.07);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 10px;
+}
+.selected-btn {
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  min-width: 120px;
+  padding: 7px;
+  position: relative;
+  transition: 0.25s;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+.range-values {
+  display: flex;
+  justify-content: space-around;
+}
+.unselected-dropdown {
+  background: rgb(248, 248, 248);
+  box-shadow: none;
+  color: rgb(132, 132, 132);
+  border: none;
+  min-width: 120px;
+  padding: 7px;
+  border-radius: 12px;
+}
+.unselected-dropdown:hover {
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  border-radius: 12px;
+  position: relative;
+  transition: 0.25s;
+}
+/* Add these styles to your CSS file */
+.search-container {
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4.3275208473px 35.7020454407px 0 rgba(0, 0, 0, 0.06);
+  display: flex;
+  padding: 0px 13px;
+  margin-right: 10px;
+}
+
+.search-icon {
+  color: #999;
+  margin-right: 8px;
+}
+.input-search {
+  border: none;
+  padding: 12px 15px;
+}
+.input-search:focus {
+  border: none !important;
+  outline: none;
+  color:  white;
+}
+.style-myContactCard {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0.146323204px 25px 67px rgba(0, 0, 0, 0.07);
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 16px 10px;
+  width: 100%;
+}
+.tbody-style-card {
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+#range-slider-gradient {
+  height: 10px;
+}
+
+.range-slider .range-slider__range {
+  background: transparent !important;
+}
+.range-slider .range-slider__thumb {
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  ) !important;
+  width: 17px !important;
+  height: 17px !important;
+}
+.Contact-flex-style {
+  display: flex;
+  align-items: center;
+  /* margin-left: 34vw; */
+  gap: 1rem;
+  /* position: fixed; */
+ 
+}
+.search-flex-main {
+  display: flex;
+}
+.Not-Found-style {
+  text-align: center;
+  font-weight: bold;
+}
+.country-flag {
+  height: 1.5vh;
+  padding-right: 5px;
+}
+.hide-ex-main-btn {
+  display: none;
+}
+@media screen and (max-width: 820px) {
+  .search-flex-main {
+    width: 100%;
+  }
+  .hide-ex-btn {
+    display: none !important;
+  }
+  .width-100 {
+    width: 100% !important;
+  }
+  .my-Context-style {
+    padding: 0;
+  }
+  .card-box-border {
+    padding: 5px 0px;
+  }
+  .Contact-flex-style {
+    gap: 0.75rem;
+    padding-bottom: 10px;
+  }
+  .unselected-dropdown {
+    min-width: 50px;
+    padding: 4px;
+    font-size: 1.4vh;
+  }
+  .selected-btn {
+    min-width: 50px;
+    padding: 4px;
+    font-size: 1.4vh;
+  }
+  .unselected-dropdown {
+    min-width: 50px;
+  }
+  .search-container {
+    padding: 0px;
+    margin-right: 0px;
+    display: flex;
+    width: 100%;
+  }
+  .input-search {
+    padding: 5px;
+    width: 100%;
+  }
+  .My-form-input {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: fit-content;
+  }
+  .th-font-style {
+    font-size: 1.1vh;
+    font-weight: 500;
+  }
+  .tbody-font-style {
+    font-size: 1.1vh;
+  }
+  .row {
+    margin-right: 0 !important;
+  }
+  .mycontact-btn {
+    padding: 6px;
+    font-size: 1.5vh;
+  }
+  .Not-Found-style {
+    font-size: 1.6vh;
+  }
+  .country-flag {
+    height: 1.2vh;
+    padding-right: 5px;
+  }
+  .menu-Country {
+    min-width: 80px !important;
+    text-align: center;
+    font-size: 1.4vh;
+  }
+  .selected-btn {
+    box-shadow: none !important;
+  }
+  .hide-ex-main-btn {
+    display: flex;
+  }
+}
+/* 520 */
+@media screen and (max-width: 500px) {
+  .Contact-flex-style {
+    gap: 0 0.6rem !important;
+    flex-direction: column;
+    display: flex;
+    width: auto;
+  }
+  .search-flex-main{
+    width: 40% !important; 
+  }
+  .My-form-input{
+    margin-left: -1vh;
+  }
+  .card-box-border {
+    padding: 0px;
+  }
+  .mycontact-btn {
+    font-size: 1.1vh;
+  }
+  .search-container {
+    font-size: 1.6vh;
+  }
+  .menuAge {
+    font-size: 1.3vh;
+    height: 3.5vh;
+  }
+  .range-slider .range-slider__thumb {
+    width: 2vh !important;
+    height: 2vh !important;
+  }
+  #range-slider-gradient {
+    height: 1vh;
+  }
+  .menu-Gender {
+    font-size: 1.5vh;
+    min-width: 60px !important;
+  }
+}
+@media screen and (max-width: 400px) {
+  .mycontact-btn {
+    font-size: 1vh;
+  }
+  .search-container {
+    font-size: 1.5vh;
+  }
+  .menu-Country {
+    font-size: 1.2vh;
+  }
+}
+@media screen and (max-width: 310px) {
+  .width-305{
+    margin-top: 9rem !important;
+  }
+}

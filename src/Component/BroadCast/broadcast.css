@@ -1,0 +1,140 @@
+.Drop-btnstyle {
+  background-color: #e9ecef;
+  color: black;
+  width: 100%;
+  border: none;
+  letter-spacing: 5px;
+  padding: 10px 14px;
+}
+.Drop-btnstyle:hover {
+  background-color: #3ab19d;
+}
+.form-check .form-check-input {
+  margin-left: 0.5em;
+}
+.form-check-input:checked {
+  background-color: #3ab19d;
+  border-color: #3ab19d;
+}
+
+.text-area-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items:flex-end;
+}
+.text-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px 16px;
+  border-radius: 2px;
+  border: 1px solid var(--gray-500, #adb5bd);
+  cursor: pointer;
+}
+#text-upload:focus {
+  border: none;
+}
+.card-stylebdcast {
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  min-width: 31%;
+  margin-right: 10px;
+}
+.message-templates-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 100%;
+  padding: 10px 0;
+}
+
+.message-templates-container::-webkit-scrollbar {
+  height: 5px; /* Set the scrollbar width */
+}
+
+/* Customize the scrollbar track */
+.message-templates-container::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Set the track color */
+}
+
+/* Customize the scrollbar thumb (the draggable part) */
+.message-templates-container::-webkit-scrollbar-thumb {
+  background: #3ab19d; /* Set the thumb color */
+  border-radius: 50px;
+}
+.brdCast-input {
+  width: 100%;
+  border: 1px solid #eee;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: 0.5s;
+  background-color: #e9ecef;
+}
+.broadCast-edit {
+  color: rgb(165, 165, 165);
+  position: absolute;
+  padding-top: 15px;
+  left: 37%;
+}
+.bdCast-body-font{
+  font-size: 2vh;
+}
+.bdCast-head-font{
+  font-size: 2.5vh;
+}
+.msg-btns-style{
+  display: flex;
+  justify-content: flex-end
+}
+@media screen and (max-width: 820px) {
+  .broadCast-edit {
+    color: rgb(165, 165, 165);
+    position: absolute;
+    padding-top: 15px;
+    left: 90%;
+  }
+  .row-bd-width-100 {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  .mob-btn {
+    font-size: 1.5vh !important;
+    width: auto;
+  
+  }
+  .msg-temp-style {
+    padding: 0px;
+  }
+  .bdCast-body-font{
+    font-size: 1.3vh;
+  }
+  .bdCast-head-font{
+    font-size: 1.5vh;
+  }
+  .card-stylebdcast {
+    min-width: 85%;
+  }
+  .msg-btns-style{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem !important;
+  }
+  .Sd-Sch-font{
+    font-size: 1.5vh;
+    width: auto;
+  }
+}
+@media screen and (max-width: 340px) {
+  .broadCast-edit {
+    left: 85%;
+  }
+  .msg-temp-style {
+    padding: 0px;
+  }
+}

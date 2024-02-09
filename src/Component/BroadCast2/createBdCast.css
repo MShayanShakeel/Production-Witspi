@@ -1,0 +1,228 @@
+.createbrdCast_textarea {
+  width: 100%;
+  border: 1px solid #eee;
+  padding: 10px 14px;
+  /* height: 20vh; */
+  border-radius: 8px;
+  transition: 0.5s;
+  background-color: transparent;
+}
+.createbrdCast_textarea:focus {
+  outline: none;
+}
+.card-stylecreatbdcast {
+  padding-bottom: 10px;
+  border: 2px solid #f5f1ff;
+  border-radius: 5px;
+  min-width: 31% !important;
+  margin-right: auto;
+}
+.Backdrop-myContact2-broadcast{
+  /* margin-left: -0.5rem !important; */
+  width: 100% !important;
+}
+@media screen and (max-width: 500px) {
+.Braod-cast-page-main{
+  height: 80vh !important;
+  overflow-x: scroll !important;
+}
+.Backdrop-myContact2-broadcast{
+  padding: 0px 0px 0px 0px !important;
+  /* 413 */
+  margin-left: 1rem !important;
+  width: 99% !important;
+}
+.card-stylecreatbdcast {
+  font-size: 10px !important;
+  min-width: 35vh !important;
+    width: 80vw ; 
+  }
+.createbrdCast_textarea{
+  width: 105% ;
+  border: 1px solid #eee;
+  /* padding: 10px 14px; */
+  border-radius: 8px;
+  transition: 0.5s;
+  background-color: transparent;
+  }
+  .text-area-main{
+    height: 70px;
+    width: auto !important;
+    min-width: 40px;
+    max-width: 34vh !important;
+  }
+  
+.Backdrop-myContact2-broadcast{
+    margin-top: 0vh;
+    }
+
+}
+@media screen and (max-width: 391px) {
+  .Backdrop-myContact2-broadcast{
+    margin-left: -0.71vh !important;
+  }
+}
+@media screen and (max-width: 380px) {
+.Backdrop-myContact2-broadcast{
+  /* margin-left: -0.1vh !important; */
+  margin-left: -0.34rem !important;
+}
+
+
+
+.Broadcast-contact-list-excel-file{
+  margin-left: 0px !important;
+  
+}
+.text-area-main{
+  max-width: 39vh !important;
+}
+}
+.Create-BroadCast-text-h4{
+  /* padding: 1vh 1vh 1vh 0px !important; */
+}
+.Add-new-btn_createbd {
+  background: transparent;
+  border: 2px solid #f5f1ff;
+  margin-left: 8px;
+  margin-top: 0rem;
+}
+.Add-new-btn_createbd:hover {
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  border: 1px solid #3ab19d;
+}
+.createbrdCast-input {
+  width: 100%;
+  border: 2px solid #f5f1ff;
+  padding: 10px 14px;
+  height: 50px;
+  border-radius: 8px;
+  transition: 0.5s;
+  background-color: transparent;
+}
+.createbrdCast-input:focus {
+  outline: none;
+}
+.Drop-btnstyle_createbd {
+  background-color: transparent;
+  color: black;
+  height: 50px;
+  width: 100%;
+  border: none;
+  letter-spacing: 5px;
+  padding: 10px 14px;
+  border: 2px solid #f5f1ff;
+
+  /* Set the background color to transparent when in focus (dropdown open) */
+  &:focus {
+    background-color: transparent;
+    border: 2px solid #f5f1ff;
+  }
+}
+
+.Drop-btnstyle_createbd .btn.active .btn.show {
+  background-color: transparent !important;
+}
+
+.color-white {
+  color: white;
+}
+.broadCast-edit2 {
+  color: white;
+  position: absolute;
+  padding-top: 15px;
+  left: 29%;
+}
+.contact-list-container {
+  max-height: 30vh; /* Adjust the height as needed */
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* Add this style to hide the native scrollbar */
+.contact-list-container::-webkit-scrollbar {
+  width: 1px;
+}
+
+.contact-list-container::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Scrollbar thumb color */
+  border-radius: 8px;
+}
+
+.contact-list-container::-webkit-scrollbar-track {
+  background-color: transparent; /* Scrollbar track color */
+}
+
+.table {
+  --bs-table-bg: transparent !important;
+}
+.main_Crte_BDCAST2{
+  max-height: 17vh;
+  /* margin-top: 0px; */
+  overflow-x: scroll;
+  overflow-y: hidden; 
+}
+.main_Crte_BDCAST2::-webkit-scrollbar {
+  width: 1px;
+}
+
+
+.main_Crte_BDCAST2::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Scrollbar thumb color */
+  border-radius: 8px;
+}
+
+.main_Crte_BDCAST2::-webkit-scrollbar-track {
+  background-color: transparent; /* Scrollbar track color */
+}
+/* .broadcast-Message Templates{
+  margin-top: -3rem !important;
+    margin-bottom: -5px !important;
+} */
+.S_No_th{
+  min-width: 20% !important;
+}
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+  .contact-list-container {
+    max-height: 15vh;
+  }
+}
+.color_white{
+  color: white !important;
+  font-weight: 300;
+}
+@media only screen and (max-width: 600px) {
+.createbrdCast-input{
+  height: 10%;
+  }
+
+.Drop-btnstyle_createbd{
+  height: 10%;
+  } 
+.createbrdCast-input{
+  height: 10%;
+}
+.text-area-main{
+  height: 70px;
+  width: 140px;
+}
+.msg-btns-style{
+  display: flex;
+  justify-content: end;
+  margin: auto;
+}
+}
+@media screen and (max-width: 500px) {
+  
+  .Broad-cast-items-postion{
+  padding-right: 3vh ;
+  margin-bottom: -20px;
+  }
+  .broadCast-edit2{
+    margin-left: 20vh;
+  }
+}

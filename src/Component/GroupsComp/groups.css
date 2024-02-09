@@ -1,0 +1,146 @@
+.search-groups {
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4.3275208473px 35.7020454407px 0 rgba(0, 0, 0, 0.06);
+  display: flex;
+  padding: 0px 13px;
+  margin-right: 10px;
+}
+.Grps-style {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0.146323204px 25px 67px rgba(0, 0, 0, 0.07);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 10px;
+}
+.grp-input-search {
+  border: none;
+  padding: 12px 15px;
+}
+.grps-btn {
+  width: 100%;
+  border: 1px solid #eee;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: 0.5s;
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  box-shadow: rgba(89, 38, 240, 0.17) 0px 11.9007px 8.65504px;
+  color: white;
+}
+.sr-flex {
+  display: flex;
+}
+.style-myContactCard {
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+.gps-form-input{
+  display: flex;
+  justify-content: flex-end;
+}
+.creategrp-mob-display{
+  display: none;
+}
+@media screen and (max-width: 820px) {
+  .search-groups {
+    padding: 0px;
+    margin-right: 0px;
+    font-size: 1.5vh;
+  }
+  .gps-form-input{
+    display: flex;
+    justify-content: center;
+  }
+  .Grps-style {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0.146323204px 25px 67px rgba(0, 0, 0, 0.07);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 10px 0 !important;
+    border-radius: 10px;
+  }
+  .grp-input-search {
+    padding: 0px;
+  }
+  .head-gp-tr {
+    font-size: 1.5vh;
+  }
+  .table > :not(caption) > * > * {
+    padding: 0.15rem 0.1rem;
+    border-spacing: 0px;
+  }
+  .td-Sno {
+    width: 8%;
+  }
+  .body-gp-tr {
+    font-size: 1.4vh;
+  }
+  .row > * {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .card-box-border {
+    width: auto;
+    padding: 10px;
+  }
+  .grps-btn {
+    font-size: 1.5vh;
+  }
+  .style-myContactCard {
+    padding: 10px 5px !important;
+    border-radius: 10px;
+  }
+  .sr-flex {
+    display: flex;
+    width: 100%;
+  }
+  .search-icon {
+    font-size: 1.5vh;
+  }
+  .grps-btn {
+    font-size: 1.3vh;
+    padding: 8px;
+  }
+  .width-100{
+    width: 100% !important;
+  }
+  .creategrp-mob-hide{
+    display: none;
+  }
+  .creategrp-mob-display{
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .search-groups {
+    padding: 5px;
+    font-size: 1.3vh;
+  }
+  .sr-flex {
+    display: block;
+  }
+  .grp-input-search {
+    padding: 5px;
+  }
+}

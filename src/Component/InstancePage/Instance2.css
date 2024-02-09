@@ -1,0 +1,97 @@
+.Dashboard-Comp-card_instancePage {
+  margin-right: auto;
+  margin-left: auto;
+  height: 95vh;
+  border-radius: 20px;
+  text-align: center;
+}
+.backdropfilter_InstancePage {
+  backdrop-filter: blur(1px);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  margin: 5px 0;
+  border: 2px solid #f5f1ff;
+}
+.input-instance-new {
+  width: 100%;
+  border: 1px solid #eee;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: 0.5s;
+  background-color: #e9ecef;
+}
+.left-input-new-copy {
+  color: rgb(165, 165, 165);
+  position: absolute;
+  padding-top: 10px;
+  right: 3rem !important;
+}
+.right-input-new-copy {
+  color: rgb(165, 165, 165);
+  position: absolute;
+  right: 2rem !important;
+  padding-top: 10px;
+}
+.label-txt-start {
+  text-align: start;
+}
+.td-fl-end {
+  display: flex;
+  justify-content: flex-end;
+}
+.row-instance-2{
+  margin-top: 0.9rem;
+  margin-left: 0.7rem !important;
+}
+td,
+th {
+  min-width: 300px;
+}
+.transparent-background-dropdown {
+  background-color: transparent;
+}
+.transparent-background-dropdown:hover {
+  background-color: transparent;
+}
+
+
+.clr_white_pd {
+  color: white;
+  padding: 20px 0px 15px 0px;
+  font-weight: 600;
+}
+.clr1_white {
+  color: white;
+}
+.btn_3{
+  border: 1px solid #f5f1ff;
+  padding: 1px 4px;
+  border-radius: 8px;
+  transition: 0.5s;
+  background: transparent;
+  color: white;
+  margin: 0 5px 0 0;
+}
+.btn_3:hover{
+  background-color: #3ab19d;
+  border: 1px solid #3ab19d;
+}
+
+
+/* UPDATE INTSNCE PAGE CSS */
+.instance-update-page-main-row{
+  padding: 3vh 4.5vh 3vh 0;
+}
+@media screen and (max-width : 500px) {
+  .instance-update-page-main-row{
+    padding: 1vh 0vh 0vh 1.2vh;
+  }
+}
+@media screen and (max-width : 376px) {
+  .instance-update-page-main-row{
+    padding: 1vh -1vh 0vh 110vh !important;
+  }
+  .Dashboard-Comp-card_instancePage{
+    margin-left: 0.4rem;
+  }
+}

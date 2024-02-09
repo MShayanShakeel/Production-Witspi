@@ -1,0 +1,313 @@
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: -15%;
+  height: 97vh;
+  width: 14.5%;
+  /* background: linear-gradient(to top right, var(--color-secondary), var(--color-primary)); */
+  transition: 0.4s;
+  z-index: 10;
+  margin: 10px 0 15px 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 2px 1px rgb(238 235 235 / 75%);
+  background-color: white;
+}
+
+#sidebar.active {
+  left: 0;
+}
+.sidebar-icon {
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  padding: 3px;
+  margin-right: 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+.sidebar-icon.active-link {
+  -webkit-box-shadow: 0px 0px 5px 1px #2ee6c7bf;
+}
+.sidebar-icon:hover {
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.75);
+}
+.sidebar-text {
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.active-link {
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  border-radius: 14px;
+  padding: 10px;
+}
+.active-link .sidebar-icon {
+  -webkit-box-shadow: 0px 0px 5px 1px #989bf2;
+}
+.active-link:hover {
+  color: white;
+}
+.active-link .sidebar-text:hover {
+  color: white !important;
+}
+
+/* Add styles for inactive links */
+.main-sidebar .sidebar-text {
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  -webkit-background-clip: text; /* This property is used for text color inside the gradient */
+  color: transparent;
+  display: flex;
+}
+
+.main-sidebar .sidebar-text:hover {
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  -webkit-background-clip: text; /* This property is used for text color inside the gradient */
+  color: transparent;
+  display: flex;
+}
+/* Add styles for active links */
+.main-sidebar.active-link .sidebar-text {
+  color: white !important;
+}
+
+.main-sidebar.active .sidebar-icon {
+  -webkit-box-shadow: 0px 0px 5px 1px #989bf2;
+}
+
+.main-sidebar.active:hover {
+  color: white;
+}
+
+.main-sidebar.active .sidebar-text:hover {
+  color: white !important;
+}
+
+.main-sidebar {
+  display: flex;
+  align-items: end;
+  color: white;
+  padding: 10px 5px;
+  border-radius: 10px;
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 9999;
+}
+.sidebar-toggle.active {
+  left: 12%;
+}
+.sidebar-togglestyle {
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+  background-color: hsl(0deg 0.94% 44.62%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: 0.4s;
+}
+.grid-icon-style {
+  color: #fff;
+}
+.grid-icon-style:hover {
+  color: #5c61f2;
+}
+
+.its-heading-logo {
+  display: flex;
+  align-items: center;
+  /* padding: 15px; */
+  position: fixed;
+  top: 3%;
+  left: 3%;
+  z-index: 999;
+}
+
+.its-logo {
+  width: 120px;
+  height: 40px;
+  margin-right: 10px;
+  z-index: 999;
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  border-radius: 5px;
+}
+
+.its-heading {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 999;
+}
+/* Add this to your existing CSS file */
+.submenu {
+  display: none;
+  padding-left: 20px;
+  transition: max-height 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.submenu-open {
+  display: block;
+  max-height: 500px; /* Adjust this value as needed */
+  transition: max-height 0.3s ease-in-out;
+}
+
+.submenu-item {
+  padding-left: 10px;
+  color: white;
+}
+
+.submenu-icon {
+  font-size: 1.3rem;
+}
+
+@media (min-width: 950px) and (max-width: 1250px) {
+  .sidebar-toggle .active {
+    left: 14%;
+  }
+}
+
+.heading-style {
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  -webkit-background-clip: text; /* This property is used for text color inside the gradient */
+  color: transparent; /* Set text color to transparent */
+  width: fit-content;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 1;
+}
+
+.submenuItem {
+  color: #3aa9ab;
+}
+.submenuItem:hover {
+  color: #3aa9ab;
+}
+.submenuItem.active-link {
+  color: white;
+}
+.mr-top {
+  margin-top: 6vh !important;
+}
+@media screen and (max-width: 820px) {
+  .mr-top {
+    margin-top: 0 !important;
+  }
+  .collapse:not(.show) {
+    display: flex;
+  }
+  .navbar-collapse {
+    flex-basis: auto;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+  }
+  #sidebar {
+    left: 0;
+    height: 97vh;
+    z-index: 10000;
+    display: block;
+    width: 300px;
+  }
+
+  #sidebar.active {
+    display: none;
+  }
+  /* .its-heading-logo{
+      left: 7%;
+      z-index: 99999;
+  } */
+}
+@media screen and (max-width: 360px) {
+  #sidebar {
+    width: 60% !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #sidebar.active {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 900px) and (max-width: 1100px) {
+  .main-sidebar {
+    padding: 5px 2px !important;
+    border-radius: 5px;
+    align-items: center;
+    font-size: 1.6vh;
+  }
+  .its-logo {
+    width: 100px;
+    height: 30px;
+  }
+  .me-2 {
+    margin-right: 0.1rem !important;
+  }
+  .p-4 {
+    padding: 1rem !important;
+  }
+}
+@media screen and (min-width: 822px) and (max-width: 991px) {
+  .collapse:not(.show) {
+    display: flex !important;
+    flex-basis: auto;
+  }
+  .profile-info {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 821px) and (max-width: 899px) {
+  .main-sidebar {
+    padding: 5px 2px !important;
+    border-radius: 5px;
+    align-items: center;
+    font-size: 1.5vh;
+  }
+  .its-logo {
+    width: 100px;
+    height: 30px;
+  }
+  .me-2 {
+    margin-right: 0.1rem !important;
+  }
+  .p-4 {
+    padding: 1rem !important;
+  }
+  .collapse:not(.show) {
+    display: flex !important;
+    flex-basis: auto;
+  }
+  .profile-info {
+    flex-direction: row;
+  }
+}

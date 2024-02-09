@@ -1,0 +1,18 @@
+.main-bg-pd-10px{
+    background-color: #f7f8fc;
+    padding: 20px !important;
+}
+.pd-tb-30{
+    padding: 30px 0;   
+}
+.card-border-none{
+    --bs-card-border-width: 0.5px grey;
+}
+.br-10{
+    border-radius: 10px !important;
+}
+@media screen and (max-width: 820px) {
+    .main-bg-pd-10px{
+        padding: 0px !important;
+    }
+}

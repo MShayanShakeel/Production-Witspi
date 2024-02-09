@@ -1,0 +1,308 @@
+/* .main-card {
+  padding: 20px;
+} */
+.card-msg-border {
+  --bs-card-border-width: none;
+  border: none !important;
+}
+.Main-Profile-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.Profile-flex {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: center;
+}
+.image-style {
+  object-fit: cover;
+  height: 70px;
+  width: 70px;
+}
+.connected-badge {
+  background-color: #74ba2d;
+  color: white;
+  padding: 0px 6px;
+  border-radius: 15px;
+  max-width: 120px;
+  text-align: center;
+}
+.main-status {
+  display: flex;
+}
+.font-style-status {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+.Profile-style {
+  display: flex;
+  padding: 0 10px;
+}
+.main-status-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+.icon-style-flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+.pd-lr-10 {
+  padding: 5px 10px;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  margin: 0 2px;
+}
+
+.Main-Msgs {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.tr {
+  background-color: white;
+}
+.th {
+  padding: 10px !important;
+}
+.filter-btn {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  margin: 0px 10px;
+  padding: 3px 8px;
+  border: none;
+  -webkit-box-shadow: 0px 0px 1px 1px rgb(226 224 224 / 75%);
+}
+.filter-btn:hover {
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  color: white;
+}
+
+.search-icon {
+  color: #adb0b4;
+}
+.info-icon {
+  color: #4780d3;
+  padding: 0 5px;
+  height: 2.5vh;
+}
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-bg-type: rgb(255 218 218 / 5%);
+}
+.cl-light-grey {
+  color: #a9a4a1;
+  font-size: 1.5vh;
+}
+.msgbtn-color {
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  padding: 3px 8px;
+  border: none;
+}
+.svg-style:hover {
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  color: white;
+}
+.connected-mob-badge {
+  display: none;
+}
+/* Add these styles for scrollable header and body on X-axis */
+.table-wrap {
+  width: 100%;
+  max-height: 400px; /* Adjust the max height as needed */
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.main-table {
+  width: auto;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.table-heading-style {
+  display: flex;
+}
+
+.table-heading-style th {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+}
+
+.scrollable-header {
+  max-width: 100%; /* Ensure the header takes the full width */
+  overflow: hidden;
+}
+
+.scrollable-body {
+  /* height: auto; */
+  max-height: 50vh; /* Adjust this value as needed */
+  overflow-y: auto;
+  display: block;
+  overflow-x: scroll;
+  white-space: nowrap; /* Prevent text wrapping in cells */
+}
+.scrollable-body::-webkit-scrollbar {
+  height: 4px !important;
+  width: 4px; /* Set the width of the scrollbar */
+}
+
+.scrollable-body::-webkit-scrollbar-thumb {
+  background-color: white;
+}
+td,
+th {
+  min-width: 150px;
+}
+@media screen and (max-width: 1200px) {
+  .Main-Profile-flex {
+    flex-direction: row; /* Change flex direction for smaller screens */
+  }
+  .cl-light-grey {
+    font-size: 1vh;
+  }
+  .main-status-col {
+    padding: 0 10px;
+  }
+  .font-style-status {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 820px) {
+  .Messages-dash {
+    font-size: 1.5vh;
+  }
+  .msg-head-dash {
+    font-size: 1.2vh !important;
+  }
+  .msg-body-dash {
+    font-size: 1.1vh !important;
+  }
+  .main-status {
+    display: none;
+  }
+  .image-style {
+    height: 40px;
+    width: 40px;
+  }
+  .connected-badge {
+    display: none;
+  }
+  .icon-style-flex {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 10px;
+    padding-right: 5px;
+  }
+  .connected-mob-badge {
+    background-color: #74ba2d;
+    color: white;
+    padding: 0px 6px;
+    border-radius: 10px;
+    max-width: 100px;
+    text-align: center;
+    font-size: 1.4vh;
+    display: block !important;
+    border-radius: 5px;
+  }
+  .pd-lr-10 {
+    padding: 5px;
+    margin: 0 1px;
+  }
+  .msgs-icons-mob {
+    font-size: 1.5vh;
+  }
+  .info-icon {
+    height: 2vh;
+  }
+  .msg-info {
+    height: 2vh;
+  }
+  .filter-btn {
+    margin: 0 4px;
+    padding: 2px 4px !important;
+    font-size: 1.35vh;
+  }
+  .msgbtn-color{
+    padding: 2px 4px !important;
+    font-size: 1.35vh;
+  }
+  .search-icon {
+    font-size: 1.35vh;
+  }
+  /* Add these styles for scrollable header and body on X-axis */
+  .table-wrap {
+    width: 100%;
+    max-height: 400px; /* Adjust the max height as needed */
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+  }
+
+  .main-table {
+    min-width: 100%;
+    table-layout: fixed;
+  }
+  .table-heading-style {
+    position: sticky;
+    top: 0;
+  }
+  .scroll-style {
+    overflow-y: auto;
+  }
+  .table-th {
+    padding: 1.25rem 1.5rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    --tw-text-opacity: 1;
+    color: rgb(71 85 105 / var(--tw-text-opacity));
+  }
+  th,
+  td {
+    text-align: left;
+    padding: 8px;
+  }
+
+  .scrollable-header {
+    max-width: 100%; /* Ensure the header takes the full width */
+    overflow: hidden;
+  }
+
+  .scrollable-body {
+    max-height: 350px; /* Adjust this value as needed */
+    overflow-y: auto;
+    display: block;
+    overflow-x: scroll;
+    white-space: nowrap; /* Prevent text wrapping in cells */
+  }
+  .table > :not(caption) > * > * {
+    padding: 0.15rem 0.5rem;
+  }
+  td,
+  th {
+    padding: 5px;
+    min-width: 100px;
+  }
+}
