@@ -19,7 +19,7 @@ function Dashboard2() {
     return (
         <>
             <div style={{
-                backgroundImage: `url(${bgImg1})`,
+                backgroundImage: `url(https://coolbackgrounds.io/images/backgrounds/white/pure-white-background-85a2a7fd.jpg)`,
                 width: "100%",
                 height: "100vh",
                 overflow: 'hidden',
@@ -33,7 +33,7 @@ function Dashboard2() {
                     </Col>
             ) : (<p></p>)
             }      
-                    <Col sm="1" lg="1" xl="1" xxl="1">
+                    <Col sm="12" md="1" lg="1" xl="1" xxl="1">
                         <Sidebar2 />
                     </Col>
                     <Col sm="12" md="7" lg="7" xl="7" xxl="7">

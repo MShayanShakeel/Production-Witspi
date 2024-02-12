@@ -65,6 +65,9 @@ overflow-y: scroll;
     object-fit: cover;
     /* margin-right: -5px !important;  */
 }
+.msg-body-dash{
+  box-shadow: 2px 2px lightblue !important;
+}
 
 }
 

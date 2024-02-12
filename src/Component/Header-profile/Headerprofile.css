@@ -19,6 +19,7 @@
     vertical-align: baseline;
     color: white;
     flex-wrap: wrap;
+    box-shadow: #388c8c !important;
 }
 
 .header-pro-button{

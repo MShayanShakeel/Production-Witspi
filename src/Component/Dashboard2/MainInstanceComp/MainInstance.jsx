@@ -148,7 +148,7 @@ function MainInstance() {
                 alt="Profile-Image"
                 style={{ cursor: "pointer" }}
               />
-              <span style={{ marginLeft: "5px", color: "white" }}>
+              <span style={{ marginLeft: "5px", color: "#388c8c" }}>
                 {userName || "Huzaifa"}
               </span>
             </div>

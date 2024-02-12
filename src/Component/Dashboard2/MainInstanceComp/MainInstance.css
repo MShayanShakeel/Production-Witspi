@@ -195,10 +195,8 @@
     width: 98%;
     position: fixed;
     background-color: #52918d;
-    /* margin-top: 230%; */
     align-items: center;
-    /* margin-right: 12%; */
-    left: 1%;
+    /* left: 1%; */
   }
 
   .transparent-background-dropdown {
