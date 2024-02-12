@@ -23,7 +23,7 @@ const DashBoardComponent = () => {
         <div>
           <img src={whatsapiLogo}
             alt="Profile-Image"
-            style={{ cursor: 'pointer', height: "4vh" }}
+            style={{ cursor: 'pointer', height: "4vh" , background: "#3AAAA9" }}
           />
         </div>
         <div>

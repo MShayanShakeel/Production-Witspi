@@ -20,6 +20,7 @@ import Loader from "./../../Pages/Loader/index";
 import LaptopHeader from "../Header-profile/LaptopHeader";
 
 function Instances2() {
+
   const dispatch = useDispatch();
   const isSidebarOpen = useSelector(
     (state) => state.sideBarStore.isSidebarOpen
@@ -28,7 +29,7 @@ function Instances2() {
     (state) => state.userSetting.selectedInstanceId
   );
   console.log(selectedInstanceId, "as");
-  const { userDetails, setUserDetails } = useUserdetails();
+  const { userDetails, sideBarRender } = useUserdetails();
 
   // const userDetails = useSelector((state) => state.userInfoStore.userDetails.userObj);
   console.log(userDetails);
@@ -324,6 +325,9 @@ function Instances2() {
         ) : (
           <p></p>
         )}
+        {sideBarRender ? (
+
+        
         <Row
           className="Main-insatance-row"
           style={{ padding: "3vh 4.5vh 3vh 0" }}
@@ -353,53 +357,53 @@ function Instances2() {
                         className="All-instance-heading"
                         style={{
                           fontWeight: "600",
-                          color: "white",
+                          color: "#388c8c",
                           lineHeight: "0",
                         }}
                       >
                         Instances
                       </h4>
-                      <div style={{ display: "flex" }}>
+                      <div style={{ display: "flex", color: "#388c8c",}}>
                         <Dropdown style={{ paddingRight: "10px" }}>
                           <Dropdown.Toggle
                             variant="light"
                             id="cardCountDropdown"
                             className="transparent-background-dropdown"
-                            style={{ color: "white" }}
+                            style={{ color: "#388c8c" }}
                           >
                             Show {selectedCardCount} Cards
                           </Dropdown.Toggle>
                           <Dropdown.Menu
                             className="transparent-background-dropdown"
-                            style={{ color: "white" }}
+                            style={{ color: "#388c8c" }}
                           >
                             <Dropdown.Item
                               onClick={() => setSelectedCardCount(10)}
-                              className="color-white"
+                              className="color-#388c8c"
                             >
                               10 Cards
                             </Dropdown.Item>
                             <Dropdown.Item
                               onClick={() => setSelectedCardCount(20)}
-                              className="color-white"
+                              className="color-#388c8c"
                             >
                               20 Cards
                             </Dropdown.Item>
                             <Dropdown.Item
                               onClick={() => setSelectedCardCount(50)}
-                              className="color-white"
+                              className="color-#388c8c"
                             >
                               50 Cards
                             </Dropdown.Item>
                             <Dropdown.Item
                               onClick={() => setSelectedCardCount(100)}
-                              className="color-white"
+                              className="color-#388c8c"
                             >
                               100 Cards
                             </Dropdown.Item>
                             <Dropdown.Item
                               onClick={() => setSelectedCardCount(200)}
-                              className="color-white"
+                              className="color-#388c8c"
                             >
                               200 Cards
                             </Dropdown.Item>
@@ -467,6 +471,151 @@ function Instances2() {
             </div>
           </Col>
         </Row>
+        ) : (<p>
+            <Row
+          className="Main-insatance-row"
+          style={{ padding: "3vh 4.5vh 3vh 0" }}
+        >
+          <Col sm="2" lg="2" xl="2" xxl="2">
+            <Sidebar2 />
+          </Col>
+          <Col sm="12" md="10" lg="10" xl="10" xxl="10">
+            <div style={{width : "99.5%" , marginLeft :"0.4%"}}>
+            {headerShowInLaptop ? <LaptopHeader /> : <p></p>}
+            </div>
+
+            <div className="Dashboard-Comp-card Dashboard-Comp-card-instance">
+              <div className="Dashboard-display">
+                <Row className="pd-20 pd-10-mob">
+                  <Col className="pd-mob-instances">
+                    <div
+                      className="All-instance-postion"
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        padding: "15px 0",
+                        alignItems: "baseline",
+                      }}
+                    >
+                      <h4
+                        className="All-instance-heading"
+                        style={{
+                          fontWeight: "600",
+                          color: "#388c8c",
+                          lineHeight: "0",
+                        }}
+                      >
+                        Instances
+                      </h4>
+                      <div style={{ display: "flex", color: "#388c8c",}}>
+                        <Dropdown style={{ paddingRight: "10px" }}>
+                          <Dropdown.Toggle
+                            variant="light"
+                            id="cardCountDropdown"
+                            className="transparent-background-dropdown"
+                            style={{ color: "#388c8c" }}
+                          >
+                            Show {selectedCardCount} Cards
+                          </Dropdown.Toggle>
+                          <Dropdown.Menu
+                            className="transparent-background-dropdown"
+                            style={{ color: "#388c8c" }}
+                          >
+                            <Dropdown.Item
+                              onClick={() => setSelectedCardCount(10)}
+                              className="color-#388c8c"
+                            >
+                              10 Cards
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                              onClick={() => setSelectedCardCount(20)}
+                              className="color-#388c8c"
+                            >
+                              20 Cards
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                              onClick={() => setSelectedCardCount(50)}
+                              className="color-#388c8c"
+                            >
+                              50 Cards
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                              onClick={() => setSelectedCardCount(100)}
+                              className="color-#388c8c"
+                            >
+                              100 Cards
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                              onClick={() => setSelectedCardCount(200)}
+                              className="color-#388c8c"
+                            >
+                              200 Cards
+                            </Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
+                        <Button
+                          className="create-instance2"
+                          onClick={handleSaveInput}
+                        >
+                          Create Instance
+                        </Button>
+                      </div>
+                    </div>
+                    <div className="All-Instance-Card">
+                      {showLoader && (
+                        <Loader top={50} left={50} width={50} height={50} />
+                      )}
+                      {filteredInstances?.map((instance) => (
+                        <Link
+                          to={`/instancePage2/${instance?._id}`}
+                          onClick={() => {
+                            dispatch(setSelectedInstanceId(instance?._id));
+                            console.log(
+                              "Dispatched setSelectedInstanceId with ID:",
+                              instance?._id
+                            );
+                          }}
+                          style={{ textDecoration: "none" }}
+                        >
+                          <div className="All-single-card">
+                            {instance?.keepOnlineStatus ? (
+                              <>
+                                <div className="live-all-badge">Live</div>
+                              </>
+                            ) : (
+                              <>
+                                <div className="red-badge">Inactive</div>
+                              </>
+                            )}
+                            <img
+                              src={
+                                "https://plus.unsplash.com/premium_photo-1661698763470-55da05629e50?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                              }
+                              alt="Profile-Image"
+                              className="images-allcard-style"
+                              style={{ cursor: "pointer" }}
+                            />
+                            <div className="AllI-Rightcard-container">
+                              <div className="instance-id">
+                                {instance?.idInstance}
+                              </div>
+                              <h6 className="h6-font-size">
+                                {instance?.InstancesName}
+                              </h6>
+                              <p>{instance?.InstancesPhone}</p>
+                              <p>10 Days Left</p>
+                            </div>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </Col>
+                </Row>
+              </div>
+            </div>
+          </Col>
+        </Row>
+        </p>)}
       </div>
     </>
   );

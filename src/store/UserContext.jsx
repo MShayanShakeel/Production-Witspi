@@ -8,6 +8,7 @@
     const [instanceDataUseContext , setInstanceDataUseContext] = useState(null);
     const [instanceForGroup , setInstanceForGroup ] = useState("");
     const [showGroupShareIcon , setShowGroupShareIcon ] = useState(false);
+    const [sideBarRender , setSideBarRender] = useState(false);
     const [otpObj, setOtpObj] = useState({
       token: "",
       otp: "",
@@ -28,7 +29,7 @@
     return (
       <UserContext.Provider
         value={{ userDetails, setUserDetails, updateOtpObj, setOtpObj, otpObj , conformpass , setComformpass ,instanceDataUseContext , setInstanceDataUseContext ,
-          showGroupShareIcon , setShowGroupShareIcon , instanceForGroup , setInstanceForGroup }}
+          showGroupShareIcon , setShowGroupShareIcon , instanceForGroup , setInstanceForGroup , sideBarRender , setSideBarRender}}
       >
         {children}
       </UserContext.Provider>

@@ -149,7 +149,7 @@
 }
 .create-instance2 {
     backdrop-filter: blur(1px);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #388c8c;
     border: 1px solid white;
 }
 .create-instance2:hover {

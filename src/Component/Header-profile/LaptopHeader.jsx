@@ -52,7 +52,7 @@ const LaptopHeader = () => {
                   <img
                     src={whatsapiLogo}
                     alt="Profile-Image"
-                    style={{ cursor: "pointer", height: "3.5vh" }}
+                    style={{ cursor: "pointer", height: "3.5vh" , background : "#388c8c" , borderRadius : "10px"}}
                   />
                 </div>
 
@@ -73,7 +73,7 @@ const LaptopHeader = () => {
                   />
                   <span style={{  width: "6rem"}}>
                   <abbr
-                  className="custom-tooltip" title={userDetails?.name} style={{ textDecoration: 'none' }}>
+                  className="custom-tooltip" title={userDetails?.name} style={{ textDecoration: 'none' , color : "#388c8c" }}>
                     <ShortText text={userDetails?.name} maxChar={8} />
                     </abbr>
                   </span>
@@ -84,11 +84,12 @@ const LaptopHeader = () => {
                         style={{
                           fontSize: "3.5vh",
                           marginRight : "0.5rem",
-                          color: "rgb(255 252 252 / 100%)",
+                           color : "#388c8c",
                         }}
                       />
                     </div>
                   <a
+                  style={{color : "#388c8c"}}
                     className="dropdown-item_MainInstance"
                     onClick={handleLogout}
                     title="Logout"

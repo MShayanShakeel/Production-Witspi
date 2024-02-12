@@ -48,10 +48,14 @@ th {
   min-width: 300px;
 }
 .transparent-background-dropdown {
-  background-color: transparent;
+  background-color: #388c8c;
+  color: white !important;  
+
 }
 .transparent-background-dropdown:hover {
-  background-color: transparent;
+ 
+  background-color: gray;
+  color: white !important;
 }
 
 

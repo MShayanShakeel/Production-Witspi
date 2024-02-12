@@ -178,6 +178,7 @@ function DashboardInstances() {
               textAlign: "start",
               margin: "10px 0 10px 5px",
               color: "#388c8c",
+              marginBottom : "1.5rem"
             }}
           >
             Messages
@@ -191,7 +192,7 @@ function DashboardInstances() {
                 <thead style={{ marginBottom: "0px", tableLayout: "fixed" }}>
                   <tr
                     className="msg-body-dash"
-                    style={{ verticalAlign: "baseline", color: "#388c8c"  , boxShadow: "2px 2px lightblue"}}
+                    style={{ verticalAlign: "baseline", color: "black"  , boxShadow: "2px 2px lightblue"}}
                   >
                     <td
                       style={{
