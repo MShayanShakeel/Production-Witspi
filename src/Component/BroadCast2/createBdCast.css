@@ -12,7 +12,8 @@
 }
 .card-stylecreatbdcast {
   padding-bottom: 10px;
-  border: 2px solid #f5f1ff;
+  box-shadow: 2px 2px lightblue;
+  background-color: #3ab19d;
   border-radius: 5px;
   min-width: 31% !important;
   margin-right: auto;
@@ -82,8 +83,8 @@
   /* padding: 1vh 1vh 1vh 0px !important; */
 }
 .Add-new-btn_createbd {
-  background: transparent;
-  border: 2px solid #f5f1ff;
+  background: #3ab19d;
+  /* box-shadow:  2px 2px lightblue; */
   margin-left: 8px;
   margin-top: 0rem;
 }
@@ -93,23 +94,28 @@
     var(--color-secondary),
     var(--color-primary)
   );
-  border: 1px solid #3ab19d;
+  /* border: 1px solid #3ab19d; */
 }
 .createbrdCast-input {
+  /* margin-left: 0.45rem; */
   width: 100%;
   border: 2px solid #f5f1ff;
   padding: 10px 14px;
   height: 50px;
   border-radius: 8px;
   transition: 0.5s;
-  background-color: transparent;
+  background-color: #3ab19d !important;
+  color: white !important;
+}
+.createbrdCast-input::placeholder{
+  color: white;
 }
 .createbrdCast-input:focus {
   outline: none;
 }
 .Drop-btnstyle_createbd {
-  background-color: transparent;
-  color: black;
+  background-color: #3ab19d;
+  color: white !important;
   height: 50px;
   width: 100%;
   border: none;
@@ -129,7 +135,8 @@
 }
 
 .color-white {
-  color: white;
+  margin-left: 10px !important;
+  color: #3ab19d;
 }
 .broadCast-edit2 {
   color: white;
@@ -192,7 +199,7 @@
   }
 }
 .color_white{
-  color: white !important;
+  color: black !important;
   font-weight: 300;
 }
 @media only screen and (max-width: 600px) {

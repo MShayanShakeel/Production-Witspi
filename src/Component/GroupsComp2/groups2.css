@@ -4,7 +4,7 @@
   padding: 10px 14px;
   border-radius: 8px;
   transition: 0.5s;
-  background: transparent;
+  background: #3ab19d;
   color: white;
 }
 .fixed-height-5rem{
@@ -65,6 +65,7 @@ abbr.custom-tooltip {
 }
 
 .search-groups2 {
+  background-color: #3ab19d;
   align-items: center;
   border-radius: 12px;
   box-shadow: 0 4.3275208473px 35.7020454407px 0 rgba(0, 0, 0, 0.06);
@@ -172,8 +173,10 @@ abbr.custom-tooltip {
 }
 .td-Sno {
   min-width: 40px !important;
+  color: black;
 }
 .Group-get-table-contant {
+  color: black;
   width: auto;
   max-width: 15rem !important;
   min-width: 15rem !important;
@@ -190,7 +193,7 @@ abbr.custom-tooltip {
   z-index: 1;
 }
 .Group-header-for-laptop{
-  width: 91%;
+  width: 83%;
 }
 
 @media screen and (min-width : 600px) and (max-width : 2200px) {

@@ -5,19 +5,23 @@
   min-height: 10vh; */
   backdrop-filter: blur(1px);
   /* background-color: rgba(255, 255, 255, 0.2); */
-  background-color: #448787;
-  border: 2px solid #f5f1ff;
+  background-color: white;
+  box-shadow: 2px 2px 10px 0 lightblue;
+  /* border: 2px solid #388c8c; */
   border-radius: 20px;
   z-index: 0;
   margin-top: 1rem;
   position: relative;
 }
 .Backdrop-myContact2-2 {
+  width: 100%;
   padding-bottom: 1px !important;
   backdrop-filter: blur(1px);
   /* background-color: rgba(255, 255, 255, 0.2); */
   background-color: white;
-  border: 2px solid #f5f1ff;
+  /* border: 2px solid #388c8c; */
+  box-shadow: 2px 2px 10px 0 lightblue; /* Adjust values as needed */
+  /* box-shadow: 2px 2px lightblue; */
   border-radius: 20px;
   z-index: 0;
   position: relative;
@@ -26,7 +30,7 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: #448787; /* Set a background color for the header */
+  background-color: #448787;
   z-index: 1;
 }
 .Add-new-btn_createbd {
@@ -50,7 +54,7 @@
 }
 @media screen and (min-width: 1600px) and (max-width: 1830px) {
   .Contact-width-1830-1600 {
-    width: 90% !important;
+    width: 100% !important;
   }
 }
 @media screen and (min-width: 900px) and (max-width: 1200px) {
@@ -60,7 +64,7 @@
 }
 @media screen and (min-width: 1200px) and (max-width: 1605px) {
   .Contact-width-1830-1600 {
-    width: 90% !important;
+    width: 100% !important;
   }
 }
 
@@ -143,7 +147,9 @@
     margin-left: 0.7rem !important;
     margin-bottom: 5.5rem;
   }
-
+.Backdrop-myContact2-2-3{
+  width: 91% !important;
+}
   .h1-MY-contact {
     font-size: 15px;
   }
@@ -230,7 +236,8 @@
   margin-right: 10px;
 }
 .inputsearch-2 {
-  background-color: transparent;
+  background-color: #388c8c;
+  border-radius: 10px ;
 }
 .inputsearch-2::placeholder {
   color: white; /* Change this to the desired color */
@@ -245,7 +252,7 @@
   height: 40px;
   transition: 0.5s;
   /* margin: auto; */
-  background: transparent;
+  background: #388c8c;
   color: white;
 }
 .myexecl-btn2:hover {
@@ -253,7 +260,7 @@
 }
 .myexecl-btn2:focus {
   outline: none;
-  border: 1px solid #f5f1ff;
+  border: 1px solid gray;
 }
 ::-webkit-input-placeholder {
   /* Webkit browsers */
@@ -269,7 +276,7 @@
 }
 .search-icon2 {
   color: white;
-  margin-right: 8px;
+  margin-right: 0rem !important;
 }
 .MyContact_2_maincontainer {
   max-height: 47vh;
@@ -289,8 +296,8 @@
 }
 @media screen and (min-width: 900px) and (max-width: 1200px) {
   .Contact-Header-width-1200-900 {
-    width: 91% !important;
-    margin-left: 8.7%;
+    width: 100% !important;
+    /* margin-left: 8.7%; */
   }
 }
 
@@ -328,8 +335,10 @@
 }
 .td_min_sNo_width {
   min-width: 40px !important;
+  color: black;
 }
 .td_min_width {
+  color: black;
   min-width: 140px !important;
   max-width: 140px;
   overflow: hidden;
@@ -364,7 +373,7 @@ _min_desc_width {
 }
 
 .unselected-dropdown_2 {
-  background: transparent;
+  background: #388c8c;
   box-shadow: none;
   color: white;
   border: 2px solid #f5f1ff;
@@ -576,7 +585,7 @@ _min_desc_width {
     position: absolute;
   }
   .unselected-dropdown_2 {
-    background: transparent;
+    background: 388c8c;
     box-shadow: none;
     color: white;
     border: 1px solid #f5f1fe;

@@ -45,7 +45,7 @@ function MyContact2() {
   // const userId = userDetails?._id;
   // const { setInstanceDataUseContext } = useUserdetails();
 
-  const { userDetails, instanceDataUseContext } = useUserdetails();
+  const { userDetails, instanceDataUseContext , sideBarRender} = useUserdetails();
 
   // FATCH CONTACT ID WHEN CLICK ON GROUP ICCON
   const [fatchContactId, setFatchContactId] = useState("");
@@ -677,7 +677,6 @@ function MyContact2() {
     console.log(contactsList, "temparr");
   };
 
-  console.log(contactsList, "contactsttt");
 
   // const contactSaveUseToExcel = () => {
   //   const data = {
@@ -860,11 +859,11 @@ function MyContact2() {
   });
   //END LOADER CODE LOGIC
 
-  console.log(formattedDate, "000000");
-  console.log(selectedData, "111111");
-  console.log(userId, "222222");
-  console.log(instanseId, "33333");
-  console.log(fatchContactId, "444444");
+  // console.log(formattedDate, "000000");
+  // console.log(selectedData, "111111");
+  // console.log(userId, "222222");
+  // console.log(instanseId, "33333");
+  // console.log(fatchContactId, "444444");
 
   useEffect(() => {
     if (Array.isArray(instanceIdStore)) {
@@ -872,9 +871,6 @@ function MyContact2() {
     }
   }, [instanceIdStore]);
 
- 
-
-  console.log(instanseId, "instanseId");
 
   return (
     <>
@@ -1198,10 +1194,14 @@ function MyContact2() {
           <p></p>
         )}
         <Row className="shayanshakeel" style={{ padding: "3vh 4.5vh 3vh 0px" }}>
+          {
+sideBarRender ? (
+ 
+         <>
           <Col sm="1" lg="1" xl="1" xxl="1">
             <Sidebar2 />
           </Col>
-
+          <div style={{width : "91%", float : "right"}}>
           <Col className="Contact-width-1830-1600">
             <div className="Contact-Header-width-1200-900">
               {headerShowInLaptop ? <LaptopHeader /> : <p></p>}
@@ -1211,11 +1211,11 @@ function MyContact2() {
               className="mob-row width-100 center-component-class"
               style={{ marginBottom: "1rem" }}
             >
-              <Col></Col>
+              {/* <Col></Col> */}
               <Col
                 sm={12}
-                md={11}
-                lg={11}
+                md={12}
+                lg={12}
                 xl={12}
                 xxl={12}
                 className="Backdrop-myContact2 width_91"
@@ -1228,7 +1228,7 @@ function MyContact2() {
                       padding: "10px",
                       paddingTop: "20px",
                       fontWeight: "600",
-                      color: "white",
+                      color: "#388c8c",
                     }}
                   >
                     My Contacts
@@ -1761,12 +1761,12 @@ function MyContact2() {
               <Getcontactinfo activeContact={activeContact} />
             )}
             <Row>
-              <Col sm={1}></Col>
+              {/* <Col sm={1}></Col> */}
               <Col
                 md={11}
                 lg={11}
-                xl={12}
-                xxl={12}
+                xl={11}
+                xxl={11}
                 className="Backdrop-myContact2-2 width_91"
                 //  (window.innerWidth === "50px" ?
                 style={{ padding: "15px" }}
@@ -1777,7 +1777,7 @@ function MyContact2() {
                 <div>
                   <div className="MyContact_2_maincontainer">
                     <thead style={{ marginBottom: "0", tableLayout: "fixed" }}>
-                      <tr style={{ color: "white" }} className="th-font-style">
+                      <tr style={{ background: "white" , boxShadow: "0px 2px 0px 0px lightblue"}} className="th-font-style">
                         <th className="td_min_sNo_width">S.N</th>
                         <th className="td_min_width">First Name</th>
                         <th className="td_min_width">Last Name</th>
@@ -1875,6 +1875,692 @@ function MyContact2() {
             </Row>
             {/* </div> */}
           </Col>
+        </div>
+        </>
+       
+
+       ) : (
+         <>
+          <Col sm="2" lg="2" xl="2" xxl="2">
+            <Sidebar2 />
+          </Col>
+          <div style={{width : "83%" , float : "right"}}>
+          <Col className="Contact-width-1830-1600">
+            <div className="Contact-Header-width-1200-900">
+              {headerShowInLaptop ? <LaptopHeader /> : <p></p>}
+            </div>
+            {/* <div className="main1234"> */}
+            <Row
+              className="mob-row width-100 center-component-class"
+              style={{ marginBottom: "1rem" }}
+            >
+              {/* <Col></Col> */}
+              <Col
+                sm={12}
+                md={12}
+                lg={12}
+                xl={12}
+                xxl={12}
+                className="Backdrop-myContact2 width_91"
+                style={{ paddingBottom: "10px" }}
+              >
+                <div className="card-drop-style">
+                  <h1
+                    className="h1-MY-contact"
+                    style={{
+                      padding: "10px",
+                      paddingTop: "20px",
+                      fontWeight: "600",
+                      color: "#388c8c",
+                    }}
+                  >
+                    My Contacts
+                  </h1>
+                  {allContactFound?.map((item) => {
+                    <h1 key={item?.email}>{item[0]?.number}</h1>;
+                  })}
+
+                  {/* Search... input box  */}
+
+                  <div className="Contact-button-add-excel-also">
+                    <span className="hide-ex-btn">
+                      <button
+                        onClick={() => handleShowContactpage()}
+                        type="button"
+                        className="myexecl-btn2 mycontact-btn"
+                      >
+                        New contact..
+                      </button>
+                    </span>
+
+                    <span className="hide-ex-btn">
+                      <button
+                        type="button"
+                        onClick={handleFileSelect}
+                        className="myexecl-btn2 mycontact-btn"
+                      >
+                        Add Excel File
+                      </button>
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept=".xls, .xlsx"
+                        onChange={handleFileInputChange}
+                        style={{ display: "none" }} // Hide the input
+                      />
+                    </span>
+                  </div>
+
+                  {/* ya wo div hy jo top par positon day rahi hy  */}
+
+                  <div className="mobile-view-create-contact-excel-btn">
+                    <span className="hide-ex-main-btn">
+                      <button
+                        onClick={() => handleShowContactpage()}
+                        type="button"
+                        className="myexecl-btn2 mycontact-btn"
+                      >
+                        New contact
+                      </button>
+                    </span>
+
+                    <span className="hide-ex-main-btn">
+                      <button
+                        type="button"
+                        onClick={handleFileSelect}
+                        className="myexecl-btn2 mycontact-btn"
+                      >
+                        Add Excel File
+                      </button>
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept=".xls, .xlsx"
+                        onChange={handleFileInputChange}
+                        style={{ display: "none" }} // Hide the input
+                      />
+                    </span>
+                  </div>
+                </div>
+
+                {headerShowInMobile ? (
+                  <p></p>
+                ) : (
+                  <form>
+                    <Row>
+                      <Col>
+                        <div className="My-form-input">
+                          <div className="Contact-flex-style">
+                            <div className="search-flex-main">
+                              <div className="search-container2">
+                                <FaSearch className="search-icon2" />
+                                <input
+                                  type="text"
+                                  placeholder="Search..."
+                                  value={searchQuery}
+                                  onChange={handleSearchInputChange}
+                                  className="input-search inputsearch-2"
+                                />
+                              </div>
+                            </div>
+
+                            <button
+                              type="button"
+                              className={
+                                filteredData === excelData
+                                  ? "selected-btn"
+                                  : "unselected-dropdown_2"
+                              }
+                              onClick={handleFilterAllClick}
+                            >
+                              All
+                            </button>
+                            <Dropdown>
+                              <Dropdown.Toggle
+                                className={
+                                  filteredData === "Gender"
+                                    ? "selected-btn"
+                                    : "unselected-dropdown_2"
+                                }
+                                id="filterDropdown"
+                              >
+                                Gender
+                              </Dropdown.Toggle>
+                              <Dropdown.Menu className="menu-Gender">
+                                <Dropdown.Item
+                                  value="Male"
+                                  onClick={() =>
+                                    handleFilterGenderChange("Male")
+                                  }
+                                >
+                                  Male
+                                </Dropdown.Item>
+                                <Dropdown.Item
+                                  value="Female"
+                                  onClick={() =>
+                                    handleFilterGenderChange("Female")
+                                  }
+                                >
+                                  Female
+                                </Dropdown.Item>
+                                <Dropdown.Item
+                                  value="Others"
+                                  onClick={() =>
+                                    handleFilterGenderChange("Others")
+                                  }
+                                >
+                                  Others
+                                </Dropdown.Item>
+                              </Dropdown.Menu>
+                            </Dropdown>
+                            <Dropdown>
+                              <Dropdown.Toggle
+                                className={
+                                  filteredData === "Country"
+                                    ? "selected-btn"
+                                    : "unselected-dropdown_2"
+                                }
+                                id="filterDropdown"
+                              >
+                                Country
+                              </Dropdown.Toggle>
+                              <Dropdown.Menu className="menu-Country">
+                                {defaultCountries.map((country, index) => (
+                                  <Dropdown.Item
+                                    key={index}
+                                    value={index}
+                                    onClick={() =>
+                                      handleFilterCountryChange(index)
+                                    }
+                                  >
+                                    <img
+                                      src={country.flagUrl}
+                                      className="country-flag"
+                                    />
+                                    {country.name}
+                                  </Dropdown.Item>
+                                ))}
+                              </Dropdown.Menu>
+                            </Dropdown>
+                          </div>
+
+                          {/* <div className="Contact-button-add-excel-also">
+                             <span className="hide-ex-btn">
+                               <button
+                                 onClick={() => handleShowContactpage()}
+                                 type="button"
+                                 className="myexecl-btn2 mycontact-btn"
+                               >
+                                 New contact
+                               </button>
+                             </span>
+ 
+                             <span className="hide-ex-btn">
+                               <button
+                                 type="button"
+                                 onClick={handleFileSelect}
+                                 className="myexecl-btn2 mycontact-btn"
+                               >
+                                 Add Excel File
+                               </button>
+                               <input
+                                 ref={fileInputRef}
+                                 type="file"
+                                 accept=".xls, .xlsx"
+                                 onChange={handleFileInputChange}
+                                 style={{ display: "none" }} // Hide the input
+                               />
+                             </span>
+                           </div> */}
+                        </div>
+                        {/* </div> */}
+                      </Col>
+                    </Row>
+                  </form>
+                )}
+
+                {headerShowInMobile ? (
+                  <div className="search-flex-main">
+                    <div className="search-container2">
+                      <FaSearch className="search-icon2" />
+                      <input
+                        type="text"
+                        placeholder="Search..."
+                        value={searchQuery}
+                        onChange={handleSearchInputChange}
+                        className="input-search inputsearch-2"
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <p></p>
+                )}
+
+                {/* <div className="mobile-menu">
+                  <button onClick={toggleMenu} className="menu-icon">
+                    ☰ Menu
+                  </button>
+                </div> */}
+                {/* MENU BUTTON END */}
+              </Col>
+            </Row>
+
+            {/* Start Upload excel File model */}
+            {/* {showLoader && <Loader top={50} left={50} width={50} height={50} />}     */}
+            {showModal && (
+              <div className="excel-mode Main-contact">
+                <div className="container" onHide={() => setShowModal(false)}>
+                  <div closeButton>
+                    <Modal.Title className="Excel-model-lable">
+                      Excel Data
+                    </Modal.Title>
+                  </div>
+                  <div>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <div>
+                        <label className="Excel-model-lable">First Name:</label>
+                        {header?.length > 0 && (
+                          <div>
+                            <select
+                              className="model-select-box"
+                              onChange={(e) =>
+                                handleOptionSelect("firstName", e.target.value)
+                              }
+                              value={
+                                selectedOptions.includes("firstName")
+                                  ? "firstName"
+                                  : ""
+                              }
+                            >
+                              {selectedOptions.includes("firstName") ? (
+                                <option value="firstName">First Name</option>
+                              ) : (
+                                <option value="">firstName</option>
+                              )}
+                              {header?.map((option, index) => (
+                                <option key={index} value={option}>
+                                  {option}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        )}
+                      </div>
+                      <div>
+                        <label className="Excel-model-lable">Last Name:</label>
+                        {header?.length > 0 && (
+                          <div>
+                            <select
+                              className="model-select-box"
+                              onChange={(e) =>
+                                handleOptionSelect("lastName", e.target.value)
+                              }
+                              value={
+                                selectedOptions.includes("lastName")
+                                  ? "lastName"
+                                  : ""
+                              }
+                            >
+                              {selectedOptions.includes("lastName") ? (
+                                <option value="lastName">Last Name</option>
+                              ) : (
+                                <option value="">lastName</option>
+                              )}
+                              {header?.map((option, index) => (
+                                <option key={index} value={option}>
+                                  {option}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        )}
+                      </div>
+                      <div>
+                        <label className="Excel-model-lable">Number:</label>
+                        {header?.length > 0 && (
+                          <div>
+                            <select
+                              className="model-select-box"
+                              onChange={(e) =>
+                                handleOptionSelect("number", e.target.value)
+                              }
+                              value={
+                                selectedOptions.includes("number")
+                                  ? "number"
+                                  : ""
+                              }
+                            >
+                              {selectedOptions.includes("number") ? (
+                                <option value="number">number</option>
+                              ) : (
+                                <option value="">number</option>
+                              )}
+                              {header?.map((option, index) => (
+                                <option key={index} value={option}>
+                                  {option}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        )}
+                      </div>
+                      <div>
+                        <label className="Excel-model-lable">Gender:</label>
+                        {header?.length > 0 && (
+                          <div>
+                            <select
+                              className="model-select-box"
+                              onChange={(e) =>
+                                handleOptionSelect("gender", e.target.value)
+                              }
+                              value={
+                                selectedOptions.includes("gender")
+                                  ? "gender"
+                                  : ""
+                              }
+                            >
+                              {selectedOptions.includes("gender") ? (
+                                <option value="gender">Gender</option>
+                              ) : (
+                                <option value="">Gender</option>
+                              )}
+                              {header?.map((option, index) => (
+                                <option key={index} value={option}>
+                                  {option}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        )}
+                      </div>
+                      <div>
+                        <label className="Excel-model-lable">Email:</label>
+                        {header?.length > 0 && (
+                          <div>
+                            <select
+                              className="model-select-box"
+                              onChange={(e) =>
+                                handleOptionSelect("email", e.target.value)
+                              }
+                              value={
+                                selectedOptions.includes("email") ? "email" : ""
+                              }
+                            >
+                              {selectedOptions.includes("email") ? (
+                                <option value="email">Email</option>
+                              ) : (
+                                <option value="">Email</option>
+                              )}
+                              {header?.map((option, index) => (
+                                <option key={index} value={option}>
+                                  {option}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        )}
+                      </div>
+                      <div>
+                        <label className="Excel-model-lable">Country:</label>
+                        {header?.length > 0 && (
+                          <div>
+                            <select
+                              className="model-select-box"
+                              onChange={(e) =>
+                                handleOptionSelect("country", e.target.value)
+                              }
+                              value={
+                                selectedOptions.includes("country")
+                                  ? "country"
+                                  : ""
+                              }
+                            >
+                              {selectedOptions.includes("country") ? (
+                                <option value="country">Country</option>
+                              ) : (
+                                <option value="">Country</option>
+                              )}
+                              {header?.map((option, index) => (
+                                <option key={index} value={option}>
+                                  {option}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        )}
+                      </div>
+                      <div>
+                        <label className="Excel-model-lable">Age:</label>
+                        {header?.length > 0 && (
+                          <div>
+                            <select
+                              className="model-select-box"
+                              onChange={(e) =>
+                                handleOptionSelect("age", e.target.value)
+                              }
+                              value={
+                                selectedOptions.includes("age") ? "age" : ""
+                              }
+                            >
+                              {selectedOptions.includes("age") ? (
+                                <option value="age">Age</option>
+                              ) : (
+                                <option value="">Age</option>
+                              )}
+                              {header?.map((option, index) => (
+                                <option key={index} value={option}>
+                                  {option}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    <div>
+                      {selectedDropdownColumn && (
+                        <div>
+                          {selectedDropdownColumn && (
+                            <div>
+                              {uploading ? (
+                                <ProgressBar
+                                  animated
+                                  now={uploadProgress}
+                                  label={`${uploadProgress}%`}
+                                />
+                              ) : (
+                                <div className="div-model-button-excel">
+                                  <button
+                                    className="Modal-Footer-div"
+                                    //  variant="primary"
+                                    onClick={handleUploadClick}
+                                    // onClick={contactSaveUseToExcel}
+                                  >
+                                    AddContact
+                                  </button>
+                                </div>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="MyContact_scroll">
+                      <table className="table table-striped">
+                        {header?.length > 0 && (
+                          <thead>
+                            <tr style={{ color: "white" }}>
+                              {header.map((headerText, index) => (
+                                <th key={index}>{headerText}</th>
+                              ))}
+                            </tr>
+                          </thead>
+                        )}
+                        <tbody>
+                          {modalData?.map((row, rowIndex) => (
+                            <tr key={rowIndex}>
+                              {row.map((cell, cellIndex) => (
+                                <td key={cellIndex}>{cell}</td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div className="div-model-button-excel">
+                    <div>{errStatus}</div>
+                    <button
+                      className="Modal-Footer-div"
+                      variant="secondary"
+                      onClick={() => setShowModal(false)}
+                    >
+                      Close
+                    </button>
+                    <button
+                      className="Modal-Footer-div"
+                      variant="primary"
+                      onClick={handleUploadClick}
+                      disabled={uploading}
+                    >
+                      Upload
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* End  Upload excel File model */}
+            {showComponent && <CreateContact />}
+            {showGetcomponent && (
+              <Getcontactinfo activeContact={activeContact} />
+            )}
+            <Row>
+              {/* <Col sm={1}></Col> */}
+              <Col
+                md={12}
+                lg={12}
+                xl={12}
+                xxl={12}
+                className="Backdrop-myContact2-2 width_91"
+                //  (window.innerWidth === "50px" ?
+                style={{ padding: "15px" }}
+              >
+                {showLoader && (
+                  <Loader top={50} left={50} width={50} height={50} />
+                )}
+                <div>
+                  <div className="MyContact_2_maincontainer">
+                    <thead style={{ marginBottom: "0", tableLayout: "fixed" }}>
+                      <tr style={{ background: "white" , boxShadow: "0px 2px 0px 0px lightblue"}} className="th-font-style">
+                        <th className="td_min_sNo_width">S.N</th>
+                        <th className="td_min_width">First Name</th>
+                        <th className="td_min_width">Last Name</th>
+                        <th className="td_min_width">Email</th>
+                        <th className="td_min_width">Phone</th>
+                        <th className="td_min_width">Gender</th>
+                        <th className="td_min_width">Age</th>
+                        <th className="td_min_width">Country</th>
+                        <th className="td_min_width">Actions</th>
+                      </tr>
+                    </thead>
+                    {/* <div className="MyContact_2_container"> */}
+                    {allContacts?.length < 0 ? (
+                      <p>No data found</p>
+                    ) : (
+                      allContacts?.map((row, index) => (
+                        <table>
+                          <tbody
+                            className="tbody-font-style"
+                            style={{
+                              marginBottom: "0",
+                              tableLayout: "absolute",
+                              color: "white",
+                            }}
+                          >
+                            <tr key={row._id}>
+                              <td className="td_min_sNo_width">{index + 1}</td>
+                              <td className="td_min_width">{row?.firstName}</td>
+                              <td className="td_min_width">
+                                {row?.lastName || ""}
+                              </td>
+                              <td className="td_min_width">
+                                {row?.email || ""}
+                              </td>
+                              <td className="td_min_width">{row?.number}</td>
+                              <td className="td_min_width">
+                                {row?.gender || ""}
+                              </td>
+                              <td className="td_min_width">{row?.age || ""}</td>
+                              <td className="td_min_width">
+                                {row?.country || ""}
+                              </td>
+                              <td className="td_min_width">
+                                <FontAwesomeIcon
+                                  icon={faEdit}
+                                  style={{
+                                    cursor: "pointer",
+                                    marginRight: "15px",
+                                  }}
+                                  onClick={() => {
+                                    openEditModal(row);
+                                    setContactIdToDelete(row?._id);
+                                  }}
+                                />
+                                <FontAwesomeIcon
+                                  icon={faTrash}
+                                  style={{
+                                    cursor: "pointer",
+                                    marginRight: "15px",
+                                  }}
+                                  onClick={() => {
+                                    setContactIdToDelete(row?._id);
+                                    setShowDeleteModal(true);
+                                  }}
+                                />
+                                <RiMessage2Fill
+                                  style={{
+                                    cursor: "pointer",
+                                    marginRight: "15px",
+                                  }}
+                                  onClick={() => {
+                                    setShowSendMessageModal(true);
+                                    setFatchContactId(row?._id);
+                                  }}
+                                />
+                                <span>
+                                  <GrView
+                                    style={{ cursor: "pointer" }}
+                                    onClick={() =>
+                                      handleshowGetcontactpage(row)
+                                    }
+                                  />
+                                </span>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        // ))
+                      ))
+                    )}
+                    {/* </div> */}
+                  </div>
+                </div>
+              </Col>
+            </Row>
+            {/* </div> */}
+          </Col>
+        </div>
+        </>
+        )}
         </Row>
       </div>
     </>

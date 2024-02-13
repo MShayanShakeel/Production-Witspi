@@ -4,6 +4,7 @@ import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import whatsapiLogo from "../../../../images/watspilogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { RiMenuFoldLine } from "react-icons/ri";
 import { PiListFill } from "react-icons/pi";
 import {
   faAddressBook,
@@ -47,7 +48,23 @@ function Sidebar2() {
           {onMouseEnter || expand ? (
             <>
               <div className="main-sidebar-logo Svg-Container svg-white">
-                <PiListFill style={{ width: iconSize, height: iconSize }} />
+                <PiListFill
+                  style={{ width: iconSize, height: iconSize }}
+                  // onClick={() => {
+                  //   setExpand(!expand);
+                  //   setSideBarRender(!expand);
+                  // }}
+                />
+                {/* {expand ?  : <RiMenuFoldLine /> } */}
+
+                {/* <PiListFill
+                style={{ width: iconSize, height: iconSize }} 
+                onClick={() => {
+                  setExpand(!expand);
+                  setSideBarRender(expand);}}
+                 {expand ? <RiMenuFoldLine /> : <PiListFill/>}
+
+                  /> */}
                 <img
                   src={whatsapiLogo}
                   alt="Profile-Image"
@@ -55,7 +72,7 @@ function Sidebar2() {
                     cursor: "pointer",
                     height: "4vh",
                     background: "#388c8c",
-                    borderRadius : "10px",
+                    borderRadius: "10px",
                   }}
                 />
               </div>
@@ -76,7 +93,7 @@ function Sidebar2() {
                   <div>
                     <FontAwesomeIcon
                       icon={faHouse}
-                      style={{ width: iconSize, height: iconSize }}
+                      style={{ width: iconSize, height: iconSize ,color : "white"}}
                     />
                   </div>
                   <div>
@@ -84,7 +101,7 @@ function Sidebar2() {
                       style={{
                         marginLeft: "1rem",
                         textDecoration: "none",
-                        color: "#388c8c",
+                       
                       }}
                     >
                       Dashboard
@@ -119,7 +136,7 @@ function Sidebar2() {
                       style={{
                         marginLeft: "1rem",
                         textDecoration: "none",
-                        color: "#388c8c",
+                       
                       }}
                     >
                       Instance
@@ -159,7 +176,7 @@ function Sidebar2() {
                       style={{
                         marginLeft: "1rem",
                         textDecoration: "none",
-                        color: "#388c8c",
+                     
                       }}
                     >
                       Contact
@@ -194,7 +211,7 @@ function Sidebar2() {
                       style={{
                         marginLeft: "1rem",
                         textDecoration: "none",
-                        color: "#388c8c",
+                        
                       }}
                     >
                       BroadCast
@@ -281,11 +298,7 @@ function Sidebar2() {
               <>
                 <div className="main-sidebar-logo Svg-Container svg-white">
                   <PiListFill style={{ width: iconSize, height: iconSize }} />
-                  {/* <img
-              src={whatsapiLogo}
-              alt="Profile-Image"
-              style={{ cursor: "pointer", height: "4vh" }}
-            /> */}
+                
                 </div>
                 <Link
                   to="/dashboard2"

@@ -15,13 +15,12 @@
 }
 
 .Sidebar-Comp-card {
-  /* width: 96%; */
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
   height: 95vh;
   border-radius: 20px;
   background-color: white;
-  padding: 0.8rem;
-  margin-top: 2.5vh;
+  padding: 1rem;
+  margin-top: 2.4vh;
   margin-bottom: 2.5vh;
   text-align: center;
   border: 2px solid #f5f1ff;
@@ -32,12 +31,66 @@
   margin-left: 0.5rem;
   z-index: 1;
 }
+@media screen and (min-width: 2100px) and (max-width: 2300px) {
+  .Sidebar-Comp-card {
+    padding: 4rem;
+    margin-top: 1.5vh;
+  }
+}
+@media screen and (min-width: 2000px) and (max-width: 2100px) {
+  .Sidebar-Comp-card {
+    padding: 3.5rem;
+    margin-top: 1.5vh;
+  }
+}
+
+@media screen and (min-width: 1900px) and (max-width: 2000px) {
+  .Sidebar-Comp-card {
+    padding: 3rem;
+  }
+}
+@media screen and (min-width: 1700px) and (max-width: 1900px) {
+  .Sidebar-Comp-card {
+    padding: 2.3rem;
+  }
+}
+@media screen and (min-width: 1600px) and (max-width: 1700px) {
+  .Sidebar-Comp-card {
+    padding: 2.1rem;
+  }
+}
+@media screen and (min-width: 1500px) and (max-width: 1600px) {
+  .Sidebar-Comp-card {
+    padding: 2.1rem;
+  }
+}
+@media screen and (min-width: 1400px) and (max-width: 1500px) {
+  .Sidebar-Comp-card {
+    padding: 1.7rem;
+    margin-top: 1rem;
+  }
+}
+@media screen and (min-width: 1300px) and (max-width: 1400px) {
+  .Sidebar-Comp-card {
+    padding: 1.4rem;
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1300px) {
+  .Sidebar-Comp-card {
+    padding: 1.2rem;
+  }
+}
+
 .active-link .svg-white,
 .active-link .Svg-Container .active-link .main-sidebar2 {
-  background-color: white !important;
-  box-shadow: 0px 0px 1px #388c8c;
-  padding: 0.5rem 1px 2px 2px !important;
+  background-color: #388c8c !important;
+  color: white; 
+  box-shadow: 0px 0px 1px gray;
+  padding: 0.6rem 7px 2px 5px !important;
   text-decoration: none;
+}
+.active-link .Svg-Container .svg-white {
+  color: white !important; /* Color when the link is active */
 }
 .Svg-Container {
   display: flex;
@@ -49,8 +102,6 @@
 }
 
 .Svg-Container h6:hover {
-  /* background-color:#388c8c; */
-  color: black !important;
   border-radius: 10px;
   padding: 0px 5px 0px 5px !important;
 }
@@ -61,6 +112,9 @@
 }  */
 .svg-white path {
   fill: #388c8c;
+}
+.active-link .svg-white path {
+  fill: white;
 }
 
 .main-sidebar2 {
@@ -85,4 +139,8 @@
     padding-top: 7px !important;
     padding-bottom: 3px !important;
   }
+}
+.row>* {
+  padding-right: calc(var(--bs-gutter-x) * .2) !important;
+  padding-left: calc(var(--bs-gutter-x) * .1) !important;
 }

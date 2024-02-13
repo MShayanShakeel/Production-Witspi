@@ -1,5 +1,6 @@
 .backdrop-filter {
   backdrop-filter: blur(1px);
+  box-shadow: 1.5px 1.5px lightblue;
   background-color: rgba(255, 255, 255, 0.2);
   border: 2px solid #f5f1ff;
   border-radius: 20px;
@@ -20,10 +21,10 @@
   cursor: pointer;
 }
 .color-icon-white {
-  color: white;
+  color: #3ab19d;
 }
 .color-h6-white {
-  color: white;
+  color: #3ab19d;
   font-size: 2.2vh;
   font-weight: 500;
 }
@@ -34,10 +35,14 @@
 
 .input-field-setting2 {
   border: 1px solid white;
+  box-shadow: 1px 1px lightblue;
   padding: 8px 12px;
   border-radius: 8px;
   transition: 0.5s;
-  background-color: transparent;
+  background-color: #3ab19d;
+}
+.input-field-setting2::placeholder{
+  color: white !important;
 }
 .input-field-setting2:focus {
   border: 1px solid white;
@@ -56,10 +61,10 @@
   background-color: transparent; /* Set the color of the scrollbar thumb */
 }
 .set_color_icon_white {
-  color: white;
+  color: #3ab19d;
 }
 .label_white {
-  color: white;
+  color: #3ab19d;
 }
 .frst-div {
   margin-right: 12px;
@@ -115,7 +120,7 @@ margin-left: calc(-.5 * var(--bs-gutter-x));}
     padding: 2vh 2vh 1vh 0vh !important;
   }
   .color-h6-white {
-    color: white;
+    color: #3ab19d;
     font-size: 2.2vh;
     font-weight: 500;
   }
