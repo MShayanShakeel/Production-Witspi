@@ -27,7 +27,7 @@ const DashBoardComponent = () => {
           />
         </div>
         <div>
-          <FontAwesomeIcon icon={faBell} style={{ fontSize: "2.5vh", color: "rgb(255 252 252 / 100%)" }} />
+          <FontAwesomeIcon icon={faBell} style={{ fontSize: "2.5vh", color: "#3AABA7" }} />
         </div>
       </div>
       ) : (

@@ -1714,18 +1714,18 @@ sideBarRender ? (
                       <table className="table table-striped">
                         {header?.length > 0 && (
                           <thead>
-                            <tr style={{ color: "white" }}>
+                            <tr style={{ color: "black" }}>
                               {header.map((headerText, index) => (
-                                <th key={index}>{headerText}</th>
+                                <th key={index} >{headerText}</th>
                               ))}
                             </tr>
                           </thead>
                         )}
                         <tbody>
                           {modalData?.map((row, rowIndex) => (
-                            <tr key={rowIndex}>
+                            <tr key={rowIndex} >
                               {row.map((cell, cellIndex) => (
-                                <td key={cellIndex}>{cell}</td>
+                                <td key={cellIndex} >{cell}</td>
                               ))}
                             </tr>
                           ))}
@@ -2397,7 +2397,7 @@ sideBarRender ? (
                       <table className="table table-striped">
                         {header?.length > 0 && (
                           <thead>
-                            <tr style={{ color: "white" }}>
+                            <tr style={{ color: "black" , boxShadow : "1px 1px 1px 1px lightblue"}}>
                               {header.map((headerText, index) => (
                                 <th key={index}>{headerText}</th>
                               ))}
@@ -2406,7 +2406,7 @@ sideBarRender ? (
                         )}
                         <tbody>
                           {modalData?.map((row, rowIndex) => (
-                            <tr key={rowIndex}>
+                            <tr key={rowIndex} style={{ color: "black" , boxShadow : "1px 1px 1px 1px lightblue"}}>
                               {row.map((cell, cellIndex) => (
                                 <td key={cellIndex}>{cell}</td>
                               ))}

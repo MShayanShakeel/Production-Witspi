@@ -323,7 +323,7 @@ function CreateBroadCast2() {
                                 <Dropdown.Menu
                                   style={{
                                     width: "100%",
-                                    backgroundColor: "transparent",
+                                    backgroundColor: "#388C8C",
                                     color: "white",
                                   }}
                                 >
@@ -410,7 +410,7 @@ function CreateBroadCast2() {
                                       <textarea
                                         type="text"
                                         placeholder="Enter your message..."
-                                        className="createbrdCast_textarea msg-temp-style text-white focus:text-white"
+                                        className="createbrdCast_textarea msg-temp-style text-gray focus:text-gray"
                                         value={template?.textMessage}
                                         onChange={(e) =>
                                           handleTemplateChange(e, index)
@@ -538,7 +538,7 @@ function CreateBroadCast2() {
                         >
                           <tbody className="bdCast-body-font">
                             {excelData?.map((row, index) => (
-                              <tr key={index}>
+                              <tr key={index} >
                                 <td className="color_white">{index + 1}</td>
                                 <td className="color_white">{row[0]}</td>
                                 <td className="color_white">{row[1]}</td>
@@ -559,7 +559,7 @@ function CreateBroadCast2() {
             <Col sm="2" lg="2" xl="2" xxl="2">
               <Sidebar2 />
             </Col>
-            <Col className="Group-header-for-laptop broad-cast-float-class" style={{float : "right" , width : "82%"}}>
+            <Col className="Group-header-for-laptop broad-cast-float-class" style={{float : "right" , width : "83%"}}>
               {headerShowInLaptop ? <LaptopHeader /> : <p></p>}
               <Row>
                 <Col
@@ -624,7 +624,7 @@ function CreateBroadCast2() {
                                     icon={faCheck}
                                     className="broadCast-edit2"
                                     onClick={handleSaveInput}
-                                    style={{ color: "white" }}
+                                    style={{ color: "#388C8C" }}
                                   />
                                 )}
                               </span>
@@ -633,7 +633,7 @@ function CreateBroadCast2() {
 
                           <Col xs={12} md={4} lg={4}>
                             <div className="instance-form-input">
-                              <label className="color-white">
+                              <label className="color-black">
                                 {" "}
                                 Select Instance{" "}
                               </label>
@@ -648,7 +648,7 @@ function CreateBroadCast2() {
                                 <Dropdown.Menu
                                   style={{
                                     width: "100%",
-                                    backgroundColor: "transparent",
+                                    backgroundColor: "#3AABA7",
                                     color: "white",
                                   }}
                                 >
@@ -735,7 +735,7 @@ function CreateBroadCast2() {
                                       <textarea
                                         type="text"
                                         placeholder="Enter your message..."
-                                        className="createbrdCast_textarea msg-temp-style text-white focus:text-white"
+                                        className="createbrdCast_textarea msg-temp-style text-gray focus:text-gray"
                                         value={template?.textMessage}
                                         onChange={(e) =>
                                           handleTemplateChange(e, index)
@@ -783,7 +783,7 @@ function CreateBroadCast2() {
                               style={{ display: "flex" }}
                             >
                               <Button
-                                className="Add-new-btn_createbd"
+                                className="Add-new-btn_createbd "
                                 onClick={handleAddTemplate}
                               >
                                 <FontAwesomeIcon icon={faPlus} />
@@ -820,7 +820,7 @@ function CreateBroadCast2() {
                   lg="10"
                   xl="10"
                   xxl="10"
-                  className="Backdrop-myContact2 Backdrop-myContact2-broadcast "
+                  className="broad-cast-contact-1 Backdrop-myContact2 Backdrop-myContact2-broadcast"
                 >
                   <Row
                     className="row-bd-width-100"
@@ -857,7 +857,7 @@ function CreateBroadCast2() {
                         >
                           <tbody className="bdCast-body-font">
                             {excelData?.map((row, index) => (
-                              <tr key={index}>
+                              <tr key={index} style={{ color: "black" , boxShadow : "1px 1px 1px 1px lightblue"}}>
                                 <td className="color_white">{index + 1}</td>
                                 <td className="color_white">{row[0]}</td>
                                 <td className="color_white">{row[1]}</td>

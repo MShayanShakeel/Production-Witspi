@@ -52,7 +52,7 @@
 }
 .table > :not(caption) > * > * {
   border-bottom-width: 0;
-  color: #ffffff;
+  color: black;
 }
 .close-btn {
   background: linear-gradient(

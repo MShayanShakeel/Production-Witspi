@@ -65,7 +65,7 @@ abbr.custom-tooltip {
 }
 
 .search-groups2 {
-  background-color: #3ab19d;
+  background-color: #FFFFFF;
   align-items: center;
   border-radius: 12px;
   box-shadow: 0 4.3275208473px 35.7020454407px 0 rgba(0, 0, 0, 0.06);
@@ -73,13 +73,16 @@ abbr.custom-tooltip {
   padding: 0px 13px;
   margin-right: 10px;
 }
+.search-groups2::placeholder{
+  color: #3AABA7;
+}
 .grp-input-search2 {
   border: none;
   padding: 12px 15px;
-  background-color: transparent;
+  background-color: #FFFFFF;
 }
 .grp-input-search2::placeholder {
-  color: white;
+  color: #3aa9ab !important;
 }
 .grp-input-search2:focus {
   outline: none;
@@ -97,7 +100,7 @@ abbr.custom-tooltip {
   color: white;
 }
 .search-icon2 {
-  color: white;
+  color: #388C8C;
   margin-right: 8px;
 }
 .group2_head_main {
@@ -189,7 +192,6 @@ abbr.custom-tooltip {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: #448787; /* Set a background color for the header */
   z-index: 1;
 }
 .Group-header-for-laptop{

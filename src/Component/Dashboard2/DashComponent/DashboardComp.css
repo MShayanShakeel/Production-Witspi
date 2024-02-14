@@ -6,7 +6,7 @@
   margin-top: 1rem;
   border-radius: 20px;
   backdrop-filter: blur(1px);
-  background-color: #55938F;
+  background-color: #FFFFFF;
   padding: 10px 32px 10px 40px;
   text-align: center;
   border: 2px solid #f5f1ff;
@@ -16,7 +16,7 @@
 }
 
 .Dashboard-Comp-card::-webkit-scrollbar-thumb {
-  background-color: transparent; /* Set the color of the scrollbar thumb */
+  background-color: #FFFFFF; /* Set the color of the scrollbar thumb */
 }
 .Dashboard-display{
   align-items: center;

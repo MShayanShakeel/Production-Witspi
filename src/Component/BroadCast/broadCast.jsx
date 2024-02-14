@@ -300,8 +300,8 @@ function BroadCast() {
                                 </thead>
                                 <tbody className='bdCast-body-font'>
                                     {excelData?.map((row, index) => (
-                                        <tr key={index}>
-                                            <td>{index + 1}</td>
+                                        <tr key={index} >
+                                            <td >{index + 1}</td>
                                             <td>{row[0]}</td> {/* FirstName */}
                                             <td>{row[1]}</td> {/* LastName */}
                                             <td style={{ display: 'flex', justifyContent: 'center' }}>{row[6]}</td> {/* Phone */}

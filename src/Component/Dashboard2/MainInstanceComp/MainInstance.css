@@ -5,7 +5,7 @@
   height: 95vh;
   border-radius: 20px;
   backdrop-filter: blur(1px);
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #FFFFFF;
   padding: 10px 32px 10px 40px;
   text-align: center;
   border: 2px solid #f5f1ff;
@@ -57,7 +57,7 @@
     height: 95vh;
     border-radius: 20px;
     backdrop-filter: blur(1px);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #FFFFFF;
     width: 95%;
     /* margin-left: 75px; */
     margin-left: 5%;
@@ -82,7 +82,7 @@
     height: 95vh;
     border-radius: 20px;
     backdrop-filter: blur(1px);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #FFFFFF;
     width: 90%;
     margin-left: 13%;
     padding: 10px 32px 10px 40px;
@@ -121,7 +121,7 @@
     height: auto;
     border-radius: 20px;
     backdrop-filter: blur(1px);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #FFFFFF;
     width: 99%;
     padding: 10px 32px 10px 40px;
     text-align: center;

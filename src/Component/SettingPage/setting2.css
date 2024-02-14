@@ -1,7 +1,7 @@
 .backdrop-filter {
   backdrop-filter: blur(1px);
   box-shadow: 1.5px 1.5px lightblue;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #FFFFFF;
   border: 2px solid #f5f1ff;
   border-radius: 20px;
   margin: 10px;
@@ -17,7 +17,7 @@
   padding: 16px 16px;
   border-radius: 2px;
   border: none;
-  background: transparent;
+  background: #FFFFFF;
   cursor: pointer;
 }
 .color-icon-white {
@@ -90,9 +90,9 @@ margin-left: calc(-.5 * var(--bs-gutter-x));}
 
 @media screen and (max-width: 500px) {
   .backdrop-filter {
-    backdrop-filter: blur(1px);
+    /* backdrop-filter: blur(1px); */
     width: 93.8%;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #FFFFFF;
     border: 2px solid #f5f1ff;
     border-radius: 20px;
     margin-left: 2.8vh !important;
@@ -157,7 +157,7 @@ margin-left: calc(-.5 * var(--bs-gutter-x));}
   .backdrop-filter {
     backdrop-filter: blur(1px);
     width: 93.6%;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #FFFFFF;
     border: 2px solid #f5f1ff;
     border-radius: 20px;
     margin-left: 3.7vh !important;

@@ -276,13 +276,14 @@ function Sidebar2() {
                 </div>
               </Link>
 
-              <p
+              <h5
                 onClick={() => {
                   setExpand(!expand);
                   setSideBarRender(expand);
                   // handleMouseEnter();
                 }}
                 style={{
+                  color : "#388C8C",
                   position: "absolute",
                   bottom: 0,
                   left: 20,
@@ -290,8 +291,8 @@ function Sidebar2() {
                   transition: "all 0.5s ease",
                 }}
               >
-                {expand ? "Close" : "Expand"}
-              </p>
+                {expand ? "<-- Close" : "Expand --> "}
+              </h5>
             </>
           ) : (
             <p>

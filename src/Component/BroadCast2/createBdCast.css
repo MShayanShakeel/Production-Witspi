@@ -10,17 +10,25 @@
 .createbrdCast_textarea:focus {
   outline: none;
 }
+.createbrdCast_textarea::placeholder {
+  color: #388C8C;
+}
+.broad-cast-contact-1{
+  width: 101% !important;
+  margin-left: -1.2% !important;
+}
 .card-stylecreatbdcast {
   padding-bottom: 10px;
-  box-shadow: 2px 2px lightblue;
-  background-color: #3ab19d;
+  box-shadow: 2px 2px 1px 1px lightblue;
+  background-color: #FFFFFF;
   border-radius: 5px;
   min-width: 31% !important;
   margin-right: auto;
 }
 .Backdrop-myContact2-broadcast{
   /* margin-left: -0.5rem !important; */
-  width: 100% !important;
+  width: 100%;
+  margin-right: 0.5rem !important; 
 }
 @media screen and (max-width: 500px) {
 .Braod-cast-page-main{
@@ -33,6 +41,7 @@
   margin-left: 1rem !important;
   width: 99% !important;
 }
+
 .card-stylecreatbdcast {
   font-size: 10px !important;
   min-width: 35vh !important;
@@ -98,30 +107,30 @@
 }
 .createbrdCast-input {
   /* margin-left: 0.45rem; */
-  width: 100%;
-  border: 2px solid #f5f1ff;
+  width: 99%;
+  box-shadow: 1px 1px 1px 1px lightblue;
   padding: 10px 14px;
   height: 50px;
   border-radius: 8px;
   transition: 0.5s;
-  background-color: #3ab19d !important;
-  color: white !important;
+  background-color: #FFFFFF !important;
+  color:  #388C8C !important;
 }
 .createbrdCast-input::placeholder{
-  color: white;
+  color: #388C8C;
 }
 .createbrdCast-input:focus {
   outline: none;
 }
 .Drop-btnstyle_createbd {
-  background-color: #3ab19d;
-  color: white !important;
+  background-color: #FFFFFF;
+  color: #388C8C !important;
   height: 50px;
   width: 100%;
   border: none;
   letter-spacing: 5px;
   padding: 10px 14px;
-  border: 2px solid #f5f1ff;
+  box-shadow: 1px 1px 1px 1px lightblue;
 
   /* Set the background color to transparent when in focus (dropdown open) */
   &:focus {
@@ -139,7 +148,7 @@
   color: #3ab19d;
 }
 .broadCast-edit2 {
-  color: white;
+  color: #388C8C;
   position: absolute;
   padding-top: 15px;
   left: 29%;
@@ -168,7 +177,7 @@
   --bs-table-bg: transparent !important;
 }
 .main_Crte_BDCAST2{
-  max-height: 17vh;
+  max-height: 18vh;
   /* margin-top: 0px; */
   overflow-x: scroll;
   overflow-y: hidden; 

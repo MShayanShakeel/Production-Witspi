@@ -742,7 +742,7 @@ function Groups2() {
                           <input
                             type="text"
                             placeholder="Search..."
-                            className="grp-input-search2 text-white focus:text-white"
+                            className="grp-2 text-gray focus:text-gray"
                           />
                         </span>
                         <span>
@@ -1075,7 +1075,7 @@ function Groups2() {
                             <input
                               type="text"
                               placeholder="Search..."
-                              className="grp-input-search2 text-white focus:text-white"
+                              className="grp-input-search2 text-gray focus:text-gray"
                             />
                           </span>
                           <span>
