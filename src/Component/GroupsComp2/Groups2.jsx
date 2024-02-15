@@ -698,7 +698,7 @@ function Groups2() {
             sideBarRender ? (
           <>
           <Col sm="1" lg="1" xl="1" xxl="1">
-            <Sidebar2 />
+            {/* <Sidebar2 /> */}
           </Col>
           <Col className="Group-header-for-laptop">
             {headerShowInLaptop ? <LaptopHeader /> : <p></p>}
@@ -905,8 +905,6 @@ function Groups2() {
                                           </li>
                                         )
                                       )}
-
-                                      {console.log(group, "check group")}
                                     </div>
                                   </td>
                                   <td className="Group-get-table-contant">
@@ -1031,7 +1029,7 @@ function Groups2() {
           ) : (
             <>
             <Col sm="2" lg="2" xl="2" xxl="2">
-              <Sidebar2 />
+              {/* <Sidebar2 /> */}
             </Col>
             <Col className="Group-header-for-laptop">
               {headerShowInLaptop ? <LaptopHeader /> : <p></p>}

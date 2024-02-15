@@ -15,16 +15,16 @@
 @media screen and (max-width: 2500px) {
   .Main-contact {
     width: 100% !important;
-    margin-left: -1vb !important;
+    margin-left: -0.2vb !important;
   }
 }
 @media screen and (max-width: 1400px) {
   .Main-contact {
     width: 100% !important;
-    margin-left: -1vb !important;
+    margin-left: -0vb !important;
   }
 }
-@media screen and (max-width: 1100px) {
+/* @media screen and (max-width: 1100px) {
   .Main-contact { 
     margin-left: 8vb !important;
   }
@@ -34,15 +34,15 @@
     width: 92% !important;
     margin-left: 8vb !important;
   }
-}
+} */
 
 .Contact-dropdown-Gender {
   /* Removes default styles */
   /* padding: 0.5px; */
   width: 100%; /* Set the desired width */
-  background-color: #388C8C;
+  background-color: #FFFFFF;
   color: white; /* Set text color */
-  border: 0.5px solid white; /* Add border for styling */
+  border: 1px solid #848484; /* Add border for styling */
   border-radius: 5px;
   cursor: pointer; /* Show pointer on hover */
   height: 2.6rem;
@@ -52,8 +52,8 @@
   margin-top: 0;
   margin-bottom: 1rem;
   height: 3rem;
-  border: 0.5px solid #E5E9E9 !important;
-  color: white;
+  border: 1px solid #848484 !important;
+  color: black;
 }
 .Contact-dropdown-Gender:hover {
   background-color: #388C8C;
@@ -71,12 +71,13 @@
   padding: 8px 12px;
   border-radius: 8px;
   transition: 0.5s;
-  background-color: #388C8C;
-  color: #ffffff;
+  background-color:#ffffff; 
+  border: 1px solid #848484;
+  color: black;
 }
 
 .contact-text-field:focus {
-  border: 1px solid white;
+  border: 1px solid #848484;
   outline: none;
 }
 .contact-text-field::placeholder {
@@ -126,13 +127,13 @@
   color: white;
 }
 .lable-create-contact {
-  color: #388C8C;
+  color: black;
 }
 .Group-contact-list-Section {
   max-height: 50vh !important;
   height: auto;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   margin-bottom: 0.5rem;
 }
 

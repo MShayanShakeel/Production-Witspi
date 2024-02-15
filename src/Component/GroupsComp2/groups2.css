@@ -10,11 +10,11 @@
 .fixed-height-5rem{
   display: flex;
   gap: 1rem;
- padding-top: 2rem;
+ padding: 1.5rem;
   /* justify-content: center; */
   /* height: 6rem; */
   overflow-y: hidden;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 .saprat-line-in-gourps{
 width: 2900%; 
@@ -69,6 +69,7 @@ abbr.custom-tooltip {
   align-items: center;
   border-radius: 12px;
   box-shadow: 0 4.3275208473px 35.7020454407px 0 rgba(0, 0, 0, 0.06);
+  /* border: 1px solid #848484; */
   display: flex;
   padding: 0px 13px;
   margin-right: 10px;
@@ -112,8 +113,8 @@ abbr.custom-tooltip {
 
 .groups_2_maincontainer {
   max-height: 60vh !important;
-  overflow-x: scroll;
-  overflow-y: scroll;
+  overflow-x: auto;
+  overflow-y: auto;
   /* display: flex;
   flex-direction: column;
   justify-content: center;
@@ -122,8 +123,8 @@ abbr.custom-tooltip {
 @media screen and (min-width: 1590px) {
   .groups_2_maincontainer {
     max-height: 30rem;
-    overflow-x: scroll;
-    overflow-y: scroll;
+    overflow-x: auto;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -144,7 +145,7 @@ abbr.custom-tooltip {
 }
 .groups_2-container {
   max-height: 30rem; /* Adjust the height as needed */
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 

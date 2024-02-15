@@ -9,11 +9,11 @@
     
 }
 .Dashboard-Comp-card-instance{
-    max-height:  81vh !important;
+    max-height:  83vh !important;
 }
 .All-Instance-Card {
     max-height: 75vh; /* Adjust the height as needed */
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
   }
   
@@ -32,11 +32,7 @@
   }
 
 
-@media screen and (min-width : 600px) and (max-width : 2200px) {
-.Dashboard-Comp-card-instance{
-    margin-left: -7px !important;
-}
-}
+
   /* MOBILE RESPONCIVE */
 
   @media only screen and (max-width: 500px) {

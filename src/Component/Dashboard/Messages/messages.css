@@ -157,7 +157,7 @@
   max-height: 50vh; /* Adjust this value as needed */
   overflow-y: auto;
   display: block;
-  overflow-x: scroll;
+  overflow-x: auto;
   white-space: nowrap; /* Prevent text wrapping in cells */
 }
 .scrollable-body::-webkit-scrollbar {
@@ -294,7 +294,7 @@ th {
     max-height: 350px; /* Adjust this value as needed */
     overflow-y: auto;
     display: block;
-    overflow-x: scroll;
+    overflow-x: auto;
     white-space: nowrap; /* Prevent text wrapping in cells */
   }
   .table > :not(caption) > * > * {

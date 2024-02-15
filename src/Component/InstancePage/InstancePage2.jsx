@@ -335,12 +335,12 @@ function InstancePage2() {
             sideBarRender ? (
           <>
           <Col sm="1" lg="1" xl="1" xxl="1">
-            <Sidebar2 />
+            {/* <Sidebar2 /> */}
           </Col>
           <Col sm="12" md="7" lg="7" xl="7" xxl="7">
           
             <div className="Dashboard-Comp-card_instancePage">
-                 <div style={{width : "96.5%" ,marginLeft : "1.5rem" ,}}> 
+                 <div style={{width : "98%" }}> 
                     <LaptopHeader />
             </div>
               <div className="Dashboard-display" style={{ padding: 0 }}>
@@ -840,12 +840,12 @@ function InstancePage2() {
           ) : (
             <>
             <Col sm="2" lg="2" xl="2" xxl="2">
-              <Sidebar2 />
+              {/* <Sidebar2 /> */}
             </Col>
             <Col sm="12" md="7" lg="7" xl="7" xxl="7">
             
               <div className="Dashboard-Comp-card_instancePage">
-                   <div style={{width : "96.5%" ,marginLeft : "1.5rem" ,}}> 
+                   <div style={{width : "98%"}}> 
                       <LaptopHeader />
               </div>
                 <div className="Dashboard-display" style={{ padding: 0 }}>

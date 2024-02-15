@@ -127,7 +127,7 @@ function Setting2() {
           {sideBarRender ? ( 
           <>
           <Col sm="1" lg="1" xl="1" xxl="1">
-            <Sidebar2 />
+            {/* <Sidebar2 /> */}
           </Col>
 
           <Col sm="11" md="11" lg="11" xl="11" xxl="11">
@@ -180,7 +180,7 @@ function Setting2() {
                                     <input
                                       type="text"
                                       placeholder="Name..."
-                                      className="input-field-setting2 text-white focus:text-white"
+                                      className="input-field-setting2 text-black focus:text-black"
                                     />
                                   </div>
                                 </Col>
@@ -194,7 +194,7 @@ function Setting2() {
                                     <input
                                       type="email"
                                       placeholder="xyz@gmail.com"
-                                      className="input-field-setting2 text-white focus:text-white"
+                                      className="input-field-setting2 text-black focus:text-black"
                                     />
                                   </div>
                                 </Col>
@@ -209,7 +209,7 @@ function Setting2() {
                                     <input
                                       type="text"
                                       placeholder="Karachi"
-                                      className="input-field-setting2 text-white focus:text-white"
+                                      className="input-field-setting2 text-black focus:text-black"
                                     />
                                   </div>
                                 </Col>
@@ -223,7 +223,7 @@ function Setting2() {
                                     <input
                                       type="email"
                                       placeholder="Pakistan"
-                                      className="input-field-setting2 text-white focus:text-white"
+                                      className="input-field-setting2 text-black focus:text-black"
                                     />
                                   </div>
                                 </Col>
@@ -290,7 +290,7 @@ function Setting2() {
                                       placeholder="Name..."
                                       value={currentPassword}
                                       onChange={(e)=> setCurrentPassword(e.target.value)}
-                                      className="input-field-setting2 cur-pass text-white focus:text-white"
+                                      className="input-field-setting2 cur-pass text-black focus:text-black"
                                       style={{ width: "49%" }}
 
                                     />
@@ -310,7 +310,7 @@ function Setting2() {
                                         placeholder="Karachi"
                                         value={newPassword}
                                         onChange={(e) => setNewPassword(e.target.value)}
-                                        className="input-field-setting2 text-white focus:text-white"
+                                        className="input-field-setting2 text-black focus:text-black"
                                       />
                                     </div>
                                   </Col>
@@ -326,7 +326,7 @@ function Setting2() {
                                         placeholder="Pakistan"
                                         value={newConform}
                                         onChange={(e) => setConformPassword(e.target.value)}
-                                        className="input-field-setting2 text-white focus:text-white"
+                                        className="input-field-setting2 text-black focus:text-black"
                                       />
                                     </div>
                                   </Col>
@@ -513,7 +513,7 @@ function Setting2() {
           ) : (<p>
              <>
           <Col sm="2" lg="2" xl="2" xxl="2">
-            <Sidebar2 />
+            {/* <Sidebar2 /> */}
           </Col>
 
           <Col sm="10" md="10" lg="10" xl="10" xxl="10" style={{float : "right"}}>
@@ -566,7 +566,7 @@ function Setting2() {
                                     <input
                                       type="text"
                                       placeholder="Name..."
-                                      className="input-field-setting2 text-white focus:text-white"
+                                      className="input-field-setting2 text-black focus:text-black"
                                     />
                                   </div>
                                 </Col>
@@ -580,7 +580,7 @@ function Setting2() {
                                     <input
                                       type="email"
                                       placeholder="xyz@gmail.com"
-                                      className="input-field-setting2 text-white focus:text-white"
+                                      className="input-field-setting2 text-black focus:text-black"
                                     />
                                   </div>
                                 </Col>
@@ -595,7 +595,7 @@ function Setting2() {
                                     <input
                                       type="text"
                                       placeholder="Karachi"
-                                      className="input-field-setting2 text-white focus:text-white"
+                                      className="input-field-setting2 text-black focus:text-black"
                                     />
                                   </div>
                                 </Col>
@@ -609,7 +609,7 @@ function Setting2() {
                                     <input
                                       type="email"
                                       placeholder="Pakistan"
-                                      className="input-field-setting2 text-white focus:text-white"
+                                      className="input-field-setting2 text-black focus:text-black"
                                     />
                                   </div>
                                 </Col>
@@ -676,7 +676,7 @@ function Setting2() {
                                       placeholder="Name..."
                                       value={currentPassword}
                                       onChange={(e)=> setCurrentPassword(e.target.value)}
-                                      className="input-field-setting2 cur-pass text-white focus:text-white"
+                                      className="input-field-setting2 cur-pass text-black focus:text-black"
                                       style={{ width: "49%" }}
 
                                     />
@@ -696,7 +696,7 @@ function Setting2() {
                                         placeholder="Karachi"
                                         value={newPassword}
                                         onChange={(e) => setNewPassword(e.target.value)}
-                                        className="input-field-setting2 text-white focus:text-white"
+                                        className="input-field-setting2 text-black focus:text-black"
                                       />
                                     </div>
                                   </Col>
@@ -712,7 +712,7 @@ function Setting2() {
                                         placeholder="Pakistan"
                                         value={newConform}
                                         onChange={(e) => setConformPassword(e.target.value)}
-                                        className="input-field-setting2 text-white focus:text-white"
+                                        className="input-field-setting2 text-black focus:text-black"
                                       />
                                     </div>
                                   </Col>

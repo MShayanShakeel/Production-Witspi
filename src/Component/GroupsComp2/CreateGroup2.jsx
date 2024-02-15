@@ -175,7 +175,7 @@ function CreateGroup2() {
       >
         <Row style={{ padding: "3vh 4.5vh 3vh 0" }}>
           <Col sm="1" lg="1" xl="1" xxl="1">
-            <Sidebar2 />
+            {/* <Sidebar2 /> */}
           </Col>
           <Col style={{width : "91%"}}>
           <LaptopHeader />

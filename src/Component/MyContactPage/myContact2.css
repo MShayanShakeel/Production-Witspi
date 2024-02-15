@@ -282,8 +282,8 @@
 }
 .MyContact_2_maincontainer {
   max-height: 47vh;
-  overflow-x: scroll;
-  overflow-y: scroll;
+  overflow-x: auto;
+  overflow-y: auto;
 }
 @media screen and (min-width: 1720px) {
   .MyContact_2_maincontainer {
@@ -292,8 +292,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    overflow-x: scroll;
-    overflow-y: scroll;
+    overflow-x: auto;
+    overflow-y: auto;
   }
 }
 @media screen and (min-width: 900px) and (max-width: 1200px) {
@@ -305,7 +305,7 @@
 
 .MyContact_2_container {
   max-height: 30rem;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   align-items: center;
 }
@@ -363,7 +363,7 @@ _min_desc_width {
 }
 .MyContact_scroll {
   max-height: 40rem;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
 }
 .MyContact_scroll::-webkit-scrollbar {
@@ -503,7 +503,7 @@ _min_desc_width {
 .Excel-model-lable {
   margin-top: 10px;
   margin-bottom: 5px;
-  color: #ffffff;
+  color: black;
 }
 
 @media screen and (max-width: 500px) {

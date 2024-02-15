@@ -232,7 +232,7 @@ function CreateBroadCast2() {
                sideBarRender ? (     
             <>
             <Col sm="1" lg="1" xl="1" xxl="1">
-              <Sidebar2 />
+              {/* <Sidebar2 /> */}
             </Col>
             <Col className="Group-header-for-laptop">
               {headerShowInLaptop ? <LaptopHeader /> : <p></p>}
@@ -492,9 +492,9 @@ function CreateBroadCast2() {
                 className="broadcast-main-div"
                 style={{ padding: "3vh 4.5vh 3vh 0" }}
               >
-                {/* <Col sm="1" lg="1" xl="1" xxl="1">
-                  <Sidebar2 />
-                </Col> */}
+                <Col sm="1" lg="1" xl="1" xxl="1">
+                  {/* <Sidebar2 /> */}
+                </Col>
                 <Col
                   sm="12"
                   md="11"
@@ -557,9 +557,9 @@ function CreateBroadCast2() {
              ) : (<p> 
               <>
             <Col sm="2" lg="2" xl="2" xxl="2">
-              <Sidebar2 />
+              {/* <Sidebar2 /> */}
             </Col>
-            <Col className="Group-header-for-laptop broad-cast-float-class" style={{float : "right" , width : "83%"}}>
+            <Col className="Group-header-for-laptop broad-cast-float-class" style={{float : "right" , width : "83%" , marginRight : "0.3rem"}}>
               {headerShowInLaptop ? <LaptopHeader /> : <p></p>}
               <Row>
                 <Col
@@ -634,8 +634,7 @@ function CreateBroadCast2() {
                           <Col xs={12} md={4} lg={4}>
                             <div className="instance-form-input">
                               <label className="color-black">
-                                {" "}
-                                Select Instance{" "}
+                                Select Instance
                               </label>
                               <Dropdown>
                                 <Dropdown.Toggle

@@ -333,12 +333,12 @@ function Instances2() {
           style={{ padding: "3vh 4.5vh 3vh 0" }}
         >
           <Col sm="1" lg="1" xl="1" xxl="1" style={{ width: "8%" }}>
-            <Sidebar2 />
+            {/* <Sidebar2 /> */}
           </Col>
           <Col sm="12" md="11" lg="11" xl="11" xxl="11">
-            <div style={{width : "99.5%" , marginLeft :"0.4%"}}>
+            <div style={{width : "100%"}}>
             {headerShowInLaptop ? <LaptopHeader /> : <p></p>}
-            </div>
+            </div>  
 
             <div className="Dashboard-Comp-card Dashboard-Comp-card-instance">
               <div className="Dashboard-display">
@@ -477,10 +477,10 @@ function Instances2() {
           style={{ padding: "3vh 4.5vh 3vh 0" }}
         >
           <Col sm="2" lg="2" xl="2" xxl="2">
-            <Sidebar2 />
+            {/* <Sidebar2 /> */}
           </Col>
           <Col sm="12" md="10" lg="10" xl="10" xxl="10">
-            <div style={{width : "99.5%" , marginLeft :"0.4%"}}>
+            <div style={{width : "100%"}}>
             {headerShowInLaptop ? <LaptopHeader /> : <p></p>}
             </div>
 

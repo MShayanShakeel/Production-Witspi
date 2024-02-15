@@ -1,7 +1,7 @@
 .backdrop-filter {
   backdrop-filter: blur(1px);
   box-shadow: 1.5px 1.5px lightblue;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border: 2px solid #f5f1ff;
   border-radius: 20px;
   margin: 10px;
@@ -17,7 +17,7 @@
   padding: 16px 16px;
   border-radius: 2px;
   border: none;
-  background: #FFFFFF;
+  background: #ffffff;
   cursor: pointer;
 }
 .color-icon-white {
@@ -29,27 +29,27 @@
   font-weight: 500;
 }
 .color-white {
-  color: white;
+  color: #3ab19d;
   font-size: 2vh;
 }
 
 .input-field-setting2 {
-  border: 1px solid white;
-  box-shadow: 1px 1px lightblue;
+  border: 1px solid #848484;
+  box-shadow: 1.5px 1.5px lightblue;
   padding: 8px 12px;
   border-radius: 8px;
   transition: 0.5s;
-  background-color: #3ab19d;
+  background-color: #ffffff;
 }
-.input-field-setting2::placeholder{
-  color: white !important;
+.input-field-setting2::placeholder {
+  color: black !important;
 }
 .input-field-setting2:focus {
-  border: 1px solid white;
+  border: 1px solid #848484;
   outline: none;
 }
 .scroll-setting2 {
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: 80vh;
   overflow-x: hidden;
 }
@@ -64,7 +64,7 @@
   color: #3ab19d;
 }
 .label_white {
-  color: #3ab19d;
+  color: black;
 }
 .frst-div {
   margin-right: 12px;
@@ -77,8 +77,16 @@
 }
 @media screen and (min-width: 1200px) and (max-width: 1500px) {
   .scroll-setting2 {
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: full;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 2200px) {
+  .row {
+    margin-right: calc(-0 * var(--bs-gutter-x)) !important;
+    padding: 0 !important;
+    margin-left: calc(-0 * var(--bs-gutter-x)) !important;
   }
 }
 
@@ -86,13 +94,14 @@
 .row {
   margin-right: calc(-0 * var(--bs-gutter-x)) !important;
   padding: 0 !important;
-margin-left: calc(-.5 * var(--bs-gutter-x));}
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
 
 @media screen and (max-width: 500px) {
   .backdrop-filter {
     /* backdrop-filter: blur(1px); */
     width: 93.8%;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border: 2px solid #f5f1ff;
     border-radius: 20px;
     margin-left: 2.8vh !important;
@@ -104,7 +113,7 @@ margin-left: calc(-.5 * var(--bs-gutter-x));}
     margin-bottom: -3vh;
   }
   .scroll-setting2 {
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: 73vh;
     width: 106%;
     padding: 1px;
@@ -142,10 +151,10 @@ margin-left: calc(-.5 * var(--bs-gutter-x));}
 }
 
 @media screen and (max-width: 405px) {
-.row {
-  margin-right: calc(0.1 * var(--bs-gutter-x)) !important;
- } 
- .scroll-setting2 {
+  .row {
+    margin-right: calc(0.1 * var(--bs-gutter-x)) !important;
+  }
+  .scroll-setting2 {
     margin-right: -1.4rem !important;
   }
 }
@@ -153,11 +162,11 @@ margin-left: calc(-.5 * var(--bs-gutter-x));}
 @media screen and (max-width: 376px) {
   .row {
     margin-right: calc(0.2 * var(--bs-gutter-x)) !important;
-   } 
+  }
   .backdrop-filter {
     backdrop-filter: blur(1px);
     width: 93.6%;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border: 2px solid #f5f1ff;
     border-radius: 20px;
     margin-left: 3.7vh !important;
@@ -165,7 +174,6 @@ margin-left: calc(-.5 * var(--bs-gutter-x));}
   .scroll-setting2 {
     margin-left: -0.5rem !important;
   }
-  
 }
 @media screen and (max-width: 360px) {
   .backdrop-filter {

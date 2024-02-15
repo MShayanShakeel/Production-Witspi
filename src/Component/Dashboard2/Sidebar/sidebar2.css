@@ -7,11 +7,13 @@
   /* z-index: 10; */
   /* top: 0;
   bottom: 0; */
-  /* left: 2.7vh; */
 }
 .main-sidebar-logo {
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between !important;
+  
 }
 
 .Sidebar-Comp-card {
@@ -20,90 +22,137 @@
   border-radius: 20px;
   background-color: white;
   padding: 1rem;
-  margin-top: 2.4vh;
+  margin-top: 1.6vh;
   margin-bottom: 2.5vh;
   text-align: center;
   border: 2px solid #f5f1ff;
     margin-right: auto;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-left: 0.5rem;
+  /* gap: 0.5rem; */
+  margin-left: 0.5rem !important; 
   z-index: 1;
 }
-@media screen and (min-width: 2100px) and (max-width: 2300px) {
+@media screen and (min-width: 2200px) and (max-width: 2300px) {
   .Sidebar-Comp-card {
-    padding: 4rem;
-    margin-top: 1.5vh;
+    padding: 3.4rem;
+    margin-top: 1.2vh;
+  }
+}
+@media screen and (min-width: 2100px) and (max-width: 2200px) {
+  .Sidebar-Comp-card {
+    padding: 3rem;
+    margin-top: 1.2vh;
   }
 }
 @media screen and (min-width: 2000px) and (max-width: 2100px) {
   .Sidebar-Comp-card {
-    padding: 3.5rem;
-    margin-top: 1.5vh;
+    padding: 3.2rem;
+    margin-top: 1.3vh;
   }
 }
 
 @media screen and (min-width: 1900px) and (max-width: 2000px) {
   .Sidebar-Comp-card {
-    padding: 3rem;
+    padding: 2.8rem;
+    margin-top: 1.2vh;
   }
 }
-@media screen and (min-width: 1700px) and (max-width: 1900px) {
+@media screen and (min-width: 1800px) and (max-width: 1900px) {
+  .Sidebar-Comp-card {
+    padding: 2.6rem;
+  }
+}
+@media screen and (min-width: 1700px) and (max-width: 1800px) {
   .Sidebar-Comp-card {
     padding: 2.3rem;
   }
 }
 @media screen and (min-width: 1600px) and (max-width: 1700px) {
   .Sidebar-Comp-card {
-    padding: 2.1rem;
+    padding: 2rem;
+    /* margin-top: 1rem */
+    
   }
 }
 @media screen and (min-width: 1500px) and (max-width: 1600px) {
   .Sidebar-Comp-card {
-    padding: 2.1rem;
+    padding: 1.9rem;
+    
   }
 }
 @media screen and (min-width: 1400px) and (max-width: 1500px) {
   .Sidebar-Comp-card {
-    padding: 1.7rem;
+    padding: 1.6rem;
+  
   }
 }
 @media screen and (min-width: 1300px) and (max-width: 1400px) {
   .Sidebar-Comp-card {
     padding: 1.4rem;
+    margin-top: 2.3vh;
   }
+  /* .sidebar-content-wrapper{
+    width: 10rem;
+  } */
 }
 @media screen and (min-width: 1200px) and (max-width: 1300px) {
   .Sidebar-Comp-card {
     padding: 1.2rem;
   }
 }
+@media screen and (min-width: 1100px) and (max-width: 1200px) {
+  .Sidebar-Comp-card {
+    padding: 0.9rem;
+    margin-top: 2.6vh;
+  }
+}
 
-.active-link .svg-white,
+@media screen and (min-width: 1000px) and (max-width: 1100px) {
+  .Sidebar-Comp-card {
+    padding: 0.7rem;
+    margin-top: 2.6vh;
+  }
+}
+
+
+
+/* .active-link .svg-white,
 .active-link .Svg-Container .active-link .main-sidebar2 {
   background-color: #388c8c !important;
   color: white; 
   box-shadow: 0px 0px 1px gray;
-  padding: 0.6rem 7px 2px 5px !important;
+  padding: 0.5rem 6px 0.15rem 5px !important;
   text-decoration: none;
 }
 .active-link .Svg-Container .svg-white {
-  color: white !important; /* Color when the link is active */
+  color: white !important; 
+} */
+
+.main-sidebar2.active-link .svg-white,
+.main-sidebar2.active-link .Svg-Container .main-sidebar2.active-link {
+  background-color: #388c8c !important;
+  color: white; 
+  box-shadow: 0px 0px 1px gray;
+  padding: 0.5rem 6px 0.15rem 5px !important;
+  text-decoration: none;
 }
+
+.main-sidebar2.active-link .Svg-Container .svg-white {
+  color: white !important; 
+}
+
+
 .Svg-Container {
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
+  align-items: center;
+  color: #388C8C;
   padding: 0px 2px -0px 2px !important;
-  border-radius: 20px;
+  border-radius: 15px;
   /* background-color: gray; */
 }
 
-.Svg-Container h6:hover {
-  border-radius: 10px;
-  padding: 0px 5px 0px 5px !important;
-}
+
 /* .Svg-Container:hover {
   background-color: white;
   border-radius: 20px;

@@ -1,4 +1,5 @@
 import React, { useEffect, createContext } from "react";
+import "./Component/Dashboard2/Sidebar/Sidebar2.css";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -38,50 +39,47 @@ import Newpassword from "./Component/Forgotpasss/Newpassword";
 import { useUserdetails } from "./store/UserContext";
 import GetALLInstances from "./helpers/GetApis/GetALLInstance";
 import GetSingleGroup from "./Component/GroupsComp2/GetSingleGroup";
+import Layout from "./Layout";
 
 const App = () => {
   // const dispatch = useDispatch();
   var token = localStorage.getItem("token");
-  const { userDetails, setUserDetails  , instanceDataUseContext , setInstanceDataUseContext } = useUserdetails();
+  const {
+    userDetails,
+    setUserDetails,
+    instanceDataUseContext,
+    setInstanceDataUseContext,
+  } = useUserdetails();
   const userId = userDetails?._id;
   console.log(userId);
 
   useEffect(() => {
     // Your token expiration logic
     if (!token && window.location.pathname !== "/") {
-      localStorage.removeItem('token')
+      localStorage.removeItem("token");
       window.location.replace("/");
     } else if (token && window.location.pathname === "/") {
       window.location.href = "/dashboard2";
     }
   }, [token]);
-  
 
-
- 
-
-
-   //ALL instances
-   useEffect(() => {
+  //ALL instances
+  useEffect(() => {
     const fetchData = async () => {
-        try {
-            const data = await GetALLInstances(userId);
-            console.log(data?.message, "datadatadata")
-            setInstanceDataUseContext(data?.message)
-            // setInstancesData(data?.message);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
+      try {
+        const data = await GetALLInstances(userId);
+        console.log(data?.message, "datadatadata");
+        setInstanceDataUseContext(data?.message);
+        // setInstancesData(data?.message);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
 
     fetchData();
-}, [userDetails]);
+  }, [userDetails]);
 
-
-// END GET INSTANCE API 
-
-
-
+  // END GET INSTANCE API
 
   useEffect(() => {
     // console.log("this ran");
@@ -118,30 +116,30 @@ const App = () => {
   // console.log(userDetails, "userdea");
   return (
     <BrowserRouter>
+      {/* <Sidebar2 /> */}
       <Routes>
-        {/* <Provider setUserDetails={getUserdetail} UserDetails={setGetuserdetail}> */}
-
-        {/* <Route path={"/"} element={<div>No content here</div>} /> */}
-        <Route path={"/"} element={<Login />} />
+        <Route path={"/login"} element={<Login />} />
         <Route path={"/signup"} element={<Signup />} />
         <Route path={"/otpForm"} element={<OtpForm />} />
-
-        <Route path="/dashboard2" element={<Dashboard2 />} />
-        <Route path="/header2" element={<Header2 />} />
-        <Route path="/Instances2" element={<Instances2 />} />
-        <Route path="/instancePage2/:id" element={<InstancePage2 />} />
-        <Route path={"/settings2"} element={<Setting2 />} />
-        <Route path={"/myContact2"} element={<MyContact2 />} />
-        <Route path={"/groups2"} element={<Groups2 />} />
-        <Route path={"/creategroup2"} element={<CreateGroup2 />} />
-        <Route path={"/createBroadCast2"} element={<CreateBroadCast2 />} />
+        <Route path={"/forgototp"} element={<ForgatOtp />} />
         <Route path={"/createcontact"} element={<CreateContact />} />
         <Route path={"/getcontactinfo"} element={<Getcontactinfo />} />
         <Route path={"/forgotpass"} element={<Forgotpass />} />
         <Route path={"/newpassword"} element={<Newpassword />} />
-        <Route path={"/getsinglegroup/:group_id"} element={<GetSingleGroup />} />
-        {/* <Route path={"/uploadexcel"} element={<UploadExcel />} /> */}
-        <Route path={"/forgototp"} element={<ForgatOtp />} />
+
+        <Route path="/" element={<Layout />}>
+          <Route path="/dashboard2" element={<Dashboard2 />} />
+          <Route path="/header2" element={<Header2 />} />
+          <Route path="/Instances2" element={<Instances2 />} />
+          <Route path="/instancePage2/:id" element={<InstancePage2 />} />
+          <Route path={"/settings2"} element={<Setting2 />} />
+          <Route path={"/myContact2"} element={<MyContact2 />} />
+          <Route path={"/groups2"} element={<Groups2 />} />
+          <Route path={"/creategroup2"} element={<CreateGroup2 />} />
+          <Route path={"/createBroadCast2"} element={<CreateBroadCast2 />} />
+          <Route path={"/getsinglegroup/:group_id"} element={<GetSingleGroup />}
+          />
+        </Route>
 
         <Route element={<HeaderComponent />}>
           <Route path={"/dashboard"} element={<Dashboard />} />

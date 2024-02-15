@@ -1199,7 +1199,7 @@ sideBarRender ? (
  
          <>
           <Col sm="1" lg="1" xl="1" xxl="1">
-            <Sidebar2 />
+            {/* <Sidebar2 /> */}
           </Col>
           <div style={{width : "91%", float : "right"}}>
           <Col className="Contact-width-1830-1600">
@@ -1882,7 +1882,7 @@ sideBarRender ? (
        ) : (
          <>
           <Col sm="2" lg="2" xl="2" xxl="2">
-            <Sidebar2 />
+            {/* <Sidebar2 /> */}
           </Col>
           <div style={{width : "83%" , float : "right"}}>
           <Col className="Contact-width-1830-1600">

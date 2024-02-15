@@ -121,7 +121,7 @@ function DashboardInstances() {
     <>
       <div
         className="main-dashboard-contant"
-        style={{ marginTop: "1.5vh" }}
+        style={{ marginTop: "1.5vh" , marginLeft : "-1rem"}}
       >
         {/* <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: "baseline" , marginTop: "-2rem"}}>
                     <h4 className='Dashboard-insstance-hadding' style={{ textAlign: 'start', color: "white" }}>
@@ -200,6 +200,7 @@ function DashboardInstances() {
                         minWidth: "170px",
                         marginTop: "20px",
                         paddingLeft: "4rem",
+                        paddingBlock : "0.6rem",
                       }}
                     >
                       Name
