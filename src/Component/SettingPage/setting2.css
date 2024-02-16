@@ -86,7 +86,7 @@
   .row {
     margin-right: calc(-0 * var(--bs-gutter-x)) !important;
     padding: 0 !important;
-    margin-left: calc(-0 * var(--bs-gutter-x)) !important;
+    margin-left: calc(0.1 * var(--bs-gutter-x)) !important;
   }
 }
 

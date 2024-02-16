@@ -1,6 +1,6 @@
 .Dashboard-Comp-card {
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: auto !important;
+  margin-left: auto !important;
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
   height: 95vh;
   border-radius: 20px;
@@ -9,6 +9,9 @@
   padding: 10px 32px 10px 40px;
   text-align: center;
   border: 2px solid #f5f1ff;
+}
+.temp-css-for-dashborad-2{
+  padding-left: 9px !important;
 }
 .All-single-card {
   margin-top: 1rem;
@@ -38,7 +41,7 @@
 @media screen and (min-width : 1401px) and (max-width : 1910px) {
   .Dashboard-instance-allinstance-cls {
     flex-direction: column;
-    gap: 0.1rem !important;
+    gap: 0.5rem !important;
     flex-wrap: nowrap !important;
     justify-content: center !important;
   }

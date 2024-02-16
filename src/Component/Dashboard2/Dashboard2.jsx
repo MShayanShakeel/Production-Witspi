@@ -69,7 +69,7 @@ function Dashboard2() {
               <Col sm="12" md="6" lg="6" xl="6" xxl="6">
                 <DashBoardComponent />
               </Col>
-              <Col sm="12" md="4" lg="4" xl="4" xxl="4">
+              <Col sm="12" md="4" lg="4" xl="4" xxl="4" className="temp-css-for-dashborad-2">
                 <MainInstance />
               </Col>
             </>

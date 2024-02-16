@@ -1,6 +1,6 @@
 .Dashboard-Comp-card {
   margin-right: auto;
-  margin-left: auto;
+  margin-left: auto !important;
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
   height: 95vh;
   margin-top: 1rem;

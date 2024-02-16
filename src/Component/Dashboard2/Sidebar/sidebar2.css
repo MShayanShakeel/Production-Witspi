@@ -13,12 +13,12 @@
   margin-bottom: 2rem;
   display: flex;
   justify-content: space-between !important;
-  
 }
 
 .Sidebar-Comp-card {
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
   height: 95vh;
+  /* width: 3vh; */
   border-radius: 20px;
   background-color: white;
   padding: 1rem;
@@ -26,11 +26,11 @@
   margin-bottom: 2.5vh;
   text-align: center;
   border: 2px solid #f5f1ff;
-    margin-right: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
   /* gap: 0.5rem; */
-  margin-left: 0.5rem !important; 
+  margin-left: 0.5rem !important;
   z-index: 1;
 }
 @media screen and (min-width: 2200px) and (max-width: 2300px) {
@@ -61,45 +61,37 @@
 @media screen and (min-width: 1800px) and (max-width: 1900px) {
   .Sidebar-Comp-card {
     padding: 2.6rem;
-    
   }
 }
 @media screen and (min-width: 1700px) and (max-width: 1800px) {
   .Sidebar-Comp-card {
     padding: 2.3rem;
-    
   }
 }
 @media screen and (min-width: 1600px) and (max-width: 1700px) {
   .Sidebar-Comp-card {
     padding: 2rem;
     /* margin-top: 1rem */
-    width: 30vh;  
-    
+    /* width: 30vh;   */
   }
 }
 @media screen and (min-width: 1500px) and (max-width: 1600px) {
   .Sidebar-Comp-card {
     padding: 1.9rem;
-    
   }
 }
 @media screen and (min-width: 1400px) and (max-width: 1500px) {
   .Sidebar-Comp-card {
     padding: 1.6rem;
     width: 30vh;
-  
   }
 }
 @media screen and (min-width: 1300px) and (max-width: 1400px) {
   .Sidebar-Comp-card {
     padding: 1.4rem;
     margin-top: 2.3vh;
-    width: 28.8vh;
+    /* width: 32.8vh; */
   }
-  /* .sidebar-content-wrapper{
-    width: 10rem;
-  } */
 }
 @media screen and (min-width: 1200px) and (max-width: 1300px) {
   .Sidebar-Comp-card {
@@ -120,8 +112,6 @@
   }
 }
 
-
-
 /* .active-link .svg-white,
 .active-link .Svg-Container .active-link .main-sidebar2 {
   background-color: #388c8c !important;
@@ -137,26 +127,24 @@
 .main-sidebar2.active-link .svg-white,
 .main-sidebar2.active-link .Svg-Container .main-sidebar2.active-link {
   background-color: #388c8c !important;
-  color: white; 
+  color: white;
   box-shadow: 0px 0px 1px gray;
   padding: 0.5rem 6px 0.15rem 5px !important;
   text-decoration: none;
 }
 
 .main-sidebar2.active-link .Svg-Container .svg-white {
-  color: white !important; 
+  color: white !important;
 }
-
 
 .Svg-Container {
   display: flex;
-  align-items: center;
-  color: #388C8C;
+  align-items: center !important;
+  color: #388c8c;
   padding: 0px 2px -0px 2px !important;
   border-radius: 15px;
   /* background-color: gray; */
 }
-
 
 /* .Svg-Container:hover {
   background-color: white;
@@ -193,7 +181,7 @@
     padding-bottom: 3px !important;
   }
 }
-.row>* {
-  padding-right: calc(var(--bs-gutter-x) * .2) !important;
-  padding-left: calc(var(--bs-gutter-x) * .1) !important;
+.row > * {
+  padding-right: calc(var(--bs-gutter-x) * 0.2) !important;
+  padding-left: calc(var(--bs-gutter-x) * 0.1) !important;
 }

@@ -7,7 +7,7 @@ import "./DashboardComp.css"
 import DashboardInstances from './../DashboardInstances/DashboardInstances';
 import whatsapiLogo from "../../../../images/watspilogo.png";
 const DashBoardComponent = () => {
-  const userDetails = useSelector((state) => state.userInfoStore.userDetails.userObj);
+  // const userDetails = useSelector((state) => state.userInfoStore.userDetails.userObj);
   
   const [webViewHeaderShow , setWebViewHeaderShow ] = useState (window.innerWidth >= 500);
 

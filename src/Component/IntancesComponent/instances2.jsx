@@ -351,6 +351,7 @@ function Instances2() {
                         justifyContent: "space-between",
                         padding: "15px 0",
                         alignItems: "baseline",
+                        boxShadow : "0px 1px 0px 0px lightblue",
                       }}
                     >
                       <h4
@@ -495,6 +496,8 @@ function Instances2() {
                         justifyContent: "space-between",
                         padding: "15px 0",
                         alignItems: "baseline",
+                        boxShadow : "0px 1px 0px 0px lightblue",
+                        // borderRadius : "20px",
                       }}
                     >
                       <h4
