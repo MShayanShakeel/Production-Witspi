@@ -39,6 +39,7 @@ import Newpassword from "./Component/Forgotpasss/Newpassword";
 import { useUserdetails } from "./store/UserContext";
 import GetALLInstances from "./helpers/GetApis/GetALLInstance";
 import GetSingleGroup from "./Component/GroupsComp2/GetSingleGroup";
+// const Layout = lazy(()=> import('./Layout'))
 import Layout from "./Layout";
 
 const App = () => {
