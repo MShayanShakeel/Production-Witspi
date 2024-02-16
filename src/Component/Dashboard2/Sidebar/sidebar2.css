@@ -43,7 +43,6 @@
   .Sidebar-Comp-card {
     padding: 3rem;
     margin-top: 1.2vh;
-    width: 30.5vh; 
   }
 }
 @media screen and (min-width: 2000px) and (max-width: 2100px) {
@@ -57,19 +56,18 @@
   .Sidebar-Comp-card {
     padding: 2.8rem;
     margin-top: 1.2vh;
-    width: 30.4vh; 
   }
 }
 @media screen and (min-width: 1800px) and (max-width: 1900px) {
   .Sidebar-Comp-card {
     padding: 2.6rem;
-    width: 30.4vh; 
+    
   }
 }
 @media screen and (min-width: 1700px) and (max-width: 1800px) {
   .Sidebar-Comp-card {
     padding: 2.3rem;
-    width: 30.3vh; 
+    
   }
 }
 @media screen and (min-width: 1600px) and (max-width: 1700px) {
