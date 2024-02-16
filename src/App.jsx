@@ -118,7 +118,7 @@ const App = () => {
     <BrowserRouter>
       {/* <Sidebar2 /> */}
       <Routes>
-        <Route path={"/login"} element={<Login />} />
+        <Route path={"/"} element={<Login />} />
         <Route path={"/signup"} element={<Signup />} />
         <Route path={"/otpForm"} element={<OtpForm />} />
         <Route path={"/forgototp"} element={<ForgatOtp />} />
@@ -127,7 +127,7 @@ const App = () => {
         <Route path={"/forgotpass"} element={<Forgotpass />} />
         <Route path={"/newpassword"} element={<Newpassword />} />
 
-        <Route path="/" element={<Layout />}>
+        <Route element={<Layout />}>
           <Route path="/dashboard2" element={<Dashboard2 />} />
           <Route path="/header2" element={<Header2 />} />
           <Route path="/Instances2" element={<Instances2 />} />
@@ -141,7 +141,7 @@ const App = () => {
           />
         </Route>
 
-        <Route element={<HeaderComponent />}>
+        {/* <Route element={<HeaderComponent />}>
           <Route path={"/dashboard"} element={<Dashboard />} />
           <Route path={"/settings"} element={<Setting />} />
           <Route path={"/groups"} element={<Groups />} />
@@ -151,7 +151,7 @@ const App = () => {
           <Route path={"/mybroadCast"} element={<MyBroadCast />} />
           <Route path={"/broadCast"} element={<BroadCast />} />
           <Route path={"/instances"} element={<Instances />} />
-        </Route>
+        </Route> */}
 
         {/* </Provider> */}
       </Routes>

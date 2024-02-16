@@ -182,7 +182,7 @@ function BroadCast() {
 
                                         <Col xs={12} md={4} lg={4}>
                                             <div className='instance-form-input'>
-                                                <label> Select Instance </label>
+                                                <label><p> Select Instance </p></label>
                                                 <Dropdown>
                                                     <Dropdown.Toggle id='dropdown-basic' className='Drop-btnstyle'>
                                                         Select Instance
