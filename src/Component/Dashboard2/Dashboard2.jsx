@@ -3,7 +3,6 @@ import { Row, Col } from "react-bootstrap";
 import Sidebar2 from "./Sidebar/Sidebar2";
 import DashBoardComponent from "./DashComponent/DashBoardComponent";
 import MainInstance from "./MainInstanceComp/MainInstance";
-import bgImg from "../../../images/bg2.jpg";
 import bgImg1 from "../../../images/bg1.jpg";
 import Headerprofile from "../Header-profile/Headerprofile";
 import "../../Component/Dashboard2/MainInstanceComp/MainInstance.css";

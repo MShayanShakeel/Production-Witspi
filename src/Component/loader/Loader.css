@@ -8,7 +8,7 @@
   }
   .nfLoader:after {
     content: "";
-    background-image: url('../../../images/Loaderimg.jpg');
+    /* background-image: url('../../../images/Loaderimg.jpg'); */
   
     background-repeat: no-repeat;
     background-position-x: 50%;
