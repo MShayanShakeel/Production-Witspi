@@ -8,6 +8,7 @@
   /* top: 0;
   bottom: 0; */
 }
+
 .main-sidebar-logo {
   /* margin-top: 2rem; */
   margin-bottom: 2rem;
@@ -33,6 +34,7 @@
   margin-left: 0.5rem !important;
   z-index: 1;
 }
+
 @media screen and (min-width: 2200px) and (max-width: 2300px) {
   .Sidebar-Comp-card {
     padding: 3.4rem;
@@ -65,14 +67,13 @@
 }
 @media screen and (min-width: 1700px) and (max-width: 1800px) {
   .Sidebar-Comp-card {
-    padding: 2.3rem;
+    padding: 2.4rem;
   }
 }
 @media screen and (min-width: 1600px) and (max-width: 1700px) {
   .Sidebar-Comp-card {
     padding: 2rem;
-    /* margin-top: 1rem */
-    /* width: 30vh;   */
+    /* margin-top: 1rem */ /* width: 30vh;   */
   }
 }
 @media screen and (min-width: 1500px) and (max-width: 1600px) {
@@ -90,12 +91,15 @@
   .Sidebar-Comp-card {
     padding: 1.4rem;
     margin-top: 2.3vh;
-    /* width: 32.8vh; */
   }
 }
 @media screen and (min-width: 1200px) and (max-width: 1300px) {
   .Sidebar-Comp-card {
     padding: 1.2rem;
+  }
+  .shayan-sidebar-temp {
+    /* max-width: 25vh; */
+    width: 24vh;
   }
 }
 @media screen and (min-width: 1100px) and (max-width: 1200px) {

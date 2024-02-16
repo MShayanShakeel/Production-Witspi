@@ -61,7 +61,7 @@ function Sidebar2() {
         >
           {onMouseEnter || expand ? (
             <>
-              <div className="main-sidebar-logo Svg-Container svg-white">
+              <div className="main-sidebar-logo Svg-Container svg-white shayan-sidebar-temp">
                 <div className="Svg-Container svg-white">
                   <div>
                     <PiListFill
