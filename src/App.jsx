@@ -1,25 +1,13 @@
 import React, { useEffect, createContext } from "react";
-import "./Component/Dashboard2/Sidebar/Sidebar2.css";
+// import "./Component/Dashboard2/Sidebar/Sidebar2.css";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Setting from "./Component/SettingPage/Setting";
-import Dashboard from "./Component/Dashboard/Dashboard";
-import HeaderComponent from "./Component/header/header";
-import InstancePage from "./Component/InstancePage/InstancePage";
-import BroadCast from "./Component/BroadCast/broadCast";
-import MyBroadCast from "./Component/BroadCast/MyBroadCast/MyBroadCast";
-import MyContact from "./Component/MyContactPage/Contact";
-import Groups from "./Component/GroupsComp/Groups";
-import CreateGroup from "./Component/GroupsComp/CreateGroup";
 import OtpForm from "./Pages/OtpForm/otpForm";
-import Instances from "./Component/IntancesComponent/Instances";
 // import { setUserDetails } from "./store/userSlice";
-import { useDispatch } from "react-redux";
 import axios from "axios";
 import Dashboard2 from "./Component/Dashboard2/Dashboard2";
-import Sidebar2 from "./Component/Dashboard2/Sidebar/Sidebar2";
 import Instances2 from "./Component/IntancesComponent/instances2";
 import { decryption } from "./helpers/encryptionDecryption";
 import InstancePage2 from "./Component/InstancePage/InstancePage2";
@@ -153,7 +141,7 @@ const App = () => {
           <Route path={"/broadCast"} element={<BroadCast />} />
           <Route path={"/instances"} element={<Instances />} />
         </Route> */}
-
+        
         {/* </Provider> */}
       </Routes>
     </BrowserRouter>
