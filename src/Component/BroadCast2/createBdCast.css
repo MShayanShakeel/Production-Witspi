@@ -124,15 +124,16 @@
 .createbrdCast-input:focus {
   outline: none;
 }
+
 .Drop-btnstyle_createbd {
   background-color: #FFFFFF;
   color: #388C8C !important;
   height: 50px;
   width: 100%;
-  margin-top: -4.5px;
+  /* margin-top: -4.5px; */
   border: none;
   letter-spacing: 5px;
-  /* padding: 10px 14px; */
+  /* padding: 5px 14px !important; */
   border: 1px solid #848484;
   /* box-shadow: 1px 1px 1px 1px lightblue; */
 
@@ -142,7 +143,25 @@
     border: 2px solid #f5f1ff;
   }
 }
-
+@media screen and (min-width : 2000px) and (max-width : 2300px) {
+  .Drop-btnstyle_createbd {
+      margin-top: 0.4rem;
+  }
+}
+@media screen and (min-width : 1500px) and (max-width : 1700px) {
+  .Drop-btnstyle_createbd {
+      margin-top: 0.15rem;
+  }
+}
+@media screen and (min-width : 1300px) and (max-width : 1500px) {
+  .Drop-btnstyle_createbd {
+      margin-top: 0.3rem;
+  }
+}
+@media screen and (min-width : 1300px) and (max-width : 1400px) {
+  .Drop-btnstyle_createbd {
+      margin-top: -0.26rem;
+  }
 .Drop-btnstyle_createbd .btn.active .btn.show {
   background-color: transparent !important;
 }
@@ -152,10 +171,19 @@
   color: black;
 }
 .broadCast-edit2 {
-  color: #388C8C;
-  position: absolute;
-  padding-top: 15px;
-  left: 29%;
+  color: black;
+  position: absolute !important;
+    /* margin-left: -2rem;
+    margin-top: 1rem; */
+}
+  /* padding-top: 15px; */
+  /* left: 29%; */
+}
+.broadCast-edit2 {
+  color: black;
+  position: absolute !important;
+    margin-left: -2rem;
+    margin-top: 1rem;
 }
 .contact-list-container {
   max-height: 30vh; /* Adjust the height as needed */

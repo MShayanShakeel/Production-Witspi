@@ -68,7 +68,7 @@ abbr.custom-tooltip {
   background-color: #FFFFFF;
   align-items: center;
   border-radius: 12px;
-  box-shadow: 0 4.3275208473px 35.7020454407px 0 rgba(0, 0, 0, 0.06);
+ box-shadow: 1px 1px 1px 1px lightblue;
   /* border: 1px solid #848484; */
   display: flex;
   padding: 0px 13px;

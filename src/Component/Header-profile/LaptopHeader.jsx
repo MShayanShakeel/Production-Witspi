@@ -21,7 +21,7 @@ const LaptopHeader = () => {
         return "";
       }
       if (text.length > maxChar) {
-        return text.slice(0, maxChar) + ".";
+        return text.slice(0, maxChar) + "...";
       }
       return text;
     };

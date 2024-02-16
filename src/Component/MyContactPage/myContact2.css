@@ -230,7 +230,7 @@
   align-items: center;
   /* background: #fff; */
   border-radius: 12px;
-  box-shadow: 0 4.3275208473px 35.7020454407px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 1px 1px 1px 1px lightblue;
   display: flex;
   padding: 0px 13px;
   margin-right: 10px;
@@ -239,7 +239,7 @@
   background-color: #FFFFFF;
   /* border: solid 1px #388C8C; */
   border-radius: 10px ;
-  box-shadow: 1px 1px 1px 1px lightblue;
+  /* box-shadow: 1px 1px 1px 1px lightblue; */
 }
 .inputsearch-2::placeholder {
   color:  #388C8C; /* Change this to the desired color */
@@ -284,6 +284,7 @@
   max-height: 47vh;
   overflow-x: auto;
   overflow-y: auto;
+  margin-left: 0.5rem;
 }
 @media screen and (min-width: 1720px) {
   .MyContact_2_maincontainer {

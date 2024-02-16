@@ -287,7 +287,7 @@ function Setting2() {
                                     </label>
                                     <input
                                       type="password"
-                                      placeholder="Name..."
+                                      placeholder="Current Password"
                                       value={currentPassword}
                                       onChange={(e)=> setCurrentPassword(e.target.value)}
                                       className="input-field-setting2 cur-pass text-black focus:text-black"
@@ -307,7 +307,7 @@ function Setting2() {
                                       </label>
                                       <input
                                         type="password"
-                                        placeholder="Karachi"
+                                        placeholder="New Password"
                                         value={newPassword}
                                         onChange={(e) => setNewPassword(e.target.value)}
                                         className="input-field-setting2 text-black focus:text-black"
@@ -323,7 +323,7 @@ function Setting2() {
                                       </label>
                                       <input
                                         type="password"
-                                        placeholder="Pakistan"
+                                        placeholder="Confirm Password"
                                         value={newConform}
                                         onChange={(e) => setConformPassword(e.target.value)}
                                         className="input-field-setting2 text-black focus:text-black"
@@ -673,7 +673,7 @@ function Setting2() {
                                     </label>
                                     <input
                                       type="password"
-                                      placeholder="Name..."
+                                      placeholder="Current Password"
                                       value={currentPassword}
                                       onChange={(e)=> setCurrentPassword(e.target.value)}
                                       className="input-field-setting2 cur-pass text-black focus:text-black"
@@ -693,7 +693,7 @@ function Setting2() {
                                       </label>
                                       <input
                                         type="password"
-                                        placeholder="Karachi"
+                                        placeholder="New Password"
                                         value={newPassword}
                                         onChange={(e) => setNewPassword(e.target.value)}
                                         className="input-field-setting2 text-black focus:text-black"
@@ -709,7 +709,7 @@ function Setting2() {
                                       </label>
                                       <input
                                         type="password"
-                                        placeholder="Pakistan"
+                                        placeholder="Confirm Password"
                                         value={newConform}
                                         onChange={(e) => setConformPassword(e.target.value)}
                                         className="input-field-setting2 text-black focus:text-black"
