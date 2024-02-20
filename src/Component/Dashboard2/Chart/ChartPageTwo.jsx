@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 function ChartPageTwo() {
   const [options] = useState({
     chart: {
-      height: 130,
+      height: 200,
       opacity: 1,
       type: "area",
       toolbar: {
@@ -84,7 +84,7 @@ function ChartPageTwo() {
         series={series}
         type="area"
         height={100}
-        width={"100%"}
+        width={"114%"}
         style={{
           transform: "translateX(-1%) translateY(1px)",
           minHeight: "185px",

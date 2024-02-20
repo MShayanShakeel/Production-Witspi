@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 // import whatsapiLogo from "../../../images/watspilogo.png";
 // import defaultImg from "../../../images/default-img.png"
 import defaultImg from "../../../../images/default-img.png";
+import BGbroadcast from "../../../../images/Frame13.png";
 import {
   faBell,
   faCheck,
@@ -32,10 +33,13 @@ import { Link } from "react-router-dom";
 // import DashboardInstances from "./../DashboardInstances/DashboardInstances";
 // import whatsapiLogo from "../../../../images/watspilogo.png";
 const DashBoardComponent = () => {
-  const { instanceDataUseContext, getAllGroupsStore } = useUserdetails();
+  const {
+    instanceDataUseContext,
+    getAllGroupsStore,
+    getAllMessagesStore,
+    getAllContactStore,
+  } = useUserdetails();
   const [loader, setLoader] = useState(true);
-
-  const [allGroups, setAllGroups] = useState([]);
 
   const ShortText = ({ text, maxChar }) => {
     const shorttext = (text, maxChar) => {
@@ -64,18 +68,15 @@ const DashBoardComponent = () => {
   //   setWebViewHeaderShow(window.innerWidth >= 500)
   // }
   // window.addEventListener('resize' , HandleShowWebHeader)
-  console.log(getAllGroupsStore, "getAllGroupsStore");
+  console.log(getAllContactStore, "getAllGroupsStore");
 
   return (
     <>
       <div className="grid-container">
-        {/* <div className="   Graph-main-class">
-          shayan
-        </div> */}
         <div className="item1 Graph-main-class">
           <div>
             <div
-              className="profile-messages-section"
+              className="profile-messages-section message-section-width"
               style={{ margin: "2rem" }}
             >
               <h6
@@ -89,9 +90,8 @@ const DashBoardComponent = () => {
                 Messages
               </h6>
             </div>
-
-            <ChartPageTwo />
           </div>
+          <ChartPageTwo />
         </div>
 
         {/* DASHBOARD MESSAGES SECTION CODE START  */}
@@ -168,28 +168,86 @@ const DashBoardComponent = () => {
                   Messages
                 </h4>
               </div>
+              <div className="message-main-card">
+                <div className="message-singel-card">
+                  <div
+                    className="deshbord-header-profile"
+                    style={{ width: "11vh" }}
+                  >
+                    <img
+                      src={defaultImg}
+                      className="Profile-img-radius"
+                      alt="Profile-Image"
+                      style={{ cursor: "pointer", margin: "5px 5px" }}
+                    />
+                    <div className="single-message-contact">
+                      <span
+                        className="Profile-span-name"
+                        style={{ color: "#388c8c" }}
+                      >
+                        {getAllMessagesStore[0]?.chatId?.firstName}
+                      </span>
+
+                      <span
+                        className="Profile-span-name"
+                        style={{ width: "95%" }}
+                      >
+                        {getAllMessagesStore[0]?.message}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         {/* DASHBOARD MESSAGES SECTION CODE END  */}
 
-        {/* BROADCAST MESSAGES SECTION CODE START  */}
+        {/* BROADCAST SECTION CODE START  */}
         <div className="item3">
           <div
+            className="image-container"
             style={{
-              backgroundImage: `url(https://storage.googleapis.com/chatfuel-cms-staging/pic/xl_whatsapp_broadcast_complete_guide_6fd279d284/xl_whatsapp_broadcast_complete_guide_6fd279d284.png)`,
-              width: "300px",
-              height: "150px",
+              backgroundImage: `url(${BGbroadcast})`,
+              width: "100%",
+              height: "170px",
               overflow: "hidden",
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
               borderRadius: "20px",
             }}
           ></div>
-        </div>
-        {/* DASHBOARD MESSAGES SECTION CODE END */}
+          <div className="message-main-card">
+            <div className="message-singel-card">
+              <div
+                className="deshbord-header-profile"
+                style={{ width: "11vh" }}
+              >
+                <img
+                  src={defaultImg}
+                  className="Profile-img-radius"
+                  alt="Profile-Image"
+                  style={{ cursor: "pointer", margin: "5px 5px" }}
+                />
+                <div className="single-message-contact">
+                  <span
+                    className="Profile-span-name"
+                    style={{ color: "#388c8c" }}
+                  >
+                    {getAllMessagesStore[0]?.chatId?.firstName}
+                  </span>
 
-        {/* INSTANCE MESSAGES SECTION CODE START */}
+                  <span className="Profile-span-name" style={{ width: "95%" }}>
+                    {getAllMessagesStore[0]?.message}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* BROADCAST SECTION CODE END */}
+
+        {/* INSTANCE SECTION CODE START */}
         <div className="item4  instance-main-class">
           <div className="">
             <div className="">
@@ -200,7 +258,7 @@ const DashBoardComponent = () => {
             {/* ) : ( */}
             <p></p>
             {/* )} */}
-            <div>
+            <div className="add-instance-div">
               <button
                 className="Add-new-Dash-btn"
                 // onClick={handleSaveInput}
@@ -211,7 +269,7 @@ const DashBoardComponent = () => {
 
             {/* INSTANCE MAIN PAGE  */}
             <div className="instance-main-page">
-              <div className="All-Instance-Card Dashboard-instance-allinstance-cls">
+              <div className="All-Instance-Card Dashboard-instance-allinstance-cls dashbord-instance-height-50">
                 {/* {showLoader && ( */}
                 {instanceDataUseContext > 0 ? (
                   <Loader top={50} left={50} width={50} height={50} />
@@ -263,12 +321,32 @@ const DashBoardComponent = () => {
                   ))}
               </div>
             </div>
+
+            <div className="dashbord-contact-main">
+              <h5 className="Good-evening padding-left">My Contact</h5>
+              <div className="deshbord-contact-second">
+                <div className="deshboard-single-contact">
+                  <>
+                    {getAllContactStore.map((allcon) => (
+                      <div
+                        className="deshbord-contact-profile-picture"
+                        key={allcon.id}
+                      >
+                        <span className="centered-span">
+                          <ShortText text={allcon?.firstName} maxChar={1} />
+                        </span>
+                        <p>{allcon?.firstName}</p>
+                      </div>
+                    ))}
+                  </>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         {/* INSTANCE MESSAGES SECTION CODE END */}
 
         {/* GROUP SECTION CODE START */}
-
         <div className="item5">
           <div className="Group-mian-class">
             <div className="My-group-heading">
@@ -293,97 +371,52 @@ const DashBoardComponent = () => {
               }}
             >
               <div className="groups_2_maincontainer">
-                <thead style={{ marginBottom: "0", tableLayout: "fixed" }}>
+                {/* <thead style={{ marginBottom: "0", tableLayout: "fixed" }}>
                   <tr
                     style={{ background: "white" }}
                     className="head-gp-tr tr-Groups"
                   >
-                    <th className="td-Sno ">No</th>
-                    <th className="Group-get-table-contant table-padding-2rem">Group Name</th>
-                    <th className="Group-get-table-contant">Group Members</th>
-                    <th className="Group-get-table-contant">Description</th>
-                    <th className="Group-get-table-contant">Status</th>
+                    <th className="table-padding-2rem">Group Name</th>
+                    <th className="table-padding-2rem">Members</th>
                   </tr>
-                </thead>
+                </thead> */}
 
-                <table>
-                  {loader && (
-                    <Loader top={50} height={50} width={50} left={50} />
-                  )}
-                  {getAllGroupsStore?.length === 0 ? (
-                    <p>Groups Not Available</p>
-                  ) : (
-                    getAllGroupsStore?.map((group, index) => (
-                      <>
-                        <tr
-                          key={index}
-                          style={{
-                            marginBottom: "0",
-                            tableLayout: "fixed",
-                            color: "white",
-                          }}
-                        >
-                          <td className="td-Sno">{index + 1}</td>
-                          <td className="Group-get-table-contant">
-                            {group.groupName
-                              ? group?.groupName
-                              : group?.groupId?.groupName}
-                          </td>
-                          <td className="Group-get-table-contant">
-                            <div className="fixed-height-5rem">
-                              {group?.contactList?.map(
-                                (contact, contactIndex) => (
-                                  <li key={contactIndex}>
-                                    <ShortText
-                                      text={contact?.firstName}
-                                      maxChar={23}
-                                    />
-                                  </li>
-                                )
-                              )}
-                            </div>
-                          </td>
-                          <td className="Group-get-table-contant">
-                            <ShortText
-                              text={
-                                group?.description
-                                  ? group?.description
-                                  : group?.groupId?.description
-                              }
-                              maxChar={23}
-                            />
-                          </td>
-                          <td className="Group-get-table-contant">
-                            {group?.status
-                              ? group?.status
-                              : group?.groupId?.status}
-                            <abbr
-                              className="custom-tooltip"
-                              title={group?.sharedID?.role}
-                            >
-                              {group?.sharedID?.role ? (
-                                <>
-                                  <IoIosCloudDone
-                                    style={{
-                                      marginLeft: "2rem",
-                                      fontSize: "1.5rem",
-                                      cursor: "pointer",
-                                    }}
-                                  />
-                                </>
-                              ) : null}
-                            </abbr>
-                          </td>
-                        </tr>
-                        <hr
-                          className="saprat-line-in-gourps"
-                          color="white"
-                          size="4"
-                        ></hr>
-                      </>
-                    ))
-                  )}
-                </table>
+                {loader && <Loader top={50} height={50} width={50} left={50} />}
+                {getAllGroupsStore?.length === 0 ? (
+                  <p>Groups Not Available</p>
+                ) : (
+                  getAllGroupsStore?.map((group) => (
+                    <div className="deshbord-goup-contact-all">
+                      <div className="table-padding-2rem">
+                        {group.groupName
+                          ? group?.groupName
+                          : group?.groupId?.groupName}
+                        <span className="deshbord-span-group-description">
+                          <ShortText
+                            text={
+                              group?.description
+                                ? group?.description
+                                : group?.groupId?.description
+                            }
+                            maxChar={23}
+                          />
+                        </span>
+                      </div>
+                      <div className="table-padding-2rem">
+                        <div className="table-padding-2rem">
+                          {group?.contactList?.map((contact, contactIndex) => (
+                            <li key={contactIndex}>
+                              <ShortText
+                                text={contact?.firstName}
+                                maxChar={23}
+                              />
+                            </li>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))
+                )}
                 {/* </div> */}
               </div>
             </div>

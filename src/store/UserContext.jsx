@@ -7,6 +7,8 @@
     const [userDetails, setUserDetails] = useState(null);
     const [instanceDataUseContext , setInstanceDataUseContext] = useState(null);
     const [getAllGroupsStore , setGetAllGroupsStore] = useState([]);
+    const [getAllMessagesStore , setGetAllMessagesStore] = useState([]);
+    const [getAllContactStore , setGetAllContactStore] = useState([]);
     const [instanceForGroup , setInstanceForGroup ] = useState("");
     const [showGroupShareIcon , setShowGroupShareIcon ] = useState(false);
     const [sideBarRender , setSideBarRender] = useState(false);
@@ -30,7 +32,8 @@
     return (
       <UserContext.Provider
         value={{ userDetails, setUserDetails, updateOtpObj, setOtpObj, otpObj , conformpass , setComformpass ,instanceDataUseContext , setInstanceDataUseContext ,
-          showGroupShareIcon , setShowGroupShareIcon , instanceForGroup , setInstanceForGroup , sideBarRender , setSideBarRender , getAllGroupsStore , setGetAllGroupsStore}}
+          showGroupShareIcon , setShowGroupShareIcon , instanceForGroup , setInstanceForGroup , sideBarRender , setSideBarRender , getAllGroupsStore , setGetAllGroupsStore ,
+          getAllMessagesStore , setGetAllMessagesStore , getAllContactStore , setGetAllContactStore}}
       >
         {children}
       </UserContext.Provider>

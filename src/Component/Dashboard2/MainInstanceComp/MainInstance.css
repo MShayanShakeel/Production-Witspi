@@ -148,16 +148,14 @@
       var(--color-primary)
     );
     padding: 1vh 2vh;
-    width: 80%;
-    margin-top: 6px !important;
-    margin-bottom: 1px !important;
+    width: 90%;
     border-radius: 20px;
     border: none;
     color: white;
     box-shadow: 0 0 15px #3ab19d;
     transition: box-shadow 0.3s ease;
-    margin-top: -2px;
-    margin-bottom: -10px;
+    /* margin-top: -2px;
+    margin-bottom: -10px; */
   }
   .images-card-section {
     height: 11vh !important;
@@ -374,8 +372,7 @@
     var(--color-primary)
   );
   padding: 1vh 1vh;
-  width: 80%;
-  margin-left: 1.3rem;
+  width: 90%;
   border-radius: 20px;
   border: none;
   color: white;

@@ -41,6 +41,7 @@ import GetALLInstances from "./helpers/GetApis/GetALLInstance";
 import GetSingleGroup from "./Component/GroupsComp2/GetSingleGroup";
 import Layout from "./Layout";
 import { UserHeader } from "./helpers/Userheader";
+import { GetAllMessagesData } from "./helpers/GetApis/GetAllMessage";
 
 const App = () => {
   // const dispatch = useDispatch();
@@ -51,6 +52,8 @@ const App = () => {
     instanceDataUseContext,
     setInstanceDataUseContext,
     setGetAllGroupsStore,
+    setGetAllMessagesStore,
+    setGetAllContactStore,
   } = useUserdetails();
   const userId = userDetails?._id;
   console.log(userId);
@@ -107,6 +110,48 @@ const App = () => {
   }, [userDetails]);
 
 
+  // GET MESSAGES 
+  useEffect(() => {
+    const fetchMessageData = async () => {
+      try {
+        const msgData = await GetAllMessagesData(userId);
+        if (Array.isArray(msgData?.chatHistory)) {
+          setGetAllMessagesStore(msgData.chatHistory);
+          console.log(msgData.chatHistory , "shayannnnn")
+        } else {
+          console.log("Invalid chatHistory format");
+        }
+      } catch (error) {
+        console.log("Error fetching message data:", error);
+      }
+    };
+
+    fetchMessageData();
+  }, [userId]);
+
+
+   //GET ALL CONTACT'S API
+useEffect(() => {
+   const handleGetAllContact = async () => {
+    try {
+      const url = `https://watspi-dev-aa7972875395.herokuapp.com/api/contact/getAllContacts/${userDetails?._id}`;
+      if (userDetails?._id) {
+        const response = await axios.get(url, {
+          headers: UserHeader,
+        });
+        console.log(response, "response");
+        const resData = decryption(response?.data?.data);
+        setGetAllContactStore(resData?.message);
+      }
+    } catch (error) {
+      console.error(
+        "Error fetching data at GetAllContacts:",
+        decryption(error.response.data.data)
+      );
+    }
+  };
+  handleGetAllContact();
+} , [userDetails?._id]);
 
 
   // END GET INSTANCE API

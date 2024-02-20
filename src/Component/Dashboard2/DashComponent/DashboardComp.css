@@ -1,6 +1,3 @@
-.item0 {
-  grid-area: header;
-}
 .item1 {
   grid-area: header11;
 }
@@ -16,17 +13,20 @@
 .item5 {
   grid-area: footer;
 }
+/* .item6 {
+  grid-area: hayannn;
+} */
 
 .grid-container {
   width: 100%;
   height: 95vh;
   display: grid;
   grid-template-areas:
-    "menu menu           main main    right right  "
+    "menu menu           main main        right right  "
     "menu menu           main main        right right"
-    "header11 header11   footer footer    right right";
+    "header11 header11   footer footer    right right"
+    "hayannn hayannn hayannn hayannn hayannn hayannn";
   gap: 2%;
-  /* background-color: #2196F3; */
   padding: 10px;
   margin-top: 0.5rem;
 }
@@ -34,6 +34,9 @@
 .grid-container > div {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
+}
+.padding-left {
+  padding: 0.5rem 0.5rem;
 }
 
 /* DASHBOARD MESSAGES SECTION CODE START   */
@@ -54,14 +57,14 @@
   margin: auto;
   padding: 1rem 1rem 0.5rem 1rem;
 }
-.deshbord-header-profile{
+.deshbord-header-profile {
   width: 100% !important;
   display: flex;
-  margin: 0px 4vh 0px 2vh;
+  /* margin: 0px 2vh 0px 1vh; */
 }
-.Good-evening{
+.Good-evening {
   text-align: start;
-    color: rgb(56, 140, 140);
+  color: rgb(56, 140, 140);
 }
 
 .profile-table-head {
@@ -72,8 +75,20 @@
 .profile-table-head tr td {
   max-width: 50px !important;
 }
+.message-section-width {
+  width: 300px;
+}
 
 /* DASHBOARD MESSAGES SECTION CODE END */
+
+.image-container {
+  transition: transform 0.3s ease;
+  border-radius: 20px;
+}
+
+.image-container:hover {
+  transform: scale(1.1); /* Increase the scale on hover */
+}
 
 /* GRAPH SECTION CODE END */
 .Graph-main-class {
@@ -86,12 +101,18 @@
 }
 
 .My-group-heading {
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem 0.5rem 0px 0.5rem;
 }
 .deshbord-groupdata-td {
   padding: 0.3rem 0.1rem;
 }
-
+.deshbord-goup-contact-all {
+  display: flex;
+  justify-content: space-between;
+  background-color: gray;
+  margin-bottom: 3px;
+  border-radius: 10px;
+}
 /* For Webkit based browsers like Chrome and Safari */
 .deshbord-Group-contant::-webkit-scrollbar {
   width: 5px;
@@ -105,7 +126,7 @@
 
 /* For the thumb (the draggable handle) */
 .deshbord-Group-contant::-webkit-scrollbar-thumb {
-  background: #388C8C; /* Color of the thumb */
+  background: #388c8c; /* Color of the thumb */
   border-radius: 1px; /* Radius of the thumb */
 }
 
@@ -114,10 +135,19 @@
   background: transparent; /* Background color of the corner */
 }
 
-.table-padding-2rem{
+.table-padding-2rem {
   padding: 1px !important;
+  color: black;
+  width: auto;
+  margin: 0.5rem 0.5rem;
+  /* min-width: 9rem !important; */
+  overflow: hidden;
 }
 
+.add-instance-div {
+  display: flex;
+  justify-content: center;
+}
 /* .deshbord-Group-contant{
   overflow-x: auto;
   overflow-y: auto;
@@ -126,3 +156,84 @@
 .deshbord-groupdata-td{
   min-width: 2rem !important;
 } */
+
+/* card css */
+.message-main-card {
+  max-height: 30vh;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+.message-singel-card {
+  background-color: white;
+  border-radius: 10px;
+  /* width: %; */
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+.single-message-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: start !important;
+}
+.Profile-span-name {
+  display: flex;
+  text-align: left;
+  margin-left: 8px;
+  /* color: #388c8c; */
+  /* font-weight: 800 !important; */
+  width: 99%;
+}
+.deshbord-span-group-description {
+  font-size: 11px;
+  color: #388c8c;
+}
+
+.dashbord-instance-height-50 {
+  height: 48vh !important;
+  width: 18.75rem;
+}
+
+/* CONTACT COMPONENT CSS  */
+/* .dashbord-contact-main {
+
+} */
+.deshbord-contact-second {
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+}
+.deshboard-single-contact {
+  display: flex;
+  flex-direction: column;
+  max-height: 30vh;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: start !important;
+  gap: 0.3rem;
+  padding: 0.5rem 0.5rem 0px 0.5rem;
+  /* margin-left: 0.5rem; */
+}
+.deshboard-single-contact span {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 2px !important;
+  border-radius: 15px;
+  background-color: gray;
+}
+.centered-span {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100%; /* Ensures vertical centering */
+}
+.deshbord-contact-profile-picture {
+  align-items: center;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.deshbord-contact-profile-picture p {
+  font-size: small;
+}

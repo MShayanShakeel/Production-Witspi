@@ -91,6 +91,7 @@ function DashboardInstances() {
         const msgData = await GetAllMessagesData(userId);
         if (Array.isArray(msgData?.chatHistory)) {
           setMessageData(msgData.chatHistory);
+          console.log(msgData.chatHistory , "shayannnnn")
         } else {
           console.log("Invalid chatHistory format");
         }
@@ -116,7 +117,7 @@ function DashboardInstances() {
 
   //     fetchData();
   // }, [userId]);
-
+console.log(messageData , "messageData")
   return (
     <>
       <div
