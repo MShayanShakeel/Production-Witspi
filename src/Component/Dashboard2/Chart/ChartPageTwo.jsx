@@ -83,7 +83,7 @@ function ChartPageTwo() {
         options={options}
         series={series}
         type="area"
-        height={120}
+        height={100}
         width={"100%"}
         style={{
           transform: "translateX(-1%) translateY(1px)",

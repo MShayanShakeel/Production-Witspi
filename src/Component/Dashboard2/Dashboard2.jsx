@@ -58,7 +58,7 @@ function Dashboard2() {
                 <DashBoardComponent />
               </Col>
               <Col sm="12" md="4" lg="4" xl="4" xxl="4">
-                <MainInstance />
+                {/* <MainInstance /> */}
               </Col>
             </>
           ) : (
@@ -66,12 +66,12 @@ function Dashboard2() {
               <Col sm="12" md="2" lg="2" xl="2" xxl="2">
                 {/* <Sidebar2 /> */}
               </Col>
-              <Col sm="12" md="6" lg="6" xl="6" xxl="6">
+              <Col sm="12" md="10" lg="10" xl="10" xxl="10">
                 <DashBoardComponent />
               </Col>
-              <Col sm="12" md="4" lg="4" xl="4" xxl="4" className="temp-css-for-dashborad-2">
+              {/* <Col sm="12" md="4" lg="4" xl="4" xxl="4" className="temp-css-for-dashborad-2">
                 <MainInstance />
-              </Col>
+              </Col> */}
             </>
           )}
         </Row>

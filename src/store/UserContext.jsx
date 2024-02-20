@@ -6,6 +6,7 @@
   const UserProvider = ({ children }) => {
     const [userDetails, setUserDetails] = useState(null);
     const [instanceDataUseContext , setInstanceDataUseContext] = useState(null);
+    const [getAllGroupsStore , setGetAllGroupsStore] = useState([]);
     const [instanceForGroup , setInstanceForGroup ] = useState("");
     const [showGroupShareIcon , setShowGroupShareIcon ] = useState(false);
     const [sideBarRender , setSideBarRender] = useState(false);
@@ -29,7 +30,7 @@
     return (
       <UserContext.Provider
         value={{ userDetails, setUserDetails, updateOtpObj, setOtpObj, otpObj , conformpass , setComformpass ,instanceDataUseContext , setInstanceDataUseContext ,
-          showGroupShareIcon , setShowGroupShareIcon , instanceForGroup , setInstanceForGroup , sideBarRender , setSideBarRender}}
+          showGroupShareIcon , setShowGroupShareIcon , instanceForGroup , setInstanceForGroup , sideBarRender , setSideBarRender , getAllGroupsStore , setGetAllGroupsStore}}
       >
         {children}
       </UserContext.Provider>

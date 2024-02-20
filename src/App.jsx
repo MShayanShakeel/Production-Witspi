@@ -40,6 +40,7 @@ import { useUserdetails } from "./store/UserContext";
 import GetALLInstances from "./helpers/GetApis/GetALLInstance";
 import GetSingleGroup from "./Component/GroupsComp2/GetSingleGroup";
 import Layout from "./Layout";
+import { UserHeader } from "./helpers/Userheader";
 
 const App = () => {
   // const dispatch = useDispatch();
@@ -49,6 +50,7 @@ const App = () => {
     setUserDetails,
     instanceDataUseContext,
     setInstanceDataUseContext,
+    setGetAllGroupsStore,
   } = useUserdetails();
   const userId = userDetails?._id;
   console.log(userId);
@@ -78,6 +80,34 @@ const App = () => {
 
     fetchData();
   }, [userDetails]);
+
+
+   //Get All Groups
+
+   useEffect(() => {
+    let url = `https://watspi-dev-aa7972875395.herokuapp.com/api/contact/getAllGroups/${userId}`;
+    if (userId) {
+      axios
+        .get(url, {
+          headers: UserHeader,
+        })
+        .then(async (response) => {
+          console.log(response, "responsedata");
+          const resData = await decryption(response?.data?.data);
+          setGetAllGroupsStore(resData?.message);
+          console.log(resData?.message, "resData");
+        })
+        .catch((error) => {
+          console.error(
+            "Error fetching data at GetAllGroups:",
+            decryption(error?.response?.data?.data)
+          );
+        });
+    }
+  }, [userDetails]);
+
+
+
 
   // END GET INSTANCE API
 

@@ -1,30 +1,128 @@
-.Dashboard-Comp-card {
-  margin-right: auto;
-  margin-left: auto !important;
-  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
-  height: 95vh;
-  margin-top: 1rem;
-  border-radius: 20px;
-  backdrop-filter: blur(1px);
-  background-color: #FFFFFF;
-  padding: 10px 32px 10px 40px;
-  text-align: center;
-  border: 2px solid #f5f1ff;
+.item0 {
+  grid-area: header;
 }
-.Dashboard-Comp-card::-webkit-scrollbar {
-  height: 1px; /* Set the width of the scrollbar */
+.item1 {
+  grid-area: header11;
+}
+.item2 {
+  grid-area: menu;
+}
+.item3 {
+  grid-area: main;
+}
+.item4 {
+  grid-area: right;
+}
+.item5 {
+  grid-area: footer;
 }
 
-.Dashboard-Comp-card::-webkit-scrollbar-thumb {
-  background-color: #FFFFFF; /* Set the color of the scrollbar thumb */
+.grid-container {
+  width: 100%;
+  height: 95vh;
+  display: grid;
+  grid-template-areas:
+    "menu menu           main main    right right  "
+    "menu menu           main main        right right"
+    "header11 header11   footer footer    right right";
+  gap: 2%;
+  /* background-color: #2196F3; */
+  padding: 10px;
+  margin-top: 0.5rem;
 }
-.Dashboard-display{
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+}
+
+/* DASHBOARD MESSAGES SECTION CODE START   */
+
+.menu-main-class {
+  width: 100%;
+  height: 55vh;
+}
+.deshbord-profile-picture {
+  display: flex;
+  justify-content: start;
   align-items: center;
+}
+
+.Profile-Upper-section {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 0 0 0;
+  margin: auto;
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+.deshbord-header-profile{
+  width: 100% !important;
+  display: flex;
+  margin: 0px 4vh 0px 2vh;
+}
+.Good-evening{
+  text-align: start;
+    color: rgb(56, 140, 140);
 }
 
-.Dashboard-Comp-card-left{
-  margin-left: -1% !important;
+.profile-table-head {
+  max-width: 10rem;
+  overflow-x: scroll;
+  overflow-y: scroll;
 }
+.profile-table-head tr td {
+  max-width: 50px !important;
+}
+
+/* DASHBOARD MESSAGES SECTION CODE END */
+
+/* GRAPH SECTION CODE END */
+.Graph-main-class {
+  width: 100%;
+  height: 37vh;
+}
+
+.instance-main-class {
+  height: 95vh;
+}
+
+.My-group-heading {
+  padding: 0.5rem 0.5rem;
+}
+.deshbord-groupdata-td {
+  padding: 0.3rem 0.1rem;
+}
+
+/* For Webkit based browsers like Chrome and Safari */
+.deshbord-Group-contant::-webkit-scrollbar {
+  width: 5px;
+  height: 5px; /* Width of the scrollbar */
+}
+
+/* For the track (the area along which the thumb moves) */
+.deshbord-Group-contant::-webkit-scrollbar-track {
+  background: transparent; /* Background color of the track */
+}
+
+/* For the thumb (the draggable handle) */
+.deshbord-Group-contant::-webkit-scrollbar-thumb {
+  background: #388C8C; /* Color of the thumb */
+  border-radius: 1px; /* Radius of the thumb */
+}
+
+/* For the corner where vertical and horizontal scrollbars meet */
+.deshbord-Group-contant::-webkit-scrollbar-corner {
+  background: transparent; /* Background color of the corner */
+}
+
+.table-padding-2rem{
+  padding: 1px !important;
+}
+
+/* .deshbord-Group-contant{
+  overflow-x: auto;
+  overflow-y: auto;
+  width: 100% !important;
+}
+.deshbord-groupdata-td{
+  min-width: 2rem !important;
+} */
