@@ -13,13 +13,10 @@
 .item5 {
   grid-area: footer;
 }
-/* .item6 {
-  grid-area: hayannn;
-} */
 
 .grid-container {
-  width: 100%;
   height: 95vh;
+  /* width: 20% !important; */
   display: grid;
   grid-template-areas:
     "menu menu           main main        right right  "
@@ -30,20 +27,48 @@
   padding: 10px;
   margin-top: 0.5rem;
 }
+@media screen and (min-width : 1000px) and (max-width : 1450px) {
+  .grid-container {
+    max-width: 20% !important;
+  }
+}
 
 .grid-container > div {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
 }
+.all-div-widths {
+  box-shadow: 1px 1px #add8e6;
+  border: 2px solid #f5f1ff;
+  /* max-width: 96%; */
+}
 .padding-left {
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem 0.5rem 0rem 0.5rem;
+}
+.bottom-fix-height-container {
+  max-height: 38vh;
+}
+/* DASHBOARD MESSAGES SECTION CODE START   */
+.deshbord-profile-Main-digit {
+  padding: 10px;
+  width: 40px;
+  height: 40px !important;
+  background: #c6c4e8;
+  border-radius: 20px;
+  margin: 5px 5px 0px 5px;
+  border: solid 1px #c6c4e8;
 }
 
-/* DASHBOARD MESSAGES SECTION CODE START   */
-
 .menu-main-class {
-  width: 100%;
-  height: 55vh;
+  height: 54vh;
+}
+.Profile-messags-padding-2rem {
+  padding: 1px !important;
+  color: black;
+  width: auto;
+  margin: 0.2rem 0.2rem;
+  /* min-width: 9rem !important; */
+  overflow: hidden;
 }
 .deshbord-profile-picture {
   display: flex;
@@ -60,6 +85,8 @@
 .deshbord-header-profile {
   width: 100% !important;
   display: flex;
+  background-color: #c6c4e8;
+  border-radius: 10px;
   /* margin: 0px 2vh 0px 1vh; */
 }
 .Good-evening {
@@ -82,26 +109,34 @@
 /* DASHBOARD MESSAGES SECTION CODE END */
 
 .image-container {
-  transition: transform 0.3s ease;
+  overflow: hidden; /* Ensure the image doesn't overflow the container */
   border-radius: 20px;
 }
 
-.image-container:hover {
-  transform: scale(1.1); /* Increase the scale on hover */
+.image-container img {
+  transition: transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1); /* Adjust timing for slow motion */
+}
+
+.image-container:hover img {
+  transform: scale(1.1); /* Zoom in on hover */
 }
 
 /* GRAPH SECTION CODE END */
 .Graph-main-class {
   width: 100%;
-  height: 37vh;
+  height: 38vh;
 }
 
 .instance-main-class {
   height: 95vh;
 }
+/* GROUP CSSS */
 
 .My-group-heading {
-  padding: 0.5rem 0.5rem 0px 0.5rem;
+  padding: 0rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .deshbord-groupdata-td {
   padding: 0.3rem 0.1rem;
@@ -109,30 +144,13 @@
 .deshbord-goup-contact-all {
   display: flex;
   justify-content: space-between;
-  background-color: gray;
-  margin-bottom: 3px;
+  background-color: #fff4e4;
+  box-shadow: 1px 1px lightblue;
+  margin-bottom: 0.5rem;
   border-radius: 10px;
 }
-/* For Webkit based browsers like Chrome and Safari */
-.deshbord-Group-contant::-webkit-scrollbar {
-  width: 5px;
-  height: 5px; /* Width of the scrollbar */
-}
-
-/* For the track (the area along which the thumb moves) */
-.deshbord-Group-contant::-webkit-scrollbar-track {
-  background: transparent; /* Background color of the track */
-}
-
-/* For the thumb (the draggable handle) */
-.deshbord-Group-contant::-webkit-scrollbar-thumb {
-  background: #388c8c; /* Color of the thumb */
-  border-radius: 1px; /* Radius of the thumb */
-}
-
-/* For the corner where vertical and horizontal scrollbars meet */
-.deshbord-Group-contant::-webkit-scrollbar-corner {
-  background: transparent; /* Background color of the corner */
+.deshbord-Group-contant {
+  max-height: 20px !important;
 }
 
 .table-padding-2rem {
@@ -148,14 +166,6 @@
   display: flex;
   justify-content: center;
 }
-/* .deshbord-Group-contant{
-  overflow-x: auto;
-  overflow-y: auto;
-  width: 100% !important;
-}
-.deshbord-groupdata-td{
-  min-width: 2rem !important;
-} */
 
 /* card css */
 .message-main-card {
@@ -163,34 +173,42 @@
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 .message-singel-card {
-  background-color: white;
   border-radius: 10px;
   /* width: %; */
   margin: auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
   transition: 0.3s;
 }
 .single-message-contact {
   display: flex;
-  flex-direction: column;
+  background-color: #fff4e4;
+  box-shadow: 1px 1px lightblue;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  /* flex-direction: column; */
   justify-content: start !important;
 }
 .Profile-span-name {
   display: flex;
   text-align: left;
-  margin-left: 8px;
+  margin-left: 2px;
+  align-items: center;
   /* color: #388c8c; */
   /* font-weight: 800 !important; */
   width: 99%;
 }
 .deshbord-span-group-description {
   font-size: 11px;
-  color: #388c8c;
+  color: #848484;
 }
 
 .dashbord-instance-height-50 {
   height: 48vh !important;
-  width: 18.75rem;
+  width: 18.75rem !important;
+    margin-left: 0.4rem;
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
 }
 
 /* CONTACT COMPONENT CSS  */
@@ -204,21 +222,28 @@
 }
 .deshboard-single-contact {
   display: flex;
-  flex-direction: column;
-  max-height: 30vh;
+  max-height: 17vh;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: start !important;
+  gap: 0.3rem;
+  padding: 0.5rem;
+  margin: auto;
+  /* display: flex;
+  max-height: 17vh;
   flex-wrap: wrap;
   box-sizing: border-box;
   justify-content: start !important;
   gap: 0.3rem;
   padding: 0.5rem 0.5rem 0px 0.5rem;
-  /* margin-left: 0.5rem; */
+  margin: auto; */
 }
 .deshboard-single-contact span {
   width: 50px;
   height: 50px;
   margin-bottom: 2px !important;
   border-radius: 15px;
-  background-color: gray;
+  background-color: #c6c4e8;
 }
 .centered-span {
   display: flex;
@@ -236,4 +261,8 @@
 }
 .deshbord-contact-profile-picture p {
   font-size: small;
+}
+
+.broadcast-main-div-height {
+  height: 54vh !important;
 }

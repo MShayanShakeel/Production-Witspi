@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 function ChartPageTwo() {
   const [options] = useState({
     chart: {
-      height: 200,
+      height: "100%",
       opacity: 1,
       type: "area",
       toolbar: {
@@ -79,22 +79,42 @@ function ChartPageTwo() {
   ]);
   return (
     <>
-      <Chart
-        options={options}
-        series={series}
-        type="area"
-        height={100}
-        width={"114%"}
-        style={{
-          transform: "translateX(-1%) translateY(1px)",
-          minHeight: "185px",
-          padding: "1rem 0px 0px",
-          boxShadow: "0 7px 8px #1111111e",
-          borderRadius: "10px",
-          margin: "2rem 0",
-          overflow: "hidden",
-        }}
-      />
+      <div style={{ borderRadius: "30px" , width : "100%" }}>
+        {/* <Chart
+          options={options}
+          series={series}
+          type="area"
+          height={130}
+          width={"113%"}
+          borderRadius={"30px"}
+          style={{
+            transform: "translateX(-1%) translateY(1px)",
+            minHeight: "350px",
+            padding: "1rem 0px 0px 4px",
+            margin: "2rem 0",
+            borderRadius: "10px",
+            overflow: "hidden",
+          }}
+        /> */}
+        <Chart
+          options={options}
+          series={series}
+          type="area"
+          height={"100%"}
+          width={"113%"}
+          borderRadius={"30px"}
+          style={{
+            transform: "translateX(-1%) translateY(1px)",
+            minHeight: "350px",
+            // padding: "1rem 0px 0px 4px",
+            // margin: "2rem 0",
+            borderRadius: "10px",
+            overflow: "hidden",
+            display: "flex",
+            flexDirection: "column-reverse", 
+          }}
+        />
+      </div>
     </>
   );
 }

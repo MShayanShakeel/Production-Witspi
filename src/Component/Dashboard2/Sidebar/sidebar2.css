@@ -89,13 +89,13 @@
 }
 @media screen and (min-width: 1300px) and (max-width: 1400px) {
   .Sidebar-Comp-card {
-    padding: 1.4rem;
+    padding: 1.8rem;
     margin-top: 2.3vh;
   }
 }
 @media screen and (min-width: 1200px) and (max-width: 1300px) {
   .Sidebar-Comp-card {
-    padding: 1.2rem;
+    padding: 1.4rem;
   }
   .shayan-sidebar-temp {
     /* max-width: 25vh; */
