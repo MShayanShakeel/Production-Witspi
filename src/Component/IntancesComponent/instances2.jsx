@@ -432,7 +432,7 @@ function Instances2() {
                               instance?._id
                             );
                           }}
-                          style={{ textDecoration: "none" }}
+                          style={{ textDecoration: "none" , marginLeft : "2rem" }}
                         >
                           <div className="All-single-card">
                             {instance?.keepOnlineStatus ? (

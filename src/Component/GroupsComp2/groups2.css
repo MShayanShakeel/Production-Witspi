@@ -17,7 +17,7 @@
   overflow-x: auto;
 }
 .saprat-line-in-gourps{
-width: 2900%; 
+width: 1800%; 
 
 }
 
@@ -115,6 +115,7 @@ abbr.custom-tooltip {
   max-height: 60vh !important;
   overflow-x: auto;
   overflow-y: auto;
+  margin-left: 1rem;
   /* display: flex;
   flex-direction: column;
   justify-content: center;
@@ -197,6 +198,7 @@ abbr.custom-tooltip {
 }
 .Group-header-for-laptop{
   width: 83%;
+  margin-right: 0.2rem;
 }
 
 @media screen and (min-width : 600px) and (max-width : 2200px) {

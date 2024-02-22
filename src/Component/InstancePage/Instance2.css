@@ -9,7 +9,7 @@
   backdrop-filter: blur(1px);
   background-color: #FFFFFF;
   border-radius: 20px;
-  margin: 5px 0;
+  margin: 5px 10px 0px 10px;
   border: 2px solid #f5f1ff;
 }
 .input-instance-new {
@@ -63,7 +63,7 @@ th {
 
 .clr_white_pd {
   color: #388c8c;
-  padding: 20px 0px 15px 0px;
+  padding: 20px 0px 15px 10px;
   font-weight: 600;
 }
 .clr1_white {

@@ -79,13 +79,13 @@ function ChartPageTwo() {
   ]);
   return (
     <>
-      <div style={{ borderRadius: "30px" , width : "100%" }}>
-        {/* <Chart
+    <div className="" style={{display : "flex" , justifyContent : "center"}}>
+        <Chart
           options={options}
           series={series}
           type="area"
           height={130}
-          width={"113%"}
+          width={"140%"}
           borderRadius={"30px"}
           style={{
             transform: "translateX(-1%) translateY(1px)",
@@ -95,26 +95,8 @@ function ChartPageTwo() {
             borderRadius: "10px",
             overflow: "hidden",
           }}
-        /> */}
-        <Chart
-          options={options}
-          series={series}
-          type="area"
-          height={"100%"}
-          width={"113%"}
-          borderRadius={"30px"}
-          style={{
-            transform: "translateX(-1%) translateY(1px)",
-            minHeight: "350px",
-            // padding: "1rem 0px 0px 4px",
-            // margin: "2rem 0",
-            borderRadius: "10px",
-            overflow: "hidden",
-            display: "flex",
-            flexDirection: "column-reverse", 
-          }}
         />
-      </div>
+    </div>
     </>
   );
 }

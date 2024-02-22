@@ -1,11 +1,14 @@
 .backdrop-filter {
   backdrop-filter: blur(1px);
-  box-shadow: 1.5px 1.5px lightblue;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  transition: box-shadow 0.3s ease;
+  border: none;
   background-color: #ffffff;
   border: 2px solid #f5f1ff;
   border-radius: 20px;
   margin: 10px;
 }
+
 
 #label-file-upload2 {
   display: flex;
@@ -42,7 +45,7 @@
   background-color: #ffffff;
 }
 .input-field-setting2::placeholder {
-  color: #3AADA3 !important;
+  color: #3aada3 !important;
 }
 .input-field-setting2:focus {
   border: 1px solid #848484;

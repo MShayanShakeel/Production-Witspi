@@ -26,6 +26,9 @@
   min-width: 31% !important;
   margin-right: auto;
 }
+.broad-cast-contact-1{
+  max-height: 22.5vh !important;
+}
 .Backdrop-myContact2-broadcast{
   /* margin-left: -0.5rem !important; */
   width: 100%;
@@ -89,9 +92,7 @@
   max-width: 39vh !important;
 }
 }
-.Create-BroadCast-text-h4{
-  /* padding: 1vh 1vh 1vh 0px !important; */
-}
+
 .Add-new-btn_createbd {
   background: #3ab19d;
   /* box-shadow:  2px 2px lightblue; */
@@ -273,4 +274,8 @@
   .broadCast-edit2{
     margin-left: 20vh;
   }
+}
+
+.fixed-height-Broadcast-Contact{
+  max-height: 20.5vh !important;
 }

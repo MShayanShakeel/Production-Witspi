@@ -27,23 +27,26 @@
   padding: 10px;
   margin-top: 0.5rem;
 }
-@media screen and (min-width : 1000px) and (max-width : 1450px) {
-  .grid-container {
-    max-width: 20% !important;
-  }
-}
+/* @media screen and (min-width : 1000px) and (max-width : 1350px) {
+    .grid-container {
+      max-width: 20% !important;
+    }
+  } */
 
 .grid-container > div {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
 }
+
+
 .all-div-widths {
-  box-shadow: 1px 1px #add8e6;
-  border: 2px solid #f5f1ff;
-  /* max-width: 96%; */
+  /* box-shadow: 0 0 15px #3ab19d; */
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  transition: box-shadow 0.3s ease;
+  border: none;
 }
 .padding-left {
-  padding: 0.5rem 0.5rem 0rem 0.5rem;
+  padding: 1rem 1rem 0.5rem 1rem;
 }
 .bottom-fix-height-container {
   max-height: 38vh;
@@ -127,11 +130,28 @@
   height: 38vh;
 }
 
+/* INSTANNCE ALL CSSS  START */
 .instance-main-class {
   height: 95vh;
 }
-/* GROUP CSSS */
+.Deshbord-instance-main-div {
+  height: 57vh;
+}
+.add-instance-div {
+  display: flex;
+  justify-content: center;
+}
+.dashbord-instance-height-50 {
+  height: 42vh !important;
+  /* width: 18.75rem !important; */
+  margin-left: 0.4rem;
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+}
+/* INSTANNCE ALL CSSS END  */
 
+/* GROUP CSSS */
 .My-group-heading {
   padding: 0rem 0.5rem;
   display: flex;
@@ -145,7 +165,8 @@
   display: flex;
   justify-content: space-between;
   background-color: #fff4e4;
-  box-shadow: 1px 1px lightblue;
+  box-shadow: 0 0 5px #3ab19d;
+  transition: box-shadow 0.3s ease;
   margin-bottom: 0.5rem;
   border-radius: 10px;
 }
@@ -154,23 +175,29 @@
 }
 
 .table-padding-2rem {
+  max-height: 8vh;
   padding: 1px !important;
   color: black;
   width: auto;
   margin: 0.5rem 0.5rem;
-  /* min-width: 9rem !important; */
   overflow: hidden;
-}
-
-.add-instance-div {
-  display: flex;
-  justify-content: center;
 }
 
 /* card css */
 .message-main-card {
-  max-height: 30vh;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+@media screen and (min-width: 1100px) and (max-width: 1200px) {
+  .message-main-card {
+    max-height: 27vh;
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1100px) {
+  .message-main-card {
+    max-height: 27vh;
+    overflow: hidden;
+  }
 }
 .message-singel-card {
   border-radius: 10px;
@@ -182,7 +209,8 @@
 .single-message-contact {
   display: flex;
   background-color: #fff4e4;
-  box-shadow: 1px 1px lightblue;
+  box-shadow: 0 0 5px #3ab19d;
+  transition: box-shadow 0.3s ease;
   border-radius: 10px;
   margin-bottom: 0.5rem;
   /* flex-direction: column; */
@@ -202,19 +230,7 @@
   color: #848484;
 }
 
-.dashbord-instance-height-50 {
-  height: 48vh !important;
-  width: 18.75rem !important;
-    margin-left: 0.4rem;
-    display: flex;
-    justify-content: center !important;
-    align-items: center;
-}
-
 /* CONTACT COMPONENT CSS  */
-/* .dashbord-contact-main {
-
-} */
 .deshbord-contact-second {
   display: flex;
   /* justify-content: center;
@@ -222,7 +238,8 @@
 }
 .deshboard-single-contact {
   display: flex;
-  max-height: 17vh;
+  max-height: 30vh !important; 
+  overflow: hidden;
   flex-wrap: wrap;
   box-sizing: border-box;
   justify-content: start !important;
@@ -253,7 +270,7 @@
 }
 .deshbord-contact-profile-picture {
   align-items: center;
-  width: 5rem;
+  width: 4rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

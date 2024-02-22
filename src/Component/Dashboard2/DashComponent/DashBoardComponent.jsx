@@ -48,13 +48,29 @@ const DashBoardComponent = () => {
         return "";
       }
       if (text.length > maxChar) {
-        return text.slice(0, maxChar) + ".";
+        return text.slice(0, maxChar) + "...";
       }
       return text;
     };
     const shoortedtext = shorttext(text, maxChar);
 
     return <div>{shoortedtext}</div>;
+  };
+
+  const MinText = ({ text, minChar }) => {
+    const minimizeText = (text, minChar) => {
+      if (typeof text !== "string") {
+        return "";
+      }
+      if (text.length > minChar) {
+        return text.slice(0, minChar) + "";
+      }
+      return text;
+    };
+
+    const minimizedText = minimizeText(text, minChar);
+
+    return <div>{minimizedText}</div>;
   };
 
   useEffect(() => {
@@ -74,30 +90,73 @@ const DashBoardComponent = () => {
   return (
     <>
       <Row>
-        <Col md={12} lg={12} xl={12} xxl={12}>
+        <Col md={12} lg={12} xl={12} xxl={12} style={{}}>
           <div className="grid-container">
+            {/* DASHBOARD MESSAGES SECTION CODE START  */}
             <div className="item1 Graph-main-class all-div-widths">
-              <div>
-                <div
-                  className="profile-messages-section message-section-width"
-                  style={{ margin: "2rem" }}
-                >
-                  <h3
+              <>
+                <div className="profile-messages-section">
+                  <h4
                     style={{
                       textAlign: "start",
-                      margin: "10px 0 10px 5px",
+                      margin: "0.5rem 5px 0px 1rem",
                       color: "#388c8c",
-                      marginBottom: "1.5rem",
+                      marginBottom: "0.5rem",
                     }}
                   >
-                    My Revenue Graph
-                  </h3>
+                    Messages
+                  </h4>
                 </div>
-              </div>
-              <ChartPageTwo />
+                <div
+                  className="message-main-card"
+                  style={{
+                    marginLeft: "0.5rem",
+                  }}
+                >
+                  <div className="message-singel-card">
+                    {loader && (
+                      <Loader top={50} height={50} width={50} left={50} />
+                    )}
+                    {getAllMessagesStore?.length === 0 ? (
+                      <p>Groups Not Available</p>
+                    ) : (
+                      getAllMessagesStore?.slice(0, 2).map((message) => (
+                        <div className="single-message-contact">
+                          <span
+                            className="deshbord-profile-Main-digit centered-span"
+                            style={{ color: "black" }}
+                          >
+                            <MinText text={userDetails?.name} minChar={1} />
+                          </span>
+                          <div className="Profile-messags-padding-2rem">
+                            <div className="Profile-messags-padding-2rem">
+                              <span
+                                className="Profile-span-name"
+                                style={{ color: "#388c8c" }}
+                              >
+                                {message.chatId?.firstName}
+                              </span>
+                              <span
+                                className="Profile-span-name"
+                                style={{ width: "95%" }}
+                              >
+                                <ShortText
+                                  text={message.message}
+                                  maxChar={64}
+                                />
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
+              </>
             </div>
+            {/* DASHBOARD MESSAGES SECTION CODE END  */}
 
-            {/* DASHBOARD MESSAGES SECTION CODE START  */}
+            {/* DASHBOARD GRAPH SECTION CODE START  */}
             <div className="item2 menu-main-class all-div-widths">
               <div className="row">
                 <div className="profile-section col-12">
@@ -121,7 +180,8 @@ const DashBoardComponent = () => {
                             icon={faBell}
                             style={{
                               fontSize: "3.5vh",
-                              color: "rgb(255 252 252 / 100%)",
+                              margin: "2px 5px 0px 2px",
+                              color: "#388C8C",
                             }}
                           />
                         </div>
@@ -148,7 +208,7 @@ const DashBoardComponent = () => {
                           className="deshbord-profile-Main-digit centered-span"
                           style={{ color: "black" }}
                         >
-                          <ShortText text={userDetails?.name} maxChar={1} />
+                          <MinText text={userDetails?.name} minChar={1} />
                         </span>
 
                         <span className="Profile-span">
@@ -156,7 +216,8 @@ const DashBoardComponent = () => {
                             style={{
                               display: "flex",
                               alignItems: " center",
-                              marginTop: "5px",
+                              marginTop: "8px",
+                              marginLeft: "5px",
                               color: "black",
                             }}
                           >
@@ -168,110 +229,11 @@ const DashBoardComponent = () => {
                   </div>
                 </div>
                 <div>
-                  <div className="profile-messages-section">
-                    <h4
-                      style={{
-                        textAlign: "start",
-                        margin: "8px 5px",
-                        color: "#388c8c",
-                        marginBottom: "0.5rem",
-                      }}
-                    >
-                      Messages
-                    </h4>
-                  </div>
-                  {/* <div className="message-main-card">
-                    <div className="message-singel-card">
-                      <div
-                        className="deshbord-header-profile"
-                        style={{ width: "11vh" }}
-                      >
-                        {getAllMessagesStore
-                          .slice(0, 2)
-                          .map((message, index) => (
-                            <>
-                              <span className="deshbord-profile-Main-digit centered-span">
-                                <ShortText
-                                  text={message.chatId?.firstName}
-                                  maxChar={1}
-                                />
-                              </span>
-                              <div
-                                className="single-message-contact"
-                                key={index}
-                              >
-                                <span
-                                  className="Profile-span-name"
-                                  style={{ color: "#388c8c" }}
-                                >
-                                  {message.chatId?.firstName}
-                                </span>
-                                <span
-                                  className="Profile-span-name"
-                                  style={{ width: "95%" }}
-                                >
-                                  <ShortText
-                                    text={message.message}
-                                    maxChar={64}
-                                  />
-                                </span>
-                              </div>
-                            </>
-                          ))}
-                      </div>
-                    </div>
-                  </div> */}
-                  <div
-                    className="message-main-card"
-                    style={{
-                      // width: "22rem",
-                      marginLeft: "0.5rem",
-                      padding: "0.5rem 0.5rem 0.5rem 0.5rem",
-                    }}
-                  >
-                    <div className="message-singel-card">
-                      {loader && (
-                        <Loader top={50} height={50} width={50} left={50} />
-                      )}
-                      {getAllMessagesStore?.length === 0 ? (
-                        <p>Groups Not Available</p>
-                      ) : (
-                        getAllMessagesStore?.slice(0, 2).map((message) => (
-                          <div className="single-message-contact">
-                            <span
-                              className="deshbord-profile-Main-digit centered-span"
-                              style={{ color: "black" }}
-                            >
-                              <ShortText text={userDetails?.name} maxChar={1} />
-                            </span>
-                            <div className="Profile-messags-padding-2rem">
-                              <div className="Profile-messags-padding-2rem">
-                                <span
-                                  className="Profile-span-name"
-                                  style={{ color: "#388c8c" }}
-                                >
-                                  {message.chatId?.firstName}
-                                </span>
-                                <span
-                                  className="Profile-span-name"
-                                  style={{ width: "95%" }}
-                                >
-                                  <ShortText
-                                    text={message.message}
-                                    maxChar={64}
-                                  />
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        ))
-                      )}
-                    </div>
-                  </div>
+                  <ChartPageTwo />
                 </div>
               </div>
             </div>
-            {/* DASHBOARD MESSAGES SECTION CODE END  */}
+            {/* DASHBOARD GRAPH SECTION CODE END  */}
 
             {/* BROADCAST SECTION CODE START  */}
             <div className="item3 broadcast-main-div-height all-div-widths">
@@ -280,11 +242,11 @@ const DashBoardComponent = () => {
                 style={{
                   backgroundImage: `url(${BGbroadcast})`,
                   width: "100%",
-                  height: "160px",
+                  height: "20vh",
                   overflow: "hidden",
                   backgroundRepeat: "no-repeat",
                   backgroundSize: "cover",
-                  borderRadius: "20px",
+                  borderRadius: "8px",
                 }}
               >
                 <img
@@ -299,41 +261,10 @@ const DashBoardComponent = () => {
                 />
               </div>
               <div className="message-main-card">
-                {/* <div className="message-singel-card">
-                  <div
-                    className="deshbord-header-profile"
-                    style={{ width: "11vh" }}
-                  >
-                    {getAllMessagesStore.slice(0, 2).map((message, index) => (
-                      <>
-                        <span className="deshbord-profile-Main-digit centered-span">
-                          <ShortText
-                            text={message.chatId?.firstName}
-                            maxChar={1}
-                          />
-                        </span>
-                        <div className="single-message-contact" key={index}>
-                          <span
-                            className="Profile-span-name"
-                            style={{ color: "#388c8c" }}
-                          >
-                            {message.chatId?.firstName}
-                          </span>
-                          <span
-                            className="Profile-span-name"
-                            style={{ width: "95%" }}
-                          >
-                            <ShortText text={message.message} maxChar={64} />
-                          </span>
-                        </div>
-                      </>
-                    ))}
-                  </div>
-                </div> */}
                 <div
                   className="deshbord-Group-contant"
                   style={{
-                    width: "22rem",
+                    // width: "22rem",
                     padding: "0.5rem 0.5rem 0.5rem 0.5rem",
                   }}
                 >
@@ -353,9 +284,14 @@ const DashBoardComponent = () => {
                             key={group.groupId}
                           >
                             <div className="table-padding-2rem">
-                              {group.groupName
-                                ? group.groupName
-                                : group.groupId.groupName}
+                              <ShortText
+                                text={
+                                  group.groupName
+                                    ? group.groupName
+                                    : group.groupId.groupName
+                                }
+                                maxChar={12}
+                              />
                               <span className="deshbord-span-group-description">
                                 <ShortText
                                   text={
@@ -391,17 +327,14 @@ const DashBoardComponent = () => {
             </div>
             {/* BROADCAST SECTION CODE END */}
 
-            {/* INSTANCE SECTION CODE START */}
+            {/* INSTANCE SECTION CODE START & CONTACT*/}
             <div className="item4  instance-main-class all-div-widths">
-              <div className="">
+              <div className="Deshbord-instance-main-div">
                 <div className="">
                   <div className="Profile-Upper-section">
                     <h4 className="Good-evening">My Instances</h4>
                   </div>
                 </div>
-                {/* ) : ( */}
-                <p></p>
-                {/* )} */}
                 <div className="add-instance-div">
                   <button
                     className="Add-new-Dash-btn"
@@ -436,7 +369,11 @@ const DashBoardComponent = () => {
                               instance?._id
                             );
                           }}
-                          style={{ textDecoration: "none" }}
+                          style={{
+                            textDecoration: "none",
+                            marginLeft: "6px",
+                            marginRight: "1px",
+                          }}
                         >
                           <div className="All-single-card Dashboard-instance-cls">
                             {instance?.keepOnlineStatus ? (
@@ -471,30 +408,32 @@ const DashBoardComponent = () => {
                       ))}
                   </div>
                 </div>
+              </div>
 
-                <div className="dashbord-contact-main">
-                  <h5 className="Good-evening padding-left">My Contact</h5>
-                  <div className="deshbord-contact-second">
-                    <div className="deshboard-single-contact">
-                      <>
-                        {getAllContactStore.slice(0, 6).map((allcon) => (
-                          <div
-                            className="deshbord-contact-profile-picture"
-                            key={allcon.id}
-                          >
-                            <span className="centered-span">
-                              <ShortText text={allcon?.firstName} maxChar={1} />
-                            </span>
-                            <p>{allcon?.firstName}</p>
-                          </div>
-                        ))}
-                      </>
-                    </div>
+              {/* CONTACT COMPONENT CODE START HERE */}
+              <div className="dashbord-contact-main">
+                <h3 className="Good-evening padding-left">My Contact</h3>
+                <div className="deshbord-contact-second">
+                  <div className="deshboard-single-contact">
+                    <>
+                      {getAllContactStore.slice(0, 9).map((allcon) => (
+                        <div
+                          className="deshbord-contact-profile-picture"
+                          key={allcon.id}
+                        >
+                          <span className="centered-span">
+                            <MinText text={allcon?.firstName} minChar={1} />
+                          </span>
+                          <p>{allcon?.firstName}</p>
+                        </div>
+                      ))}
+                    </>
                   </div>
                 </div>
               </div>
+              {/* CONTACT COMPONE T CODE END HEREE */}
             </div>
-            {/* INSTANCE MESSAGES SECTION CODE END */}
+            {/* INSTANCE MESSAGES & CONTACT* SECTION CODE END */}
 
             {/* GROUP SECTION CODE START */}
             <div className="item5 bottom-fix-height-container all-div-widths">
@@ -537,9 +476,14 @@ const DashBoardComponent = () => {
                             key={group.groupId}
                           >
                             <div className="table-padding-2rem">
-                              {group.groupName
-                                ? group.groupName
-                                : group.groupId.groupName}
+                              <ShortText
+                                text={
+                                  group.groupName
+                                    ? group.groupName
+                                    : group.groupId.groupName
+                                }
+                                maxChar={12}
+                              />
                               <span className="deshbord-span-group-description">
                                 <ShortText
                                   text={
