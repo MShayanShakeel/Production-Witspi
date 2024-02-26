@@ -84,7 +84,8 @@ function Groups2() {
   const [fatchGroupId, setFatchGroupId] = useState("");
   // FATCH GROUP ID WHEN CLICK ON GROUP ICCON
 
-  const { userDetails, instanceDataUseContext , sideBarRender} = useUserdetails();
+  const { userDetails, instanceDataUseContext, sideBarRender } =
+    useUserdetails();
   const [selectedGroup, setSelectedGroup] = useState({});
   const userId = userDetails?._id;
 
@@ -256,7 +257,7 @@ function Groups2() {
   const handleShareGroupUser = async () => {
     try {
       const data = {
-        userId : userId ,
+        userId: userId,
         groupId: selectedGroup?._id,
         contactId: selectedGroup?.contactList,
         role: selectedRole,
@@ -694,351 +695,375 @@ function Groups2() {
           className="group-row-main-css"
           style={{ padding: "3vh 4.5vh 3vh 0" }}
         >
-          {
-            sideBarRender ? (
-          <>
-          <Col sm="1" lg="1" xl="1" xxl="1">
-            {/* <Sidebar2 /> */}
-          </Col>
-          <Col className="Group-header-for-laptop">
-            {headerShowInLaptop ? <LaptopHeader /> : <p></p>}
-            <Row>
-              <Col
-                sm="11"
-                md="11"
-                lg="11"
-                xl="11"
-                xxl="11"
-                className="Backdrop-myContact2-group-1 Backdrop-myContact2"
-              >
-                <div>
-                  <Row
-                    className="mob-row width-100"
-                    style={{
-                      marginBottom: "20px",
-                      marginLeft: "10px",
-                      width: "99%",
-                    }}
+          {sideBarRender ? (
+            <>
+              <Col sm="1" lg="1" xl="1" xxl="1">
+                {/* <Sidebar2 /> */}
+              </Col>
+              <Col className="Group-header-for-laptop">
+                {headerShowInLaptop ? <LaptopHeader /> : <p></p>}
+                <Row>
+                  <Col
+                    sm="11"
+                    md="11"
+                    lg="11"
+                    xl="11"
+                    xxl="11"
+                    className="Backdrop-myContact2-group-1 Backdrop-myContact2"
                   >
-                    {/* <Col> */}
-                    <div className="group2_head_main">
-                      <h1
-                        className="Grouups-H1"
+                    <div>
+                      <Row
+                        className="mob-row width-100"
                         style={{
-                          padding: "10px",
-                          paddingTop: "20px",
-                          fontWeight: "600",
-                          color: "#3ab19d",
+                          marginBottom: "20px",
+                          marginLeft: "10px",
+                          width: "99%",
                         }}
                       >
-                        Groups
-                      </h1>
-                      <span
-                        className="search-groups2-main"
-                        style={{ display: "flex" }}
-                      >
-                        <span className="search-groups2">
-                          <FaSearch className="search-icon2" />
-                          <input
-                            type="text"
-                            placeholder="Search..."
-                            className="grp-2 text-gray focus:text-gray"
-                          />
-                        </span>
-                        <span>
-                          <a href="/creategroup2">
-                            <button type="button" className="grps2-btn">
-                              Create Group
-                            </button>
-                          </a>
-                        </span>
-                      </span>
-                    </div>
-                    {/* </Col> */}
-                  </Row>
-                  <Row
-                    className="mob-row width-100"
-                    style={{
-                      marginBottom: "20px",
-                      marginLeft: "10px",
-                      width: "99%",
-                    }}
-                  >
-                    <Col>
-                      <div className="groups_2_maincontainer">
-                        <thead
-                          style={{ marginBottom: "0", tableLayout: "fixed" }}
-                        >
-                          <tr
-                            style={{ background : "white" }}
-                            className="head-gp-tr tr-Groups"
+                        {/* <Col> */}
+                        <div className="group2_head_main">
+                          <h1
+                            className="Grouups-H1"
+                            style={{
+                              padding: "10px",
+                              paddingTop: "20px",
+                              fontWeight: "600",
+                              color: "#3ab19d",
+                            }}
                           >
-                            <th className="td-Sno ">No</th>
-                            <th className="Group-get-table-contant">
-                              Group Name
-                            </th>
-                            <th className="Group-get-table-contant">
-                              Group Members
-                            </th>
-                            <th className="Group-get-table-contant">
-                              Description
-                            </th>
-                            <th className="Group-get-table-contant">Status</th>
-                            <th className="Group-get-table-contant">Actions</th>
-                          </tr>
-                        </thead>
+                            Groups
+                          </h1>
+                          <span
+                            className="search-groups2-main"
+                            style={{ display: "flex" }}
+                          >
+                            <span className="search-groups2">
+                              <FaSearch className="search-icon2" />
+                              <input
+                                type="text"
+                                placeholder="Search..."
+                                className="grp-2 text-gray focus:text-gray"
+                              />
+                            </span>
+                            <span>
+                              <a href="/creategroup2">
+                                <button type="button" className="grps2-btn">
+                                  Create Group
+                                </button>
+                              </a>
+                            </span>
+                          </span>
+                        </div>
+                        {/* </Col> */}
+                      </Row>
+                      <Row
+                        className="mob-row width-100"
+                        style={{
+                          marginBottom: "20px",
+                          marginLeft: "10px",
+                          width: "99%",
+                        }}
+                      >
+                        <Col>
+                          <div className="groups_2_maincontainer">
+                            <thead
+                              style={{
+                                marginBottom: "0",
+                                tableLayout: "fixed",
+                              }}
+                            >
+                              <tr
+                                style={{ background: "white" }}
+                                className="head-gp-tr tr-Groups"
+                              >
+                                <th className="td-Sno ">No</th>
+                                <th className="Group-get-table-contant">
+                                  Group Name
+                                </th>
+                                <th className="Group-get-table-contant">
+                                  Group Members
+                                </th>
+                                <th className="Group-get-table-contant">
+                                  Description
+                                </th>
+                                <th className="Group-get-table-contant">
+                                  Status
+                                </th>
+                                <th className="Group-get-table-contant">
+                                  Actions
+                                </th>
+                              </tr>
+                            </thead>
 
-                        
-                        <table>
-                          {loader && (
-                            <Loader top={50} height={50} width={50} left={50} />
-                          )}
-                          {allGroups?.length === 0 ? (
-                            <p>Groups Not Available</p>
-                          ) : (
-                            allGroups?.map((group, index) => (
-                              <>
-                                <tr
-                                  key={index}
-                                  style={{
-                                    marginBottom: "0",
-                                    tableLayout: "fixed",
-                                    color: "white",
-                                  }}
-                                >
-                                  <td className="td-Sno">{index + 1}</td>
-                                  <td className="Group-get-table-contant">
-                                    {group.groupName
-                                      ? group?.groupName
-                                      : group?.groupId?.groupName}
-                                  </td>
-                                  <td className="Group-get-table-contant">
-                                    <div className="fixed-height-5rem">
-                                      {group?.contactList?.map(
-                                        (contact, contactIndex) => (
-                                          <li key={contactIndex}>
-                                            <ShortText
-                                              text={contact?.firstName}
-                                              maxChar={23}
-                                            />
-                                          </li>
-                                        )
-                                      )}
-                                    </div>
-                                  </td>
-                                  <td className="Group-get-table-contant">
-                                    <ShortText
-                                      text={
-                                        group?.description
-                                          ? group?.description
-                                          : group?.groupId?.description
-                                      }
-                                      maxChar={23}
-                                    />
-                                  </td>
-                                  <td className="Group-get-table-contant">
-                                    {group?.status
-                                      ? group?.status
-                                      : group?.groupId?.status}
-                                    <abbr
-                                      className="custom-tooltip"
-                                      title={group?.sharedID?.role}
+                            <table>
+                              {loader && (
+                                <Loader
+                                  top={50}
+                                  height={50}
+                                  width={50}
+                                  left={50}
+                                />
+                              )}
+                              {allGroups?.length === 0 ? (
+                                <p>Groups Not Available</p>
+                              ) : (
+                                allGroups?.map((group, index) => (
+                                  <>
+                                    <tr
+                                      key={index}
+                                      style={{
+                                        marginBottom: "0",
+                                        tableLayout: "fixed",
+                                        color: "white",
+                                      }}
                                     >
-                                      {group?.sharedID?.role ? (
-                                        <>
-                                          <IoIosCloudDone
-                                            style={{
-                                              marginLeft: "2rem",
-                                              fontSize: "1.5rem",
-                                              cursor: "pointer",
-                                            }}
-                                          />
-                                          {/* {group?.groupOwner} */}
-                                        </>
-                                      ) : null}
-                                    </abbr>
-
-                                    {console.log(group?.groupOwner , "ownerrrrr")}
-                                  </td>
-                                  <td className="Group-get-table-contant">
-                                    <FontAwesomeIcon
-                                      icon={faEdit}
-                                      style={{
-                                        cursor: "pointer",
-                                        marginRight: "15px",
-                                      }}
-                                      onClick={() =>
-                                        openUpdateModal({
-                                          ...group,
-                                          groupId: group?._id,
-                                        })
-                                      }
-                                    />
-                                    <FontAwesomeIcon
-                                      icon={faTrash}
-                                      style={{
-                                        cursor: "pointer",
-                                        marginRight: "15px",
-                                      }}
-                                      onClick={() => {
-                                        setGroupsIdToDelete(group?._id);
-                                        setShowDeleteModal(true);
-                                      }}
-                                    />
-                                    <FontAwesomeIcon
-                                      icon={faShare}
-                                      style={{
-                                        cursor: "pointer",
-                                        marginRight: "15px",
-                                      }}
-                                      onClick={() => {
-                                        setSelectedGroup(group);
-                                        setsearchEmailModel(true);
-                                      }}
-                                      // onClick={() => handleShareGroup()}
-                                    />
-                                    <RiMessage2Fill
-                                      style={{
-                                        cursor: "pointer",
-                                        marginRight: "15px",
-                                      }}
-                                      onClick={() => {
-                                        setShowSendMessageModal(true);
-                                        setFatchGroupId(group?._id);
-                                      }}
-                                    />
-                                    {/* <Link to="/getsinglegroup"> */}
-                                    <GrView
-                                      onClick={() => {
-                                        {
-                                          // navigate
-                                          if (group?._id) {
-                                            handleGroupClick(
-                                              group.groupId?._id || group?._id
-                                            );
-                                          } else {
-                                            console.error(
-                                              "Group ID not available"
-                                            );
+                                      <td className="td-Sno">{index + 1}</td>
+                                      <td className="Group-get-table-contant">
+                                        {group.groupName
+                                          ? group?.groupName
+                                          : group?.groupId?.groupName}
+                                      </td>
+                                      <td className="Group-get-table-contant">
+                                        <div className="fixed-height-5rem">
+                                          {group?.contactList?.map(
+                                            (contact, contactIndex) => (
+                                              <li key={contactIndex}>
+                                                <ShortText
+                                                  text={contact?.firstName}
+                                                  maxChar={23}
+                                                />
+                                              </li>
+                                            )
+                                          )}
+                                        </div>
+                                      </td>
+                                      <td className="Group-get-table-contant">
+                                        <ShortText
+                                          text={
+                                            group?.description
+                                              ? group?.description
+                                              : group?.groupId?.description
                                           }
-                                        }
-                                      }}
-                                    />
-                                    {/* </Link> */}
-                                  </td>
-                                </tr>
-                                <hr
-                                  className="saprat-line-in-gourps"
-                                  color="white"
-                                  size="4"
-                                ></hr>
-                              </>
-                            ))
-                          )}
-                        </table>
-                        {/* </div> */}
-                      </div>
-                    </Col>
-                  </Row>
-                </div>
+                                          maxChar={23}
+                                        />
+                                      </td>
+                                      <td className="Group-get-table-contant">
+                                        {group?.status
+                                          ? group?.status
+                                          : group?.groupId?.status}
+                                        <abbr
+                                          className="custom-tooltip"
+                                          title={group?.sharedID?.role}
+                                        >
+                                          {group?.sharedID?.role ? (
+                                            <>
+                                              <IoIosCloudDone
+                                                style={{
+                                                  marginLeft: "2rem",
+                                                  fontSize: "1.5rem",
+                                                  cursor: "pointer",
+                                                }}
+                                              />
+                                              {/* {group?.groupOwner} */}
+                                            </>
+                                          ) : null}
+                                        </abbr>
+
+                                        {console.log(
+                                          group?.groupOwner,
+                                          "ownerrrrr"
+                                        )}
+                                      </td>
+                                      <td className="Group-get-table-contant">
+                                        <FontAwesomeIcon
+                                          icon={faEdit}
+                                          style={{
+                                            cursor: "pointer",
+                                            marginRight: "15px",
+                                          }}
+                                          onClick={() =>
+                                            openUpdateModal({
+                                              ...group,
+                                              groupId: group?._id,
+                                            })
+                                          }
+                                        />
+                                        <FontAwesomeIcon
+                                          icon={faTrash}
+                                          style={{
+                                            cursor: "pointer",
+                                            marginRight: "15px",
+                                          }}
+                                          onClick={() => {
+                                            setGroupsIdToDelete(group?._id);
+                                            setShowDeleteModal(true);
+                                          }}
+                                        />
+                                        <FontAwesomeIcon
+                                          icon={faShare}
+                                          style={{
+                                            cursor: "pointer",
+                                            marginRight: "15px",
+                                          }}
+                                          onClick={() => {
+                                            setSelectedGroup(group);
+                                            setsearchEmailModel(true);
+                                          }}
+                                          // onClick={() => handleShareGroup()}
+                                        />
+                                        <RiMessage2Fill
+                                          style={{
+                                            cursor: "pointer",
+                                            marginRight: "15px",
+                                          }}
+                                          onClick={() => {
+                                            setShowSendMessageModal(true);
+                                            setFatchGroupId(group?._id);
+                                          }}
+                                        />
+                                        {/* <Link to="/getsinglegroup"> */}
+                                        <GrView
+                                          style={{
+                                            cursor: "pointer",
+                                          }}
+                                          onClick={() => {
+                                            {
+                                              // navigate
+                                              if (group?._id) {
+                                                handleGroupClick(
+                                                  group.groupId?._id ||
+                                                    group?._id
+                                                );
+                                              } else {
+                                                console.error(
+                                                  "Group ID not available"
+                                                );
+                                              }
+                                            }
+                                          }}
+                                        />
+                                        {/* </Link> */}
+                                      </td>
+                                    </tr>
+                                    <hr
+                                      className="saprat-line-in-gourps"
+                                      color="white"
+                                      size="4"
+                                    ></hr>
+                                  </>
+                                ))
+                              )}
+                            </table>
+                            {/* </div> */}
+                          </div>
+                        </Col>
+                      </Row>
+                    </div>
+                  </Col>
+                </Row>
               </Col>
-            </Row>
-          </Col>
-          </>
+            </>
           ) : (
             <>
-            <Col sm="2" lg="2" xl="2" xxl="2">
-              {/* <Sidebar2 /> */}
-            </Col>
-            <Col className="Group-header-for-laptop">
-              {headerShowInLaptop ? <LaptopHeader /> : <p></p>}
-              <Row>
-                <Col
-                  sm="10"
-                  md="9"
-                  lg="9"
-                  xl="9"
-                  xxl="9"
-                  className="Backdrop-myContact2-group-1 Backdrop-myContact2"
-                >
-                  <div>
-                    <Row
-                      className="mob-row width-100"
-                      style={{
-                        marginBottom: "20px",
-                        marginLeft: "10px",
-                        width: "99%",
-                      }}
-                    >
-                      {/* <Col> */}
-                      <div className="group2_head_main">
-                        <h1
-                          className="Grouups-H1"
-                          style={{
-                            padding: "10px",
-                            paddingTop: "20px",
-                            fontWeight: "600",
-                            color: "#3ab19d",
-                          }}
-                        >
-                          Groups
-                        </h1>
-                        <span
-                          className="search-groups2-main"
-                          style={{ display: "flex" }}
-                        >
-                          <span className="search-groups2">
-                            <FaSearch className="search-icon2" />
-                            <input
-                              type="text"
-                              placeholder="Search..."
-                              className="grp-input-search2 text-gray focus:text-gray"
-                            />
-                          </span>
-                          <span>
-                            <a href="/creategroup2">
-                              <button type="button" className="grps2-btn">
-                                Create Group
-                              </button>
-                            </a>
-                          </span>
-                        </span>
-                      </div>
-                      {/* </Col> */}
-                    </Row>
-                    <Row
-                      className="mob-row width-100"
-                      style={{
-                        marginBottom: "20px",
-                        marginLeft: "10px",
-                        width: "99%",
-                      }}
-                    >
-                      <Col>
-                        <div className="groups_2_maincontainer">
-                          <thead
-                            style={{ marginBottom: "0", tableLayout: "fixed" }}
+              <Col sm="2" lg="2" xl="2" xxl="2">
+                {/* <Sidebar2 /> */}
+              </Col>
+              <Col className="Group-header-for-laptop">
+                {headerShowInLaptop ? <LaptopHeader /> : <p></p>}
+                <Row>
+                  <Col
+                    sm="10"
+                    md="9"
+                    lg="9"
+                    xl="9"
+                    xxl="9"
+                    className="Backdrop-myContact2-group-1 Backdrop-myContact2"
+                  >
+                    <div>
+                      <Row
+                        className="mob-row width-100"
+                        style={{
+                          marginBottom: "20px",
+                          marginLeft: "10px",
+                          width: "99%",
+                        }}
+                      >
+                        {/* <Col> */}
+                        <div className="group2_head_main">
+                          <h1
+                            className="Grouups-H1"
+                            style={{
+                              padding: "10px",
+                              paddingTop: "20px",
+                              fontWeight: "600",
+                              color: "#3ab19d",
+                            }}
                           >
-                            <tr
-                              style={{ background : "white" }}
-                              className="head-gp-tr tr-Groups"
+                            Groups
+                          </h1>
+                          <span
+                            className="search-groups2-main"
+                            style={{ display: "flex" }}
+                          >
+                            <span className="search-groups2">
+                              <FaSearch className="search-icon2" />
+                              <input
+                                type="text"
+                                placeholder="Search..."
+                                className="grp-input-search2 text-gray focus:text-gray"
+                              />
+                            </span>
+                            <span>
+                              <a href="/creategroup2">
+                                <button type="button" className="grps2-btn">
+                                  Create Group
+                                </button>
+                              </a>
+                            </span>
+                          </span>
+                        </div>
+                        {/* </Col> */}
+                      </Row>
+                      <Row
+                        className="mob-row width-100"
+                        style={{
+                          marginBottom: "20px",
+                          marginLeft: "10px",
+                          width: "99%",
+                        }}
+                      >
+                        <Col>
+                          <div className="groups_2_maincontainer">
+                            <thead
+                              style={{
+                                marginBottom: "0",
+                                tableLayout: "fixed",
+                              }}
                             >
-                              <th className="td-Sno ">No</th>
-                              <th className="Group-get-table-contant">
-                                Group Name
-                              </th>
-                              <th className="Group-get-table-contant">
-                                Group Members
-                              </th>
-                              <th className="Group-get-table-contant">
-                                Description
-                              </th>
-                              <th className="Group-get-table-contant">Status</th>
-                              <th className="Group-get-table-contant">Actions</th>
-                            </tr>
-                          </thead>
-  
-                          {/* {(!allGroups || allGroups?.length === 0) && shareGroupDataStore.length === 0 ? (
+                              <tr
+                                style={{ background: "white" }}
+                                className="head-gp-tr tr-Groups"
+                              >
+                                <th className="td-Sno ">No</th>
+                                <th className="Group-get-table-contant">
+                                  Group Name
+                                </th>
+                                <th className="Group-get-table-contant">
+                                  Group Members
+                                </th>
+                                <th className="Group-get-table-contant">
+                                  Description
+                                </th>
+                                <th className="Group-get-table-contant">
+                                  Status
+                                </th>
+                                <th className="Group-get-table-contant">
+                                  Actions
+                                </th>
+                              </tr>
+                            </thead>
+
+                            {/* {(!allGroups || allGroups?.length === 0) && shareGroupDataStore.length === 0 ? (
                           <p>Groups Not Fonud</p>
                         ) : (
                           allGroups?.map((group, index) => (
@@ -1120,163 +1145,175 @@ function Groups2() {
                             </tr>
                           ))
                         )} */}
-                          <table>
-                            {loader && (
-                              <Loader top={50} height={50} width={50} left={50} />
-                            )}
-                            {allGroups?.length === 0 ? (
-                              <p>Groups Not Available</p>
-                            ) : (
-                              allGroups?.map((group, index) => (
-                                <>
-                                  <tr
-                                    key={index}
-                                    style={{
-                                      marginBottom: "0",
-                                      tableLayout: "fixed",
-                                      color: "white",
-                                    }}
-                                  >
-                                    <td className="td-Sno">{index + 1}</td>
-                                    <td className="Group-get-table-contant">
-                                      {group.groupName
-                                        ? group?.groupName
-                                        : group?.groupId?.groupName}
-                                    </td>
-                                    <td className="Group-get-table-contant">
-                                      <div className="fixed-height-5rem">
-                                        {group?.contactList?.map(
-                                          (contact, contactIndex) => (
-                                            <li key={contactIndex}>
-                                              <ShortText
-                                                text={contact?.firstName}
-                                                maxChar={23}
-                                              />
-                                            </li>
-                                          )
-                                        )}
-  
-                                        {console.log(group, "check group")}
-                                      </div>
-                                    </td>
-                                    <td className="Group-get-table-contant">
-                                      <ShortText
-                                        text={
-                                          group?.description
-                                            ? group?.description
-                                            : group?.groupId?.description
-                                        }
-                                        maxChar={23}
-                                      />
-                                    </td>
-                                    <td className="Group-get-table-contant">
-                                      {group?.status
-                                        ? group?.status
-                                        : group?.groupId?.status}
-                                      <abbr
-                                        className="custom-tooltip"
-                                        title={group?.sharedID?.role}
-                                      >
-                                        {group?.sharedID?.role ? (
-                                          <>
-                                            <IoIosCloudDone
-                                              style={{
-                                                marginLeft: "2rem",
-                                                fontSize: "1.5rem",
-                                                cursor: "pointer",
-                                              }}
-                                            />
-                                            {/* {group?.groupOwner} */}
-                                          </>
-                                        ) : null}
-                                      </abbr>
-  
-                                      {console.log(group?.groupOwner , "ownerrrrr")}
-                                    </td>
-                                    <td className="Group-get-table-contant">
-                                      <FontAwesomeIcon
-                                        icon={faEdit}
-                                        style={{
-                                          cursor: "pointer",
-                                          marginRight: "15px",
-                                        }}
-                                        onClick={() =>
-                                          openUpdateModal({
-                                            ...group,
-                                            groupId: group?._id,
-                                          })
-                                        }
-                                      />
-                                      <FontAwesomeIcon
-                                        icon={faTrash}
-                                        style={{
-                                          cursor: "pointer",
-                                          marginRight: "15px",
-                                        }}
-                                        onClick={() => {
-                                          setGroupsIdToDelete(group?._id);
-                                          setShowDeleteModal(true);
-                                        }}
-                                      />
-                                      <FontAwesomeIcon
-                                        icon={faShare}
-                                        style={{
-                                          cursor: "pointer",
-                                          marginRight: "15px",
-                                        }}
-                                        onClick={() => {
-                                          setSelectedGroup(group);
-                                          setsearchEmailModel(true);
-                                        }}
-                                        // onClick={() => handleShareGroup()}
-                                      />
-                                      <RiMessage2Fill
-                                        style={{
-                                          cursor: "pointer",
-                                          marginRight: "15px",
-                                        }}
-                                        onClick={() => {
-                                          setShowSendMessageModal(true);
-                                          setFatchGroupId(group?._id);
-                                        }}
-                                      />
-                                      {/* <Link to="/getsinglegroup"> */}
-                                      <GrView
-                                        onClick={() => {
-                                          {
-                                            // navigate
-                                            if (group?._id) {
-                                              handleGroupClick(
-                                                group.groupId?._id || group?._id
-                                              );
-                                            } else {
-                                              console.error(
-                                                "Group ID not available"
-                                              );
-                                            }
+                            <table>
+                              {loader && (
+                                <Loader
+                                  top={50}
+                                  height={50}
+                                  width={50}
+                                  left={50}
+                                />
+                              )}
+                              {allGroups?.length === 0 ? (
+                                <p>Groups Not Available</p>
+                              ) : (
+                                allGroups?.map((group, index) => (
+                                  <>
+                                    <tr
+                                      key={index}
+                                      style={{
+                                        marginBottom: "0",
+                                        tableLayout: "fixed",
+                                        color: "white",
+                                      }}
+                                    >
+                                      <td className="td-Sno">{index + 1}</td>
+                                      <td className="Group-get-table-contant">
+                                        {group.groupName
+                                          ? group?.groupName
+                                          : group?.groupId?.groupName}
+                                      </td>
+                                      <td className="Group-get-table-contant">
+                                        <div className="fixed-height-5rem">
+                                          {group?.contactList?.map(
+                                            (contact, contactIndex) => (
+                                              <li key={contactIndex}>
+                                                <ShortText
+                                                  text={contact?.firstName}
+                                                  maxChar={23}
+                                                />
+                                              </li>
+                                            )
+                                          )}
+
+                                          {console.log(group, "check group")}
+                                        </div>
+                                      </td>
+                                      <td className="Group-get-table-contant">
+                                        <ShortText
+                                          text={
+                                            group?.description
+                                              ? group?.description
+                                              : group?.groupId?.description
                                           }
-                                        }}
-                                      />
-                                      {/* </Link> */}
-                                    </td>
-                                  </tr>
-                                  <hr
-                                    className="saprat-line-in-gourps"
-                                    color="white"
-                                    size="4"
-                                  ></hr>
-                                </>
-                              ))
-                            )}
-                          </table>
-                          {/* </div> */}
-                        </div>
-                      </Col>
-                    </Row>
-                  </div>
-                </Col>
-              </Row>
-            </Col>
+                                          maxChar={23}
+                                        />
+                                      </td>
+                                      <td className="Group-get-table-contant">
+                                        {group?.status
+                                          ? group?.status
+                                          : group?.groupId?.status}
+                                        <abbr
+                                          className="custom-tooltip"
+                                          title={group?.sharedID?.role}
+                                        >
+                                          {group?.sharedID?.role ? (
+                                            <>
+                                              <IoIosCloudDone
+                                                style={{
+                                                  marginLeft: "2rem",
+                                                  fontSize: "1.5rem",
+                                                  cursor: "pointer",
+                                                }}
+                                              />
+                                              {/* {group?.groupOwner} */}
+                                            </>
+                                          ) : null}
+                                        </abbr>
+
+                                        {console.log(
+                                          group?.groupOwner,
+                                          "ownerrrrr"
+                                        )}
+                                      </td>
+                                      <td className="Group-get-table-contant">
+                                        <FontAwesomeIcon
+                                          icon={faEdit}
+                                          style={{
+                                            cursor: "pointer",
+                                            marginRight: "15px",
+                                          }}
+                                          onClick={() =>
+                                            openUpdateModal({
+                                              ...group,
+                                              groupId: group?._id,
+                                            })
+                                          }
+                                        />
+                                        <FontAwesomeIcon
+                                          icon={faTrash}
+                                          style={{
+                                            cursor: "pointer",
+                                            marginRight: "15px",
+                                          }}
+                                          onClick={() => {
+                                            setGroupsIdToDelete(group?._id);
+                                            setShowDeleteModal(true);
+                                          }}
+                                        />
+                                        <FontAwesomeIcon
+                                          icon={faShare}
+                                          style={{
+                                            cursor: "pointer",
+                                            marginRight: "15px",
+                                          }}
+                                          onClick={() => {
+                                            setSelectedGroup(group);
+                                            setsearchEmailModel(true);
+                                          }}
+                                          // onClick={() => handleShareGroup()}
+                                        />
+                                        <RiMessage2Fill
+                                          style={{
+                                            cursor: "pointer",
+                                            marginRight: "15px",
+                                          }}
+                                          onClick={() => {
+                                            setShowSendMessageModal(true);
+                                            setFatchGroupId(group?._id);
+                                          }}
+                                        />
+                                        {/* <Link to="/getsinglegroup"> */}
+                                        <GrView
+                                          style={{
+                                            cursor: "pointer",
+                                          }}
+                                          onClick={() => {
+                                            {
+                                              // navigate
+                                              if (group?._id) {
+                                                handleGroupClick(
+                                                  group.groupId?._id ||
+                                                    group?._id
+                                                );
+                                              } else {
+                                                console.error(
+                                                  "Group ID not available"
+                                                );
+                                              }
+                                            }
+                                          }}
+                                        />
+                                        {/* </Link> */}
+                                      </td>
+                                    </tr>
+                                    <hr
+                                      className="saprat-line-in-gourps"
+                                      color="white"
+                                      size="4"
+                                    ></hr>
+                                  </>
+                                ))
+                              )}
+                            </table>
+                            {/* </div> */}
+                          </div>
+                        </Col>
+                      </Row>
+                    </div>
+                  </Col>
+                </Row>
+              </Col>
             </>
           )}
         </Row>

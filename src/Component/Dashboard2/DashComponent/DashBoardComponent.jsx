@@ -96,7 +96,7 @@ const DashBoardComponent = () => {
             <div className="item1 Graph-main-class all-div-widths">
               <>
                 <div className="profile-messages-section">
-                  <h4
+                  <h3
                     style={{
                       textAlign: "start",
                       margin: "0.5rem 5px 0px 1rem",
@@ -105,7 +105,7 @@ const DashBoardComponent = () => {
                     }}
                   >
                     Messages
-                  </h4>
+                  </h3>
                 </div>
                 <div
                   className="message-main-card"
@@ -142,7 +142,7 @@ const DashBoardComponent = () => {
                               >
                                 <ShortText
                                   text={message.message}
-                                  maxChar={64}
+                                  maxChar={94}
                                 />
                               </span>
                             </div>
@@ -416,7 +416,7 @@ const DashBoardComponent = () => {
                 <div className="deshbord-contact-second">
                   <div className="deshboard-single-contact">
                     <>
-                      {getAllContactStore.slice(0, 9).map((allcon) => (
+                      {getAllContactStore.slice(0, 8).map((allcon) => (
                         <div
                           className="deshbord-contact-profile-picture"
                           key={allcon.id}

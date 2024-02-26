@@ -21,7 +21,7 @@ import axios from "axios";
 import Dashboard2 from "./Component/Dashboard2/Dashboard2";
 import Sidebar2 from "./Component/Dashboard2/Sidebar/Sidebar2";
 import Instances2 from "./Component/IntancesComponent/instances2";
-import { decryption } from "./helpers/encryptionDecryption";
+import { decryption, encryption } from "./helpers/encryptionDecryption";
 import InstancePage2 from "./Component/InstancePage/InstancePage2";
 import Setting2 from "./Component/SettingPage/Setting2";
 import MyContact2 from "./Component/MyContactPage/MyContact2";
@@ -108,6 +108,8 @@ const App = () => {
         });
     }
   }, [userDetails]);
+
+
 
 
   // GET MESSAGES 

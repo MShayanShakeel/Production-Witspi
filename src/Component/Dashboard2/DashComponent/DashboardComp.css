@@ -66,7 +66,7 @@
   height: 54vh;
 }
 .Profile-messags-padding-2rem {
-  padding: 1px !important;
+  padding: 0.5px !important;
   color: black;
   width: auto;
   margin: 0.2rem 0.2rem;
@@ -135,7 +135,7 @@
   height: 95vh;
 }
 .Deshbord-instance-main-div {
-  height: 57vh;
+  height: 55.5vh;
 }
 .add-instance-div {
   display: flex;
@@ -185,7 +185,7 @@
 
 /* card css */
 .message-main-card {
-  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  padding: 0rem 0.5rem 0.5rem 0.5rem;
 }
 @media screen and (min-width: 1100px) and (max-width: 1200px) {
   .message-main-card {

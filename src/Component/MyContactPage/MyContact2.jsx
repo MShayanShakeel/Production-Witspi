@@ -725,13 +725,12 @@ function MyContact2() {
           console.log(res.data.data, "reushs");
           console.log(resDecriptionn, "resinasdasdres");
 
-          toast.success("Add ContactSuccesfully");
+          toast.success("Add Contact Succesfully");
         })
         .catch((err) => {
           const ErrDecriptionn = decryption(err.response.data.data);
-          console.log(err.response.data.data, "fuuauie");
           console.log("resinasdasderr", ErrDecriptionn);
-          toast.error(err.message);
+          toast.error(ErrDecriptionn.message);
         });
     }
   }, [contactsList]);

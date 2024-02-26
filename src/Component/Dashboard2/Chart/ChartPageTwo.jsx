@@ -84,7 +84,7 @@ function ChartPageTwo() {
           options={options}
           series={series}
           type="area"
-          height={130}
+          height={190}
           width={"140%"}
           borderRadius={"30px"}
           style={{
