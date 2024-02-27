@@ -11,9 +11,9 @@
   outline: none;
 }
 .createbrdCast_textarea::placeholder {
-  color: #388C8C;
+  color: #388c8c;
 }
-  /* .broad-cast-contact-1{
+/* .broad-cast-contact-1{
     width: 101% !important;
     margin-left: -1.2% !important;
   } */
@@ -21,76 +21,72 @@
   padding-bottom: 10px;
   /* box-shadow: 2px 2px 1px 1px lightblue; */
   border: 1px solid #848484;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 5px;
   min-width: 31% !important;
   margin-right: auto;
 }
-.broad-cast-contact-1{
-  max-height: 22.5vh !important;
+.broad-cast-contact-1 {
+  max-height: 22vh !important;
 }
-.Backdrop-myContact2-broadcast{
+.Backdrop-myContact2-broadcast {
   /* margin-left: -0.5rem !important; */
   width: 100%;
-  margin-right: 0.5rem !important; 
+  margin-right: 0.5rem !important;
 }
 @media screen and (max-width: 500px) {
-.Braod-cast-page-main{
-  height: 80vh !important;
-  overflow-x: scroll !important;
-}
-.Backdrop-myContact2-broadcast{
-  padding: 0px 0px 0px 0px !important;
-  /* 413 */
-  margin-left: 1rem !important;
-  width: 99% !important;
-}
+  .Braod-cast-page-main {
+    height: 80vh !important;
+    overflow-x: scroll !important;
+  }
+  .Backdrop-myContact2-broadcast {
+    padding: 0px 0px 0px 0px !important;
+    /* 413 */
+    margin-left: 1rem !important;
+    width: 99% !important;
+  }
 
-.card-stylecreatbdcast {
-  font-size: 10px !important;
-  min-width: 35vh !important;
-    width: 80vw ; 
+  .card-stylecreatbdcast {
+    font-size: 10px !important;
+    min-width: 35vh !important;
+    width: 80vw;
   }
-.createbrdCast_textarea{
-  width: 105% ;
-  border: 1px solid #eee;
-  /* padding: 10px 14px; */
-  border-radius: 8px;
-  transition: 0.5s;
-  background-color: transparent;
+  .createbrdCast_textarea {
+    width: 105%;
+    border: 1px solid #eee;
+    /* padding: 10px 14px; */
+    border-radius: 8px;
+    transition: 0.5s;
+    background-color: transparent;
   }
-  .text-area-main{
+  .text-area-main {
     height: 70px;
     width: auto !important;
     min-width: 40px;
     max-width: 34vh !important;
   }
-  
-.Backdrop-myContact2-broadcast{
-    margin-top: 0vh;
-    }
 
+  .Backdrop-myContact2-broadcast {
+    margin-top: 0vh;
+  }
 }
 @media screen and (max-width: 391px) {
-  .Backdrop-myContact2-broadcast{
+  .Backdrop-myContact2-broadcast {
     margin-left: -0.71vh !important;
   }
 }
 @media screen and (max-width: 380px) {
-.Backdrop-myContact2-broadcast{
-  /* margin-left: -0.1vh !important; */
-  margin-left: -0.34rem !important;
-}
+  .Backdrop-myContact2-broadcast {
+    /* margin-left: -0.1vh !important; */
+    margin-left: -0.34rem !important;
+  }
 
-
-
-.Broadcast-contact-list-excel-file{
-  margin-left: 0px !important;
-  
-}
-.text-area-main{
-  max-width: 39vh !important;
-}
+  .Broadcast-contact-list-excel-file {
+    margin-left: 0px !important;
+  }
+  .text-area-main {
+    max-width: 39vh !important;
+  }
 }
 
 .Add-new-btn_createbd {
@@ -116,19 +112,19 @@
   height: 50px;
   border-radius: 8px;
   transition: 0.5s;
-  background-color: #FFFFFF !important;
-  color:  #388C8C !important;
+  background-color: #ffffff !important;
+  color: #388c8c !important;
 }
-.createbrdCast-input::placeholder{
-  color: #388C8C;
+.createbrdCast-input::placeholder {
+  color: #388c8c;
 }
 .createbrdCast-input:focus {
   outline: none;
 }
 
 .Drop-btnstyle_createbd {
-  background-color: #FFFFFF;
-  color: #388C8C !important;
+  background-color: #ffffff;
+  color: #388c8c !important;
   height: 50px;
   width: 100%;
   /* margin-top: -4.5px; */
@@ -144,47 +140,47 @@
     border: 2px solid #f5f1ff;
   }
 }
-@media screen and (min-width : 2000px) and (max-width : 2300px) {
+@media screen and (min-width: 2000px) and (max-width: 2300px) {
   .Drop-btnstyle_createbd {
-      margin-top: 0.4rem;
+    margin-top: 0.4rem;
   }
 }
-@media screen and (min-width : 1500px) and (max-width : 1700px) {
+@media screen and (min-width: 1500px) and (max-width: 1700px) {
   .Drop-btnstyle_createbd {
-      margin-top: 0.15rem;
+    margin-top: 0.15rem;
   }
 }
-@media screen and (min-width : 1300px) and (max-width : 1500px) {
+@media screen and (min-width: 1300px) and (max-width: 1500px) {
   .Drop-btnstyle_createbd {
-      margin-top: 0.3rem;
+    margin-top: 0.3rem;
   }
 }
-@media screen and (min-width : 1300px) and (max-width : 1400px) {
+@media screen and (min-width: 1300px) and (max-width: 1400px) {
   .Drop-btnstyle_createbd {
-      margin-top: -0.26rem;
+    margin-top: -0.26rem;
   }
-.Drop-btnstyle_createbd .btn.active .btn.show {
-  background-color: transparent !important;
-}
+  .Drop-btnstyle_createbd .btn.active .btn.show {
+    background-color: transparent !important;
+  }
 
-.color-white {
-  /* margin-left: 10px !important; */
-  color: black;
-}
-.broadCast-edit2 {
-  color: black;
-  position: absolute !important;
+  .color-white {
+    /* margin-left: 10px !important; */
+    color: black;
+  }
+  .broadCast-edit2 {
+    color: black;
+    position: absolute !important;
     /* margin-left: -2rem;
     margin-top: 1rem; */
-}
+  }
   /* padding-top: 15px; */
   /* left: 29%; */
 }
 .broadCast-edit2 {
   color: black;
   position: absolute !important;
-    margin-left: -2rem;
-    margin-top: 1rem;
+  margin-left: -2rem;
+  margin-top: 1rem;
 }
 .contact-list-container {
   max-height: 30vh; /* Adjust the height as needed */
@@ -209,16 +205,15 @@
 .table {
   --bs-table-bg: transparent !important;
 }
-.main_Crte_BDCAST2{
+.main_Crte_BDCAST2 {
   max-height: 18vh;
   /* margin-top: 0px; */
   overflow-x: auto;
-  overflow-y: hidden; 
+  overflow-y: hidden;
 }
 .main_Crte_BDCAST2::-webkit-scrollbar {
   width: 1px;
 }
-
 
 .main_Crte_BDCAST2::-webkit-scrollbar-thumb {
   background-color: transparent; /* Scrollbar thumb color */
@@ -232,7 +227,7 @@
   margin-top: -3rem !important;
     margin-bottom: -5px !important;
 } */
-.S_No_th{
+.S_No_th {
   min-width: 20% !important;
 }
 @media screen and (min-width: 1200px) and (max-width: 1500px) {
@@ -240,42 +235,43 @@
     max-height: 15vh;
   }
 }
-.color_white{
+.color_white {
   color: black !important;
   font-weight: 300;
 }
 @media only screen and (max-width: 600px) {
-.createbrdCast-input{
-  height: 10%;
+  .createbrdCast-input {
+    height: 10%;
   }
 
-/* .Drop-btnstyle_createbd{
+  /* .Drop-btnstyle_createbd{
   height: 10%;
   }  */
-.createbrdCast-input{
-  height: 10%;
-}
-.text-area-main{
-  height: 70px;
-  width: 140px;
-}
-.msg-btns-style{
-  display: flex;
-  justify-content: end;
-  margin: auto;
-}
+  .createbrdCast-input {
+    height: 10%;
+  }
+  .text-area-main {
+    height: 70px;
+    width: 140px;
+  }
+  .msg-btns-style {
+    display: flex;
+    justify-content: end;
+    margin: auto;
+  }
 }
 @media screen and (max-width: 500px) {
-  
-  .Broad-cast-items-postion{
-  padding-right: 3vh ;
-  margin-bottom: -20px;
+  .Broad-cast-items-postion {
+    padding-right: 3vh;
+    margin-bottom: -20px;
   }
-  .broadCast-edit2{
+  .broadCast-edit2 {
     margin-left: 20vh;
   }
 }
 
-.fixed-height-Broadcast-Contact{
+.fixed-height-Broadcast-Contact {
   max-height: 20.5vh !important;
 }
+
+

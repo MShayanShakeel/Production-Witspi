@@ -661,7 +661,7 @@ _min_desc_width {
 }
 
 .DatePicker-class {
-  width: 200.5%;
+  width: 196%;
   height: 2rem;
   background: #3aaea3;
   border-radius: 10px;
@@ -670,6 +670,7 @@ _min_desc_width {
   padding: 1rem;
   margin-top: 5px;
   text-align: center;
+  cursor: pointer;
 }
 
 .DatePicker-class::placeholder {
