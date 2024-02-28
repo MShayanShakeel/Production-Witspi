@@ -200,7 +200,7 @@ const DashBoardComponent = () => {
   //   setWebViewHeaderShow(window.innerWidth >= 500)
   // }
   // window.addEventListener('resize' , HandleShowWebHeader)
-  console.log(userDetails, "getAllGroupsStore");
+  console.log(getAllMessagesStore, "getAllGroupsStore");
 
   return (
     <>
@@ -228,7 +228,7 @@ const DashBoardComponent = () => {
                       <Loader top={50} height={50} width={50} left={50} />
                     )}
                     {getAllMessagesStore?.length === 0 ? (
-                      <p>Groups Not Available</p>
+                      <p>Message Not Available</p>
                     ) : (
                       getAllMessagesStore?.slice(0, 2).map((message) => (
                         <div className="single-message-contact">
