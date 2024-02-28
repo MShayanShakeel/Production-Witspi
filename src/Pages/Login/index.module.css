@@ -45,7 +45,6 @@
   border-radius: 6px;
   border: 1px solid white;
 }
-
 .content {
   position: absolute;
   top: 0;
@@ -183,7 +182,7 @@
 .password-toggle-icon {
   position: absolute;
   /* top: 50%; */
-  right: 32% !important;
+  right: 0% !important;
   transform: translateY(40%);
   cursor: pointer;
   font-size: 18px;

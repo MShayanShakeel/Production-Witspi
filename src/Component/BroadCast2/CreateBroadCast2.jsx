@@ -246,6 +246,204 @@ function CreateBroadCast2() {
       );
     }
   };
+
+  // EXCEL FILE UPLOAD CODE LOGIC
+  //ruffffffff
+  const [header, setHeader] = useState([]);
+  const [modalData, setModalData] = useState([]);
+
+  const fileInputRef = useRef(null);
+
+  const handleExcelFileSelect = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleFileInputChange = async (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      if (
+        file.type ===
+          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" ||
+        file.type === "application/vnd.ms-excel"
+      ) {
+        const reader = new FileReader();
+        reader.onload = async (e) => {
+          const data = e.target.result;
+          const workbook = XLSX.read(data, { type: "binary" });
+          const sheetName = workbook.SheetNames[0];
+          const sheet = workbook.Sheets[sheetName];
+          const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+          const header = jsonData[0];
+          setHeader(header);
+          const excelData = jsonData.slice(1);
+          setModalData(excelData);
+        };
+        reader.readAsBinaryString(file);
+      } else {
+        alert("Please select a valid Excel file.");
+        e.target.value = null;
+      }
+    }
+  };
+  // const [header, setHeader] = useState("");
+  // const [filteredData, setFilteredData] = useState([]);
+  // const [selectedOptions, setSelectedOptions] = useState([]);
+  // const [modalData, setModalData] = useState([]);
+
+  // const fileInputRef = useRef(null);
+
+  // const handleExcelFileSelect = () => {
+  //   // handleAddContactToExcel
+  //   fileInputRef.current.click(); // Click the hidden file input element
+  // };
+
+  // const handleFileInputChange = async (e) => {
+  //   const file = e.target.files[0];
+  //   if (file) {
+  //     if (
+  //       file.type ===
+  //         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" ||
+  //       file.type === "application/vnd.ms-excel"
+  //     ) {
+  //       const reader = new FileReader();
+
+  //       reader.onload = async (e) => {
+  //         const data = e.target.result;
+  //         const workbook = XLSX.read(data, { type: "binary" });
+  //         const sheetName = workbook.SheetNames[0];
+
+  //         const sheet = workbook.Sheets[sheetName];
+  //         const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+  //         const header = jsonData[0];
+  //         setHeader(header);
+  //         // Assuming your Excel sheet has columns in this order: firstName, lastName, Phone
+  //         const excelData = jsonData.slice(1); // Skip the header row
+
+  //         // Set the upload time to the current date and time
+  //         const newExcelData = excelData.map(() => {
+  //           const currentTime = new Date();
+  //           const localTime = currentTime.toLocaleString(); // Get the local date and time
+  //           return { Date: currentTime, localTime }; // Add an object with Date and localTime properties
+  //         });
+  //         setUploadTime(newExcelData);
+
+  //         const dropdownOptions = excelData[0];
+  //         setExcelData(excelData);
+  //         setFilteredData(newExcelData);
+  //         handleOpenModal(excelData);
+  //         setDropdownOptions(dropdownOptions);
+
+  //         // const columnsToFind = ["firstName", "lastName", "number"];
+  //         const columnsToFind = ["FirstName", "LastName", "Phone"];
+  //         const headerRow = excelData[0];
+  //         const columnIndices = {};
+
+  //         // Loop through the header row to find the column indices
+  //         headerRow.forEach((cell, index) => {
+  //           if (columnsToFind.includes(cell)) {
+  //             columnIndices[cell] = index;
+  //           }
+  //         });
+
+  //         // Now, the columnIndices object contains the indices of the columns you want
+  //         console.log(columnIndices);
+
+  //         // Identify the "Name" column and extract options when excelData is available
+  //         identifyNameColumnAndOptions(excelData);
+  //       };
+
+  //       reader.readAsBinaryString(file);
+  //     } else {
+  //       // Display an error message or alert for an invalid file type
+  //       alert("Please select a valid Excel file.");
+  //       e.target.value = null; // Reset the file input
+  //     }
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   // Set the initial state when the component loads
+  //   setFilteredData(excelData);
+  // }, [excelData]);
+
+  // useEffect(() => {
+  //   setSelectedOptions(header);
+  // }, [header]);
+
+  // const handleOpenModal = (data) => {
+  //   setModalData(data);
+  //   setShowModal(true);
+  //   setSelectedDropdownColumn(true);
+
+  //   const initialOptions = header?.map((headerText) => headerText);
+  //   setOptions(initialOptions);
+  // };
+
+  // const identifyNameColumnAndOptions = (data) => {
+  //   const headerRow = data[0]; // Assuming the header row is the first row
+  //   const nameColumnIndex = headerRow.findIndex((cell) => cell === "Name");
+
+  //   if (nameColumnIndex !== -1) {
+  //     const nameOptions = data.slice(1).map((row) => row[nameColumnIndex]);
+  //     setDropdownOptions(nameOptions);
+  //   }
+  // };
+  // useEffect(() => {
+  //   if (excelData.length > 0) {
+  //     // Identify the "Name" column and extract options when excelData is available
+  //     identifyNameColumnAndOptions(excelData);
+
+  //     // Assuming the columns you want to find are "firstName," "lastName," and "number"
+  //     const columnsToFind = ["firstName", "lastName", "number"];
+  //     const headerRow = excelData[0];
+  //     const columnIndices = {};
+
+  //     // Loop through the header row to find the column indices
+  //     headerRow.forEach((cell, index) => {
+  //       if (columnsToFind.includes(cell)) {
+  //         columnIndices[cell] = index;
+  //       }
+  //     });
+
+  //     // Now, the columnIndices object contains the indices of the columns you want
+  //     console.log(columnIndices);
+
+  //     // Extract options for each column and set them in the respective state variables
+  //     const firstNameIndex = columnIndices["firstName"];
+  //     const lastNameIndex = columnIndices["lastName"];
+  //     const numberIndex = columnIndices["number"];
+
+  //     const firstNameOptions = excelData
+  //       .slice(1)
+  //       .map((row) => row[firstNameIndex]);
+  //     setFirstNameOptions(firstNameOptions);
+
+  //     const lastNameOptions = excelData
+  //       .slice(1)
+  //       .map((row) => row[lastNameIndex]);
+  //     setLastNameOptions(lastNameOptions);
+
+  //     const numberOptions = excelData.slice(1).map((row) => row[numberIndex]);
+  //     setNumberOptions(numberOptions);
+  //   }
+  // }, [excelData]);
+
+  // const handleFilterAllClick = () => {
+  //   setFilteredData(excelData);
+  // };
+
+  console.log(
+    // filteredData,
+    // "shayanann1",
+    // selectedOptions,
+    // "shayanann2",
+    // header,
+    // "shayanann",
+    modalData,
+    "iladhvoiasvha"
+  );
+
   console.log(
     inputValue,
     templates,
@@ -415,7 +613,7 @@ function CreateBroadCast2() {
                                 <div className="instance-form-input">
                                   <label className="color-white">
                                     {" "}
-                                    Upload savExcel File{" "}
+                                    Upload Excel File{" "}
                                   </label>
                                   <span>
                                     <input
@@ -424,7 +622,7 @@ function CreateBroadCast2() {
                                       onChange={handleFileSelect}
                                       className="createbrdCast-input color-white"
                                       style={{
-                                        padding: "8px 14px",
+                                        padding: "7px 14px",
                                         backgroundColor: "transparent",
                                       }}
                                     />
@@ -612,7 +810,7 @@ function CreateBroadCast2() {
                           width: "99%",
                         }}
                       >
-                        <h5
+                        {/* <h5
                           style={{
                             color: "#3ab19d",
                             paddingTop: "0.5vh",
@@ -621,7 +819,7 @@ function CreateBroadCast2() {
                           }}
                         >
                           Contact List
-                        </h5>
+                        </h5> */}
                         {showExcelUploadComponet ? (
                           <div className="main_Crte_BDCAST2">
                             <table
@@ -879,7 +1077,8 @@ function CreateBroadCast2() {
 
                                 <Col xs={12} md={4} lg={4}>
                                   <div className="instance-form-input">
-                                    <label className="color-black">
+                                    <label className="color-white">
+                                      {" "}
                                       Select Instance
                                     </label>
                                     <Dropdown>
@@ -888,8 +1087,8 @@ function CreateBroadCast2() {
                                         id="dropdown-basic"
                                         style={{
                                           width: "100%",
-                                          height: "49px",
-                                          marginTop: "-0.2rem",
+                                          height: "39px",
+                                          // marginTop: "-0.36rem",
                                         }}
                                       >
                                         Select Instances
@@ -939,20 +1138,36 @@ function CreateBroadCast2() {
                                   <div className="instance-form-input">
                                     <label className="color-white">
                                       {" "}
-                                      Upload savExcel File{" "}
+                                      Upload Excel File{" "}
                                     </label>
-                                    <span>
+                                    <span className="hide-ex-btn">
+                                      <button
+                                        type="button"
+                                        onClick={handleExcelFileSelect}
+                                        className="myexecl-btn2 mycontact-btn"
+                                      >
+                                        Add Excel File
+                                      </button>
+                                      <input
+                                        ref={fileInputRef}
+                                        type="file"
+                                        accept=".xls, .xlsx"
+                                        onChange={handleFileInputChange}
+                                        style={{ display: "none" }} // Hide the input
+                                      />
+                                    </span>
+                                    {/* <span>
                                       <input
                                         type="file"
                                         accept=".xls, .xlsx"
                                         onChange={handleFileSelect}
                                         className="createbrdCast-input color-white"
                                         style={{
-                                          padding: "8px 14px",
+                                          padding: "7px 14px",
                                           backgroundColor: "transparent",
                                         }}
                                       />
-                                    </span>
+                                    </span> */}
                                   </div>
                                 </Col>
                               </Row>
@@ -973,10 +1188,9 @@ function CreateBroadCast2() {
                                 className="instance-form-input"
                                 style={{ marginLeft: "0.5rem" }}
                               >
-                                <h5 className="color-white broadcast-Message Templates">
-                                  {" "}
+                                <h4 className="color-white broadcast-Message Templates">
                                   Message Templates
-                                </h5>
+                                </h4>
                                 <div
                                   className="message-templates-container"
                                   id="mainCrteBDCAST2"
@@ -1104,7 +1318,6 @@ function CreateBroadCast2() {
                                 </Button>
                                 <Button
                                   className="Add-new-btn_createbd Sd-Sch-font"
-                                  style={{ marginRight: "19px" }}
                                   onClick={openModel}
                                 >
                                   Schedule
@@ -1182,7 +1395,7 @@ function CreateBroadCast2() {
                           width: "99%",
                         }}
                       >
-                        <h5
+                        {/* <h5
                           style={{
                             color: "#3ab19d",
                             paddingTop: "0.5vh",
@@ -1192,31 +1405,55 @@ function CreateBroadCast2() {
                           }}
                         >
                           Contact List
-                        </h5>
+                        </h5> */}
 
                         {/* ALL CONTACT SHOW THEY CODE  */}
                         {showExcelUploadComponet ? (
-                          <div className="main_Crte_BDCAST2">
-                            <table
-                              className="table"
-                              style={{
-                                tableLayout: "fixed",
-                                marginBottom: "0",
-                              }}
-                            >
-                              <thead
-                                className="bdCast-head-font"
-                                style={{ tableLayout: "fixed" }}
-                              >
-                                <tr>
-                                  <th className="color_white">No</th>
-                                  <th className="color_white">FirstName</th>
-                                  <th className="color_white">LastName</th>
-                                  <th className="color_white">Phone</th>
-                                </tr>
-                              </thead>
-                            </table>
-                            <div className="contact-list-container">
+                          // <div className="main_Crte_BDCAST2">
+                          //   <table
+                          //     className="table"
+                          //     style={{
+                          //       tableLayout: "fixed",
+                          //       marginBottom: "0",
+                          //     }}
+                          //   >
+                          //     <thead
+                          //       className="bdCast-head-font"
+                          //       style={{ tableLayout: "fixed" }}
+                          //     >
+                          //       <tr>
+                          //         <th className="color_white">No</th>
+                          //         <th className="color_white">FirstName</th>
+                          //         <th className="color_white">LastName</th>
+                          //         <th className="color_white">Phone</th>
+                          //       </tr>
+                          //     </thead>
+                          //   </table>
+                          //   <div className="contact-list-container">
+                          //     <table
+                          //       className="table"
+                          //       style={{
+                          //         tableLayout: "fixed",
+                          //         marginBottom: "0",
+                          //       }}
+                          //     >
+                          //       <tbody className="bdCast-body-font">
+                          //         {excelData?.map((row, index) => (
+                          //           <tr key={index}>
+                          //             <td className="color_white">
+                          //               {index + 1}
+                          //             </td>
+                          //             <td className="color_white">{row[0]}</td>
+                          //             <td className="color_white">{row[1]}</td>
+                          //             <td className="color_white">{row[6]}</td>
+                          //           </tr>
+                          //         ))}
+                          //       </tbody>
+                          //     </table>
+                          //   </div>
+                          // </div>
+                          <>
+                            <div className="main_Crte_BDCAST2">
                               <table
                                 className="table"
                                 style={{
@@ -1224,21 +1461,39 @@ function CreateBroadCast2() {
                                   marginBottom: "0",
                                 }}
                               >
-                                <tbody className="bdCast-body-font">
-                                  {excelData?.map((row, index) => (
-                                    <tr key={index}>
-                                      <td className="color_white">
-                                        {index + 1}
-                                      </td>
-                                      <td className="color_white">{row[0]}</td>
-                                      <td className="color_white">{row[1]}</td>
-                                      <td className="color_white">{row[6]}</td>
-                                    </tr>
-                                  ))}
-                                </tbody>
-                              </table>
+                                <thead
+                                  className="bdCast-head-font"
+                                  style={{ tableLayout: "fixed" }}
+                                >
+                                  <tr
+                                    style={{
+                                      background: "white",
+                                      boxShadow: "0px 2px 0px 0px lightblue",
+                                    }}
+                                    className="th-font-style"
+                                  >
+                                    {header.map((headerText, index) => (
+                                      <th key={index}>{headerText}</th>
+                                    ))}
+                                  </tr>
+                                </thead>
+                                  <tbody className="bdCast-body-font">
+                                    {modalData.map((row, rowIndex) => (
+                                      <tr key={rowIndex}>
+                                        {row.map((cell, cellIndex) => (
+                                          <td
+                                            key={cellIndex}
+                                            className="color_white"
+                                          >
+                                            {cell}
+                                          </td>
+                                        ))}
+                                      </tr>
+                                    ))}
+                                  </tbody>
+                                </table>
                             </div>
-                          </div>
+                          </>
                         ) : (
                           <div>
                             <div className="MyContact_2_maincontainer fixed-height-Broadcast-Contact">

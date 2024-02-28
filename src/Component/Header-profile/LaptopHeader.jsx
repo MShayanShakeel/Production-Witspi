@@ -5,7 +5,7 @@ import { faBell, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useUserdetails } from "../../store/UserContext";
 import { Col, Row } from "react-bootstrap";
-import "./LaptopHeader.css"
+import "./LaptopHeader.css";
 
 const LaptopHeader = () => {
   const handleLogout = () => {
@@ -48,48 +48,48 @@ const LaptopHeader = () => {
                 className="header-main-items"
                 style={{ verticalAlign: "baseline", color: "white" }}
               >
-                <div>
-                  <img
-                    src={whatsapiLogo}
-                    alt="Profile-Image"
-                    style={{ cursor: "pointer", height: "3.5vh" , background : "#388c8c" , borderRadius : "10px"}}
-                  />
-                </div>
+              
+                <img
+                  src={defaultImg}
+                  className="Profile-img-radius"
+                  alt="Profile-Image"
+                  style={{ cursor: "pointer", marginTop: "5px" }}
+                />
+                <span style={{ width: "6rem" }}>
+                  <abbr
+                    className="custom-tooltip"
+                    title={userDetails?.name}
+                    style={{ textDecoration: "none", color: "#388c8c" }}
+                  >
+                    <ShortText text={userDetails?.name} maxChar={15} />
+                  </abbr>
+                </span>
 
-                <div className="header-profile" style={{ width: "11vh" }}></div>
+                <div className="header-profile"></div>
                 <span
                   className="logoutbutton-and-pro"
                   style={{
+                  paddingRight : "2rem",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "space-between",
+                    gap : "0.5rem"
                   }}
                 >
-                  <img
-                    src={defaultImg}
-                    className="Profile-img-radius"
-                    alt="Profile-Image"
-                    style={{ cursor: "pointer", marginTop: "5px" }}
-                  />
-                  <span style={{  width: "6rem"}}>
-                  <abbr
-                  className="custom-tooltip" title={userDetails?.name} style={{ textDecoration: 'none' , color : "#388c8c" }}>
-                    <ShortText text={userDetails?.name} maxChar={8} />
-                    </abbr>
-                  </span>
                   <div className="Pro-badge">Pro</div>
                   <div className="header-ball-icon-main">
-                      <FontAwesomeIcon
-                        icon={faBell}
-                        style={{
-                          fontSize: "3.5vh",
-                          marginRight : "0.5rem",
-                           color : "#388c8c",
-                        }}
-                      />
-                    </div>
+                    <FontAwesomeIcon
+                      icon={faBell}
+                      style={{
+                        fontSize: "3.5vh",
+                        marginRight: "0.5rem",
+                        color: "#388c8c",
+                        cursor : "pointer",
+                      }}
+                    />
+                  </div>
                   <a
-                  style={{color : "#388c8c"}}
+                    style={{ color: "#388c8c" }}
                     className="dropdown-item_MainInstance"
                     onClick={handleLogout}
                     title="Logout"

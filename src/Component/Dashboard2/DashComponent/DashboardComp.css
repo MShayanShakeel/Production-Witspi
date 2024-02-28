@@ -83,7 +83,7 @@
   display: flex;
   justify-content: space-between;
   margin: auto;
-  padding: 1rem 1rem 0.5rem 1rem;
+  padding: 1.7rem 1rem 0.5rem 1rem;
 }
 .deshbord-header-profile {
   width: 100% !important;
@@ -94,7 +94,8 @@
 }
 .Good-evening {
   text-align: start;
-  color: rgb(56, 140, 140);
+  align-items: center;
+  color: #388c8c;
 }
 
 .profile-table-head {
@@ -140,11 +141,13 @@
 .add-instance-div {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .dashbord-instance-height-50 {
-  height: 42vh !important;
+  height: 39.5vh !important;
   /* width: 18.75rem !important; */
   margin-left: 0.4rem;
+  padding-bottom: 1rem;
   display: flex;
   justify-content: center !important;
   align-items: center;
@@ -182,7 +185,6 @@
   margin: 0.5rem 0.5rem;
   overflow: hidden;
 }
-
 /* card css */
 .message-main-card {
   padding: 0rem 0.5rem 0.5rem 0.5rem;
@@ -245,21 +247,12 @@
   justify-content: start !important;
   gap: 0.3rem;
   padding: 0.5rem;
-  margin: auto;
-  /* display: flex;
-  max-height: 17vh;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  justify-content: start !important;
-  gap: 0.3rem;
-  padding: 0.5rem 0.5rem 0px 0.5rem;
-  margin: auto; */
 }
 .deshboard-single-contact span {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   margin-bottom: 2px !important;
-  border-radius: 15px;
+  border-radius: 20px;
   background-color: #c6c4e8;
 }
 .centered-span {
@@ -270,7 +263,7 @@
 }
 .deshbord-contact-profile-picture {
   align-items: center;
-  width: 4rem;
+  width: 4.5rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

@@ -830,7 +830,7 @@ function Groups2() {
                                               <li key={contactIndex}>
                                                 <ShortText
                                                   text={contact?.firstName}
-                                                  maxChar={23}
+                                                  maxChar={10}
                                                 />
                                               </li>
                                             )
@@ -1173,22 +1173,42 @@ function Groups2() {
                                           ? group?.groupName
                                           : group?.groupId?.groupName}
                                       </td>
-                                      <td className="Group-get-table-contant">
+                                      {/* <td className="Group-get-table-contant">
                                         <div className="fixed-height-5rem">
+                                        {group?.contactList.length}
                                           {group?.contactList?.map(
                                             (contact, contactIndex) => (
                                               <li key={contactIndex}>
                                                 <ShortText
                                                   text={contact?.firstName}
-                                                  maxChar={23}
+                                                  maxChar={10}
                                                 />
                                               </li>
                                             )
                                           )}
+                                         
 
-                                          {console.log(group, "check group")}
+                                          {console.log(group?.contactList.length, "check group")}
+                                        </div>
+                                      </td> */}
+                                      <td className="Group-get-table-contant">
+                                        <div className="fixed-height-5rem">
+                                          {/* Display the count of contacts */}
+                                          {group?.contactList.length > 0 && (
+                                            <p>
+                                              {group?.contactList.length}
+                                            </p>
+                                          )}
+
+                                          {/* Display the name of the first contact */}
+                                          {group?.contactList.length > 0 && (
+                                            <p>
+                                              {group.contactList[0]?.firstName}
+                                            </p>
+                                          )}
                                         </div>
                                       </td>
+
                                       <td className="Group-get-table-contant">
                                         <ShortText
                                           text={
@@ -1300,7 +1320,7 @@ function Groups2() {
                                     <hr
                                       className="saprat-line-in-gourps"
                                       color="white"
-                                      size="4"
+                                      size="0"
                                     ></hr>
                                   </>
                                 ))

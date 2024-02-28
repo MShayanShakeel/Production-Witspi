@@ -39,12 +39,11 @@
     width: 4vh !important;
 }
 .header-main-items{
+    width: 100%;
     display: flex !important;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 0.8rem;
-    /* justify-content: space-between; */
-    /* flex-wrap: wrap; */
 }
 .Profile-span{
     text-align: center;

@@ -1,3 +1,7 @@
+.input_width {
+  width: 100%; /* Adjust the width as per your requirement */
+}
+
 .btn-Verify {
     background: linear-gradient(to right, #3ab19d, var(--color-primary));
     border: none;
@@ -43,7 +47,7 @@
   }
   .password-toggle-icon {
     position: absolute !important;
-    right: 28% !important;
+    right: 18% !important;
     transform: translateY(40%) !important;
     cursor: pointer;
   }

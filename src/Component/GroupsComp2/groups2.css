@@ -7,24 +7,25 @@
   background: #3ab19d;
   color: white;
 }
-.fixed-height-5rem{
+.fixed-height-5rem {
+  /* width: 10rem; */
   display: flex;
-  gap: 1rem;
- padding: 1.5rem;
-  /* justify-content: center; */
-  /* height: 6rem; */
-  overflow-y: hidden;
-  overflow-x: auto;
+  /* gap: 1rem; */
+  padding: 1.5rem;
+  justify-content: center;
+  height: 5rem;
+  /* overflow-y: auto; */
+  /* padding-top: 10rem; */
+  /* overflow-x: hidden; */
+  flex-direction: column;
 }
-.saprat-line-in-gourps{
-width: 1800%; 
-
+.saprat-line-in-gourps {
+  width: 1800%;
 }
-
 
 abbr.custom-tooltip {
   text-decoration: none !important;
-  cursor: default !important;   
+  cursor: default !important;
 }
 
 .custom-tooltip {
@@ -52,9 +53,8 @@ abbr.custom-tooltip {
   opacity: 1;
 }
 
-
 .fixed-height-5rem::-webkit-scrollbar {
-  width: 0;  /* Set the width to 0 to hide the scrollbar */
+  width: 0; /* Set the width to 0 to hide the scrollbar */
 }
 .grps2-btn:hover {
   background: linear-gradient(to right, #3ab19d, #3aa9ab);
@@ -65,22 +65,21 @@ abbr.custom-tooltip {
 }
 
 .search-groups2 {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   align-items: center;
   border-radius: 12px;
- box-shadow: 1px 1px 1px 1px lightblue;
-  /* border: 1px solid #848484; */
+  box-shadow: 0 5px 10px rgba(129, 124, 124, 0.2);
   display: flex;
   padding: 0px 13px;
   margin-right: 10px;
 }
-.search-groups2::placeholder{
-  color: #3AABA7;
+.search-groups2::placeholder {
+  color: #3aaba7;
 }
 .grp-input-search2 {
   border: none;
   padding: 12px 15px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 .grp-input-search2::placeholder {
   color: #3aa9ab !important;
@@ -101,7 +100,7 @@ abbr.custom-tooltip {
   color: white;
 }
 .search-icon2 {
-  color: #388C8C;
+  color: #388c8c;
   margin-right: 8px;
 }
 .group2_head_main {
@@ -116,22 +115,19 @@ abbr.custom-tooltip {
   overflow-x: auto;
   overflow-y: auto;
   margin-left: 1rem;
-  /* display: flex;
+}
+/* @media screen and (min-width: 1590px) { */
+.groups_2_maincontainer {
+  max-height: 30rem;
+  overflow-x: auto;
+  overflow-y: auto;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center; */
+  justify-content: start !important;
+  justify-content: start;
+  align-items: center; 
 }
-@media screen and (min-width: 1590px) {
-  .groups_2_maincontainer {
-    max-height: 30rem;
-    overflow-x: auto;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
+/* } */
 .groups_2_maincontainer::-webkit-scrollbar {
   width: 1px;
 }
@@ -177,17 +173,16 @@ abbr.custom-tooltip {
   justify-items: center;
 }
 .td-Sno {
-  min-width: 70px !important;
+  min-width: 60px !important;
   color: black;
 }
 .Group-get-table-contant {
   color: black;
   width: auto;
-  max-width: 15rem !important;
-  min-width: 15rem !important;
+  max-width: 7rem !important;
+  min-width: 12rem !important;
   overflow: hidden;
   /* white-space: nowrap; */
-  padding: 6px;
   padding-left: 25px;
 }
 .groups_2_maincontainer thead {
@@ -196,18 +191,17 @@ abbr.custom-tooltip {
   top: 0;
   z-index: 1;
 }
-.Group-header-for-laptop{
+.Group-header-for-laptop {
   width: 83%;
   margin-right: 0.2rem;
 }
 
-@media screen and (min-width : 600px) and (max-width : 2200px) {
-.Backdrop-myContact2-group-1 {
-  /* width: 90.66666667% !important; */
-  width: 100% !important;
+@media screen and (min-width: 600px) and (max-width: 2200px) {
+  .Backdrop-myContact2-group-1 {
+    /* width: 90.66666667% !important; */
+    width: 100% !important;
+  }
 }
-}
-
 
 @media screen and (min-width: 1350px) and (max-width: 1600) {
   .Group-get-table-contant {
@@ -217,8 +211,8 @@ abbr.custom-tooltip {
 }
 @media screen and (min-width: 1600px) and (max-width: 2200) {
   .Group-get-table-contant {
-    max-width: 300px !important;
-    min-width: 300px !important;
+    max-width: 7rem !important;
+    min-width: 16rem !important;
   }
 }
 @media screen and (max-width: 500px) {
@@ -303,7 +297,7 @@ abbr.custom-tooltip {
     margin-right: auto;
   }
   .td-Sno {
-    min-width: 35px !important;
+    min-width: 20px !important;
   }
   .Group-get-table-contant {
     width: auto;
@@ -327,8 +321,8 @@ abbr.custom-tooltip {
   .groups_2_maincontainer {
     height: 66vh !important;
   }
-  .grps2-btn{
-    padding: 8px 14px ;
+  .grps2-btn {
+    padding: 8px 14px;
   }
   .Backdrop-myContact2-group-1 {
     margin-left: 2px !important;
@@ -349,16 +343,10 @@ abbr.custom-tooltip {
   .groups_2_maincontainer {
     height: 65.5vh !important;
   }
-  .group2_head_main{
+  .group2_head_main {
     margin-left: -2rem !important;
   }
-  .grps2-btn{
+  .grps2-btn {
     margin-top: 0.7rem !important;
   }
 }
-
-
-
-
-
-

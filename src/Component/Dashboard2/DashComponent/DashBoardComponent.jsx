@@ -24,6 +24,8 @@ import { Col, Row } from "react-bootstrap";
 import Loader from "../../../Pages/Loader";
 import { useUserdetails } from "../../../store/UserContext";
 import { Link } from "react-router-dom";
+import CreateInstanceApi from "../../../helpers/PostApis/CreateInstance";
+import { toast } from "react-toastify";
 
 // import { useUserdetails } from '../../store/UserContext';
 // import { useSelector } from "react-redux";
@@ -33,6 +35,11 @@ import { Link } from "react-router-dom";
 // import DashboardInstances from "./../DashboardInstances/DashboardInstances";
 // import whatsapiLogo from "../../../../images/watspilogo.png";
 const DashBoardComponent = () => {
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/";
+  };
+
   const {
     userDetails,
     instanceDataUseContext,
@@ -80,6 +87,114 @@ const DashBoardComponent = () => {
     return () => clearTimeout(timer);
   });
 
+  const [delaySendMessagesMilliseconds, setDelaySendMessagesMilliseconds] =
+    useState(1000);
+  const [markIncomingMessagesReaded, setMarkIncomingMessagesReaded] =
+    useState(false);
+  const [
+    markIncomingMessagesReadedOnReply,
+    setMarkIncomingMessagesReadedOnReply,
+  ] = useState(false);
+  const [keepOnlineStatus, setKeepOnlineStatus] = useState(true);
+  const [outgoingAPIMessageWebhook, setOutgoingAPIMessageWebhook] =
+    useState(true);
+  const [outgoingWebhook, setOutgoingWebhook] = useState(true);
+  const [deviceWebhook, setDeviceWebhook] = useState(true);
+  const [stateWebhook, setStateWebhook] = useState(true);
+  const [outgoingMessageWebhook, setOutgoingMessageWebhook] = useState(true);
+  const [incomingWebhook, setIncomingWebhook] = useState(true);
+  const [enableMessagesHistory, setEnableMessagesHistory] = useState(false);
+  const [webhookUrl, setWebhookUrl] = useState(
+    "https://mysite.com/webhook/green-api/"
+  );
+  //----Create Instance
+  const handleSaveInput = () => {
+    const randomNames = [
+      "Ali",
+      "Smith",
+      "Johnson",
+      "Brown",
+      "Taylor",
+      "Williams",
+      "Huzaifa",
+      "Saad",
+      "Emma",
+      "Liam",
+      "Olivia",
+      "Noah",
+      "Ava",
+      "Isabella",
+      "Sophia",
+      "Mia",
+      "Charlotte",
+      "Amelia",
+      "Harper",
+    ];
+
+    const randomName =
+      randomNames[Math.floor(Math.random() * randomNames.length)];
+    const data = {
+      webhookUrl,
+      delaySendMessagesMilliseconds,
+      markIncomingMessagesReaded: JSON.stringify(markIncomingMessagesReaded),
+      markIncomingMessagesReadedOnReply: JSON.stringify(
+        markIncomingMessagesReadedOnReply
+      ),
+      keepOnlineStatus: JSON.stringify(keepOnlineStatus),
+      outgoingAPIMessageWebhook: JSON.stringify(outgoingAPIMessageWebhook),
+      outgoingWebhook: JSON.stringify(outgoingWebhook),
+      deviceWebhook: JSON.stringify(deviceWebhook),
+      stateWebhook: JSON.stringify(stateWebhook),
+      outgoingMessageWebhook: JSON.stringify(outgoingMessageWebhook),
+      incomingWebhook: JSON.stringify(incomingWebhook),
+      userId: userDetails?._id,
+      InstancesName: randomName,
+      InstancesPhone: +92345678910,
+      enableMessagesHistory: JSON.stringify(enableMessagesHistory),
+    };
+
+    console.log(data, "datainside");
+
+    CreateInstanceApi(data)
+      .then((response) => {
+        if (response?.message === "Instance Added") {
+          toast.success(response?.message, {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          });
+          setTimeout(() => {
+            window.location.reload();
+          }, 5000);
+        } else {
+          console.error("API error:", response);
+          toast.error(response?.message, {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          });
+        }
+      })
+      .catch((error) => {
+        console.error("API error:", error);
+        toast.error(error?.message, {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
+      });
+  };
+  //----Ends Create Instance
+
   // const [webViewHeaderShow , setWebViewHeaderShow ] = useState (window.innerWidth >= 500);
   // const HandleShowWebHeader = () =>{
   //   setWebViewHeaderShow(window.innerWidth >= 500)
@@ -96,7 +211,7 @@ const DashBoardComponent = () => {
             <div className="item1 Graph-main-class all-div-widths">
               <>
                 <div className="profile-messages-section">
-                  <h3
+                  <h4
                     style={{
                       textAlign: "start",
                       margin: "0.5rem 5px 0px 1rem",
@@ -105,14 +220,9 @@ const DashBoardComponent = () => {
                     }}
                   >
                     Messages
-                  </h3>
+                  </h4>
                 </div>
-                <div
-                  className="message-main-card"
-                  style={{
-                    marginLeft: "0.5rem",
-                  }}
-                >
+                <div className="message-main-card">
                   <div className="message-singel-card">
                     {loader && (
                       <Loader top={50} height={50} width={50} left={50} />
@@ -162,7 +272,7 @@ const DashBoardComponent = () => {
                 <div className="profile-section col-12">
                   <div className="Profile-Upper-section">
                     <div className="Good-evening">
-                      <h6>Good Evening</h6>
+                      <h6 style={{ marginTop: "0.1rem" }}>Good Evening</h6>
                     </div>
                     <div className="profile-icons">
                       {" "}
@@ -182,12 +292,13 @@ const DashBoardComponent = () => {
                               fontSize: "3.5vh",
                               margin: "2px 5px 0px 2px",
                               color: "#388C8C",
+                              cursor: "pointer",
                             }}
                           />
                         </div>
                         <a
                           className="dropdown-item_MainInstance"
-                          // onClick={handleLogout}
+                          onClick={handleLogout}
                           title="Logout"
                         >
                           <FontAwesomeIcon icon={faSignOutAlt} />
@@ -242,7 +353,7 @@ const DashBoardComponent = () => {
                 style={{
                   backgroundImage: `url(${BGbroadcast})`,
                   width: "100%",
-                  height: "20vh",
+                  height: "auto",
                   overflow: "hidden",
                   backgroundRepeat: "no-repeat",
                   backgroundSize: "cover",
@@ -260,7 +371,68 @@ const DashBoardComponent = () => {
                   }}
                 />
               </div>
-              <div className="message-main-card">
+              <div
+                className="deshbord-Group-contant"
+                style={{
+                  padding: "0.5rem 0.5rem 0.5rem 0.5rem",
+                }}
+              >
+                <div className="Deshborad-Group-maincontainer">
+                  {loader && (
+                    <Loader top={50} height={50} width={50} left={50} />
+                  )}
+                  {getAllGroupsStore?.length === 0 ? (
+                    <p>Groups Not Available</p>
+                  ) : (
+                    getAllGroupsStore?.slice(0, 2).map(
+                      (
+                        group // Limit to only two iterations
+                      ) => (
+                        <div
+                          className="deshbord-goup-contact-all"
+                          key={group.groupId}
+                        >
+                          <div className="table-padding-2rem">
+                            <ShortText
+                              text={
+                                group.groupName
+                                  ? group.groupName
+                                  : group.groupId.groupName
+                              }
+                              maxChar={10}
+                            />
+                            <span className="deshbord-span-group-description">
+                              <ShortText
+                                text={
+                                  group.description
+                                    ? group.description
+                                    : group.groupId.description
+                                }
+                                maxChar={23}
+                              />
+                            </span>
+                          </div>
+                          <div className="table-padding-2rem">
+                            <div className="table-padding-2rem">
+                              {group.contactList.map(
+                                (contact, contactIndex) => (
+                                  <li key={contactIndex}>
+                                    <ShortText
+                                      text={contact.firstName}
+                                      maxChar={23}
+                                    />
+                                  </li>
+                                )
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      )
+                    )
+                  )}
+                </div>
+              </div>
+              {/* <div className="message-main-card">
                 <div
                   className="deshbord-Group-contant"
                   style={{
@@ -290,7 +462,7 @@ const DashBoardComponent = () => {
                                     ? group.groupName
                                     : group.groupId.groupName
                                 }
-                                maxChar={12}
+                                maxChar={10}
                               />
                               <span className="deshbord-span-group-description">
                                 <ShortText
@@ -323,7 +495,7 @@ const DashBoardComponent = () => {
                     )}
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
             {/* BROADCAST SECTION CODE END */}
 
@@ -332,13 +504,13 @@ const DashBoardComponent = () => {
               <div className="Deshbord-instance-main-div">
                 <div className="">
                   <div className="Profile-Upper-section">
-                    <h4 className="Good-evening">My Instances</h4>
+                    <h3 className="Good-evening">My Instances</h3>
                   </div>
                 </div>
                 <div className="add-instance-div">
                   <button
                     className="Add-new-Dash-btn"
-                    // onClick={handleSaveInput}
+                    onClick={handleSaveInput}
                   >
                     Add new Instance
                   </button>
@@ -412,7 +584,22 @@ const DashBoardComponent = () => {
 
               {/* CONTACT COMPONENT CODE START HERE */}
               <div className="dashbord-contact-main">
-                <h3 className="Good-evening padding-left">My Contact</h3>
+                <div className="My-group-heading">
+                  <h3
+                    style={{
+                      textAlign: "start",
+                      margin: "1rem 0 10px 5px",
+                      color: "#388c8c",
+                    }}
+                  >
+                    My Contacts
+                  </h3>
+                  <span>
+                    <Link to="/myContact2">
+                      <FaArrowRight style={{ color: "#7E7E7E" }} />
+                    </Link>
+                  </span>
+                </div>
                 <div className="deshbord-contact-second">
                   <div className="deshboard-single-contact">
                     <>
@@ -439,24 +626,24 @@ const DashBoardComponent = () => {
             <div className="item5 bottom-fix-height-container all-div-widths">
               <div className="Group-mian-class">
                 <div className="My-group-heading">
-                  <h3
+                  <h4
                     style={{
                       textAlign: "start",
                       margin: "10px 0 10px 5px",
                       color: "#388c8c",
-                      // marginBottom: "1.5rem",
                     }}
                   >
                     My Groups
-                  </h3>
+                  </h4>
                   <span>
-                    <FaArrowRight style={{ color: "#7E7E7E" }} />
+                    <Link to="/Groups2">
+                      <FaArrowRight style={{ color: "#7E7E7E" }} />
+                    </Link>
                   </span>
                 </div>
                 <div
                   className="deshbord-Group-contant"
                   style={{
-                    // width: "22rem",
                     padding: "0.5rem 0.5rem 0.5rem 0.5rem",
                   }}
                 >
@@ -482,7 +669,7 @@ const DashBoardComponent = () => {
                                     ? group.groupName
                                     : group.groupId.groupName
                                 }
-                                maxChar={12}
+                                maxChar={9}
                               />
                               <span className="deshbord-span-group-description">
                                 <ShortText
@@ -496,8 +683,14 @@ const DashBoardComponent = () => {
                               </span>
                             </div>
                             <div className="table-padding-2rem">
-                              <div className="table-padding-2rem">
-                                {group.contactList.map(
+                              <div
+                                className="table-padding-2rem"
+                                style={{
+                                  display: "flex",
+                                  justifyContent: "space-between",
+                                }}
+                              >
+                                {/* {group.contactList.map(
                                   (contact, contactIndex) => (
                                     <li key={contactIndex}>
                                       <ShortText
@@ -505,8 +698,10 @@ const DashBoardComponent = () => {
                                         maxChar={23}
                                       />
                                     </li>
-                                  )
-                                )}
+                                    
+                                    )
+                                    )} */}
+                                {group?.contactList.length}
                               </div>
                             </div>
                           </div>

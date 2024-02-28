@@ -557,6 +557,7 @@ const Login = () => {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                style={{ width: "100%", marginBottom: "10px" }}
               />
               <input
                 type="password"
@@ -566,6 +567,7 @@ const Login = () => {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                style={{ width: "100%", marginBottom: "10px" }}
               />
               <div className={styles.form_links}>
                 <a href="/forgotpass">Forgot password?</a>
@@ -598,7 +600,8 @@ const Login = () => {
           >
             <div>
               <h2>Create Account!</h2>
-              <div className={styles.input_container}>
+              <div className={styles.input_container}
+              style={{ width: "100%" }}>
                 <input
                   type="text"
                   id="name_signup"
@@ -606,9 +609,11 @@ const Login = () => {
                   className="placeholder_class"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
+                  style={{ width: "100%", marginBottom: "10px" }}
                 />
               </div>
-              <div className={styles.input_container}>
+              <div className={styles.input_container} style={{ width: "100%" }}
+              >
                 <input
                   type="email"
                   id="email_signup"
@@ -617,10 +622,12 @@ const Login = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  style={{ width: "100%", marginBottom: "10px" }}
                 />
               </div>
 
-              <div className={styles.input_container}>
+              <div className={styles.input_container} style={{ width: "100%" }}
+              >
                 <select
                   className="Contact-dropdown-Gender City-dropdown-Gender"
                   value={selectCountrys || country}
@@ -640,7 +647,8 @@ const Login = () => {
                 </select>
               </div>
 
-              <div className={styles.input_container}>
+              <div className={styles.input_container} style={{ width: "100%" }}
+              >
                 <select
                   className="Citysss-dropdown-Gender"
                   value={city}
@@ -659,7 +667,8 @@ const Login = () => {
                 </select>
               </div>
 
-              <div className={styles.input_container}>
+              <div className={styles.input_container} style={{ width: "100%" }}
+              >
                 <input
                   type={showPassword ? "text" : "password"} // Toggle the input type between 'text' and 'password'
                   id="password_signup"
@@ -668,6 +677,7 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="placeholder_class"
+                  style={{ width: "100%", marginBottom: "10px" }}
                 />
                 <span
                   className="password-toggle-icon"
@@ -680,7 +690,7 @@ const Login = () => {
                   )}
                 </span>
               </div>
-              <div className={styles.input_container}>
+              <div className={styles.input_container} style={{ width: "100%" }}>
                 <input
                   type={showConfirmPassworn ? "text" : "password"}
                   id="confirm_password_signup"
@@ -689,6 +699,7 @@ const Login = () => {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   className="placeholder_class"
+                  style={{ width: "100%", marginBottom: "10px" }}
                 />
                 <span
                   className="password-toggle-icon"

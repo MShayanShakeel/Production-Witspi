@@ -128,7 +128,7 @@ function Setting() {
                           Password
                         </h6>
                         <p className='color-grey'>
-                          Change Your Access Password
+                          {/* Change Your Access Password */}
                         </p>
                       </div>
                       <div className='down-icon'>

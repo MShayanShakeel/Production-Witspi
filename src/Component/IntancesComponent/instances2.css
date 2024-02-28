@@ -100,21 +100,31 @@
   margin-bottom: 4vh;
 }
 
-@media screen and (min-width: 1500px) and (max-width: 1600px) {
+
+@media screen and (min-width: 1900px) and (max-width: 2300px) {
   .All-single-card {
-    width: 19vw;
-    /* margin-left: 1rem; */
+    width: 25vw;
+  }
+}
+@media screen and (min-width: 1700px) and (max-width: 1900px) {
+  .All-single-card {
+    width: 24vw;
+  }
+}
+@media screen and (min-width: 1500px) and (max-width: 1700px) {
+  .All-single-card {
+    width: 21vw;
   }
 }
 @media screen and (min-width: 1400px) and (max-width: 1500px) {
   .All-single-card {
-    width: 17vw;
+    width: 21vw;
     /* margin-left: 0.6rem; */
   }
 }
 @media screen and (min-width: 1300px) and (max-width: 1400px) {
   .All-single-card {
-    width: 17vw;
+    width: 21vw;
   }
 }
 @media screen and (min-width: 1200px) and (max-width: 1300px) {
@@ -138,8 +148,7 @@
   border-radius: 5px;
   font-size: 1.3vh;
 }
-@media screen and (min-width: 600px) and (max-width: 2200) {
-}
+
 .instance-id {
   position: absolute;
   top: 2.5rem;

@@ -147,9 +147,9 @@
     margin-left: 0.7rem !important;
     margin-bottom: 5.5rem;
   }
-.Backdrop-myContact2-2-3{
-  width: 91% !important;
-}
+  .Backdrop-myContact2-2-3 {
+    width: 91% !important;
+  }
   .h1-MY-contact {
     font-size: 15px;
   }
@@ -230,23 +230,23 @@
   align-items: center;
   /* background: #fff; */
   border-radius: 12px;
-  box-shadow: 1px 1px 1px 1px lightblue;
+  box-shadow: 0 5px 10px rgba(129, 124, 124, 0.2);
   display: flex;
   padding: 0px 13px;
   margin-right: 10px;
 }
 .inputsearch-2 {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   /* border: solid 1px #388C8C; */
-  border-radius: 10px ;
+  border-radius: 10px;
   /* box-shadow: 1px 1px 1px 1px lightblue; */
 }
 .inputsearch-2::placeholder {
-  color:  #388C8C; /* Change this to the desired color */
+  color: #388c8c; /* Change this to the desired color */
 }
 .myexecl-btn2 {
   width: 100%;
-  margin-left: 5px;
+  /* margin-left: 4px; */
   margin-right: 5px;
   border: 1px solid #f5f1ff;
   /* padding: 10px 14px; */
@@ -277,18 +277,18 @@
   color: white;
 }
 .search-icon2 {
-  color: #388C8C;
+  color: #388c8c;
   margin-right: 0rem !important;
 }
 .MyContact_2_maincontainer {
-  max-height: 47vh;
+  max-height: 53.7vh;
   overflow-x: auto;
   overflow-y: auto;
   margin-left: 0.5rem;
 }
 @media screen and (min-width: 1720px) {
   .MyContact_2_maincontainer {
-    max-height: 30rem;
+    max-height: 65vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -491,7 +491,7 @@ _min_desc_width {
   padding: 10px 14px;
   border-radius: 8px;
   transition: 0.5s;
-  background: #388C8C;
+  background: #388c8c;
   color: white;
 }
 .div-model-button-excel {
@@ -529,7 +529,7 @@ _min_desc_width {
     padding: 7px 14px;
     border-radius: 8px;
     transition: 0.5s;
-    background: #388C8C;
+    background: #388c8c;
     color: white;
   }
 }

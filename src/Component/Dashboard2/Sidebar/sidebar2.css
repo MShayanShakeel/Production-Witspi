@@ -37,43 +37,42 @@
 
 @media screen and (min-width: 2200px) and (max-width: 2300px) {
   .Sidebar-Comp-card {
-    padding: 3.4rem;
+    padding: 2.5rem 3rem 3rem 3rem;
     margin-top: 1.2vh;
   }
 }
 @media screen and (min-width: 2100px) and (max-width: 2200px) {
   .Sidebar-Comp-card {
-    padding: 3rem;
+    padding: 2.2rem 3rem 3rem 3rem;
     margin-top: 1.2vh;
   }
 }
 @media screen and (min-width: 2000px) and (max-width: 2100px) {
   .Sidebar-Comp-card {
-    padding: 3.2rem;
+    padding: 2.1rem 3.2rem 3.2rem 3.2rem;
     margin-top: 1.3vh;
   }
 }
 
 @media screen and (min-width: 1900px) and (max-width: 2000px) {
   .Sidebar-Comp-card {
-    padding: 2.8rem;
+    padding: 2.1rem 2.8rem 2.8rem 2.8rem;
     margin-top: 1.2vh;
   }
 }
 @media screen and (min-width: 1800px) and (max-width: 1900px) {
   .Sidebar-Comp-card {
-    padding: 2.6rem;
+    padding: 2.1rem 2.6rem 2.6rem 2.6rem;
   }
 }
 @media screen and (min-width: 1700px) and (max-width: 1800px) {
   .Sidebar-Comp-card {
-    padding: 2.4rem;
+    padding: 2.1rem 2.4rem 2.4rem 2.4rem;
   }
 }
 @media screen and (min-width: 1600px) and (max-width: 1700px) {
   .Sidebar-Comp-card {
-    padding: 2rem;
-    /* margin-top: 1rem */ /* width: 30vh;   */
+     padding: 2.1rem 2rem 2rem 2rem;
   }
 }
 @media screen and (min-width: 1500px) and (max-width: 1600px) {
