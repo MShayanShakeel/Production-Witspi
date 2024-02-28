@@ -518,7 +518,7 @@ function Groups2() {
                       overflowY: "auto",
                       // border: "1px solid #ccc",
                       borderRadius: "5px",
-                      backgroundColor: "white",
+                      backgroundColor: "#3AABA8",
                     }}
                   >
                     {children}
@@ -534,7 +534,7 @@ function Groups2() {
               {selectedRole}
             </Dropdown.Toggle>
 
-            <Dropdown.Menu>
+            <Dropdown.Menu style={{background : "#3AABA8"}}>
               <Dropdown.Item onClick={(e) => handleRoleSelect("user")}>
                 User
               </Dropdown.Item>

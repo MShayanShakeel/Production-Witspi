@@ -184,9 +184,19 @@ function MyContact2() {
   //   }
   // }, [token]);
 
+  const [filteredContacts, setFilteredContacts] = useState([]);
+
   const handleSearchInputChange = (e) => {
-    setSearchQuery(e.target.value);
+    const qeury = e.target.value;
+    setSearchQuery(qeury);
+
+    const filtered = allContacts.filter(contact => 
+      contact.firstName.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilteredContacts(filtered);
   };
+
+  
   console.log(searchQuery , "searchQuery" , allContacts);
   const defaultCountries = [
     { name: "USA", flagUrl: "https://flagcdn.com/us.svg" },
