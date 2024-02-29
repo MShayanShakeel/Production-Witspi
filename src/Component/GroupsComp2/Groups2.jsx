@@ -46,7 +46,7 @@ function Groups2() {
   const navigate = useNavigate();
   const [allGroups, setAllGroups] = useState([]);
   const [filteredContacts, setFilteredContacts] = useState([]);
-  const [searchQuery, setSearchQuery] = useState();
+  const [searchQuery, setSearchQuery] = useState("");
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [searchEmailModel, setsearchEmailModel] = useState(false);
   const [emailSearch, setEmailSearch] = useState(null);
@@ -110,12 +110,7 @@ function Groups2() {
   window.addEventListener("resize", handlehidehadder);
   //END Herder show in mobile view logic
 
-  // const emailAddresses = [
-  //     "user@gmail.com"  ,
-  //     "user1@gmail.com",
-  //     "user2@gmail.com",
-  //     "user3@gmail.com",
-  //    ];
+  const tempemail = [emailAddresses];
 
   // ROLE BUTTON
   const handleRoleSelect = (role) => {
@@ -128,8 +123,7 @@ function Groups2() {
     setSearchQuery(query);
 
     const filtered = allGroups.filter((contact) =>
-    console.log(contact , "shayan"),
-      contact.groupName.toLowerCase().includes(query.toLowerCase())
+      contact?.groupName?.toLowerCase().includes(query.toLowerCase())
     );
     setFilteredContacts(filtered);
   };
@@ -153,7 +147,9 @@ function Groups2() {
     fatchData();
   }, [emailFind]);
 
-  // console.log(apiResponce, "jsxresponce");
+
+
+  console.log(apiResponce, "jsxresponce" , emailAddresses);
   // console.log(apiResponce, "emailAddresses");
 
   //FIND USER USING EMAIL
@@ -162,12 +158,12 @@ function Groups2() {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
-    console.log(typeof emailAddresses, "typeodf"); // Check the type of emailAddresses
-    console.log(emailAddresses); // Log emailAddresses content
+    console.log(typeof tempemail, "typeodf"); // Check the type of emailAddresses
+    console.log(tempemail); // Log emailAddresses content
 
     return inputLength === 0
       ? []
-      : emailAddresses.filter(
+      : tempemail.filter(
           (email) => email.toLowerCase().slice(0, inputLength) === inputValue
         );
   };
@@ -216,6 +212,8 @@ function Groups2() {
     }
   }, [userDetails]);
 
+
+
   // GET SHARE GROUPS DATA API
   useEffect(() => {
     const fatchGroupData = async () => {
@@ -240,7 +238,6 @@ function Groups2() {
       // console.log(id , userId, "del data");
       console.log(data, "del data");
       toast.success(data?.message);
-
       setShowDeleteModal(false);
     } catch (error) {
       console.error("Error deleting contact:", error);
@@ -310,6 +307,7 @@ function Groups2() {
           setUpdateGroup(response?.data);
         }
         console.log("Updated Group Data:", response?.data);
+        setShowModalUpdate(false);
         toast.success(response?.message, {
           position: "top-center",
           autoClose: 3000,
@@ -493,7 +491,8 @@ function Groups2() {
                       overflowY: "auto",
                       // border: "1px solid #ccc",
                       borderRadius: "5px",
-                      backgroundColor: "#3AABA8",
+                      backgroundColor: "white",
+                      color : "black",
                     }}
                   >
                     {children}
@@ -1039,89 +1038,6 @@ function Groups2() {
                                 </th>
                               </tr>
                             </thead>
-
-                            {/* {(!allGroups || allGroups?.length === 0) && shareGroupDataStore.length === 0 ? (
-                          <p>Groups Not Fonud</p>
-                        ) : (
-                          allGroups?.map((group, index) => (
-                            <tr
-                              key={index}
-                              style={{
-                                marginBottom: "0",
-                                tableLayout: "fixed",
-                                color: "white",
-                              }}
-                            >
-                              <td className="td-Sno">{index + 1}</td>
-                              <td className="Group-get-table-contant">
-                                {group.groupName}
-                              </td>
-                              <td className="Group-get-table-contant">
-                              <div className="fixed-height-5rem">
-                                {group?.contactList?.map(
-                                  (contact, contactIndex) => (
-                                    <li key={contactIndex}>{contact}</li>
-                                  )
-                                )}
-                                </div>
-                              </td>
-                              <td className="Group-get-table-contant">
-                                {group?.description}
-                              </td>
-                              <td className="Group-get-table-contant">
-                                {group?.status}
-                              </td>
-                              <td className="Group-get-table-contant">
-                                <FontAwesomeIcon
-                                  icon={faEdit}
-                                  style={{
-                                    cursor: "pointer",
-                                    marginRight: "15px",
-                                  }}
-                                  onClick={() =>
-                                    openUpdateModal({
-                                      ...group,
-                                      groupId: group?._id,
-                                    })
-                                  }
-                                />
-                                <FontAwesomeIcon
-                                  icon={faTrash}
-                                  style={{
-                                    cursor: "pointer",
-                                    marginRight: "15px",
-                                  }}
-                                  onClick={() => {
-                                    setGroupsIdToDelete(group?._id);
-                                    setShowDeleteModal(true);
-                                  }}
-                                />
-                                <FontAwesomeIcon
-                                  icon={faShare}
-                                  style={{
-                                    cursor: "pointer",
-                                    marginRight: "15px",
-                                  }}
-                                  onClick={() => {
-                                    setSelectedGroup(group);
-                                    setsearchEmailModel(true);
-                                  }}
-                                  // onClick={() => handleShareGroup()}
-                                />
-                                <RiMessage2Fill
-                                  style={{
-                                    cursor: "pointer",
-                                    marginRight: "15px",
-                                  }}
-                                  onClick={() => {
-                                    setShowSendMessageModal(true);
-                                    setFatchGroupId(group?._id);
-                                  }}
-                                />
-                              </td>
-                            </tr>
-                          ))
-                        )} */}
                             <table>
                               {loader && (
                                 <Loader
@@ -1133,6 +1049,172 @@ function Groups2() {
                               )}
                               {allGroups?.length === 0 ? (
                                 <p>Groups Not Available</p>
+                              ) : filteredContacts.length > 0 ? (
+                                filteredContacts?.map((group, index) => (
+                                  <>
+                                    <tr
+                                      key={index}
+                                      style={{
+                                        marginBottom: "0",
+                                        tableLayout: "fixed",
+                                        color: "white",
+                                      }}
+                                    >
+                                      <td className="td-Sno">{index + 1}</td>
+                                      <td className="Group-get-table-contant">
+                                        {group.groupName
+                                          ? group?.groupName
+                                          : group?.groupId?.groupName}
+                                      </td>
+                                      {/* <td className="Group-get-table-contant">
+                                        <div className="fixed-height-5rem">
+                                        {group?.contactList.length}
+                                          {group?.contactList?.map(
+                                            (contact, contactIndex) => (
+                                              <li key={contactIndex}>
+                                                <ShortText
+                                                  text={contact?.firstName}
+                                                  maxChar={10}
+                                                />
+                                              </li>
+                                            )
+                                          )}
+                                         
+
+                                          {console.log(group?.contactList.length, "check group")}
+                                        </div>
+                                      </td> */}
+                                      <td className="Group-get-table-contant">
+                                        <div className="fixed-height-5rem">
+                                          {/* Display the count of contacts */}
+                                          {group?.contactList.length > 0 && (
+                                            <p>{group?.contactList.length}</p>
+                                          )}
+
+                                          {/* Display the name of the first contact */}
+                                          {group?.contactList.length > 0 && (
+                                            <p>
+                                              {group.contactList[0]?.firstName}
+                                            </p>
+                                          )}
+                                        </div>
+                                      </td>
+
+                                      <td className="Group-get-table-contant">
+                                        <ShortText
+                                          text={
+                                            group?.description
+                                              ? group?.description
+                                              : group?.groupId?.description
+                                          }
+                                          maxChar={23}
+                                        />
+                                      </td>
+                                      <td className="Group-get-table-contant">
+                                        {group?.status
+                                          ? group?.status
+                                          : group?.groupId?.status}
+                                        <abbr
+                                          className="custom-tooltip"
+                                          title={group?.sharedID?.role}
+                                        >
+                                          {group?.sharedID?.role ? (
+                                            <>
+                                              <IoIosCloudDone
+                                                style={{
+                                                  marginLeft: "2rem",
+                                                  fontSize: "1.5rem",
+                                                  cursor: "pointer",
+                                                }}
+                                              />
+                                              {/* {group?.groupOwner} */}
+                                            </>
+                                          ) : null}
+                                        </abbr>
+
+                                        {console.log(
+                                          group?.groupOwner,
+                                          "ownerrrrr"
+                                        )}
+                                      </td>
+                                      <td className="Group-get-table-contant">
+                                        <FontAwesomeIcon
+                                          icon={faEdit}
+                                          style={{
+                                            cursor: "pointer",
+                                            marginRight: "15px",
+                                          }}
+                                          onClick={() =>
+                                            openUpdateModal({
+                                              ...group,
+                                              groupId: group?._id,
+                                            })
+                                          }
+                                        />
+                                        <FontAwesomeIcon
+                                          icon={faTrash}
+                                          style={{
+                                            cursor: "pointer",
+                                            marginRight: "15px",
+                                          }}
+                                          onClick={() => {
+                                            setGroupsIdToDelete(group?._id);
+                                            setShowDeleteModal(true);
+                                          }}
+                                        />
+                                        <FontAwesomeIcon
+                                          icon={faShare}
+                                          style={{
+                                            cursor: "pointer",
+                                            marginRight: "15px",
+                                          }}
+                                          onClick={() => {
+                                            setSelectedGroup(group);
+                                            setsearchEmailModel(true);
+                                          }}
+                                          // onClick={() => handleShareGroup()}
+                                        />
+                                        <RiMessage2Fill
+                                          style={{
+                                            cursor: "pointer",
+                                            marginRight: "15px",
+                                          }}
+                                          onClick={() => {
+                                            setShowSendMessageModal(true);
+                                            setFatchGroupId(group?._id);
+                                          }}
+                                        />
+                                        {/* <Link to="/getsinglegroup"> */}
+                                        <GrView
+                                          style={{
+                                            cursor: "pointer",
+                                          }}
+                                          onClick={() => {
+                                            {
+                                              // navigate
+                                              if (group?._id) {
+                                                handleGroupClick(
+                                                  group.groupId?._id ||
+                                                    group?._id
+                                                );
+                                              } else {
+                                                console.error(
+                                                  "Group ID not available"
+                                                );
+                                              }
+                                            }
+                                          }}
+                                        />
+                                        {/* </Link> */}
+                                      </td>
+                                    </tr>
+                                    <hr
+                                      className="saprat-line-in-gourps"
+                                      color="white"
+                                      size="0"
+                                    ></hr>
+                                  </>
+                                ))
                               ) : (
                                 allGroups?.map((group, index) => (
                                   <>

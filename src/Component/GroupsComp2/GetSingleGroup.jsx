@@ -80,9 +80,7 @@ const GetSingleGroup = () => {
           <p></p>
         )}
 
-        <Row
-          className="get-singel-group-main-row"
-        >
+        <Row className="get-singel-group-main-row">
           {sideBarRender ? (
             <>
               <Col sm="1" lg="1" xl="1" xxl="1">
@@ -190,7 +188,7 @@ const GetSingleGroup = () => {
                                         marginRight: "1rem",
                                       }}
                                     >
-                                      {ListContact}
+                                      {ListContact.firstName}
                                     </p>
                                     <button
                                       type="button"
@@ -208,46 +206,10 @@ const GetSingleGroup = () => {
                           </label>
                         </div>
 
-                        {/* <div
-                    className="col-6 textfield-col"
-                    style={{ marginTop: "20px" }}
-                  >
-                    <label className="lable-create-contact">Contact # NO</label>
-                    <label className="contact-text-field">
-                      {activeContact?.number}
-                    </label>
-                  </div>
-
-                  <div
-                    className="col-6 textfield-col"
-                    style={{ marginTop: "20px" }}
-                  >
-                    <label className="lable-create-contact">Gender</label>
-                    <label className="contact-text-field">
-                      {activeContact?.gender}
-                    </label>
-                  </div>
-
-                  <div
-                    className="col-6 textfield-col"
-                    style={{ marginTop: "20px" }}
-                  >
-                    <label className="lable-create-contact">Country</label>
-                    <label className="contact-text-field">
-                      {activeContact?.country}
-                    </label>
-                  </div> */}
+                 
                       </div>
                     </div>
-                    {/* <div className="Contact-button-div">
-                  <button
-                    type="button"
-                    class="btn-create-contact "
-                    //   onClick={handleComponentHidden}
-                  >
-                    Exit
-                  </button>
-                </div> */}
+                  
                   </form>
                 </div>
 
@@ -362,7 +324,6 @@ const GetSingleGroup = () => {
                                       }}
                                     >
                                       {ListContact.firstName}
-                                      {/* {console.log(ListContact , "ListContact")} */}
                                     </p>
                                     <button
                                       type="button"

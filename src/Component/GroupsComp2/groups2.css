@@ -116,7 +116,7 @@ abbr.custom-tooltip {
   overflow-y: auto;
   margin-left: 1rem;
 }
-/* @media screen and (min-width: 1590px) { */
+@media screen and (min-width: 1590px) {
 .groups_2_maincontainer {
   max-height: 30rem;
   overflow-x: auto;
@@ -127,7 +127,7 @@ abbr.custom-tooltip {
   justify-content: start;
   align-items: center; 
 }
-/* } */
+}
 .groups_2_maincontainer::-webkit-scrollbar {
   width: 1px;
 }

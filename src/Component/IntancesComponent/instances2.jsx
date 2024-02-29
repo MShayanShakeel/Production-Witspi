@@ -157,7 +157,7 @@ function Instances2() {
     setShowDelModal(false);
     setShowModal(false);
   };
-  console.log(instancesData, "temp");
+  
   //----Create Instance
   const handleSaveInput = () => {
     const randomNames = [

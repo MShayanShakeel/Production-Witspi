@@ -567,44 +567,53 @@ function CreateBroadCast2() {
                                 <div className="instance-form-input">
                                   <label className="color-white">
                                     {" "}
-                                    Select Instance{" "}
+                                    Select Instance
                                   </label>
                                   <Dropdown>
                                     <Dropdown.Toggle
+                                      variant="secondary"
                                       id="dropdown-basic"
-                                      className="Drop-btnstyle_createbd color-white"
+                                      style={{
+                                        width: "100%",
+                                        height: "39px",
+                                        // marginTop: "-0.36rem",
+                                      }}
                                     >
-                                      Select Instance
+                                      Select Instances
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu
                                       style={{
                                         width: "100%",
-                                        backgroundColor: "#388C8C",
+                                        backgroundColor: "#3AABA7",
                                         color: "white",
                                       }}
                                     >
-                                      {instanceOptions.map((option, index) => (
-                                        <div key={index} className="form-check">
-                                          <input
-                                            type="checkbox"
-                                            className="form-check-input"
-                                            id={`checkbox-${index}`}
-                                            checked={selectedItems.includes(
-                                              option
-                                            )}
-                                            onChange={() =>
-                                              toggleItemSelection(option)
-                                            }
-                                          />
-                                          <label
-                                            className="form-check-label"
-                                            htmlFor={`checkbox-${index}`}
-                                          >
-                                            {option}
-                                          </label>
-                                        </div>
-                                      ))}
+                                      {Array.isArray(instanceDataUseContext) &&
+                                        instanceDataUseContext.map(
+                                          (instance, index) => (
+                                            <div
+                                              key={index}
+                                              className="form-check"
+                                            >
+                                              <input
+                                                type="checkbox"
+                                                className="form-check-input"
+                                                value={instance.idInstance}
+                                                onChange={handleCheckboxChange}
+                                                checked={selectedInstanceIds.includes(
+                                                  instance.idInstance
+                                                )}
+                                              />
+                                              <label
+                                                className="form-check-label"
+                                                htmlFor={`checkbox-${index}`}
+                                              >
+                                                {instance.InstancesName}
+                                              </label>
+                                            </div>
+                                          )
+                                        )}
                                     </Dropdown.Menu>
                                   </Dropdown>
                                 </div>
@@ -615,16 +624,20 @@ function CreateBroadCast2() {
                                     {" "}
                                     Upload Excel File{" "}
                                   </label>
-                                  <span>
+                                  <span className="hide-ex-btn">
+                                    <button
+                                      type="button"
+                                      onClick={handleExcelFileSelect}
+                                      className="myexecl-btn2 mycontact-btn"
+                                    >
+                                      Add Excel File
+                                    </button>
                                     <input
+                                      ref={fileInputRef}
                                       type="file"
                                       accept=".xls, .xlsx"
-                                      onChange={handleFileSelect}
-                                      className="createbrdCast-input color-white"
-                                      style={{
-                                        padding: "7px 14px",
-                                        backgroundColor: "transparent",
-                                      }}
+                                      onChange={handleFileInputChange}
+                                      style={{ display: "none" }} // Hide the input
                                     />
                                   </span>
                                 </div>
@@ -785,6 +798,60 @@ function CreateBroadCast2() {
                     </Col>
                   </Row>
 
+                  {/* BUTTTON SECTION STARTT HERE */}
+                  <>
+                    <Row style={{ marginTop: "1rem" }}>
+                      <Col sm={1}></Col>
+                      <Col
+                        md={11}
+                        lg={11}
+                        xl={12}
+                        xxl={12}
+                        className="Backdrop-myContact2-2 width_91 header-laptop-view"
+                        style={{ padding: "5px 5px 5px 5px" }}
+                      >
+                        <div>
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                            }}
+                          >
+                            <div>
+                              <h3
+                                style={{
+                                  textAlign: "start",
+                                  color: "#388c8c",
+                                }}
+                              >
+                                My Contacts
+                              </h3>
+                            </div>
+                            <div className="">
+                              <Button
+                                className="Add-new-btn_createbd Sd-Sch-font"
+                                style={{ marginRight: "10px" }}
+                                onClick={() =>
+                                  setShowExcelUploadComponet(false)
+                                }
+                              >
+                                Show Contacts
+                              </Button>
+                              <Button
+                                className="Add-new-btn_createbd Sd-Sch-font"
+                                style={{ marginRight: "19px" }}
+                                onClick={() => setShowExcelUploadComponet(true)}
+                              >
+                                Excel Contact{" "}
+                              </Button>
+                            </div>
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+                  </>
+                  {/* BUTTTON SECTION ENDD HERE */}
+
                   {/* contact list sectipon start  */}
 
                   <Row
@@ -810,60 +877,56 @@ function CreateBroadCast2() {
                           width: "99%",
                         }}
                       >
-                        {/* <h5
-                          style={{
-                            color: "#3ab19d",
-                            paddingTop: "0.5vh",
-                            marginBottom: "-0.2rem",
-                            marginLeft: "5px",
-                          }}
-                        >
-                          Contact List
-                        </h5> */}
                         {showExcelUploadComponet ? (
-                          <div className="main_Crte_BDCAST2">
-                            <table
-                              className="table"
-                              style={{
-                                tableLayout: "fixed",
-                                marginBottom: "0",
-                              }}
-                            >
-                              <thead
-                                className="bdCast-head-font"
-                                style={{ tableLayout: "fixed" }}
-                              >
-                                <tr>
-                                  <th className="color_white">No</th>
-                                  <th className="color_white">FirstName</th>
-                                  <th className="color_white">LastName</th>
-                                  <th className="color_white">Phone</th>
-                                </tr>
-                              </thead>
-                            </table>
-                            <div className="contact-list-container">
+                          <>
+                            <div className="main_Crte_BDCAST2">
                               <table
                                 className="table"
                                 style={{
                                   tableLayout: "fixed",
                                   marginBottom: "0",
+                                  width: "100%",
                                 }}
                               >
+                                <thead
+                                  className="bdCast-head-font"
+                                  style={{
+                                    position: "sticky", 
+                                    top: 0, 
+                                    zIndex: 1,
+                                    background: "white",
+                                    boxShadow: "0px 2px 0px 0px lightblue",
+                                  }}
+                                >
+                                  <tr
+                                    style={{
+                                      background: "white",
+                                      boxShadow: "0px 2px 0px 0px lightblue",
+                                    }}
+                                    className="th-font-style"
+                                  >
+                                    {header.map((headerText, index) => (
+                                      <th key={index}>{headerText}</th>
+                                    ))}
+                                  </tr>
+                                </thead>
                                 <tbody className="bdCast-body-font">
-                                  {excelData?.map((row, index) => (
-                                    <tr key={index}>
-                                      <td className="color_white">
-                                        {index + 1}
-                                      </td>
-                                      <td className="color_white">{row[0]}</td>
-                                      <td className="color_white">{row[1]}</td>
-                                      <td className="color_white">{row[6]}</td>
+                                  {modalData.map((row, rowIndex) => (
+                                    <tr key={rowIndex}>
+                                      {row.map((cell, cellIndex) => (
+                                        <td
+                                          key={cellIndex}
+                                          className="color_white"
+                                        >
+                                          {cell}
+                                        </td>
+                                      ))}
                                     </tr>
                                   ))}
                                 </tbody>
                               </table>
                             </div>
-                          </div>
+                          </>
                         ) : (
                           <div>
                             <div className="MyContact_2_maincontainer fixed-height-Broadcast-Contact">
@@ -888,7 +951,6 @@ function CreateBroadCast2() {
                                   <th className="td_min_width">Gender</th>
                                   <th className="td_min_width">Age</th>
                                   <th className="td_min_width">Country</th>
-                                  <th className="td_min_width">Actions</th>
                                 </tr>
                               </thead>
                               {/* <div className="MyContact_2_container"> */}
@@ -929,48 +991,6 @@ function CreateBroadCast2() {
                                         </td>
                                         <td className="td_min_width">
                                           {row?.country || ""}
-                                        </td>
-                                        <td className="td_min_width">
-                                          <FontAwesomeIcon
-                                            icon={faEdit}
-                                            style={{
-                                              cursor: "pointer",
-                                              marginRight: "15px",
-                                            }}
-                                            // onClick={() => {
-                                            //   openEditModal(row);
-                                            //   setContactIdToDelete(row?._id);
-                                            // }}
-                                          />
-                                          <FontAwesomeIcon
-                                            icon={faTrash}
-                                            style={{
-                                              cursor: "pointer",
-                                              marginRight: "15px",
-                                            }}
-                                            // onClick={() => {
-                                            //   setContactIdToDelete(row?._id);
-                                            //   setShowDeleteModal(true);
-                                            // }}
-                                          />
-                                          <RiMessage2Fill
-                                            style={{
-                                              cursor: "pointer",
-                                              marginRight: "15px",
-                                            }}
-                                            // onClick={() => {
-                                            //   setShowSendMessageModal(true);
-                                            //   setFatchContactId(row?._id);
-                                            // }}
-                                          />
-                                          <span>
-                                            <GrView
-                                              style={{ cursor: "pointer" }}
-                                              // onClick={() =>
-                                              //   handleshowGetcontactpage(row)
-                                              // }
-                                            />
-                                          </span>
                                         </td>
                                       </tr>
                                     </tbody>
@@ -1156,18 +1176,6 @@ function CreateBroadCast2() {
                                         style={{ display: "none" }} // Hide the input
                                       />
                                     </span>
-                                    {/* <span>
-                                      <input
-                                        type="file"
-                                        accept=".xls, .xlsx"
-                                        onChange={handleFileSelect}
-                                        className="createbrdCast-input color-white"
-                                        style={{
-                                          padding: "7px 14px",
-                                          backgroundColor: "transparent",
-                                        }}
-                                      />
-                                    </span> */}
                                   </div>
                                 </Col>
                               </Row>
@@ -1277,30 +1285,9 @@ function CreateBroadCast2() {
                             <div
                               style={{
                                 display: "flex",
-                                justifyContent: "space-between",
+                                justifyContent: "end",
                               }}
                             >
-                              <div className="msg-btns-style">
-                                <Button
-                                  className="Add-new-btn_createbd Sd-Sch-font"
-                                  style={{ marginRight: "10px" }}
-                                  onClick={() =>
-                                    setShowExcelUploadComponet(false)
-                                  }
-                                >
-                                  Show Contact
-                                </Button>
-                                <Button
-                                  className="Add-new-btn_createbd Sd-Sch-font"
-                                  style={{ marginRight: "19px" }}
-                                  onClick={() =>
-                                    setShowExcelUploadComponet(true)
-                                  }
-                                >
-                                  Excel Contact{" "}
-                                </Button>
-                              </div>
-
                               <div className="msg-btns-style">
                                 <Button
                                   className="Add-new-btn_createbd Sd-Sch-font"
@@ -1377,8 +1364,75 @@ function CreateBroadCast2() {
                       </Col>
                     </Row>
 
-                    {/* contact list sectipon start  */}
+                    {/* BUTTTON SECTION STARTT HERE */}
+                    <>
+                      <Row style={{ marginTop: "1rem" }}>
+                        <Col sm={1}></Col>
+                        <Col
+                          md={11}
+                          lg={11}
+                          xl={12}
+                          xxl={12}
+                          className="Backdrop-myContact2-2 width_91 header-laptop-view"
+                          style={{ padding: "5px 5px 5px 5px" }}
+                        >
+                          <div>
+                            <div
+                              style={{
+                                display: "flex",
+                                justifyContent: "space-between",
+                              }}
+                            >
+                              <div>
+                                <h3
+                                  style={{
+                                    textAlign: "start",
+                                    color: "#388c8c",
+                                  }}
+                                >
+                                  My Contacts
+                                </h3>
+                              </div>
+                              <div className="">
+                                <Button
+                                  className="Add-new-btn_createbd Sd-Sch-font"
+                                  // style={{ marginRight: "10px" }}
+                                  style={{
+                                    display:
+                                      modalData.length > 0
+                                        ? "inline-block"
+                                        : "none",
+                                  }}
+                                  onClick={() =>
+                                    setShowExcelUploadComponet(false)
+                                  }
+                                >
+                                  Show Contacts
+                                </Button>
+                                <Button
+                                  className="Add-new-btn_createbd Sd-Sch-font"
+                                  // style={{ marginRight: "19px" }}
+                                  onClick={() =>
+                                    setShowExcelUploadComponet(true)
+                                  }
+                                  style={{
+                                    display:
+                                      modalData.length > 0
+                                        ? "inline-block"
+                                        : "none",
+                                  }}
+                                >
+                                  Excel Contact{" "}
+                                </Button>
+                              </div>
+                            </div>
+                          </div>
+                        </Col>
+                      </Row>
+                    </>
+                    {/* BUTTTON SECTION ENDD HERE */}
 
+                    {/* contact list sectipon start  */}
                     <Col
                       sm="12"
                       md="10"
@@ -1390,68 +1444,11 @@ function CreateBroadCast2() {
                       <Row
                         className="row-bd-width-100"
                         style={{
-                          // marginBottom: "20px",
                           marginLeft: "10px",
                           width: "99%",
                         }}
                       >
-                        {/* <h5
-                          style={{
-                            color: "#3ab19d",
-                            paddingTop: "0.5vh",
-                            marginBottom: "-0.2rem",
-                            marginLeft: "5px",
-                            paddingLeft: "1rem",
-                          }}
-                        >
-                          Contact List
-                        </h5> */}
-
-                        {/* ALL CONTACT SHOW THEY CODE  */}
                         {showExcelUploadComponet ? (
-                          // <div className="main_Crte_BDCAST2">
-                          //   <table
-                          //     className="table"
-                          //     style={{
-                          //       tableLayout: "fixed",
-                          //       marginBottom: "0",
-                          //     }}
-                          //   >
-                          //     <thead
-                          //       className="bdCast-head-font"
-                          //       style={{ tableLayout: "fixed" }}
-                          //     >
-                          //       <tr>
-                          //         <th className="color_white">No</th>
-                          //         <th className="color_white">FirstName</th>
-                          //         <th className="color_white">LastName</th>
-                          //         <th className="color_white">Phone</th>
-                          //       </tr>
-                          //     </thead>
-                          //   </table>
-                          //   <div className="contact-list-container">
-                          //     <table
-                          //       className="table"
-                          //       style={{
-                          //         tableLayout: "fixed",
-                          //         marginBottom: "0",
-                          //       }}
-                          //     >
-                          //       <tbody className="bdCast-body-font">
-                          //         {excelData?.map((row, index) => (
-                          //           <tr key={index}>
-                          //             <td className="color_white">
-                          //               {index + 1}
-                          //             </td>
-                          //             <td className="color_white">{row[0]}</td>
-                          //             <td className="color_white">{row[1]}</td>
-                          //             <td className="color_white">{row[6]}</td>
-                          //           </tr>
-                          //         ))}
-                          //       </tbody>
-                          //     </table>
-                          //   </div>
-                          // </div>
                           <>
                             <div className="main_Crte_BDCAST2">
                               <table
@@ -1459,11 +1456,18 @@ function CreateBroadCast2() {
                                 style={{
                                   tableLayout: "fixed",
                                   marginBottom: "0",
+                                  width: "100%", // Ensure table takes up full width
                                 }}
                               >
                                 <thead
                                   className="bdCast-head-font"
-                                  style={{ tableLayout: "fixed" }}
+                                  style={{
+                                    position: "sticky", // Stick the header
+                                    top: 0, // Place it at the top
+                                    zIndex: 1, // Ensure it's above other content
+                                    background: "white",
+                                    boxShadow: "0px 2px 0px 0px lightblue",
+                                  }}
                                 >
                                   <tr
                                     style={{
@@ -1477,21 +1481,21 @@ function CreateBroadCast2() {
                                     ))}
                                   </tr>
                                 </thead>
-                                  <tbody className="bdCast-body-font">
-                                    {modalData.map((row, rowIndex) => (
-                                      <tr key={rowIndex}>
-                                        {row.map((cell, cellIndex) => (
-                                          <td
-                                            key={cellIndex}
-                                            className="color_white"
-                                          >
-                                            {cell}
-                                          </td>
-                                        ))}
-                                      </tr>
-                                    ))}
-                                  </tbody>
-                                </table>
+                                <tbody className="bdCast-body-font">
+                                  {modalData.map((row, rowIndex) => (
+                                    <tr key={rowIndex}>
+                                      {row.map((cell, cellIndex) => (
+                                        <td
+                                          key={cellIndex}
+                                          className="color_white"
+                                        >
+                                          {cell}
+                                        </td>
+                                      ))}
+                                    </tr>
+                                  ))}
+                                </tbody>
+                              </table>
                             </div>
                           </>
                         ) : (
@@ -1518,7 +1522,6 @@ function CreateBroadCast2() {
                                   <th className="td_min_width">Gender</th>
                                   <th className="td_min_width">Age</th>
                                   <th className="td_min_width">Country</th>
-                                  <th className="td_min_width">Actions</th>
                                 </tr>
                               </thead>
                               {/* <div className="MyContact_2_container"> */}
@@ -1559,48 +1562,6 @@ function CreateBroadCast2() {
                                         </td>
                                         <td className="td_min_width">
                                           {row?.country || ""}
-                                        </td>
-                                        <td className="td_min_width">
-                                          <FontAwesomeIcon
-                                            icon={faEdit}
-                                            style={{
-                                              cursor: "pointer",
-                                              marginRight: "15px",
-                                            }}
-                                            // onClick={() => {
-                                            //   openEditModal(row);
-                                            //   setContactIdToDelete(row?._id);
-                                            // }}
-                                          />
-                                          <FontAwesomeIcon
-                                            icon={faTrash}
-                                            style={{
-                                              cursor: "pointer",
-                                              marginRight: "15px",
-                                            }}
-                                            // onClick={() => {
-                                            //   setContactIdToDelete(row?._id);
-                                            //   setShowDeleteModal(true);
-                                            // }}
-                                          />
-                                          <RiMessage2Fill
-                                            style={{
-                                              cursor: "pointer",
-                                              marginRight: "15px",
-                                            }}
-                                            // onClick={() => {
-                                            //   setShowSendMessageModal(true);
-                                            //   setFatchContactId(row?._id);
-                                            // }}
-                                          />
-                                          <span>
-                                            <GrView
-                                              style={{ cursor: "pointer" }}
-                                              // onClick={() =>
-                                              //   handleshowGetcontactpage(row)
-                                              // }
-                                            />
-                                          </span>
                                         </td>
                                       </tr>
                                     </tbody>

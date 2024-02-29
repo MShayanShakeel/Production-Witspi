@@ -254,7 +254,17 @@
   margin-bottom: 2px !important;
   border-radius: 20px;
   background-color: #c6c4e8;
+  /* cursor: pointer; */
 }
+.deshboard-single-contact span {
+  transition: transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.deshboard-single-contact span:hover {
+  transform: scale(1.1); /* Example hover effect: scale up the element */
+}
+
+
 .centered-span {
   display: flex;
   justify-content: center; /* Center horizontally */

@@ -20,29 +20,23 @@ function CreateGroup2() {
   const [selectAll, setSelectAll] = useState(false);
   const [contactList, setContactList] = useState([]);
 
-  // const handleSingleCheckboxChange = (rowId) => {
-  //   setSelectedRows(prevState => ({
-  //     ...prevState,
-  //     [rowId]: !prevState[rowId] // Toggle the checkbox state for the clicked row
-  //   }));
-  // };
 
   const handleSelectAllChange = () => {
-    setSelectAll(!selectAll); // Toggle the "Select All" state
-    const newSelectedRows = {}; // Object to store selected rows
+    setSelectAll(!selectAll); 
+    const newSelectedRows = {};
     if (!selectAll) {
-      // If "Select All" is checked, select all rows
+      
       contactList.forEach((row) => {
         newSelectedRows[row._id] = true;
       });
     }
-    setSelectedRows(newSelectedRows); // Update the selected rows state
+    setSelectedRows(newSelectedRows); 
   };
+
 
   const handleSingleCheckboxChange = (rowId) => {
     setSelectedRows((prevState) => {
       const updatedSelectedRows = { ...prevState };
-
 
       updatedSelectedRows[rowId] = !updatedSelectedRows[rowId];
 
@@ -54,9 +48,7 @@ function CreateGroup2() {
     });
   };
   const selectedIds = Object.keys(selectedRows);
-
-  console.log(selectedIds, "shayahsfkjasshfass");
-  // console.log(selectedRows, "selectedRows");
+  console.log(selectedIds , "selectedIds")
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -501,9 +493,15 @@ function CreateGroup2() {
                               {/* <input
                                 type="checkbox"
                                 onClick={setGetUserId}
-                                // onChange={handleSelectAllChange}
-                                // checked={selectAll}
+                                onChange={handleSelectAllChange}
+                                checked={selectAll}
                               /> */}
+
+                              <input
+                                type="checkbox"
+                                onChange={handleSelectAllChange}
+                                checked={selectAll}
+                              />
                             </th>
                             <th className="td_min_sNo_width">S.N</th>
                             <th className="td_min_width">First Name</th>
@@ -540,7 +538,6 @@ function CreateGroup2() {
                                       }}
                                       checked={selectedRows[row._id] || false}
                                     />
-                                    {console.log(getuserId, "anrow")}
                                   </td>
                                   <td className="td_min_sNo_width">
                                     {index + 1}

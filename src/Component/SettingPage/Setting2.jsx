@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./setting2.css";
 import { Card, Col, Row, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import passimage from "../../../images/Password-change-img.jpg";
 import {
   faCog,
   faChevronDown,
@@ -18,6 +19,7 @@ import Headerprofile from "../Header-profile/Headerprofile";
 import LaptopHeader from "../Header-profile/LaptopHeader";
 import { handelUserChangePassword } from "../../helpers/PostApis/UserChangePassword";
 import { useUserdetails } from "../../store/UserContext";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 // import Header2 from './../header/header2';
 
 function Setting2() {
@@ -94,6 +96,21 @@ function Setting2() {
     setIsNotifyOpen(false);
     setIsPassOpen(false);
     setIsCardOpen(true);
+  };
+  const [showCurrentPass, setShowCurrentPass] = useState(false);
+  const [showNewPass, setShowNewPass] = useState(false);
+  const [showConfirmPass, setShowConfirmPass] = useState(false);
+
+  const toggleShowCurrentPass = () => {
+    setShowCurrentPass(!showCurrentPass);
+  };
+
+  const toggleShowNewPass = () => {
+    setShowNewPass(!showNewPass);
+  };
+
+  const toggleShowConfirmPass = () => {
+    setShowConfirmPass(!showConfirmPass);
   };
   return (
     <>
@@ -283,57 +300,113 @@ function Setting2() {
                                           {" "}
                                           Current Password{" "}
                                         </label>
-                                        <input
-                                          type="password"
-                                          placeholder="Current Password"
-                                          value={currentPassword}
-                                          onChange={(e) =>
-                                            setCurrentPassword(e.target.value)
-                                          }
-                                          className="input-field-setting2 cur-pass text-black focus:text-black"
-                                          style={{ width: "49%" }}
-                                        />
+                                        <div>
+                                          <input
+                                            type={
+                                              showCurrentPass
+                                                ? "text"
+                                                : "password"
+                                            }
+                                            placeholder="Current Password"
+                                            value={currentPassword}
+                                            onChange={(e) =>
+                                              setCurrentPassword(e.target.value)
+                                            }
+                                            className="input-field-setting2 cur-pass text-black focus:text-black"
+                                            style={{ width: "50%" }}
+                                          />
+                                          <span
+                                            className=""
+                                            onClick={toggleShowCurrentPass}
+                                            style={{
+                                              marginLeft: "-2rem",
+                                              cursor: "pointer",
+                                            }}
+                                          >
+                                            {showCurrentPass ? (
+                                              <FiEyeOff className="password-eye-icon" />
+                                            ) : (
+                                              <FiEye className="password-eye-icon" />
+                                            )}
+                                          </span>
+                                        </div>
                                       </div>
                                     </Col>
                                   </Row>
                                   <Row>
-                                    <div className="acc-form-main">
-                                      <Col xs={12} md={6} lg={6}>
-                                        <div className="acc-form-input">
-                                          <label className="label_white">
-                                            {" "}
-                                            New Password{" "}
-                                          </label>
+                                    <Col xs={12} md={12} lg={12}>
+                                      <div className="acc-form-input">
+                                        <label className="label_white">
+                                          {" "}
+                                          New Password{" "}
+                                        </label>
+                                        <div>
                                           <input
-                                            type="password"
+                                            type={
+                                              showNewPass ? "text" : "password"
+                                            }
                                             placeholder="New Password"
                                             value={newPassword}
                                             onChange={(e) =>
                                               setNewPassword(e.target.value)
                                             }
                                             className="input-field-setting2 text-black focus:text-black"
+                                            style={{ width: "50%" }}
                                           />
+                                          <span
+                                            onClick={toggleShowNewPass}
+                                            style={{
+                                              marginLeft: "-2rem",
+                                              cursor: "pointer",
+                                            }}
+                                          >
+                                            {showNewPass ? (
+                                              <FiEyeOff className="password-eye-icon" />
+                                            ) : (
+                                              <FiEye className="password-eye-icon" />
+                                            )}
+                                          </span>
                                         </div>
-                                      </Col>
+                                      </div>
+                                    </Col>
 
-                                      <Col xs={12} md={6} lg={6}>
-                                        <div className="acc-form-input">
-                                          <label className="label_white">
-                                            {" "}
-                                            Confirm Password{" "}
-                                          </label>
+                                    <Col xs={12} md={12} lg={12}>
+                                      <div className="acc-form-input">
+                                        <label className="label_white">
+                                          {" "}
+                                          Confirm Password{" "}
+                                        </label>
+                                        <div>
                                           <input
-                                            type="password"
+                                            type={
+                                              showConfirmPass
+                                                ? "text"
+                                                : "password"
+                                            }
                                             placeholder="Confirm Password"
                                             value={newConform}
                                             onChange={(e) =>
                                               setConformPassword(e.target.value)
                                             }
                                             className="input-field-setting2 text-black focus:text-black"
+                                            style={{ width: "50%" }}
                                           />
+                                          <span
+                                            onClick={toggleShowConfirmPass}
+                                            style={{
+                                              marginLeft: "-2rem",
+                                              cursor: "pointer",
+                                            }}
+                                          >
+                                            {showConfirmPass ? (
+                                              <FiEyeOff className="password-eye-icon" />
+                                            ) : (
+                                              <FiEye className="password-eye-icon" />
+                                            )}
+                                          </span>
                                         </div>
-                                      </Col>
-                                    </div>
+                                      </div>
+                                    </Col>
                                   </Row>
                                   <div
                                     className="btn-style-end"
@@ -538,7 +611,7 @@ function Setting2() {
                   xxl="10"
                   style={{ float: "right" }}
                 >
-                  <div style={{marginRight : "1rem"}}>
+                  <div style={{ marginRight: "1rem" }}>
                     <div className="set-main">
                       {/* <h2 className='sett-pad-20px' style={{ color: 'white' }}>
                                     General Settings
@@ -685,7 +758,9 @@ function Setting2() {
                             </div>
                             {isPassOpen && (
                               <div className="below-container">
-                                <div className="card-below-body">
+                                <div
+                                  className="card-below-body"
+                                >
                                   <form>
                                     <Row>
                                       <Col xs={12} md={12} lg={12}>
@@ -694,47 +769,93 @@ function Setting2() {
                                             {" "}
                                             Current Password{" "}
                                           </label>
-                                          <input
-                                            type="password"
-                                            placeholder="Current Password"
-                                            value={currentPassword}
-                                            onChange={(e) =>
-                                              setCurrentPassword(e.target.value)
-                                            }
-                                            className="input-field-setting2 cur-pass text-black focus:text-black"
-                                            style={{ width: "49%" }}
-                                          />
+                                          <div>
+                                            <input
+                                              type={
+                                                showCurrentPass
+                                                  ? "text"
+                                                  : "password"
+                                              }
+                                              placeholder="Current Password"
+                                              value={currentPassword}
+                                              onChange={(e) =>
+                                                setCurrentPassword(
+                                                  e.target.value
+                                                )
+                                              }
+                                              className="input-field-setting2 cur-pass text-black focus:text-black"
+                                              style={{ width: "50%" }}
+                                            />
+                                            <span
+                                              className=""
+                                              onClick={toggleShowCurrentPass}
+                                              style={{
+                                                marginLeft: "-2rem",
+                                                cursor: "pointer",
+                                              }}
+                                            >
+                                              {showCurrentPass ? (
+                                                <FiEyeOff className="password-eye-icon" />
+                                              ) : (
+                                                <FiEye className="password-eye-icon" />
+                                              )}
+                                            </span>
+                                          </div>
                                         </div>
                                       </Col>
                                     </Row>
                                     <Row>
-                                      <div className="acc-form-main">
-                                        <Col xs={12} md={6} lg={6}>
-                                          <div className="acc-form-input">
-                                            <label className="label_white">
-                                              {" "}
-                                              New Password{" "}
-                                            </label>
+                                      <Col xs={12} md={12} lg={12}>
+                                        <div className="acc-form-input">
+                                          <label className="label_white">
+                                            {" "}
+                                            New Password{" "}
+                                          </label>
+                                          <div>
                                             <input
-                                              type="password"
+                                              type={
+                                                showNewPass
+                                                  ? "text"
+                                                  : "password"
+                                              }
                                               placeholder="New Password"
                                               value={newPassword}
                                               onChange={(e) =>
                                                 setNewPassword(e.target.value)
                                               }
                                               className="input-field-setting2 text-black focus:text-black"
+                                              style={{
+                                                width: "50%",
+                                                cursor: "pointer",
+                                              }}
                                             />
+                                            <span
+                                              onClick={toggleShowNewPass}
+                                              style={{ marginLeft: "-2rem" }}
+                                            >
+                                              {showNewPass ? (
+                                                <FiEyeOff className="password-eye-icon" />
+                                              ) : (
+                                                <FiEye className="password-eye-icon" />
+                                              )}
+                                            </span>
                                           </div>
-                                        </Col>
+                                        </div>
+                                      </Col>
 
-                                        <Col xs={12} md={6} lg={6}>
-                                          <div className="acc-form-input">
-                                            <label className="label_white">
-                                              {" "}
-                                              Confirm Password{" "}
-                                            </label>
+                                      <Col xs={12} md={12} lg={12}>
+                                        <div className="acc-form-input">
+                                          <label className="label_white">
+                                            {" "}
+                                            Confirm Password{" "}
+                                          </label>
+                                          <div>
                                             <input
-                                              type="password"
+                                              type={
+                                                showConfirmPass
+                                                  ? "text"
+                                                  : "password"
+                                              }
                                               placeholder="Confirm Password"
                                               value={newConform}
                                               onChange={(e) =>
@@ -743,16 +864,31 @@ function Setting2() {
                                                 )
                                               }
                                               className="input-field-setting2 text-black focus:text-black"
+                                              style={{
+                                                width: "50%",
+                                                cursor: "pointer",
+                                              }}
                                             />
+                                            <span
+                                              onClick={toggleShowConfirmPass}
+                                              style={{ marginLeft: "-2rem" }}
+                                            >
+                                              {showConfirmPass ? (
+                                                <FiEyeOff className="password-eye-icon" />
+                                              ) : (
+                                                <FiEye className="password-eye-icon" />
+                                              )}
+                                            </span>
                                           </div>
-                                        </Col>
-                                      </div>
+                                        </div>
+                                      </Col>
                                     </Row>
                                     <div
                                       className="btn-style-end"
                                       style={{
                                         marginRight: "11px",
                                         marginTop: "3px",
+                                        
                                       }}
                                     >
                                       <Button
