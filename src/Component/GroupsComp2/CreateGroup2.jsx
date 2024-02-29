@@ -14,6 +14,49 @@ import LaptopHeader from "../Header-profile/LaptopHeader";
 function CreateGroup2() {
   const [groupName, setGroupName] = useState("");
   const [groupDescription, setGroupDescription] = useState("");
+  const [getuserId, setGetUserId] = useState([]);
+
+  const [selectedRows, setSelectedRows] = useState({});
+  const [selectAll, setSelectAll] = useState(false);
+  const [contactList, setContactList] = useState([]);
+
+  // const handleSingleCheckboxChange = (rowId) => {
+  //   setSelectedRows(prevState => ({
+  //     ...prevState,
+  //     [rowId]: !prevState[rowId] // Toggle the checkbox state for the clicked row
+  //   }));
+  // };
+
+  const handleSelectAllChange = () => {
+    setSelectAll(!selectAll); // Toggle the "Select All" state
+    const newSelectedRows = {}; // Object to store selected rows
+    if (!selectAll) {
+      // If "Select All" is checked, select all rows
+      contactList.forEach((row) => {
+        newSelectedRows[row._id] = true;
+      });
+    }
+    setSelectedRows(newSelectedRows); // Update the selected rows state
+  };
+
+  const handleSingleCheckboxChange = (rowId) => {
+    setSelectedRows((prevState) => {
+      const updatedSelectedRows = { ...prevState };
+
+
+      updatedSelectedRows[rowId] = !updatedSelectedRows[rowId];
+
+      if (!updatedSelectedRows[rowId]) {
+        delete updatedSelectedRows[rowId];
+      }
+
+      return updatedSelectedRows;
+    });
+  };
+  const selectedIds = Object.keys(selectedRows);
+
+  console.log(selectedIds, "shayahsfkjasshfass");
+  // console.log(selectedRows, "selectedRows");
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -25,12 +68,9 @@ function CreateGroup2() {
     age: "",
   });
 
-  const { userDetails, setUserDetails } = useUserdetails();
+  const { userDetails, sideBarRender } = useUserdetails();
   const userId = userDetails?._id;
   console.log(userDetails, "userdetails");
-
-  const [selectAll, setSelectAll] = useState(false);
-  const [contactList, setContactList] = useState([]);
 
   //START GET ALL CONTACT API
 
@@ -61,18 +101,21 @@ function CreateGroup2() {
 
   //START CREATE GROUP
 
-  console.log(userDetails, "userdetail");
-  console.log(userId, "userdetauserIdil");
-
   const handleCreateGroup = async (id) => {
-    const data = {   
+    if (!groupName || !contactList || !groupDescription) {
+      console.log("some things are missing");
+      return;
+    }
+    const data = {
       userId: userId,
       groupName: groupName,
-      contactId: contactList?.map((contactList) => contactList?._id),
+      // contactId: contactList?.map((contactList) => contactList?._id),
+      contactId: [selectedIds],
       description: groupDescription,
       groupOwner: userId,
       status: true,
     };
+    console.log(data, "data");
 
     // console.log(data, "datadata");
     const encrypted = encryption(data);
@@ -91,7 +134,6 @@ function CreateGroup2() {
         .then((res) => {
           console.log(decryption(res.data.data)),
             toast.success("Create Group Sucessfuly");
-          alert("Create Group Sucessfuly");
           console.log(userDetails._id, "userdetail");
           console.log(res, "resresres");
           setGroupName(""), setGroupDescription("");
@@ -137,9 +179,9 @@ function CreateGroup2() {
     }
     return text.slice(0, maxLength) + "...";
   }
-  const handleSelectAllChange = () => {
-    setSelectAll(!selectAll); // Toggle the "Select All" state
-  };
+  // const handleSelectAllChange = () => {
+  //   setSelectAll(!selectAll); // Toggle the "Select All" state
+  // };
   const handleCheckboxChange = () => {
     // For Individual checkbox, in Futher
   };
@@ -156,10 +198,8 @@ function CreateGroup2() {
   // };
 
   // Check if all required fields are filled if not (HIDE BTN)
-  const isSaveButtonVisible =
-    groupName !== "" &&
-    groupDescription !== "" &&
-    (selectAll || !handleCheckboxChange);
+  const isSaveButtonVisible = groupName !== "" && groupDescription !== "";
+  // (selectAll);
 
   return (
     <>
@@ -174,151 +214,378 @@ function CreateGroup2() {
         }}
       >
         <Row style={{ padding: "3vh 4.5vh 3vh 0" }}>
-          <Col sm="1" lg="1" xl="1" xxl="1">
-            {/* <Sidebar2 /> */}
-          </Col>
-          <Col style={{width : "91%"}}>
-          <LaptopHeader />
-          <Row>
-          <Col
-            sm="12"
-            md="11"
-            lg="11"
-            xl="11"
-            xxl="11"
-            className="create_grp_filter"
-          >
-           
-            <Row
-              className="mob-row"
-              style={{
-                marginBottom: "20px",
-                marginLeft: "10px",
-                width: "98.5%",
-              }}
-            >
-              
-              <Col>
-                <div className="card-drop-style">
-                  <h1
-                    style={{
-                      padding: "10px",
-                      paddingTop: "20px",
-                      fontWeight: "600",
-                      color: "white",
-                    }}
-                  >
-                    Create Groups
-                  </h1>
-                  {isSaveButtonVisible && (
-                    <button
-                      type="button"
-                      className="myexecl-btn_creategrp2 Save-CG-btn"
-                      onClick={handleCreateGroup}
-                    >
-                      Save
-                    </button>
-                  )}
-                </div>
-                <Col xs={12} md={12} lg={12} className="cr-display">
-                  <div
-                    className="instance-form-input_grp2"
-                    style={{ paddingRight: "10px" }}
-                  >
-                    <label style={{ color: "white" }}> Name </label>
-                    <span>
-                      <input
-                        type="text"
-                        placeholder="Name..."
-                        className="input-instance_grp2 text-white focus:text-white"
-                        name="name"
-                        value={groupName}
-                        onChange={(e) => setGroupName(e.target.value)}
-                      />
-                    </span>
-                  </div>
-                  <div className="instance-form-input_grp2">
-                    <label style={{ color: "white" }}> Description </label>
-                    <input
-                      type="text"
-                      placeholder="Description..."
-                      className="input-instance_grp2 text-white focus:text-white"
-                      name="description"
-                      value={groupDescription}
-                      onChange={(e) => setGroupDescription(e.target.value)}
-                    />
-                  </div>
-                </Col>
+          {sideBarRender ? (
+            <>
+              <Col sm="1" lg="1" xl="1" xxl="1">
+                {/* <Sidebar2 /> */}
               </Col>
-            </Row>
-
-            <div>
-              <div className="MyContact_2_maincontainer">
-                <thead style={{ marginBottom: "0", tableLayout: "fixed" }}>
-                  <tr style={{ color: "white" }} className="th-font-style">
-                    <th className="th-checkbox">
-                      <input
-                        type="checkbox"
-                        onChange={handleSelectAllChange}
-                        checked={selectAll}
-                      />
-                    </th>
-                    <th className="td_min_sNo_width">S.N</th>
-                    <th className="td_min_width">First Name</th>
-                    <th className="td_min_width">Last Name</th>
-                    <th className="td_min_width">Email</th>
-                    <th className="td_min_width">Phone</th>
-                    <th className="td_min_width">Gender</th>
-                    <th className="td_min_width">Age</th>
-                    <th className="td_min_width">Country</th>
-                  </tr>
-                </thead>
-
-                {/* <div className="MyContact_2_container"> */}
-                {contactList?.length < 0 ? (
-                  <p>No data found</p>
-                ) : (
-                  contactList?.map((row, index) => (
-                    <table>
-                      <tbody
-                        className="tbody-font-style"
-                        style={{
-                          marginBottom: "0",
-                          tableLayout: "absolute",
-                          color: "white",
-                        }}
-                      >
-                        <td key={row._id}>
-                          <td className="th-checkbox">
+              <Col
+                sm="10"
+                md="10"
+                lg="10"
+                xl="10"
+                xxl="10"
+                style={{ width: "91%" }}
+              >
+                <LaptopHeader />
+                <Row>
+                  <Col
+                    sm="12"
+                    md="11"
+                    lg="11"
+                    xl="11"
+                    xxl="11"
+                    className="create_grp_filter"
+                  >
+                    <Row
+                      className="mob-row"
+                      style={{
+                        marginBottom: "20px",
+                        marginLeft: "10px",
+                        width: "98.5%",
+                      }}
+                    >
+                      <Col>
+                        <div className="card-drop-style">
+                          <h1
+                            style={{
+                              padding: "10px",
+                              paddingTop: "20px",
+                              fontWeight: "600",
+                              color: "#388C8C",
+                            }}
+                          >
+                            Create Groups
+                          </h1>
+                          {isSaveButtonVisible && (
+                            <button
+                              type="button"
+                              className="myexecl-btn_creategrp2 Save-CG-btn"
+                              onClick={handleCreateGroup}
+                            >
+                              Save
+                            </button>
+                          )}
+                        </div>
+                        <Col xs={12} md={12} lg={12} className="cr-display">
+                          <div
+                            className="instance-form-input_grp2"
+                            style={{ paddingRight: "10px" }}
+                          >
+                            <label style={{ color: "white" }}> Name </label>
+                            <span>
+                              <input
+                                type="text"
+                                placeholder="Name..."
+                                className="input-instance_grp2 focus:text-black"
+                                name="name"
+                                value={groupName}
+                                onChange={(e) => setGroupName(e.target.value)}
+                              />
+                            </span>
+                          </div>
+                          <div className="instance-form-input_grp2">
+                            <label style={{ color: "white" }}>
+                              {" "}
+                              Description{" "}
+                            </label>
                             <input
-                              type="checkbox"
-                              onChange={handleSelectAllChange}
-                              checked={selectAll}
+                              type="text"
+                              placeholder="Description..."
+                              className="input-instance_grp2 focus:text-black"
+                              name="description"
+                              value={groupDescription}
+                              onChange={(e) =>
+                                setGroupDescription(e.target.value)
+                              }
                             />
-                          </td>
-                          <td className="td_min_sNo_width">{index + 1}</td>
-                          <td className="td_min_width">{row?.firstName}</td>
-                          <td className="td_min_width">
-                            {row?.lastName || ""}
-                          </td>
-                          <td className="td_min_width">{row?.email || ""}</td>
-                          <td className="td_min_width">{row?.number}</td>
-                          <td className="td_min_width">{row?.gender || ""}</td>
-                          <td className="td_min_width">{row?.age || ""}</td>
-                          <td className="td_min_width">{row?.country || ""}</td>
-                        </td>
-                      </tbody>
-                    </table>
-                    // ))
-                  ))
-                )}
-                {/* </div> */}
-              </div>
-            </div>
-            {/* </Col> */}
-          </Col>
-          </Row>
-          </Col>
+                          </div>
+                        </Col>
+                      </Col>
+                    </Row>
+
+                    <div>
+                      <div className="MyContact_2_maincontainer">
+                        <thead
+                          style={{ marginBottom: "0", tableLayout: "fixed" }}
+                        >
+                          <tr
+                            style={{ color: "white" }}
+                            className="th-font-style"
+                          >
+                            <th className="th-checkbox">
+                              <input
+                                type="checkbox"
+                                onClick={setGetUserId}
+                                // onChange={handleSelectAllChange}
+                                // checked={selectAll}
+                              />
+                            </th>
+                            <th className="td_min_sNo_width">S.N</th>
+                            <th className="td_min_width">First Name</th>
+                            <th className="td_min_width">Last Name</th>
+                            <th className="td_min_width">Email</th>
+                            <th className="td_min_width">Phone</th>
+                            <th className="td_min_width">Gender</th>
+                            <th className="td_min_width">Age</th>
+                            <th className="td_min_width">Country</th>
+                          </tr>
+                        </thead>
+
+                        {/* <div className="MyContact_2_container"> */}
+                        {contactList?.length < 0 ? (
+                          <p>No data found</p>
+                        ) : (
+                          contactList?.map((row, index) => (
+                            <table>
+                              <tbody
+                                className="tbody-font-style"
+                                style={{
+                                  marginBottom: "0",
+                                  tableLayout: "absolute",
+                                  color: "white",
+                                }}
+                              >
+                                <td key={row._id}>
+                                  <td className="th-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      onClick={setGetUserId}
+                                      // onChange={handleSelectAllChange}
+                                      // checked={selectAll}
+                                    />
+                                  </td>
+                                  <td className="td_min_sNo_width">
+                                    {index + 1}
+                                  </td>
+                                  <td className="td_min_width">
+                                    {row?.firstName}
+                                  </td>
+                                  <td className="td_min_width">
+                                    {row?.lastName || ""}
+                                  </td>
+                                  <td className="td_min_width">
+                                    {row?.email || ""}
+                                  </td>
+                                  <td className="td_min_width">
+                                    {row?.number}
+                                  </td>
+                                  <td className="td_min_width">
+                                    {row?.gender || ""}
+                                  </td>
+                                  <td className="td_min_width">
+                                    {row?.age || ""}
+                                  </td>
+                                  <td className="td_min_width">
+                                    {row?.country || ""}
+                                  </td>
+                                </td>
+                              </tbody>
+                            </table>
+                            // ))
+                          ))
+                        )}
+                        {/* </div> */}
+                      </div>
+                    </div>
+                    {/* </Col> */}
+                  </Col>
+                </Row>
+              </Col>
+            </>
+          ) : (
+            <>
+              <Col sm="2" lg="2" xl="2" xxl="2">
+                {/* <Sidebar2 /> */}
+              </Col>
+              <Col
+                sm="10"
+                md="10"
+                lg="10"
+                xl="10"
+                xxl="10"
+                style={{ width: "82.3%" }}
+                //  style={{float : "right" , position : "relative"}}
+              >
+                <LaptopHeader />
+                <Row>
+                  <Col
+                    sm="12"
+                    md="11"
+                    lg="11"
+                    xl="11"
+                    xxl="11"
+                    className="create_grp_filter"
+                  >
+                    <Row
+                      className="mob-row"
+                      style={{
+                        marginBottom: "20px",
+                        marginLeft: "10px",
+                        width: "98.5%",
+                      }}
+                    >
+                      <Col>
+                        <div className="card-drop-style">
+                          <h1
+                            style={{
+                              padding: "10px",
+                              paddingTop: "20px",
+                              fontWeight: "600",
+                              color: "#388C8C",
+                            }}
+                          >
+                            Create Groups
+                          </h1>
+                          {isSaveButtonVisible && (
+                            <button
+                              type="button"
+                              className="myexecl-btn_creategrp2 Save-CG-btn"
+                              onClick={handleCreateGroup}
+                            >
+                              Save
+                            </button>
+                          )}
+                        </div>
+                        <Col xs={12} md={12} lg={12} className="cr-display">
+                          <div
+                            className="instance-form-input_grp2"
+                            style={{ paddingRight: "10px" }}
+                          >
+                            <label style={{ color: "white" }}> Name </label>
+                            <span>
+                              <input
+                                type="text"
+                                placeholder="Name..."
+                                className="input-instance_grp2 focus:text-black"
+                                name="name"
+                                value={groupName}
+                                onChange={(e) => setGroupName(e.target.value)}
+                              />
+                            </span>
+                          </div>
+                          <div className="instance-form-input_grp2">
+                            <label style={{ color: "white" }}>
+                              {" "}
+                              Description{" "}
+                            </label>
+                            <input
+                              type="text"
+                              placeholder="Description..."
+                              className="input-instance_grp2 focus:text-black"
+                              name="description"
+                              value={groupDescription}
+                              onChange={(e) =>
+                                setGroupDescription(e.target.value)
+                              }
+                            />
+                          </div>
+                        </Col>
+                      </Col>
+                    </Row>
+
+                    <div>
+                      <div className="MyContact_2_maincontainer">
+                        <thead
+                          style={{
+                            marginBottom: "0",
+                            tableLayout: "fixed",
+                            background: "white",
+                          }}
+                        >
+                          <tr
+                            style={{ color: "white" }}
+                            className="th-font-style"
+                          >
+                            <th className="th-checkbox">
+                              {/* <input
+                                type="checkbox"
+                                onClick={setGetUserId}
+                                // onChange={handleSelectAllChange}
+                                // checked={selectAll}
+                              /> */}
+                            </th>
+                            <th className="td_min_sNo_width">S.N</th>
+                            <th className="td_min_width">First Name</th>
+                            <th className="td_min_width">Last Name</th>
+                            <th className="td_min_width">Email</th>
+                            <th className="td_min_width">Phone</th>
+                            <th className="td_min_width">Gender</th>
+                            <th className="td_min_width">Age</th>
+                            <th className="td_min_width">Country</th>
+                          </tr>
+                        </thead>
+
+                        {/* <div className="MyContact_2_container"> */}
+                        {contactList?.length < 0 ? (
+                          <p>No data found</p>
+                        ) : (
+                          contactList?.map((row, index) => (
+                            <table style={{ marginTop: "1rem" }}>
+                              <tbody
+                                className="tbody-font-style"
+                                style={{
+                                  marginBottom: "0",
+                                  tableLayout: "absolute",
+                                  color: "white",
+                                }}
+                              >
+                                <td key={row._id}>
+                                  <td className="th-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      onClick={() => setGetUserId(row?._id)}
+                                      onChange={() => {
+                                        handleSingleCheckboxChange(row._id);
+                                      }}
+                                      checked={selectedRows[row._id] || false}
+                                    />
+                                    {console.log(getuserId, "anrow")}
+                                  </td>
+                                  <td className="td_min_sNo_width">
+                                    {index + 1}
+                                  </td>
+                                  <td className="td_min_width">
+                                    {row?.firstName}
+                                  </td>
+                                  <td className="td_min_width">
+                                    {row?.lastName || ""}
+                                  </td>
+                                  <td className="td_min_width">
+                                    {row?.email || ""}
+                                  </td>
+                                  <td className="td_min_width">
+                                    {row?.number}
+                                  </td>
+                                  <td className="td_min_width">
+                                    {row?.gender || ""}
+                                  </td>
+                                  <td className="td_min_width">
+                                    {row?.age || ""}
+                                  </td>
+                                  <td className="td_min_width">
+                                    {row?.country || ""}
+                                  </td>
+                                </td>
+                              </tbody>
+                              <hr
+                                className="saprat-line-in-gourps"
+                                color="white"
+                                size="1"
+                              ></hr>
+                            </table>
+                            // ))
+                          ))
+                        )}
+                        {/* </div> */}
+                      </div>
+                    </div>
+                    {/* </Col> */}
+                  </Col>
+                </Row>
+              </Col>
+            </>
+          )}
         </Row>
       </div>
     </>

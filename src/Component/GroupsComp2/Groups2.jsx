@@ -45,6 +45,8 @@ import handleDeleteGroup from "../../helpers/GetApis/DelGroup";
 function Groups2() {
   const navigate = useNavigate();
   const [allGroups, setAllGroups] = useState([]);
+  const [filteredContacts, setFilteredContacts] = useState([]);
+  const [searchQuery, setSearchQuery] = useState();
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [searchEmailModel, setsearchEmailModel] = useState(false);
   const [emailSearch, setEmailSearch] = useState(null);
@@ -119,6 +121,20 @@ function Groups2() {
   const handleRoleSelect = (role) => {
     setSelectedRole(role);
   };
+
+  // SEARCH GROUPS LOGIC START
+  const handleSearchInputChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+
+    const filtered = allGroups.filter((contact) =>
+    console.log(contact , "shayan"),
+      contact.groupName.toLowerCase().includes(query.toLowerCase())
+    );
+    setFilteredContacts(filtered);
+  };
+  console.log(filteredContacts, "searchquery", searchQuery);
+  // const handleSearch
 
   // USER SEARCH API
 
@@ -345,47 +361,6 @@ function Groups2() {
     return () => clearTimeout(timer);
   });
 
-  // console.log(apiResponce, "apiResponce");
-  // console.log(allGroups, "allGroupsallGroups");
-  // console.log(instanseId, "instanseIdinstanseId");
-  // console.log(fatchGroupId, "fatchd");
-  // SERCH EMAIL THROUGH USER
-  // useEffect(() => {
-  //   const fetchSuggestions = async (emailFind) =>{
-  //       axios
-  //         .get(`https://watspi-dev-aa7972875395.herokuapp.com/api/contact/search/${emailFind}` , {
-  //           headers : UserHeader,
-  //         })
-  //         .then((res) => {
-  //           console.log(res , "Responce")
-  //           if (res && res.data) {
-  //               const decryptedData = decryption(res.data.data);
-  //               console.log(decryptedData.message, "decrypted message");
-  //               console.log(res.data.data, "response data");
-  //               toast.success("User Found ")
-
-  //           } else {
-  //               console.error("Invalid response structure:", res);
-  //           }
-  //       })
-
-  //       .catch((err) => {
-  //           console.log(err.message , "Error")
-  //           console.log(err.response , "Er")
-  //           if (err.response && err.response.data.data) {
-  //               const decryptedError = decryption(err.response.data.data);
-  //               console.log(decryptedError, "decrypted error");
-  //               console.log(err.response.data, "error response data");
-  //               toast.success("Not Found")
-  //           } else {
-  //               console.error("Invalid error response structure:", err);
-  //           }
-  //       })
-  //     }
-  // }, []);
-
-  // console.log(emailAddresses , "emailAddresses");
-
   const handleGroupClick = (groupId) => {
     navigate(`/getsinglegroup/${groupId}`);
   };
@@ -534,7 +509,7 @@ function Groups2() {
               {selectedRole}
             </Dropdown.Toggle>
 
-            <Dropdown.Menu style={{background : "#3AABA8"}}>
+            <Dropdown.Menu style={{ background: "#3AABA8" }}>
               <Dropdown.Item onClick={(e) => handleRoleSelect("user")}>
                 User
               </Dropdown.Item>
@@ -741,7 +716,7 @@ function Groups2() {
                               <FaSearch className="search-icon2" />
                               <input
                                 type="text"
-                                placeholder="Search..."
+                                placeholder="Search"
                                 className="grp-2 text-gray focus:text-gray"
                               />
                             </span>
@@ -1011,6 +986,8 @@ function Groups2() {
                                 type="text"
                                 placeholder="Search..."
                                 className="grp-input-search2 text-gray focus:text-gray"
+                                value={searchQuery}
+                                onChange={handleSearchInputChange}
                               />
                             </span>
                             <span>
@@ -1195,9 +1172,7 @@ function Groups2() {
                                         <div className="fixed-height-5rem">
                                           {/* Display the count of contacts */}
                                           {group?.contactList.length > 0 && (
-                                            <p>
-                                              {group?.contactList.length}
-                                            </p>
+                                            <p>{group?.contactList.length}</p>
                                           )}
 
                                           {/* Display the name of the first contact */}

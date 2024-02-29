@@ -1,13 +1,14 @@
 .input-instance_grp2 {
   width: 100%;
-  border: 2px solid #f5f1ff;
+  border: 1px solid #848484;
   padding: 10px 14px;
   border-radius: 8px;
   transition: 0.5s;
   background-color: transparent;
+  color: black;
 }
 .input-instance_grp2::placeholder {
-  color: white; /* Change this to the desired color */
+  color: #3E8F8F; /* Change this to the desired color */
 }
 
 .input-instance_grp2:focus {
@@ -25,8 +26,7 @@
   padding: 10px 14px;
   border-radius: 8px;
   transition: 0.5s;
-  background: transparent;
-  box-shadow: rgba(89, 38, 240, 0.17) 0px 11.9007px 8.65504px;
+  background: #388C8C;
   color: white;
   transition: 0.5s ease-in;
 }
@@ -41,7 +41,7 @@
 }
 .create_grp_filter {
   backdrop-filter: blur(1px);
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color:white;
   border: 2px solid #f5f1ff;
   border-radius: 20px;
   margin-top: 1rem;

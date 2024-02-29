@@ -395,18 +395,18 @@ const DashBoardComponent = () => {
                           <div className="table-padding-2rem">
                             <ShortText
                               text={
-                                group.groupName
-                                  ? group.groupName
-                                  : group.groupId.groupName
+                                group?.groupName
+                                  ? group?.groupName
+                                  : group?.groupId?.groupName
                               }
                               maxChar={10}
                             />
                             <span className="deshbord-span-group-description">
                               <ShortText
                                 text={
-                                  group.description
-                                    ? group.description
-                                    : group.groupId.description
+                                  group?.description
+                                    ? group?.description
+                                    : group?.groupId?.description
                                 }
                                 maxChar={23}
                               />
@@ -665,18 +665,18 @@ const DashBoardComponent = () => {
                             <div className="table-padding-2rem">
                               <ShortText
                                 text={
-                                  group.groupName
-                                    ? group.groupName
-                                    : group.groupId.groupName
+                                  group?.groupName
+                                    ? group?.groupName
+                                    : group?.groupId?.groupName
                                 }
                                 maxChar={9}
                               />
                               <span className="deshbord-span-group-description">
                                 <ShortText
                                   text={
-                                    group.description
-                                      ? group.description
-                                      : group.groupId.description
+                                    group?.description
+                                      ? group?.description
+                                      : group?.groupId?.description
                                   }
                                   maxChar={23}
                                 />

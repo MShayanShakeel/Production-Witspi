@@ -97,6 +97,9 @@ function MyContact2() {
   const [sendMessageInstance, setSendMessageInstance] = useState("");
   const [instanceIdStore, setInstanceIdStore] = useState([]);
 
+  const [filteredContacts, setFilteredContacts] = useState([]);
+  const [selectedContact, setSelectedContact] = useState(null);
+
   const [enterMessageText, setEnterMessageText] = useState(null);
 
   const [inputMediaFiles, setInputMediaFiles] = useState(null);
@@ -184,20 +187,6 @@ function MyContact2() {
   //   }
   // }, [token]);
 
-  const [filteredContacts, setFilteredContacts] = useState([]);
-
-  const handleSearchInputChange = (e) => {
-    const qeury = e.target.value;
-    setSearchQuery(qeury);
-
-    const filtered = allContacts.filter(contact => 
-      contact.firstName.toLowerCase().includes(query.toLowerCase())
-      );
-      setFilteredContacts(filtered);
-  };
-
-  
-  console.log(searchQuery , "searchQuery" , allContacts);
   const defaultCountries = [
     { name: "USA", flagUrl: "https://flagcdn.com/us.svg" },
     { name: "Pakistan", flagUrl: "https://flagcdn.com/pk.svg" },
@@ -273,6 +262,17 @@ function MyContact2() {
     handleGetAllContact();
     setInstanceIdStore(instanceDataUseContext);
   }, [userDetails]);
+
+  const handleSearchInputChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+
+    const filtered = allContacts.filter((contact) =>
+      contact.firstName.toLowerCase().includes(query.toLowerCase())
+    );
+    setFilteredContacts(filtered);
+  };
+
 
   //XXXX   END GET ALL CONTACT'S API XXXXX
 
@@ -1341,6 +1341,9 @@ function MyContact2() {
                                         onChange={handleSearchInputChange}
                                         className="input-search inputsearch-2"
                                       />
+
+                                      {/* Display the filtered contacts */}
+                                    
                                     </div>
                                   </div>
 
@@ -1465,6 +1468,7 @@ function MyContact2() {
                         <div className="search-flex-main">
                           <div className="search-container2">
                             <FaSearch className="search-icon2" />
+
                             <input
                               type="text"
                               placeholder="Search..."
@@ -1472,6 +1476,15 @@ function MyContact2() {
                               onChange={handleSearchInputChange}
                               className="input-search inputsearch-2"
                             />
+                            {/* Display the filtered contacts */}
+                            {/* <select>
+                              <option value="">Select a contact</option>
+                              {filteredContacts.map((contact, index) => (
+                                <option key={index} value={contact.firstName}>
+                                  {contact.firstName}
+                                </option>
+                              ))}
+                            </select> */}
                           </div>
                         </div>
                       ) : (
@@ -1869,9 +1882,9 @@ function MyContact2() {
                           {/* <div className="MyContact_2_container"> */}
                           {allContacts?.length < 0 ? (
                             <p>No data found</p>
-                          ) : (
-                            allContacts?.map((row, index) => (
-                              <table>
+                          ) : filteredContacts.length > 0 ? (
+                            filteredContacts?.map((row, index) => (
+                              <table style={{ marginTop: "1rem" }}>
                                 <tbody
                                   className="tbody-font-style"
                                   style={{
@@ -1894,7 +1907,7 @@ function MyContact2() {
                                     <td className="td_min_width">
                                       <ShortText
                                         text={row?.email}
-                                        maxChar={13}
+                                        maxChar={11}
                                       />
                                     </td>
                                     <td className="td_min_width">
@@ -1953,8 +1966,103 @@ function MyContact2() {
                                     </td>
                                   </tr>
                                 </tbody>
+                                <hr
+                                  className="saprat-line-in-Contact"
+                                  color="white"
+                                  size="1"
+                                ></hr>
                               </table>
-                              // ))
+                            ))
+                          ) : (
+                            allContacts?.map((row, index) => (
+                              <table style={{ marginTop: "1rem" }}>
+                                <tbody
+                                  className="tbody-font-style"
+                                  style={{
+                                    marginTop: "1rem",
+                                    marginBottom: "0",
+                                    tableLayout: "absolute",
+                                    color: "white",
+                                  }}
+                                >
+                                  <tr key={row._id}>
+                                    <td className="td_min_sNo_width">
+                                      {index + 1}
+                                    </td>
+                                    <td className="td_min_width">
+                                      {row?.firstName}
+                                    </td>
+                                    <td className="td_min_width">
+                                      {row?.lastName || ""}
+                                    </td>
+                                    <td className="td_min_width">
+                                      <ShortText
+                                        text={row?.email}
+                                        maxChar={11}
+                                      />
+                                    </td>
+                                    <td className="td_min_width">
+                                      {row?.number}
+                                    </td>
+                                    <td className="td_min_width">
+                                      {row?.gender || ""}
+                                    </td>
+                                    <td className="td_min_width">
+                                      {row?.age || ""}
+                                    </td>
+                                    <td className="td_min_width">
+                                      {row?.country || ""}
+                                    </td>
+                                    <td className="td_min_width">
+                                      <FontAwesomeIcon
+                                        icon={faEdit}
+                                        style={{
+                                          cursor: "pointer",
+                                          marginRight: "15px",
+                                        }}
+                                        onClick={() => {
+                                          openEditModal(row);
+                                          setContactIdToDelete(row?._id);
+                                        }}
+                                      />
+                                      <FontAwesomeIcon
+                                        icon={faTrash}
+                                        style={{
+                                          cursor: "pointer",
+                                          marginRight: "15px",
+                                        }}
+                                        onClick={() => {
+                                          setContactIdToDelete(row?._id);
+                                          setShowDeleteModal(true);
+                                        }}
+                                      />
+                                      <RiMessage2Fill
+                                        style={{
+                                          cursor: "pointer",
+                                          marginRight: "15px",
+                                        }}
+                                        onClick={() => {
+                                          setShowSendMessageModal(true);
+                                          setFatchContactId(row?._id);
+                                        }}
+                                      />
+                                      <span>
+                                        <GrView
+                                          style={{ cursor: "pointer" }}
+                                          onClick={() =>
+                                            handleshowGetcontactpage(row)
+                                          }
+                                        />
+                                      </span>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                                <hr
+                                  className="saprat-line-in-Contact"
+                                  color="white"
+                                  size="1"
+                                ></hr>
+                              </table>
                             ))
                           )}
                           {/* </div> */}
@@ -2088,6 +2196,23 @@ function MyContact2() {
                                         onChange={handleSearchInputChange}
                                         className="input-search inputsearch-2"
                                       />
+
+                                      {/* Display the filtered contacts */}
+                                      {/* <select>
+                                        <option value="">
+                                          Select a contact
+                                        </option>
+                                        {filteredContacts.map(
+                                          (contact, index) => (
+                                            <option
+                                              key={index}
+                                              value={contact.firstName}
+                                            >
+                                              {contact.firstName}
+                                            </option>
+                                          )
+                                        )}
+                                      </select> */}
                                     </div>
                                   </div>
 
@@ -2627,9 +2752,9 @@ function MyContact2() {
                           {/* <div className="MyContact_2_container"> */}
                           {allContacts?.length < 0 ? (
                             <p>No data found</p>
-                          ) : (
-                            allContacts?.map((row, index) => (
-                              <table>
+                          ) : filteredContacts.length > 0 ? (
+                            filteredContacts?.map((row, index) => (
+                              <table style={{ marginTop: "1rem" }}>
                                 <tbody
                                   className="tbody-font-style"
                                   style={{
@@ -2717,7 +2842,97 @@ function MyContact2() {
                                   size="1"
                                 ></hr>
                               </table>
-                              // ))
+                            ))
+                          ) : (
+                            allContacts?.map((row, index) => (
+                              <table style={{ marginTop: "1rem" }}>
+                                <tbody
+                                  className="tbody-font-style"
+                                  style={{
+                                    marginTop: "1rem",
+                                    marginBottom: "0",
+                                    tableLayout: "absolute",
+                                    color: "white",
+                                  }}
+                                >
+                                  <tr key={row._id}>
+                                    <td className="td_min_sNo_width">
+                                      {index + 1}
+                                    </td>
+                                    <td className="td_min_width">
+                                      {row?.firstName}
+                                    </td>
+                                    <td className="td_min_width">
+                                      {row?.lastName || ""}
+                                    </td>
+                                    <td className="td_min_width">
+                                      <ShortText
+                                        text={row?.email}
+                                        maxChar={11}
+                                      />
+                                    </td>
+                                    <td className="td_min_width">
+                                      {row?.number}
+                                    </td>
+                                    <td className="td_min_width">
+                                      {row?.gender || ""}
+                                    </td>
+                                    <td className="td_min_width">
+                                      {row?.age || ""}
+                                    </td>
+                                    <td className="td_min_width">
+                                      {row?.country || ""}
+                                    </td>
+                                    <td className="td_min_width">
+                                      <FontAwesomeIcon
+                                        icon={faEdit}
+                                        style={{
+                                          cursor: "pointer",
+                                          marginRight: "15px",
+                                        }}
+                                        onClick={() => {
+                                          openEditModal(row);
+                                          setContactIdToDelete(row?._id);
+                                        }}
+                                      />
+                                      <FontAwesomeIcon
+                                        icon={faTrash}
+                                        style={{
+                                          cursor: "pointer",
+                                          marginRight: "15px",
+                                        }}
+                                        onClick={() => {
+                                          setContactIdToDelete(row?._id);
+                                          setShowDeleteModal(true);
+                                        }}
+                                      />
+                                      <RiMessage2Fill
+                                        style={{
+                                          cursor: "pointer",
+                                          marginRight: "15px",
+                                        }}
+                                        onClick={() => {
+                                          setShowSendMessageModal(true);
+                                          setFatchContactId(row?._id);
+                                        }}
+                                      />
+                                      <span>
+                                        <GrView
+                                          style={{ cursor: "pointer" }}
+                                          onClick={() =>
+                                            handleshowGetcontactpage(row)
+                                          }
+                                        />
+                                      </span>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                                <hr
+                                  className="saprat-line-in-Contact"
+                                  color="white"
+                                  size="1"
+                                ></hr>
+                              </table>
                             ))
                           )}
                           {/* </div> */}

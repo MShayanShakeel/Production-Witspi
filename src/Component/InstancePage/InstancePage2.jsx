@@ -400,7 +400,7 @@ function InstancePage2() {
                               </Col>
 
                               <Col xs={12} md={6} lg={6}>
-                                <div className="instance-form-input" style={{marginLeft : "0.6rem"}}>
+                                <div className="instance-form-input">
                                   <label className="label-txt-start clr1_white">
                                     Phone
                                   </label>
@@ -802,7 +802,7 @@ function InstancePage2() {
                                       </td>
                                     </tr>
                                   </tbody>
-                                  <div style={{ display: "flex" }}>
+                                  <div style={{ display: "flex" , justifyContent : "end"}}>
                                     <Button
                                       className="save-btn"
                                       onClick={handleUpdateInput}
@@ -920,7 +920,7 @@ function InstancePage2() {
 
                               <Col xs={12} md={6} lg={6}>
                                 <div className="instance-form-input">
-                                  <label className="label-txt-start clr1_white" style={{marginLeft : "0.6rem"}}>
+                                  <label className="label-txt-start clr1_white" >
                                     {" "}
                                     Phone{" "}
                                   </label>
@@ -1044,6 +1044,7 @@ function InstancePage2() {
                               >
                                 Making Incoming messages read
                               </td>
+                                
                               <td className="td-fl-end">
                                 <div className="form-check form-switch">
                                   <input
@@ -1322,7 +1323,7 @@ function InstancePage2() {
                                       </td>
                                     </tr>
                                   </tbody>
-                                  <div style={{ display: "flex" }}>
+                                  <div style={{ display: "flex" , justifyContent : "end" }}>
                                     <Button
                                       className="save-btn"
                                       onClick={handleUpdateInput}

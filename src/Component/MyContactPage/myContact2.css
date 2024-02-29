@@ -608,7 +608,7 @@ _min_desc_width {
   align-items: center;
   right: 1rem;
   /* flex-direction: column; */
-  gap: 1rem;
+  gap: 4.8vh;
   position: fixed;
 }
 
