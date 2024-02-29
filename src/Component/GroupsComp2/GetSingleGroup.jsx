@@ -35,7 +35,7 @@ const GetSingleGroup = () => {
     fetchData();
   }, [group_id]);
 
-  console.log(singleGroupData?.message?.groupName, "roin");
+  console.log(singleGroupData, "roin");
 
   const [headerShowInMobile, setHeaderShowInMobile] = useState(
     window.innerWidth <= 500
@@ -361,7 +361,8 @@ const GetSingleGroup = () => {
                                         marginRight: "1rem",
                                       }}
                                     >
-                                      {ListContact}
+                                      {ListContact.firstName}
+                                      {/* {console.log(ListContact , "ListContact")} */}
                                     </p>
                                     <button
                                       type="button"

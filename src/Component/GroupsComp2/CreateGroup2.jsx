@@ -110,7 +110,7 @@ function CreateGroup2() {
       userId: userId,
       groupName: groupName,
       // contactId: contactList?.map((contactList) => contactList?._id),
-      contactId: [selectedIds],
+      contactId: selectedIds,
       description: groupDescription,
       groupOwner: userId,
       status: true,
