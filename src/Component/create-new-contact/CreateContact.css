@@ -128,9 +128,10 @@
 }
 .lable-create-contact {
   color: black;
+  margin-left: 0.3rem;
 }
 .Group-contact-list-Section {
-  max-height: 50vh !important;
+  max-height: 39vh !important;
   height: auto;
   overflow-x: hidden;
   overflow-y: auto;
@@ -182,6 +183,7 @@
   }
   .lable-create-contact {
     font-size: 12px;
+    
   }
   .Group-contact-list-Section {
     max-height: 27.5rem !important;
