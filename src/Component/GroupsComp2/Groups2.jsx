@@ -147,9 +147,7 @@ function Groups2() {
     fatchData();
   }, [emailFind]);
 
-
-
-  console.log(apiResponce, "jsxresponce" , emailAddresses);
+  console.log(apiResponce, "jsxresponce", emailAddresses);
   // console.log(apiResponce, "emailAddresses");
 
   //FIND USER USING EMAIL
@@ -180,8 +178,29 @@ function Groups2() {
     onChange: (e) => setEmailFind(e.target.value),
   };
 
-  const onSuggestionsFetchRequested = ({ value }) => {
-    setSuggestions(getSuggestions(value));
+  // const onSuggestionsFetchRequested = ({ value }) => {
+  //   setSuggestions(getSuggestions(value));
+  // };
+  const onSuggestionsFetchRequested = async ({ value }) => {
+    const inputValue = value.trim().toLowerCase();
+    const inputLength = inputValue.length;
+
+    if (inputLength === 0) {
+      setSuggestions([]);
+      return;
+    }
+
+    try {
+      const suggestions = await getSuggestions(inputValue);
+
+      if (suggestions.length === 0) {
+        setSuggestions(["No match found"]);
+      } else {
+        setSuggestions(suggestions);
+      }
+    } catch (error) {
+      console.error("Error fetching suggestions:", error);
+    }
   };
 
   const onSuggestionsClearRequested = () => {
@@ -190,29 +209,54 @@ function Groups2() {
 
   //Get All Groups
 
-  useEffect(() => {
-    let url = `https://watspi-dev-aa7972875395.herokuapp.com/api/contact/getAllGroups/${userId}`;
-    if (userId) {
-      axios
-        .get(url, {
+  // useEffect(() => {
+  //   let url = `https://watspi-dev-aa7972875395.herokuapp.com/api/contact/getAllGroups/${userId}`;
+  //   if (userId) {
+  //     axios
+  //       .get(url, {
+  //         headers: UserHeader,
+  //       })
+  //       .then(async (response) => {
+  //         console.log(response, "responsedata");
+  //         const resData = await decryption(response?.data?.data);
+  //         setAllGroups(resData?.message);
+  //         console.log(resData?.message, "resData");
+  //       })
+  //       .catch((error) => {
+  //         console.error(
+  //           "Error fetching data at GetAllGroups:",
+  //           decryption(error?.response?.data?.data)
+  //         );
+  //       });
+  //   }
+  // }, [userDetails]);
+
+  const handleGetAllContact = async () => {
+    try {
+      let url = `https://watspi-dev-aa7972875395.herokuapp.com/api/contact/getAllGroups/${userId}`;
+      if (userId) {
+        const response = await axios.get(url, {
           headers: UserHeader,
-        })
-        .then(async (response) => {
-          console.log(response, "responsedata");
-          const resData = await decryption(response?.data?.data);
-          setAllGroups(resData?.message);
-          console.log(resData?.message, "resData");
-        })
-        .catch((error) => {
-          console.error(
-            "Error fetching data at GetAllGroups:",
-            decryption(error?.response?.data?.data)
-          );
         });
+        console.log(response, "response");
+        const resData = decryption(response?.data?.data);
+        setAllGroups(resData?.message);
+        console.log(resData?.message, "resData");
+      }
+    } catch (error) {
+      console.error(
+        "Error fetching data at GetAllContacts:",
+        decryption(error.response.data.data)
+      );
     }
+  };
+
+  useEffect(() => {
+    handleGetAllContact();
+    handleSendMessageForGroup();
   }, [userDetails]);
 
-
+  console.log(allGroups, "groups");
 
   // GET SHARE GROUPS DATA API
   useEffect(() => {
@@ -239,6 +283,7 @@ function Groups2() {
       console.log(data, "del data");
       toast.success(data?.message);
       setShowDeleteModal(false);
+      handleGetAllContact();
     } catch (error) {
       console.error("Error deleting contact:", error);
       toast.error(error?.message);
@@ -316,6 +361,7 @@ function Groups2() {
           pauseOnHover: true,
           draggable: true,
         });
+        handleGetAllContact();
       })
       .catch((error) => {
         console.error("API error:", error);
@@ -492,7 +538,7 @@ function Groups2() {
                       // border: "1px solid #ccc",
                       borderRadius: "5px",
                       backgroundColor: "white",
-                      color : "black",
+                      color: "black",
                     }}
                   >
                     {children}

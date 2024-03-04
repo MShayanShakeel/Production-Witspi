@@ -35,6 +35,7 @@ export const handleScheduleMessage = (
       const decryptedRes = decryption(res?.data?.data);
       console.log(decryptedRes, "res");
       setShowSendMessageModal(false);
+      setSendMessageInstance("");
     })
     .catch((err) => {
       const decryptedErr = decryption(err.data);

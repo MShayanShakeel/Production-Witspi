@@ -3,7 +3,12 @@ import { UserHeader } from "../../Userheader";
 import { decryption, encryption } from "../../encryptionDecryption";
 import { toast } from "react-toastify";
 
-export const handleSendMessageForGroup = async (sendMessageInstance, instanseId, fatchGroupId, userId) => {
+export const handleSendMessageForGroup = async (
+  sendMessageInstance,
+  instanseId,
+  fatchGroupId,
+  userId
+) => {
   try {
     const data = {
       idInstance: instanseId,
@@ -27,6 +32,7 @@ export const handleSendMessageForGroup = async (sendMessageInstance, instanseId,
     const decriptedData = decryption(response?.data?.data);
     console.log(decriptedData, "res inside");
     toast.success(decriptedData.message);
+    setSendMessageInstance("");
   } catch (error) {
     const decriptionErr = decryption(error?.data?.data);
     console.log(decriptionErr, "decription Error");
@@ -35,4 +41,3 @@ export const handleSendMessageForGroup = async (sendMessageInstance, instanseId,
     toast.error(decriptionErr.message);
   }
 };
-;

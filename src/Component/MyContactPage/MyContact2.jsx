@@ -443,6 +443,7 @@ function MyContact2() {
           console.log(response.data.data, "working");
           console.log("File Upload Succcesfully!", response.data);
           setShowSendMessageModal(false);
+          sendMessageInstance("");
         })
         .catch((error) => {
           console.log("File uploading Error", error);

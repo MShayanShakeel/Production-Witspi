@@ -76,7 +76,7 @@ const CreateContact = () => {
           setCountry(""),
           setEmail(""),
           setTags([""]);
-          setIshidden(true);
+        setIshidden(true);
       })
       .catch((err) => {
         const decriptionerr = decryption(err?.response?.data?.data);
@@ -90,12 +90,10 @@ const CreateContact = () => {
     setIshidden(true);
   };
 
-
-  
   const [selectCountrys, setSelectCountrys] = useState("");
   const countrySelecter = useMemo(() => countryList().getData(), []);
   const countries = Array.isArray(countrySelecter) ? countrySelecter : [];
-  
+
   const handleChangeCountry = (selectedCountry) => {
     setSelectCountrys(selectedCountry);
     setCountry(selectedCountry);
@@ -103,18 +101,18 @@ const CreateContact = () => {
   const customStyles = {
     control: (provided) => ({
       ...provided,
-      backgroundColor: '#448787',
-      color : 'white',
-      border: '0.5px solid white',
+      backgroundColor: "#448787",
+      color: "white",
+      border: "0.5px solid white",
     }),
     option: (provided, state) => ({
       ...provided,
-      color: state.isSelected ? '#448787' : 'white',
-      backgroundColor: state.isSelected ? 'white' : '#448787',
+      color: state.isSelected ? "#448787" : "white",
+      backgroundColor: state.isSelected ? "white" : "#448787",
     }),
     singleValue: (provided) => ({
       ...provided,
-      color: 'white',
+      color: "white",
     }),
   };
 
@@ -180,16 +178,14 @@ const CreateContact = () => {
                       onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
-
                   <div className="col-lg-6 col-sm-6 col-md-6 textfield-col">
-                    <label className="lable-create-contact">Phone # No</label>
+                    <label className="lable-create-contact">Age</label>
                     <input
                       type="text"
-                      required={true}
-                      placeholder="Phone # No"
+                      placeholder="Age"
                       className="contact-text-field"
-                      value={contactNumber}
-                      onChange={(e) => setContactNumber(e.target.value)}
+                      value={age}
+                      onChange={(e) => setAge(e.target.value)}
                     />
                   </div>
                 </div>
@@ -210,46 +206,46 @@ const CreateContact = () => {
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                       </select>
-                    {/* </div> */}
+                      {/* </div> */}
                     </div>
                   </div>
-                  <div className="col-lg-6 col-sm-6 col-md-6 textfield-col">
-                    <label className="lable-create-contact">Gender </label>
 
                   
+                  <div className="col-lg-6 col-sm-6 col-md-6 textfield-col">
+                    <label className="lable-create-contact">Country </label>
+
                     <div>
-                    <select
-                  className="Contact-dropdown-Gender City-dropdown-Gender"
-                  value={selectCountrys || country}
-                  onChange={(e) => {
-                    handleChangeCountry(e.target.value);
-                    setCountry(e.target.value);
-                  }}
-                >
-                  <option value="" disabled selected>
-                    Select your country
-                  </option>{" "}
-                  {countries.map((country) => (
-                    <option key={country.value} value={country.value}>
-                      {country.label}
-                    </option>
-                  ))}
-                </select>
-                  
+                      <select
+                        className="Contact-dropdown-Gender City-dropdown-Gender"
+                        value={selectCountrys || country}
+                        onChange={(e) => {
+                          handleChangeCountry(e.target.value);
+                          setCountry(e.target.value);
+                        }}
+                      >
+                        <option value="" disabled selected>
+                          Select your country
+                        </option>{" "}
+                        {countries.map((country) => (
+                          <option key={country.value} value={country.value}>
+                            {country.label}
+                          </option>
+                        ))}
+                      </select>
                     </div>
                   </div>
-                 
                 </div>
 
                 <div className="row">
-                <div className="col-lg-6 col-sm-6 col-md-6 textfield-col">
-                    <label className="lable-create-contact">Age</label>
+                  <div className="col-lg-6 col-sm-6 col-md-6 textfield-col">
+                    <label className="lable-create-contact">Phone # No</label>
                     <input
                       type="text"
-                      placeholder="Age"
+                      required={true}
+                      placeholder="Phone # No"
                       className="contact-text-field"
-                      value={age}
-                      onChange={(e) => setAge(e.target.value)}
+                      value={contactNumber}
+                      onChange={(e) => setContactNumber(e.target.value)}
                     />
                   </div>
 
