@@ -11,29 +11,30 @@ export const handleBroadCastapi = (
 ) => {
   const numbers = getAllContactStore.map((entry) => entry?.number);
 
+  const arrayData = Object.values(templates).map((obj) => obj.textMessage);
+  const tempNotEmptyString = arrayData.filter((temp) => temp !== "");
+  console.log(tempNotEmptyString, "tempstring");
+  
   const data = {
-    // messages: ["hello beta", "bolo beta", "testing"],
-    // idInstance: ["1101906427"],
-    // contacts: ["923480288071", "923302567670"],
-    // broadCastName: "broad cast single message",
-    messages: [templates],
+    messages: tempNotEmptyString,
     idInstance: ["1101885009"],
-    contacts: [numbers],
+    // contacts: [numbers],
+    contacts: ["923480288071", "923302567670"],
     broadCastName: inputValue,
   };
 
-  console.log(data, UserHeader, "data");
+  console.log(data);
   const encriptedData = encryption(data);
-  console.log(encriptedData);
+  console.log(encriptedData, "excriptdeata");
 
   axios
     .post(
       "https://watspi-dev-aa7972875395.herokuapp.com/api/contact/broadCastSingleMessage",
-      //   {
-      //       headers : UserHeader
-      //     },
       {
         data: encriptedData,
+      },
+      {
+        headers: UserHeader,
       }
     )
     .then((res) => {

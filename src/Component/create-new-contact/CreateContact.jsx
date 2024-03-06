@@ -22,11 +22,9 @@ const CreateContact = () => {
   console.log(UserHeader, "UuuuuuuserHeader");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [contactNumber, setContactNumber] = useState("");
   const [gender, setGender] = useState("");
   const [age, setAge] = useState("");
   const [email, setEmail] = useState("");
-  const [country, setCountry] = useState("");
   const [tags, setTags] = useState([""]);
 
   const handleChange = (index, event) => {
@@ -58,7 +56,7 @@ const CreateContact = () => {
     axios
       .post(
         "https://watspi-dev-aa7972875395.herokuapp.com/api/contact/createContacts",
-        { data: encrypted }, // Corrected: Pass the data directly, no need for an additional object
+        { data: encrypted }, 
         {
           headers: UserHeader,
         }
@@ -90,14 +88,88 @@ const CreateContact = () => {
     setIshidden(true);
   };
 
+  const [country, setCountry] = useState("");
   const [selectCountrys, setSelectCountrys] = useState("");
-  const countrySelecter = useMemo(() => countryList().getData(), []);
+  const [contactNumber, setContactNumber] = useState("");
+  const countrySelecter = useMemo(() => countryList().getData(), []); // remove the parentheses
+
   const countries = Array.isArray(countrySelecter) ? countrySelecter : [];
 
   const handleChangeCountry = (selectedCountry) => {
     setSelectCountrys(selectedCountry);
     setCountry(selectedCountry);
+    setContactNumber("");
   };
+
+  const handleChangeCity = (selectedCity) => {
+    setContactNumber(selectedCity);
+  };
+
+  const dummyData = {
+    US: "+1",
+    CA: "+1",
+    UK: "+44",
+    FR: "+33",
+    DE: "+49",
+    AU: "+61",
+    JP: "+81",
+    IN: "+91",
+    BR: "+55",
+    CN: "+86",
+    ZA: "+27",
+    RU: "+7",
+    MX: "+52",
+    KR: "+82",
+    IT: "+39",
+    ES: "+34",
+    AR: "+54",
+    NL: "+31",
+    SE: "+46",
+    CH: "+41",
+    NO: "+47",
+    DK: "+45",
+    FI: "+358",
+    PT: "+351",
+    GR: "+30",
+    TR: "+90",
+    EG: "+20",
+    NG: "+234",
+    KE: "+254",
+    NZ: "+64",
+    SG: "+65",
+    MY: "+60",
+    ID: "+62",
+    TH: "+66",
+    VN: "+84",
+    PH: "+63",
+    PK: "92",
+    BD: "+880",
+    LK: "+94",
+    MM: "+95",
+    KH: "+855",
+    SA: "+966",
+    AE: "+971",
+    QA: "+974",
+    KW: "+965",
+    OM: "+968",
+    BH: "+973",
+    IQ: "+964",
+    IR: "+98",
+    AF: "+93",
+    NP: "+977",
+    BT: "+975",
+    MV: "+960",
+    TL: "+670",
+    BN: "+673",
+  };
+
+  const getCityOptions = () => {
+    return dummyData[country] || "";
+  };
+  useEffect(() => {
+    getCityOptions();
+  }, [country]);
+
   const customStyles = {
     control: (provided) => ({
       ...provided,
@@ -115,7 +187,7 @@ const CreateContact = () => {
       color: "white",
     }),
   };
-
+console.log(contactNumber, "contactNumber")
   return (
     <>
       {!ishidden && (
@@ -210,7 +282,6 @@ const CreateContact = () => {
                     </div>
                   </div>
 
-                  
                   <div className="col-lg-6 col-sm-6 col-md-6 textfield-col">
                     <label className="lable-create-contact">Country </label>
 
@@ -239,13 +310,33 @@ const CreateContact = () => {
                 <div className="row">
                   <div className="col-lg-6 col-sm-6 col-md-6 textfield-col">
                     <label className="lable-create-contact">Phone # No</label>
+                    {/* <label onChange={(e)=> handleChangeCity(e.target.value)}>
+                      {getCityOptions()}
+                    </label>
                     <input
                       type="text"
                       required={true}
                       placeholder="Phone # No"
                       className="contact-text-field"
                       value={contactNumber}
-                      onChange={(e) => setContactNumber(e.target.value)}
+                      onChange={(e) => {
+                        setContactNumber(e.target.value);
+                      }}
+                    /> */}
+                    {/* <label>{getCityOptions()}</label> */}
+                    <input
+                      type="text"
+                      required={true}
+                      placeholder="Phone # No"
+                      className="contact-text-field"
+                      value={country ? getCityOptions() : contactNumber}
+                      onChange={(e) => {
+                        setContactNumber(e.target.value);
+                        setCountry(false); // Reset country selection when user starts typing
+                      }}
+                      onBlur={() => {
+                        setCountry(true); // Set country selection when user leaves the input
+                      }}
                     />
                   </div>
 

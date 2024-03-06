@@ -627,7 +627,10 @@ function CreateBroadCast2() {
                                   <span className="hide-ex-btn">
                                     <button
                                       type="button"
-                                      onClick={handleExcelFileSelect}
+                                      onClick={() => {
+                                        handleExcelFileSelect();
+                                        setShowExcelUploadComponet(true);
+                                      }}
                                       className="myexecl-btn2 mycontact-btn"
                                     >
                                       Add Excel File
@@ -787,10 +790,58 @@ function CreateBroadCast2() {
                               </Button>
                               <Button
                                 className="Add-new-btn_createbd Sd-Sch-font"
-                                style={{ marginRight: "19px" }}
+                                onClick={openModel}
                               >
                                 Schedule
                               </Button>
+                              <Modal
+                                show={modalOpen}
+                                onHide={() => setModalOpen(false)}
+                              >
+                                <Modal.Header closeButton>
+                                  <Modal.Title>
+                                    Select data and Time
+                                  </Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body>
+                                  <DatePicker
+                                    className="DatePicker-class"
+                                    placeholderText="Schedule Date & Time"
+                                    selected={selectedData}
+                                    onChange={handleDateChange}
+                                    minDate={new Date()}
+                                    showTimeSelect
+                                    timeFormat="HH:mm"
+                                    timeIntervals={15}
+                                    dateFormat="Pp"
+                                  />
+                                </Modal.Body>
+                                <Modal.Footer>
+                                  <Button
+                                    variant="secondary"
+                                    className="Close_btn"
+                                    onClick={() => setModalOpen(false)}
+                                  >
+                                    Cancel
+                                  </Button>
+                                  <Button
+                                    variant="danger"
+                                    className="Del_btn"
+                                    onClick={() =>
+                                      handleBroadCastSchedule(
+                                        inputValue,
+                                        templates,
+                                        getAllContactStore,
+                                        selectedInstanceIds,
+                                        userDetails,
+                                        selectedData
+                                      )
+                                    }
+                                  >
+                                    Send
+                                  </Button>
+                                </Modal.Footer>
+                              </Modal>
                             </div>
                           </div>
                         </Col>
@@ -891,8 +942,8 @@ function CreateBroadCast2() {
                                 <thead
                                   className="bdCast-head-font"
                                   style={{
-                                    position: "sticky", 
-                                    top: 0, 
+                                    position: "sticky",
+                                    top: 0,
                                     zIndex: 1,
                                     background: "white",
                                     boxShadow: "0px 2px 0px 0px lightblue",
@@ -1163,7 +1214,10 @@ function CreateBroadCast2() {
                                     <span className="hide-ex-btn">
                                       <button
                                         type="button"
-                                        onClick={handleExcelFileSelect}
+                                        onClick={() => {
+                                          handleExcelFileSelect();
+                                          setShowExcelUploadComponet(true);
+                                        }}
                                         className="myexecl-btn2 mycontact-btn"
                                       >
                                         Add Excel File

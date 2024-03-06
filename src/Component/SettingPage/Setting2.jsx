@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./setting2.css";
 import { Card, Col, Row, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import passimage from "../../../images/Password-change-img.jpg";
+import passimage from "../../../images/finalllllll.png";
 import {
   faCog,
   faChevronDown,
@@ -728,7 +728,19 @@ function Setting2() {
                           </Col>
                         </Row>
                         <Row>
-                          <Col md={12} lg={12} className="backdrop-filter">
+                          <Col
+                            md={12}
+                            lg={12}
+                            className="backdrop-filter"
+                            style={{
+                              backgroundImage: `url(${passimage})`,
+                              // width: "100%",
+                              // height: "100vh",
+                              // overflow: "hidden",
+                              // backgroundRepeat: "no-repeat",
+                              backgroundSize: "cover",
+                            }}
+                          >
                             <div
                               className={`main-sett-style ${
                                 isPassOpen ? "card-open" : ""
@@ -758,9 +770,7 @@ function Setting2() {
                             </div>
                             {isPassOpen && (
                               <div className="below-container">
-                                <div
-                                  className="card-below-body"
-                                >
+                                <div className="card-below-body">
                                   <form>
                                     <Row>
                                       <Col xs={12} md={12} lg={12}>
@@ -883,12 +893,12 @@ function Setting2() {
                                         </div>
                                       </Col>
                                     </Row>
+
                                     <div
                                       className="btn-style-end"
                                       style={{
                                         marginRight: "11px",
                                         marginTop: "3px",
-                                        
                                       }}
                                     >
                                       <Button
